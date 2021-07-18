@@ -7,4 +7,3 @@ Also join discord for downloading releases. I won't put any releases here. https
 Branches:
 stable - Stable integration, not in beta program.
 beta - Beta integration, testing new features with the beta program.
-content - Game content for manual download if your internet cause problems (Mostly in AU region). The content works for both stable and beta integration.
