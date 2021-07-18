@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using ZenFulcrum.EmbeddedBrowser;
 
 public class TheCloud : MonoBehaviour
@@ -766,16 +765,7 @@ public class TheCloud : MonoBehaviour
 			Debug.Log("Twitch integration is active");
 			return;
 		}
-		if (ModsManager.Nightmare)
-		{
-			this.challenge = 0;
-			CurrencyManager.AddCurrency(7f);
-			GameManager.TimeSlinger.FireTimer(30f, new Action(this.TenTwentyMode), 0);
-		}
-		else
-		{
-			this.challenge = -1;
-		}
+		this.challenge = -1;
 		Debug.Log("DOSTwitch is disabled");
 	}
 
@@ -898,6 +888,7 @@ public class TheCloud : MonoBehaviour
 		}
 		DOSTwitch.dosTwitchEnabled = false;
 		SpeedPoll.speedManipulatorActive = false;
+		KeyPoll.keyManipulatorActive = false;
 		WiFiPoll.resetWiFiStats();
 		DOSCoinPoll.moneyLoan = 0;
 		ProductsManager.ownsWhitehatScanner = false;
@@ -907,6 +898,7 @@ public class TheCloud : MonoBehaviour
 		RemoteVPNObject.ObjectBuilt = false;
 		RemoteVPNObject.RemoteVPNLevel = 1;
 		DevTools.InsanityMode = false;
+		ModsManager.Nightmare = false;
 		Debug.Log("TheCloud is disabled.");
 	}
 
@@ -915,7 +907,7 @@ public class TheCloud : MonoBehaviour
 		new GameObject("DevTools").AddComponent<DevTools>();
 	}
 
-	private void TenTwentyMode()
+	public void TenTwentyMode()
 	{
 		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
 		jumpHit.AudioClip = DownloadTIFiles.XOR;
@@ -941,7 +933,6 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 1)
 		{
-			GameManager.TimeSlinger.FireTimer(2f, new Action(this.ScheduleGoldenFreddy), 0);
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
@@ -962,54 +953,20 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 4)
 		{
+			if (!DataManager.LeetMode)
+			{
+				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
+			}
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
 		}
 		this.challenge = -1;
-	}
-
-	private void ScheduleGoldenFreddy()
-	{
-		if (!this.GFschedule)
-		{
-			this.GFschedule = true;
-			GameManager.TimeSlinger.FireTimer(45f, new Action(this.ScheduleGoldenFreddy), 0);
-			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-			jumpHit.AudioClip = DownloadTIFiles.GFPresence;
-			jumpHit.Volume = 0.8f;
-			jumpHit.Loop = false;
-			GameManager.AudioSlinger.PlaySound(jumpHit);
-			return;
-		}
-		if (StateManager.PlayerState != PLAYER_STATE.PEEPING)
-		{
-			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(45f, 210f), new Action(this.ScheduleGoldenFreddy), 0);
-			this.SpawnGF();
-			return;
-		}
-		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(5f, 10f), new Action(this.ScheduleGoldenFreddy), 0);
-	}
-
-	private void SpawnGF()
-	{
-		GameObject gameObject = new GameObject();
-		gameObject.AddComponent<Image>().sprite = Sprite.Create(DownloadTIFiles.Freddy, new Rect(0f, 0f, (float)DownloadTIFiles.Freddy.width, (float)DownloadTIFiles.Freddy.height), new Vector2(0.5f, 0.5f), 100f);
-		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
-		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)(Screen.width / 2), (float)(Screen.height / 2), 0f);
-		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.x);
-		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.y);
-		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.z);
-		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
-		gameObject.SetActive(true);
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
-		jumpHit.Volume = 1f;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
-		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
-		{
-			UnityEngine.Object.Destroy(gameObject);
-		}, 0);
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);

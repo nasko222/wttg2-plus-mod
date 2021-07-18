@@ -44,10 +44,6 @@ public class TutorialStartBehaviour : TutorialStepper
 		}
 		WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 		WindowManager.Get(SOFTWARE_PRODUCTS.ZERODAY).Launch();
-		if (ModsManager.Nightmare)
-		{
-			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].myProductObject.shipItem();
-		}
 	}
 
 	public void ShowDocIcons()

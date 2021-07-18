@@ -35,6 +35,12 @@ public class DOSTwitch : MonoBehaviour
 		{
 			this.speedPollWindowActive = false;
 			this.triggerSpeedPoll();
+			this.generateKeyPollWindow();
+		}
+		if (this.keyPollWindowActive && Time.time - this.keyPollTimeStamp >= this.keyPollTimeWindow)
+		{
+			this.keyPollWindowActive = false;
+			this.triggerKeyPoll();
 			this.generateVirusPollWindow();
 		}
 		if (this.VirusPollWindowActive && Time.time - this.VirusPollTimeStamp >= this.VirusPollTimeWindow)
@@ -81,6 +87,8 @@ public class DOSTwitch : MonoBehaviour
 		this.wifiPollMaxWindow = 360f;
 		this.speedPollMinWindow = 180f;
 		this.speedPollMaxWindow = 240f;
+		this.keyPollMinWindow = 120f;
+		this.keyPollMaxWindow = 240f;
 	}
 
 	private void prepDOSTwitch()
@@ -129,6 +137,8 @@ public class DOSTwitch : MonoBehaviour
 		this.myTrollPoll.myDOSTwitch = this;
 		this.myDiscountPoll = new DiscountPoll();
 		this.myDiscountPoll.myDOSTwitch = this;
+		this.myKeyPoll = new KeyPoll();
+		this.myKeyPoll.myDOSTwitch = this;
 		if (!this.myTwitchIRC.isConnected)
 		{
 			GameManager.TimeSlinger.FireTimer(30f, new Action(this.checkCon), 0);
@@ -147,7 +157,7 @@ public class DOSTwitch : MonoBehaviour
 	private void displayTwitchConnected()
 	{
 		Debug.Log("Twitch Integration Now Live! FeelsGoodMan");
-		this.myTwitchIRC.SendMsg("Welcome to the Game II Twitch Integration Mod by nasko222 [v1.22-beta7] - All Systems Working! - FeelsGoodMan Clap");
+		this.myTwitchIRC.SendMsg("Welcome to the Game II Twitch Integration Mod by nasko222 [v1.22-beta8] - All Systems Working! - FeelsGoodMan Clap");
 		DOSTwitch.dosTwitchEnabled = true;
 		Debug.Log("DOSTwitch was enabled and put in an instance.");
 	}
@@ -571,6 +581,45 @@ public class DOSTwitch : MonoBehaviour
 		Debug.Log("successful command: " + text);
 	}
 
+	private void generateKeyPollWindow()
+	{
+		if (DataManager.LeetMode && !ModsManager.EasyModeActive)
+		{
+			this.keyPollTimeWindow = UnityEngine.Random.RandomRange(60f, 180f);
+		}
+		else if (DataManager.LeetMode && ModsManager.EasyModeActive)
+		{
+			this.keyPollTimeWindow = UnityEngine.Random.Range(this.keyPollMinWindow, this.keyPollMaxWindow);
+		}
+		else if (!DataManager.LeetMode && !ModsManager.EasyModeActive)
+		{
+			this.keyPollTimeWindow = UnityEngine.Random.Range(this.keyPollMinWindow, this.keyPollMaxWindow);
+		}
+		else if (!DataManager.LeetMode && ModsManager.EasyModeActive)
+		{
+			this.keyPollTimeWindow = UnityEngine.Random.Range(this.keyPollMinWindow, this.keyPollMaxWindow) * 1.5f;
+		}
+		this.keyPollTimeStamp = Time.time;
+		this.keyPollWindowActive = true;
+	}
+
+	private void triggerKeyPoll()
+	{
+		if (!this.pollActive)
+		{
+			this.currentPollAction = new Action<string, string>(this.myKeyPoll.CastVote);
+			this.pollActive = true;
+			this.myKeyPoll.BeginVote();
+			return;
+		}
+		if (DataManager.LeetMode)
+		{
+			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(25f, 69f), new Action(this.triggerKeyPoll), 0);
+			return;
+		}
+		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(49f, 101f), new Action(this.triggerKeyPoll), 0);
+	}
+
 	private short conCount;
 
 	public TwitchIRC myTwitchIRC;
@@ -684,4 +733,16 @@ public class DOSTwitch : MonoBehaviour
 	private string StreamerUsername;
 
 	private bool PunishedBefore;
+
+	private bool keyPollWindowActive;
+
+	private float keyPollTimeWindow;
+
+	private float keyPollTimeStamp;
+
+	private float keyPollMinWindow;
+
+	private float keyPollMaxWindow;
+
+	private KeyPoll myKeyPoll;
 }

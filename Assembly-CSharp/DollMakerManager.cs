@@ -465,6 +465,10 @@ public class DollMakerManager : MonoBehaviour
 
 	public void ForceMarker()
 	{
+		if (this.forced)
+		{
+			return;
+		}
 		this.dollMakerActivated = true;
 		this.forced = true;
 		StateManager.PlayerStateChangeEvents.Event -= this.rePlaceMarker;

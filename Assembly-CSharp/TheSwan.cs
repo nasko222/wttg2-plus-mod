@@ -38,12 +38,7 @@ public class TheSwan
 			skyBreakBehavior.SwanNumbers[4] = 23;
 			skyBreakBehavior.SwanNumbers[5] = 42;
 		}
-		if (StateManager.BeingHacked && this._108 <= 21f)
-		{
-			GameManager.TimeSlinger.FireTimer(1f, new Action(this.StartCountdown), 0);
-			return;
-		}
-		if (this.SwanMalfunction || !ComputerPowerHook.Ins.PowerOn || EnvironmentManager.PowerState == POWER_STATE.OFF)
+		if (this.SwanMalfunction || !ComputerPowerHook.Ins.PowerOn || EnvironmentManager.PowerState == POWER_STATE.OFF || StateManager.BeingHacked)
 		{
 			GameManager.TimeSlinger.FireTimer(1f, new Action(this.StartCountdown), 0);
 			return;
@@ -94,6 +89,10 @@ public class TheSwan
 		if (this.SwanClock >= 0.75f)
 		{
 			this.SwanClock -= 0.25f;
+		}
+		if (ModsManager.Nightmare)
+		{
+			this.SwanClock = 0.5f;
 		}
 		if (this.skyBreak != null)
 		{

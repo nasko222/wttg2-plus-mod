@@ -263,29 +263,14 @@ public class AnnBehaviour : WindowBehaviour
 		if (GameManager.TheCloud.CheckIfSiteWasTapped())
 		{
 			WebPageDefinition pageDef = GameManager.TheCloud.GetCurrentWebPageDef();
-			if (InventoryManager.OwnsKeyCue)
+			if ((InventoryManager.OwnsKeyCue || KeyPoll.keyManipulatorData == KEY_CUE_MODE.ENABLED) && KeyPoll.keyManipulatorData != KEY_CUE_MODE.DISABLED)
 			{
 				LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
 			}
 			KEY_DISCOVERY_MODES keyDiscoverMode = pageDef.KeyDiscoverMode;
 			if (keyDiscoverMode != KEY_DISCOVERY_MODES.PLAIN_SIGHT)
 			{
-				if (keyDiscoverMode != KEY_DISCOVERY_MODES.CLICK_TO_PLAIN_SIGHT)
-				{
-					if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_FILE)
-					{
-						this.myBrowser.CallFunction("PickCFTag", new JSONNode[]
-						{
-							string.Empty
-						});
-						this.myBrowser.RegisterFunction("FileKeyShow", delegate(JSONNode args)
-						{
-							GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-							GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key" + (pageDef.HashIndex + 1).ToString() + ".txt", (pageDef.HashIndex + 1).ToString() + " - " + pageDef.HashValue);
-						});
-					}
-				}
-				else
+				if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_PLAIN_SIGHT)
 				{
 					this.myBrowser.CallFunction("PickCPTag", new JSONNode[]
 					{
@@ -300,6 +285,20 @@ public class AnnBehaviour : WindowBehaviour
 							new JSONNode(pageDef.HashValue)
 						});
 					});
+					return;
+				}
+				if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_FILE)
+				{
+					this.myBrowser.CallFunction("PickCFTag", new JSONNode[]
+					{
+						string.Empty
+					});
+					this.myBrowser.RegisterFunction("FileKeyShow", delegate(JSONNode args)
+					{
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key" + (pageDef.HashIndex + 1).ToString() + ".txt", (pageDef.HashIndex + 1).ToString() + " - " + pageDef.HashValue);
+					});
+					return;
 				}
 			}
 			else

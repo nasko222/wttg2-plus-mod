@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7D319D35-662C-419C-83F4-C1BF40A205DA}</ProjectGuid>
+    <ProjectGuid>{B31FF8D7-793D-475E-9171-ADF7BA4A5F29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -444,6 +444,8 @@
     <Compile Include="JumpRailingTrigger.cs" />
     <Compile Include="JumpTrigger.cs" />
     <Compile Include="KeyboardSoundScrub.cs" />
+    <Compile Include="KeyPoll.cs" />
+    <Compile Include="KEY_CUE_MODE.cs" />
     <Compile Include="KEY_DISCOVERY_MODES.cs" />
     <Compile Include="KitchenWindowHook.cs" />
     <Compile Include="LightFadeLOD.cs" />

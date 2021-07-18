@@ -415,6 +415,16 @@ public class DevTools : MonoBehaviour
 				}
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "XOR")
+			{
+				if (DevTools.Ins != null && GameManager.TheCloud != null && !ModsManager.Nightmare)
+				{
+					ModsManager.Nightmare = true;
+					GameManager.TheCloud.TenTwentyMode();
+					GameManager.TimeSlinger.FireTimer(22f, new Action(this.ScheduleGoldenFreddy), 0);
+				}
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "INSANITY")
 			{
 				if (DevTools.Ins != null && !DevTools.InsanityMode)
@@ -538,6 +548,21 @@ public class DevTools : MonoBehaviour
 					else if (Response.Additional.ToLower() == "faster")
 					{
 						SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
+					}
+				}
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "keyManipulator")
+			{
+				if (GameManager.BehaviourManager.AnnBehaviour != null && Response.Additional != "")
+				{
+					if (Response.Additional.ToLower() == "enabled")
+					{
+						KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
+					}
+					else if (Response.Additional.ToLower() == "disabled")
+					{
+						KeyPoll.DevEnableManipulator(KEY_CUE_MODE.DISABLED);
 					}
 				}
 				this.iAmLive = true;

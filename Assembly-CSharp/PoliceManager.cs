@@ -241,7 +241,7 @@ public class PoliceManager : MonoBehaviour
 		this.triggerTimeWindow = TheNetwork.networkTrackRate;
 		if (DataManager.LeetMode)
 		{
-			this.triggerTimeWindow *= (ModsManager.Nightmare ? 0.5f : 0.7f);
+			this.triggerTimeWindow *= 0.7f;
 		}
 		this.triggerTimeStamp = Time.time;
 		this.triggerActive = true;

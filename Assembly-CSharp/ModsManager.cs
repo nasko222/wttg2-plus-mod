@@ -69,16 +69,6 @@ public static class ModsManager
 		{
 			ModsManager.Trolling = false;
 		}
-		if (PlayerPrefs.GetInt("[MOD]NightmareMode", 1) == 1)
-		{
-			ModsManager.Nightmare = true;
-			ModsManager.EasyModeActive = false;
-			ModsManager.DOSTwitchActive = false;
-		}
-		else
-		{
-			ModsManager.Nightmare = false;
-		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
 
