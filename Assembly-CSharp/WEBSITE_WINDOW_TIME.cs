@@ -1,0 +1,12 @@
+﻿using System;
+
+[Serializable]
+public enum WEBSITE_WINDOW_TIME
+{
+	FIRST_QUARTER,
+	SECOND_QUARTER,
+	THRID_QUARTER,
+	FOURTH_QUARTER,
+	FIRST_HALF,
+	SECNOND_HALF
+}

@@ -1,0 +1,11 @@
+﻿using System;
+
+public enum SWAT_VOICE_COMMANDS
+{
+	GET_DOWN,
+	POLICE_DEPT,
+	STAY_DOWN,
+	GOT_YOU,
+	GO_GO,
+	CLEAR
+}
