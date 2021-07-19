@@ -112,5 +112,5 @@ public class KeyPoll
 
 	private bool voteIsLive;
 
-	public static KEY_CUE_MODE keyManipulatorData;
+	public static KEY_CUE_MODE keyManipulatorData = KEY_CUE_MODE.DEFAULT;
 }

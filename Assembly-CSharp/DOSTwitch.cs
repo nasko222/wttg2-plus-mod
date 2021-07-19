@@ -157,7 +157,7 @@ public class DOSTwitch : MonoBehaviour
 	private void displayTwitchConnected()
 	{
 		Debug.Log("Twitch Integration Now Live! FeelsGoodMan");
-		this.myTwitchIRC.SendMsg("Welcome to the Game II Twitch Integration Mod by nasko222 [v1.22-beta9] - All Systems Working! - FeelsGoodMan Clap");
+		this.myTwitchIRC.SendMsg("Welcome to the Game II Twitch Integration Mod by nasko222 [v1.22-beta10] - All Systems Working! - FeelsGoodMan Clap");
 		DOSTwitch.dosTwitchEnabled = true;
 		Debug.Log("DOSTwitch was enabled and put in an instance.");
 	}
@@ -206,7 +206,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.DOSCoinPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.DOSCoinPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -261,7 +261,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.VirusPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.VirusPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -292,7 +292,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.hackerPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.hackerPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -323,7 +323,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.trollPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.trollPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -361,7 +361,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.discountPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.discountPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -375,7 +375,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.wifiPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.wifiPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -406,7 +406,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.speedPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.speedPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
@@ -586,7 +586,7 @@ public class DOSTwitch : MonoBehaviour
 	{
 		if (DataManager.LeetMode)
 		{
-			this.keyPollTimeWindow = UnityEngine.Random.RandomRange(30f, 90f);
+			this.keyPollTimeWindow = UnityEngine.Random.RandomRange(60f, 120f);
 		}
 		else
 		{
