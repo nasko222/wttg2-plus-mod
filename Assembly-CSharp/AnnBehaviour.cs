@@ -263,7 +263,14 @@ public class AnnBehaviour : WindowBehaviour
 		if (GameManager.TheCloud.CheckIfSiteWasTapped())
 		{
 			WebPageDefinition pageDef = GameManager.TheCloud.GetCurrentWebPageDef();
-			if ((InventoryManager.OwnsKeyCue || KeyPoll.keyManipulatorData == KEY_CUE_MODE.ENABLED) && KeyPoll.keyManipulatorData != KEY_CUE_MODE.DISABLED)
+			if (KeyPoll.keyManipulatorData == KEY_CUE_MODE.DEFAULT)
+			{
+				if (InventoryManager.OwnsKeyCue)
+				{
+					LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
+				}
+			}
+			else if (KeyPoll.keyManipulatorData == KEY_CUE_MODE.ENABLED)
 			{
 				LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
 			}

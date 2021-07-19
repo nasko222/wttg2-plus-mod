@@ -888,7 +888,7 @@ public class TheCloud : MonoBehaviour
 		}
 		DOSTwitch.dosTwitchEnabled = false;
 		SpeedPoll.speedManipulatorActive = false;
-		KeyPoll.keyManipulatorActive = false;
+		KeyPoll.keyManipulatorData = KEY_CUE_MODE.DEFAULT;
 		WiFiPoll.resetWiFiStats();
 		DOSCoinPoll.moneyLoan = 0;
 		ProductsManager.ownsWhitehatScanner = false;

@@ -344,7 +344,7 @@ public class HackerManager : MonoBehaviour
 
 	private void triggerHack()
 	{
-		if (!this.openForHacks || EnemyManager.State != ENEMY_STATE.IDLE || StateManager.BeingHacked)
+		if (!this.openForHacks || EnemyManager.State != ENEMY_STATE.IDLE || StateManager.BeingHacked || this.theSwan.SwanError)
 		{
 			this.generateSmallFireWindow();
 			return;

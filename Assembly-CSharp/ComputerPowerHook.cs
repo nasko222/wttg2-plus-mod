@@ -19,6 +19,10 @@ public class ComputerPowerHook : MonoBehaviour
 
 	public void ShutDownComputer()
 	{
+		if (GameManager.HackerManager.theSwan.SwanError)
+		{
+			return;
+		}
 		GameManager.AudioSlinger.MuteAudioHub(AUDIO_HUB.COMPUTER_HUB);
 		this.myRayCaster.enabled = true;
 		this.powerLabelText.SetText("Powering Off");

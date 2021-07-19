@@ -78,33 +78,31 @@ public class KeyPoll
 
 	private void FireManipulator(KEY_CUE_MODE kEY_CUE_MODE)
 	{
-		if (KeyPoll.keyManipulatorActive)
+		if (KeyPoll.keyManipulatorData != KEY_CUE_MODE.DEFAULT)
 		{
 			return;
 		}
 		KeyPoll.keyManipulatorData = kEY_CUE_MODE;
-		KeyPoll.keyManipulatorActive = true;
 		GameManager.TimeSlinger.FireTimer(300f, new Action(this.DisableManipulator), 0);
 	}
 
 	private void DisableManipulator()
 	{
-		KeyPoll.keyManipulatorActive = false;
+		KeyPoll.keyManipulatorData = KEY_CUE_MODE.DEFAULT;
 	}
 
 	public static void DevDisableManipulator()
 	{
-		KeyPoll.keyManipulatorActive = false;
+		KeyPoll.keyManipulatorData = KEY_CUE_MODE.DEFAULT;
 	}
 
 	public static void DevEnableManipulator(KEY_CUE_MODE kEY_CUE_MODE)
 	{
-		if (KeyPoll.keyManipulatorActive)
+		if (KeyPoll.keyManipulatorData != KEY_CUE_MODE.DEFAULT)
 		{
 			return;
 		}
 		KeyPoll.keyManipulatorData = kEY_CUE_MODE;
-		KeyPoll.keyManipulatorActive = true;
 		GameManager.TimeSlinger.FireTimer(600f, new Action(SpeedPoll.DevDisableManipulator), 0);
 	}
 
@@ -113,8 +111,6 @@ public class KeyPoll
 	private Dictionary<string, string> currentVotes;
 
 	private bool voteIsLive;
-
-	public static bool keyManipulatorActive;
 
 	public static KEY_CUE_MODE keyManipulatorData;
 }

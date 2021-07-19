@@ -154,6 +154,14 @@ public class TheSwan
 		}
 	}
 
+	public bool SwanError
+	{
+		get
+		{
+			return this.SwanMalfunction;
+		}
+	}
+
 	public AudioFileDefinition SwanSFX = LookUp.SoundLookUp.LoudDoorBang;
 
 	public bool isActivatedBefore;
