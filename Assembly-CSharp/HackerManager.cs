@@ -261,13 +261,8 @@ public class HackerManager : MonoBehaviour
 	{
 		if (this.twitchGodHack && DataManager.LeetMode)
 		{
-			if (EnemyManager.State != ENEMY_STATE.LOCKED)
-			{
-				EnemyManager.State = ENEMY_STATE.LOCKED;
-				GameManager.TimeSlinger.FireTimer(60f, new Action(this.ResetEnemyState), 0);
-				this.resetEnemyStateTriggered = true;
-			}
 			EnvironmentManager.PowerBehaviour.ForcePowerOff();
+			EnvironmentManager.PowerBehaviour.ResetPowerTripTime();
 		}
 		GameManager.AudioSlinger.KillSound(this.HackingIntroBedSFX);
 		CursorManager.Ins.SwitchToHackerCursor();
@@ -679,17 +674,6 @@ public class HackerManager : MonoBehaviour
 		}
 	}
 
-	private void ResetEnemyState()
-	{
-		if (EnvironmentManager.PowerState == POWER_STATE.ON)
-		{
-			EnemyManager.State = ENEMY_STATE.IDLE;
-			this.resetEnemyStateTriggered = false;
-			return;
-		}
-		GameManager.TimeSlinger.FireTimer(30f, new Action(this.ResetEnemyState), 0);
-	}
-
 	public void BlackHatSound2S()
 	{
 		GameManager.AudioSlinger.KillSound(this.HackBlockSFX);
@@ -815,8 +799,6 @@ public class HackerManager : MonoBehaviour
 	private bool godHack;
 
 	private bool twitchGodHack;
-
-	private bool resetEnemyStateTriggered;
 
 	public TheSwan theSwan;
 }

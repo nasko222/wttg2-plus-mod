@@ -421,7 +421,7 @@ public class DevTools : MonoBehaviour
 				{
 					ModsManager.Nightmare = true;
 					GameManager.TheCloud.TenTwentyMode();
-					GameManager.TimeSlinger.FireTimer(22f, new Action(this.ScheduleGoldenFreddy), 0);
+					GameManager.TimeSlinger.FireTimer(20f, new Action(this.ScheduleGoldenFreddy), 0);
 				}
 				this.iAmLive = true;
 			}
