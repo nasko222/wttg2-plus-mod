@@ -300,7 +300,25 @@ public class skyBreakBehavior : WindowBehaviour
 		{
 			if (array[1] == "code")
 			{
-				if (array.Length < 7)
+				if (TheSwan.extOn)
+				{
+					if (array.Length < 3)
+					{
+						flag = false;
+						setLine = "parameter must be greater than 0";
+					}
+					else
+					{
+						if (!(array[2] != TheSwan.extCode))
+						{
+							this.SwanCode(theCMD);
+							return;
+						}
+						flag = false;
+						setLine = "PARAMETER UNCLEAR!";
+					}
+				}
+				else if (array.Length < 7)
 				{
 					flag = false;
 					setLine = "WRONG!";
@@ -335,32 +353,32 @@ public class skyBreakBehavior : WindowBehaviour
 					flag = false;
 					setLine = "WRONG!";
 				}
-				if (num != skyBreakBehavior.SwanNumbers[0])
+				if (flag && num != skyBreakBehavior.SwanNumbers[0])
 				{
 					flag = false;
 					setLine = "WRONG!";
 				}
-				if (num2 != skyBreakBehavior.SwanNumbers[1])
+				if (flag && num2 != skyBreakBehavior.SwanNumbers[1])
 				{
 					flag = false;
 					setLine = "WRONG!";
 				}
-				if (num3 != skyBreakBehavior.SwanNumbers[2])
+				if (flag && num3 != skyBreakBehavior.SwanNumbers[2])
 				{
 					flag = false;
 					setLine = "WRONG!";
 				}
-				if (num4 != skyBreakBehavior.SwanNumbers[3])
+				if (flag && num4 != skyBreakBehavior.SwanNumbers[3])
 				{
 					flag = false;
 					setLine = "WRONG!";
 				}
-				if (num5 != skyBreakBehavior.SwanNumbers[4])
+				if (flag && num5 != skyBreakBehavior.SwanNumbers[4])
 				{
 					flag = false;
 					setLine = "WRONG!";
 				}
-				if (num6 != skyBreakBehavior.SwanNumbers[5])
+				if (flag && num6 != skyBreakBehavior.SwanNumbers[5])
 				{
 					flag = false;
 					setLine = "WRONG!";

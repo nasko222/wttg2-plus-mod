@@ -78,6 +78,7 @@ public class TheSwan
 
 	private void SystemFailure()
 	{
+		TheSwan.extOn = false;
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
 		this.SwanSFX.AudioClip = DownloadTIFiles.SwanFailure;
 		skyBreakBehavior.SwanNumbers[0] = 4;
@@ -116,30 +117,24 @@ public class TheSwan
 		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
 		CurrencyManager.AddCurrency(UnityEngine.Random.Range(3.82f, 16.15f));
-		if (UnityEngine.Random.Range(0, 100) < (DataManager.LeetMode ? 20 : 90) || ModsManager.EasyModeActive)
+		if (UnityEngine.Random.Range(0, 100) < (DataManager.LeetMode ? 60 : 90) || ModsManager.EasyModeActive || TheSwan.extOn)
 		{
+			TheSwan.extOn = false;
 			return;
 		}
-		int num = UnityEngine.Random.Range(0, 6);
-		if (num > 2)
+		TheSwan.extOn = true;
+		int num = UnityEngine.Random.Range(0, 3);
+		if (num == 0)
 		{
-			skyBreakBehavior.SwanNumbers[num]++;
+			TheSwan.extCode = "SW4N";
+			return;
 		}
-		else
+		if (num == 1)
 		{
-			skyBreakBehavior.SwanNumbers[num]--;
+			TheSwan.extCode = "H4TCH";
+			return;
 		}
-		for (int i = 0; i < skyBreakBehavior.SwanNumbers.Length; i++)
-		{
-			if (skyBreakBehavior.SwanNumbers[i] <= 0)
-			{
-				skyBreakBehavior.SwanNumbers[i] = 99;
-			}
-			else if (skyBreakBehavior.SwanNumbers[i] >= 100)
-			{
-				skyBreakBehavior.SwanNumbers[i] = 1;
-			}
-		}
+		TheSwan.extCode = "DH4RMA";
 	}
 
 	private void TakeSwanDOS()
@@ -175,4 +170,8 @@ public class TheSwan
 	private bool firstTIME = true;
 
 	private float SwanClock;
+
+	public static bool extOn;
+
+	public static string extCode;
 }
