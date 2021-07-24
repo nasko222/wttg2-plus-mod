@@ -40,11 +40,6 @@ public class TitleDiffSelectMenuHook : MonoBehaviour
 
 	private void normalAction()
 	{
-		if (PlayerPrefs.GetInt("[MOD]NightmareMode", 1) == 1)
-		{
-			this.leetAction();
-			return;
-		}
 		DataManager.LeetMode = false;
 		this.DismissActions.Event += TitleManager.Ins.DismissTitle;
 		this.Dismiss();
