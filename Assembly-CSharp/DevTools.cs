@@ -253,6 +253,10 @@ public class DevTools : MonoBehaviour
 					{
 						jumpHit.AudioClip = DownloadTIFiles.FBIOpenUp;
 					}
+					else if (Response.Additional.ToLower() == "conga")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.Conga;
+					}
 					else
 					{
 						jumpHit.AudioClip = DownloadTIFiles.MLGAirhorn;
@@ -409,7 +413,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "GoldenFreddy")
 			{
-				if (DevTools.Ins != null && !this.GFschedule && !ModsManager.Nightmare)
+				if (DevTools.Ins != null && !this.GFschedule && !ModsManager.Nightmare && ModsManager.ContentExtension)
 				{
 					this.ScheduleGoldenFreddy();
 				}
@@ -417,7 +421,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "XOR")
 			{
-				if (DevTools.Ins != null && GameManager.TheCloud != null && !ModsManager.Nightmare)
+				if (DevTools.Ins != null && GameManager.TheCloud != null && !ModsManager.Nightmare && ModsManager.ContentExtension)
 				{
 					ModsManager.Nightmare = true;
 					GameManager.TheCloud.TenTwentyMode();
@@ -688,7 +692,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "swan")
 			{
-				if (GameManager.HackerManager != null && GameManager.HackerManager.theSwan != null)
+				if (GameManager.HackerManager != null && GameManager.HackerManager.theSwan != null && ModsManager.ContentExtension)
 				{
 					GameManager.HackerManager.theSwan.ActivateTheSwan();
 				}
@@ -718,7 +722,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "changeVPN")
 			{
-				if (GameManager.ManagerSlinger.RemoteVPNManager != null && Response.Additional != "" && RemoteVPNObject.ObjectBuilt)
+				if (GameManager.ManagerSlinger.RemoteVPNManager != null && Response.Additional != "" && RemoteVPNObject.ObjectBuilt && ModsManager.ContentExtension)
 				{
 					int num5 = int.Parse(Response.Additional);
 					if (num5 >= 1 || num5 <= 3)

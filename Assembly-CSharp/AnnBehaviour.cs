@@ -657,6 +657,10 @@ public class AnnBehaviour : WindowBehaviour
 
 	private void thePrey()
 	{
+		if (!ModsManager.ContentExtension)
+		{
+			return;
+		}
 		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "the prey") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "theprey"))
 		{
 			EnemyManager.CultManager.attemptSpawn();

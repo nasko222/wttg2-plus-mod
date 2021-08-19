@@ -95,10 +95,12 @@ public class TitleManager : MonoBehaviour
 		OptionsUtil.BuildOptionsButton("Troll Poll:", "[MOD]TrolloPollo", 1, 100f, null, null);
 		OptionsUtil.BuildOptionsButton("DevTools:", "[MOD]DevTools", 1, 150f, null, null);
 		OptionsUtil.BuildOptionsButton("Easy Mode:", "[MOD]EasyMode", 0, 200f, null, null);
+		OptionsUtil.BuildOptionsButton("Content Extension:", "[MOD]Content", 1, 250f, null, null);
 		OptionsUtil.BuildOptionsButton2("Show God Spot:", "[MOD]GODSpot", 0, 50f, null, null);
 		OptionsUtil.BuildOptionsButton2("Force Hacks:", "[MOD]ForceHack", 0, 100f, null, null);
 		OptionsUtil.BuildOptionsButton2("Unlimited Stamina:", "[MOD]UnlimitedStamina", 0, 150f, null, null);
 		OptionsUtil.BuildOptionsButton2("Auto WiFi Crack:", "[MOD]SkybreakGlitch", 0, 200f, null, null);
+		OptionsUtil.BuildOptionsButton2("Jumpscares:", "[MOD]Jumpscares", 1, 250f, null, null);
 	}
 
 	public CustomEvent TitleStaging = new CustomEvent(5);

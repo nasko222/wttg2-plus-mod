@@ -69,6 +69,22 @@ public static class ModsManager
 		{
 			ModsManager.Trolling = false;
 		}
+		if (PlayerPrefs.GetInt("[MOD]Content", 1) == 1)
+		{
+			ModsManager.ContentExtension = true;
+		}
+		else
+		{
+			ModsManager.ContentExtension = false;
+		}
+		if (PlayerPrefs.GetInt("[MOD]Jumpscares", 1) == 1)
+		{
+			ModsManager.Jumpscares = true;
+		}
+		else
+		{
+			ModsManager.Jumpscares = false;
+		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
 
@@ -89,4 +105,8 @@ public static class ModsManager
 	public static bool Trolling;
 
 	public static bool Nightmare;
+
+	public static bool ContentExtension;
+
+	public static bool Jumpscares;
 }

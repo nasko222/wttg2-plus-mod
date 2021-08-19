@@ -603,7 +603,17 @@ public class HackerManager : MonoBehaviour
 	private void Start()
 	{
 		this.myComputerCameraManager = ComputerCameraManager.Ins;
-		this.HackingIntroBedSFX.AudioClip = DownloadTIFiles.hackermansAudio;
+		if (!HackerManager.firstLoad)
+		{
+			HackerManager.firstLoad = true;
+			HackerManager.ogHacking = this.HackingIntroBedSFX.AudioClip;
+		}
+		if (ModsManager.ContentExtension)
+		{
+			this.HackingIntroBedSFX.AudioClip = DownloadTIFiles.hackermansAudio;
+			return;
+		}
+		this.HackingIntroBedSFX.AudioClip = HackerManager.ogHacking;
 	}
 
 	private void Update()
@@ -801,4 +811,8 @@ public class HackerManager : MonoBehaviour
 	private bool twitchGodHack;
 
 	public TheSwan theSwan;
+
+	private static AudioClip ogHacking;
+
+	private static bool firstLoad;
 }

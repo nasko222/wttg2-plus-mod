@@ -63,7 +63,7 @@ public class VirusPoll
 			}
 			if (num == 1)
 			{
-				if (UnityEngine.Random.Range(0, 100) > 95 && !GameManager.HackerManager.theSwan.isActivatedBefore)
+				if (ModsManager.ContentExtension && UnityEngine.Random.Range(0, 100) > 90 && !GameManager.HackerManager.theSwan.isActivatedBefore)
 				{
 					GameManager.HackerManager.theSwan.ActivateTheSwan();
 					this.myDOSTwitch.myTwitchIRC.SendMsg("Player's computer got infected by TH3SW4N!");

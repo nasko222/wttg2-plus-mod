@@ -776,9 +776,16 @@ public class TheCloud : MonoBehaviour
 		if (!TheCloud.vpnFIX)
 		{
 			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[6].isDiscounted = false;
-			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[1];
 			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].deliveryTimeMax = GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].deliveryTimeMin;
 			TheCloud.vpnFIX = true;
+		}
+		if (ModsManager.ContentExtension)
+		{
+			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[1];
+		}
+		else
+		{
+			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[0];
 		}
 		if (ModsManager.ShowGodSpot)
 		{

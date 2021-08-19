@@ -86,7 +86,7 @@ public class FlashLightBehaviour : MonoBehaviour
 		{
 			FlashLightBehaviour.Ins.TriggerFlashLight();
 		}
-		if (this.flashLightIsOn && !this.flashlightHuntMode)
+		if (ModsManager.ContentExtension && this.flashLightIsOn && !this.flashlightHuntMode)
 		{
 			this.HuntFlashLight(EnemyManager.State == ENEMY_STATE.CULT);
 		}

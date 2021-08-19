@@ -187,6 +187,11 @@ public static class DownloadTIFiles
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/challenger.wav", "WTTG2_Data\\Resources\\custom_audio\\challenger.wav");
 			Debug.Log("[CONTENT] challenger open up does not exist, downloading...");
 		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\conga.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/conga.wav", "WTTG2_Data\\Resources\\custom_audio\\conga.wav");
+			Debug.Log("[CONTENT] conga open up does not exist, downloading...");
+		}
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\freddy.png"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/freddy.png", "WTTG2_Data\\Resources\\custom_tex\\freddy.png");
@@ -226,6 +231,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.FBIOpenUp = WavUtility.ToAudioClip("fbi.wav");
 		DownloadTIFiles.XOR = WavUtility.ToAudioClip("xor.wav");
 		DownloadTIFiles.Challenger = WavUtility.ToAudioClip("challenger.wav");
+		DownloadTIFiles.Conga = WavUtility.ToAudioClip("conga.wav");
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 	}
 
@@ -310,4 +316,6 @@ public static class DownloadTIFiles
 	public static AudioClip XOR;
 
 	public static AudioClip Challenger;
+
+	public static AudioClip Conga;
 }

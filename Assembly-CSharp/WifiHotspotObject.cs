@@ -90,18 +90,21 @@ public class WifiHotspotObject : MonoBehaviour
 				}
 				if (this.myWifiNetworks[i].networkName == "DonaldsWiFi")
 				{
-					this.myWifiNetworks[i].networkStrength = 0;
+					this.myWifiNetworks[i].networkStrength = (ModsManager.ContentExtension ? 0 : 1);
 					Debug.Log("Fixed array error in DonaldsWiFi + Buffed DonaldsWiFi");
 				}
-				if (this.myWifiNetworks[i].networkName == "Big Dave Network" || this.myWifiNetworks[i].networkName == "mycci7471" || this.myWifiNetworks[i].networkName == "tedata")
+				if (ModsManager.ContentExtension)
 				{
-					this.myWifiNetworks[i].networkStrength = 0;
-					Debug.Log("Buffed " + this.myWifiNetworks[i].networkName);
-				}
-				if (this.myWifiNetworks[i].networkName.ToLower() == "freewifinovirus")
-				{
-					this.myWifiNetworks[i].affectedByDosDrainer = true;
-					Debug.Log("Infected FreeWiFiNoViruses");
+					if (this.myWifiNetworks[i].networkName == "Big Dave Network" || this.myWifiNetworks[i].networkName == "mycci7471" || this.myWifiNetworks[i].networkName == "tedata")
+					{
+						this.myWifiNetworks[i].networkStrength = 0;
+						Debug.Log("Buffed " + this.myWifiNetworks[i].networkName);
+					}
+					if (this.myWifiNetworks[i].networkName.ToLower() == "freewifinovirus")
+					{
+						this.myWifiNetworks[i].affectedByDosDrainer = true;
+						Debug.Log("Infected FreeWiFiNoViruses");
+					}
 				}
 				if (ModsManager.EasyModeActive)
 				{
