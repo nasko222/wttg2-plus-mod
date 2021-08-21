@@ -274,7 +274,25 @@ public class AnnBehaviour : WindowBehaviour
 			{
 				LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
 			}
+			LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
 			KEY_DISCOVERY_MODES keyDiscoverMode = pageDef.KeyDiscoverMode;
+			if (pageDef.isWTTG1Website)
+			{
+				this.myBrowser.CallFunction("PickHotSpot", new JSONNode[]
+				{
+					string.Empty
+				});
+				this.myBrowser.RegisterFunction("HotSpotHit", delegate(JSONNode args)
+				{
+					GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+					int num = pageDef.HashIndex + 1;
+					this.myBrowser.CallFunction("PlaceKey", new JSONNode[]
+					{
+						num.ToString() + " - " + pageDef.HashValue.ToString()
+					});
+				});
+				return;
+			}
 			if (keyDiscoverMode != KEY_DISCOVERY_MODES.PLAIN_SIGHT)
 			{
 				if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_PLAIN_SIGHT)

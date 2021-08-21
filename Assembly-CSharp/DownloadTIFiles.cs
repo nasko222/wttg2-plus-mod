@@ -16,7 +16,12 @@ public static class DownloadTIFiles
 		{
 			Directory.CreateDirectory("WTTG2_Data\\Resources\\custom_tex");
 		}
+		if (!Directory.Exists("WTTG2_Data\\Resources\\custom_source"))
+		{
+			Directory.CreateDirectory("WTTG2_Data\\Resources\\custom_source");
+		}
 		WebClient webClient = new WebClient();
+		DownloadTIFiles.downloadsourcesAsync(webClient);
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\dream.wav"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/dream.wav", "WTTG2_Data\\Resources\\custom_audio\\dream.wav");
@@ -245,6 +250,58 @@ public static class DownloadTIFiles
 			texture2D.LoadImage(data);
 		}
 		return texture2D;
+	}
+
+	private static void downloadpagesource(string filename, WebClient client)
+	{
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt"))
+		{
+			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/sources/" + filename + ".txt", "WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt");
+		}
+	}
+
+	private static void downloadsourcesAsync(WebClient webClient)
+	{
+		DownloadTIFiles.downloadpagesource("bathroomcams", webClient);
+		DownloadTIFiles.downloadpagesource("bathroomcamsaccess", webClient);
+		DownloadTIFiles.downloadpagesource("bathroomcamscams", webClient);
+		DownloadTIFiles.downloadpagesource("burnedatthestake", webClient);
+		DownloadTIFiles.downloadpagesource("cheapsurgery", webClient);
+		DownloadTIFiles.downloadpagesource("cheapsurgerycontact", webClient);
+		DownloadTIFiles.downloadpagesource("darkbook", webClient);
+		DownloadTIFiles.downloadpagesource("deathlog", webClient);
+		DownloadTIFiles.downloadpagesource("doctormurder", webClient);
+		DownloadTIFiles.downloadpagesource("eurofirearms", webClient);
+		DownloadTIFiles.downloadpagesource("eurofirearmsorder", webClient);
+		DownloadTIFiles.downloadpagesource("eurofirearmsproducts", webClient);
+		DownloadTIFiles.downloadpagesource("fleshtrade", webClient);
+		DownloadTIFiles.downloadpagesource("forsakengifts", webClient);
+		DownloadTIFiles.downloadpagesource("forsakengiftsgifts", webClient);
+		DownloadTIFiles.downloadpagesource("forsakengiftsorder", webClient);
+		DownloadTIFiles.downloadpagesource("gravethieves", webClient);
+		DownloadTIFiles.downloadpagesource("greetmysisters", webClient);
+		DownloadTIFiles.downloadpagesource("greetmysistersorder", webClient);
+		DownloadTIFiles.downloadpagesource("greetmysisterssisters", webClient);
+		DownloadTIFiles.downloadpagesource("hiddencams", webClient);
+		DownloadTIFiles.downloadpagesource("hiddencamsorder", webClient);
+		DownloadTIFiles.downloadpagesource("hotburners", webClient);
+		DownloadTIFiles.downloadpagesource("hotburnersorder", webClient);
+		DownloadTIFiles.downloadpagesource("legion", webClient);
+		DownloadTIFiles.downloadpagesource("organmart", webClient);
+		DownloadTIFiles.downloadpagesource("organmartorder", webClient);
+		DownloadTIFiles.downloadpagesource("organmartproducts", webClient);
+		DownloadTIFiles.downloadpagesource("passportsrus", webClient);
+		DownloadTIFiles.downloadpagesource("passportsrusorder", webClient);
+		DownloadTIFiles.downloadpagesource("shadowwebportal", webClient);
+		DownloadTIFiles.downloadpagesource("takedownman", webClient);
+		DownloadTIFiles.downloadpagesource("tangodown", webClient);
+		DownloadTIFiles.downloadpagesource("tangodownhire", webClient);
+		DownloadTIFiles.downloadpagesource("tangodownpayment", webClient);
+		DownloadTIFiles.downloadpagesource("tangodownresults", webClient);
+		DownloadTIFiles.downloadpagesource("testicalmutilation", webClient);
+		DownloadTIFiles.downloadpagesource("themuhgel", webClient);
+		DownloadTIFiles.downloadpagesource("themuhgelorder", webClient);
+		Debug.Log("WEBSITE EXTENSION [MOD]: Done?");
 	}
 
 	public static AudioClip triangleMusic;

@@ -1,0 +1,330 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+public class WebsiteExtension
+{
+	public List<WebSiteDefinition> ExtendWebsites(List<WebSiteDefinition> Websites)
+	{
+		this.dynamicId = 2000;
+		this.dynamicId++;
+		this.AddFakeWebsites(Websites);
+		this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html");
+		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "");
+		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "", "cheapsurgerycontact.txt", "contact.html");
+		this.AddSinglePageWebsite(Websites, "darkbook.txt", "Darkbook", "Darkbook", "");
+		this.AddSinglePageWebsite(Websites, "deathlog.txt", "Deathlog", "Deathlog", "");
+		this.AddSinglePageWebsite(Websites, "doctormurder.txt", "Doctor Murder", "DoctorMurder", "");
+		this.AddTriplePageWebsite(Websites, "eurofirearms.txt", "Euro Firearms", "EuroFirearms", "", "eurofirearmsproducts.txt", "products.html", "eurofirearmsorder.txt", "order.html");
+		this.AddSinglePageWebsite(Websites, "fleshtrade.txt", "Flesh Trade", "FleshTrade", "");
+		this.AddTriplePageWebsite(Websites, "forsakengifts.txt", "Forsaken Gifts", "ForsakenGifts", "", "forsakengiftsgifts.txt", "gifts.html", "forsakengiftsorder.txt", "order.html");
+		this.AddSinglePageWebsite(Websites, "gravethieves.txt", "Grave Thieves", "GraveThieves", "");
+		this.AddTriplePageWebsite(Websites, "greetmysisters.txt", "Greet My Sisters", "GreetMySisters", "", "greetmysisterssisters.txt", "sisters.html", "greetmysistersorder.txt", "order.html");
+		this.AddDoublePageWebsite(Websites, "hiddencams.txt", "Hidden Cams", "HiddenCams", "", "hiddencamsorder.txt", "order.html");
+		this.AddDoublePageWebsite(Websites, "hotburners.txt", "Hot Burners", "HotBurners", "", "hotburnersorder.txt", "order.html");
+		this.AddSinglePageWebsite(Websites, "legion.txt", "Legion", "Legion", "");
+		this.AddTriplePageWebsite(Websites, "organmart.txt", "Organ Mart", "OrganMart", "", "organmartproducts.txt", "products.html", "organmartorder.txt", "order.html");
+		this.AddDoublePageWebsite(Websites, "passportsrus.txt", "Passports R Us", "PassportsRUs", "", "passportsrusorder.txt", "order.html");
+		this.AddSinglePageWebsite(Websites, "shadowwebportal.txt", "Shadow Web Portal", "ShadowWeb", "");
+		this.AddQuadriplePageWebsite(Websites, "tangodown.txt", "Tango Down", "TangoDown", "", "tangodownpayment.txt", "payment.html", "tangodownresults.txt", "results.html", "tangodownhire.txt", "hire.html");
+		this.AddSinglePageWebsite(Websites, "testicalmutilation.txt", "Testical Mutilation", "TesticalMutilation", "");
+		this.AddDoublePageWebsite(Websites, "themuhgel.txt", "The Muhgel", "TheMuhgel", "", "themuhgelorder.txt", "order.html");
+		return Websites;
+	}
+
+	private void AddFakeWebsites(List<WebSiteDefinition> Websites)
+	{
+		Websites.Add(this.FakeWebPageStructure("133734", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Alphabit Market", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("ANN Hoster", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("ANN Wallet", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Beam Info", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Black Hat Post", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("BLACKHOST", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Black Wire", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("CannabisWorld", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Charlie EU", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Cheap Cigs", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("ChosenAwake", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Claffis", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("ClickClick Dead", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Cotton Road", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Decrypt You", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Deepweed", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("DoubleUP", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Dream Place", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Easy Paybuddy", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Family Drug Shop", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Flame", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Gnumped", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Hail Satan", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Hidden Questions", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Hotel ANN", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Illuminati", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Mobile Market", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("NudeYouTubers", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Parasite", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Paybuddy Dolla", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Pay Blocker", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("PirateHACKERS", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Pounds", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Rent A Hacker", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Shiwa", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Steroid Queen", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Bunker", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Butcher", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Gatekeeper", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Info Exchange", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Pedo Handbook", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Upper Earth", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Vess", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("Weed Post", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("XXXTEENXXX", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("zeroDay", "", 9778));
+	}
+
+	private WebSiteDefinition FakeWebPageStructure(string name, string desc, int id)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		webSiteDefinition.id = id;
+		webSiteDefinition.isFake = true;
+		webSiteDefinition.PageTitle = name;
+		webSiteDefinition.PageDesc = desc;
+		return webSiteDefinition;
+	}
+
+	private void AddSinglePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
+		webPageDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition.AudioFile = null;
+		webPageDefinition.HasMusic = false;
+		webPageDefinition.FileName = "index.html";
+		webPageDefinition.HashIndex = 0;
+		webPageDefinition.HashValue = string.Empty;
+		webPageDefinition.IsTapped = false;
+		webPageDefinition.PageEvent = null;
+		webPageDefinition.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source);
+		webPageDefinition.PageName = pageName;
+		webPageDefinition.isWTTG1Website = true;
+		webSiteDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webSiteDefinition.isFake = false;
+		webSiteDefinition.DoNotList = false;
+		webSiteDefinition.DoNotTap = false;
+		webSiteDefinition.isStatic = false;
+		webSiteDefinition.HasWindow = false;
+		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		webSiteDefinition.PageTitle = pageName;
+		webSiteDefinition.PageDesc = description;
+		webSiteDefinition.PageURL = string.Empty;
+		webSiteDefinition.DocumentRoot = documentName;
+		webSiteDefinition.HoldsSecondWikiLink = false;
+		webSiteDefinition.IsTapped = false;
+		webSiteDefinition.WasVisted = false;
+		webSiteDefinition.WikiIndex = 0;
+		webSiteDefinition.WikiSpecific = false;
+		webSiteDefinition.HomePage = webPageDefinition;
+		Websites.Add(webSiteDefinition);
+	}
+
+	private void AddDoublePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
+		WebPageDefinition webPageDefinition2 = ScriptableObject.CreateInstance<WebPageDefinition>();
+		webPageDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition.AudioFile = null;
+		webPageDefinition.HasMusic = false;
+		webPageDefinition.FileName = "index.html";
+		webPageDefinition.HashIndex = 0;
+		webPageDefinition.HashValue = string.Empty;
+		webPageDefinition.IsTapped = false;
+		webPageDefinition.PageEvent = null;
+		webPageDefinition.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source);
+		webPageDefinition.PageName = pageName;
+		webPageDefinition.isWTTG1Website = true;
+		webPageDefinition2.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.HasMusic = false;
+		webPageDefinition2.FileName = html2;
+		webPageDefinition2.HashIndex = 0;
+		webPageDefinition2.HashValue = string.Empty;
+		webPageDefinition2.IsTapped = false;
+		webPageDefinition2.PageEvent = null;
+		webPageDefinition2.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source2);
+		webPageDefinition2.PageName = pageName;
+		webPageDefinition2.isWTTG1Website = true;
+		webSiteDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webSiteDefinition.isFake = false;
+		webSiteDefinition.DoNotList = false;
+		webSiteDefinition.DoNotTap = false;
+		webSiteDefinition.isStatic = false;
+		webSiteDefinition.HasWindow = false;
+		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		webSiteDefinition.PageTitle = pageName;
+		webSiteDefinition.PageDesc = "";
+		webSiteDefinition.PageURL = string.Empty;
+		webSiteDefinition.DocumentRoot = documentName;
+		webSiteDefinition.HoldsSecondWikiLink = false;
+		webSiteDefinition.IsTapped = false;
+		webSiteDefinition.WasVisted = false;
+		webSiteDefinition.WikiIndex = 0;
+		webSiteDefinition.WikiSpecific = false;
+		webSiteDefinition.HomePage = webPageDefinition;
+		webSiteDefinition.SubPages.Add(webPageDefinition2);
+		Websites.Add(webSiteDefinition);
+	}
+
+	private void AddTriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
+		WebPageDefinition webPageDefinition2 = ScriptableObject.CreateInstance<WebPageDefinition>();
+		WebPageDefinition webPageDefinition3 = ScriptableObject.CreateInstance<WebPageDefinition>();
+		webPageDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition.AudioFile = null;
+		webPageDefinition.HasMusic = false;
+		webPageDefinition.FileName = "index.html";
+		webPageDefinition.HashIndex = 0;
+		webPageDefinition.HashValue = string.Empty;
+		webPageDefinition.IsTapped = false;
+		webPageDefinition.PageEvent = null;
+		webPageDefinition.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source);
+		webPageDefinition.PageName = pageName;
+		webPageDefinition.isWTTG1Website = true;
+		webPageDefinition2.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.HasMusic = false;
+		webPageDefinition2.FileName = html2;
+		webPageDefinition2.HashIndex = 0;
+		webPageDefinition2.HashValue = string.Empty;
+		webPageDefinition2.IsTapped = false;
+		webPageDefinition2.PageEvent = null;
+		webPageDefinition2.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source2);
+		webPageDefinition2.PageName = pageName;
+		webPageDefinition2.isWTTG1Website = true;
+		webPageDefinition3.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.HasMusic = false;
+		webPageDefinition3.FileName = html3;
+		webPageDefinition3.HashIndex = 0;
+		webPageDefinition3.HashValue = string.Empty;
+		webPageDefinition3.IsTapped = false;
+		webPageDefinition3.PageEvent = null;
+		webPageDefinition3.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source3);
+		webPageDefinition3.PageName = pageName;
+		webPageDefinition3.isWTTG1Website = true;
+		webSiteDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webSiteDefinition.isFake = false;
+		webSiteDefinition.DoNotList = false;
+		webSiteDefinition.DoNotTap = false;
+		webSiteDefinition.isStatic = false;
+		webSiteDefinition.HasWindow = false;
+		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		webSiteDefinition.PageTitle = pageName;
+		webSiteDefinition.PageDesc = "";
+		webSiteDefinition.PageURL = string.Empty;
+		webSiteDefinition.DocumentRoot = documentName;
+		webSiteDefinition.HoldsSecondWikiLink = false;
+		webSiteDefinition.IsTapped = false;
+		webSiteDefinition.WasVisted = false;
+		webSiteDefinition.WikiIndex = 0;
+		webSiteDefinition.WikiSpecific = false;
+		webSiteDefinition.HomePage = webPageDefinition;
+		webSiteDefinition.SubPages.Add(webPageDefinition2);
+		webSiteDefinition.SubPages.Add(webPageDefinition3);
+		Websites.Add(webSiteDefinition);
+	}
+
+	private void AddQuadriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
+		WebPageDefinition webPageDefinition2 = ScriptableObject.CreateInstance<WebPageDefinition>();
+		WebPageDefinition webPageDefinition3 = ScriptableObject.CreateInstance<WebPageDefinition>();
+		WebPageDefinition webPageDefinition4 = ScriptableObject.CreateInstance<WebPageDefinition>();
+		webPageDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition.AudioFile = null;
+		webPageDefinition.HasMusic = false;
+		webPageDefinition.FileName = "index.html";
+		webPageDefinition.HashIndex = 0;
+		webPageDefinition.HashValue = string.Empty;
+		webPageDefinition.IsTapped = false;
+		webPageDefinition.PageEvent = null;
+		webPageDefinition.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source);
+		webPageDefinition.PageName = pageName;
+		webPageDefinition.isWTTG1Website = true;
+		webPageDefinition2.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.HasMusic = false;
+		webPageDefinition2.FileName = html2;
+		webPageDefinition2.HashIndex = 0;
+		webPageDefinition2.HashValue = string.Empty;
+		webPageDefinition2.IsTapped = false;
+		webPageDefinition2.PageEvent = null;
+		webPageDefinition2.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source2);
+		webPageDefinition2.PageName = pageName;
+		webPageDefinition2.isWTTG1Website = true;
+		webPageDefinition3.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.HasMusic = false;
+		webPageDefinition3.FileName = html3;
+		webPageDefinition3.HashIndex = 0;
+		webPageDefinition3.HashValue = string.Empty;
+		webPageDefinition3.IsTapped = false;
+		webPageDefinition3.PageEvent = null;
+		webPageDefinition3.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source3);
+		webPageDefinition3.PageName = pageName;
+		webPageDefinition3.isWTTG1Website = true;
+		webPageDefinition4.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition4.AudioFile = null;
+		webPageDefinition4.HasMusic = false;
+		webPageDefinition4.FileName = html4;
+		webPageDefinition4.HashIndex = 0;
+		webPageDefinition4.HashValue = string.Empty;
+		webPageDefinition4.IsTapped = false;
+		webPageDefinition4.PageEvent = null;
+		webPageDefinition4.PageHTML = File.ReadAllText("WTTG2_Data\\Resources\\custom_source\\" + source4);
+		webPageDefinition4.PageName = pageName;
+		webPageDefinition4.isWTTG1Website = true;
+		webSiteDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webSiteDefinition.isFake = false;
+		webSiteDefinition.DoNotList = false;
+		webSiteDefinition.DoNotTap = false;
+		webSiteDefinition.isStatic = false;
+		webSiteDefinition.HasWindow = false;
+		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		webSiteDefinition.PageTitle = pageName;
+		webSiteDefinition.PageDesc = "";
+		webSiteDefinition.PageURL = string.Empty;
+		webSiteDefinition.DocumentRoot = documentName;
+		webSiteDefinition.HoldsSecondWikiLink = false;
+		webSiteDefinition.IsTapped = false;
+		webSiteDefinition.WasVisted = false;
+		webSiteDefinition.WikiIndex = 0;
+		webSiteDefinition.WikiSpecific = false;
+		webSiteDefinition.HomePage = webPageDefinition;
+		webSiteDefinition.SubPages.Add(webPageDefinition2);
+		webSiteDefinition.SubPages.Add(webPageDefinition3);
+		webSiteDefinition.SubPages.Add(webPageDefinition4);
+		Websites.Add(webSiteDefinition);
+	}
+
+	private int dynamicId;
+}

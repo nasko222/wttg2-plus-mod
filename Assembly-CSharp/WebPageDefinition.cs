@@ -30,4 +30,6 @@ public class WebPageDefinition : Definition
 	public string HashValue;
 
 	public GameEvent PageEvent;
+
+	public bool isWTTG1Website;
 }

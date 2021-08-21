@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7A257734-2098-44D2-9D83-4B3CCCB64726}</ProjectGuid>
+    <ProjectGuid>{34C22095-3CA6-4BAD-99B3-AC0B9B3AECE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -32,82 +32,82 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTween.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTween43">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTween43.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTween43.dll</HintPath>
     </Reference>
     <Reference Include="DOTween46">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTween46.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTween46.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTweenPro.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\System.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\System.Core.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>F:\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -788,6 +788,7 @@
     <Compile Include="WebpageHTMLInjector.cs" />
     <Compile Include="WebSiteData.cs" />
     <Compile Include="WebSiteDefinition.cs" />
+    <Compile Include="WebsiteExtension.cs" />
     <Compile Include="WebsiteImporter.cs" />
     <Compile Include="WebSitesData.cs" />
     <Compile Include="WEBSITE_WINDOW_TIME.cs" />
