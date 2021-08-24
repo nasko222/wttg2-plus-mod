@@ -274,7 +274,6 @@ public class AnnBehaviour : WindowBehaviour
 			{
 				LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
 			}
-			LookUp.DesktopUI.ANN_KEY_CUE.enabled = true;
 			KEY_DISCOVERY_MODES keyDiscoverMode = pageDef.KeyDiscoverMode;
 			if (pageDef.isWTTG1Website)
 			{
