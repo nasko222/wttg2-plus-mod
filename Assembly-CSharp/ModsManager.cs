@@ -77,13 +77,13 @@ public static class ModsManager
 		{
 			ModsManager.ContentExtension = false;
 		}
-		if (PlayerPrefs.GetInt("[MOD]Jumpscares", 1) == 1)
+		if (PlayerPrefs.GetInt("[MOD]Websites", 1) == 1)
 		{
-			ModsManager.Jumpscares = true;
+			ModsManager.Websites = true;
 		}
 		else
 		{
-			ModsManager.Jumpscares = false;
+			ModsManager.Websites = false;
 		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
@@ -109,4 +109,6 @@ public static class ModsManager
 	public static bool ContentExtension;
 
 	public static bool Jumpscares;
+
+	public static bool Websites;
 }

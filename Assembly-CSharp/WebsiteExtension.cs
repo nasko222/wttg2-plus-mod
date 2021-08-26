@@ -10,78 +10,74 @@ public class WebsiteExtension
 		this.dynamicId = 2000;
 		this.dynamicId++;
 		this.AddFakeWebsites(Websites);
-		this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html");
-		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "");
-		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "", "cheapsurgerycontact.txt", "contact.html");
-		this.AddSinglePageWebsite(Websites, "darkbook.txt", "Darkbook", "Darkbook", "");
-		this.AddSinglePageWebsite(Websites, "deathlog.txt", "Deathlog", "Deathlog", "");
-		this.AddSinglePageWebsite(Websites, "doctormurder.txt", "Doctor Murder", "DoctorMurder", "");
-		this.AddTriplePageWebsite(Websites, "eurofirearms.txt", "Euro Firearms", "EuroFirearms", "", "eurofirearmsproducts.txt", "products.html", "eurofirearmsorder.txt", "order.html");
-		this.AddSinglePageWebsite(Websites, "fleshtrade.txt", "Flesh Trade", "FleshTrade", "");
-		this.AddTriplePageWebsite(Websites, "forsakengifts.txt", "Forsaken Gifts", "ForsakenGifts", "", "forsakengiftsgifts.txt", "gifts.html", "forsakengiftsorder.txt", "order.html");
-		this.AddSinglePageWebsite(Websites, "gravethieves.txt", "Grave Thieves", "GraveThieves", "");
-		this.AddTriplePageWebsite(Websites, "greetmysisters.txt", "Greet My Sisters", "GreetMySisters", "", "greetmysisterssisters.txt", "sisters.html", "greetmysistersorder.txt", "order.html");
-		this.AddDoublePageWebsite(Websites, "hiddencams.txt", "Hidden Cams", "HiddenCams", "", "hiddencamsorder.txt", "order.html");
-		this.AddDoublePageWebsite(Websites, "hotburners.txt", "Hot Burners", "HotBurners", "", "hotburnersorder.txt", "order.html");
-		this.AddSinglePageWebsite(Websites, "legion.txt", "Legion", "Legion", "");
-		this.AddTriplePageWebsite(Websites, "organmart.txt", "Organ Mart", "OrganMart", "", "organmartproducts.txt", "products.html", "organmartorder.txt", "order.html");
-		this.AddDoublePageWebsite(Websites, "passportsrus.txt", "Passports R Us", "PassportsRUs", "", "passportsrusorder.txt", "order.html");
-		this.AddSinglePageWebsite(Websites, "shadowwebportal.txt", "Shadow Web Portal", "ShadowWeb", "");
-		this.AddQuadriplePageWebsite(Websites, "tangodown.txt", "Tango Down", "TangoDown", "", "tangodownpayment.txt", "payment.html", "tangodownresults.txt", "results.html", "tangodownhire.txt", "hire.html");
-		this.AddSinglePageWebsite(Websites, "testicalmutilation.txt", "Testical Mutilation", "TesticalMutilation", "");
-		this.AddDoublePageWebsite(Websites, "themuhgel.txt", "The Muhgel", "TheMuhgel", "", "themuhgelorder.txt", "order.html");
+		this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1);
+		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "Group of people who hunt down \"witches\"", true, 4);
+		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "Shady doctors selling cheap surgery.", "cheapsurgerycontact.txt", "contact.html", false, -1);
+		this.AddSinglePageWebsite(Websites, "darkbook.txt", "Darkbook", "Darkbook", "The facebook of the dark web.", false, -1);
+		this.AddSinglePageWebsite(Websites, "deathlog.txt", "Deathlog", "Deathlog", "\"Person finds dead people\" blog post collection.", false, -1);
+		this.AddSinglePageWebsite(Websites, "doctormurder.txt", "Doctor Murder", "DoctorMurder", "Professional murder service for hire.", true, 2);
+		this.AddTriplePageWebsite(Websites, "eurofirearms.txt", "Euro Firearms", "EuroFirearms", "The European weapons store front.", "eurofirearmsproducts.txt", "products.html", "eurofirearmsorder.txt", "order.html", true, 0);
+		this.AddSinglePageWebsite(Websites, "fleshtrade.txt", "Flesh Trade", "FleshTrade", "Comunity looking for memebers to trade human flesh.", false, -1);
+		this.AddTriplePageWebsite(Websites, "forsakengifts.txt", "Forsaken Gifts", "ForsakenGifts", "Storefront for a very special type of gift.", "forsakengiftsgifts.txt", "gifts.html", "forsakengiftsorder.txt", "order.html", false, -1);
+		this.AddSinglePageWebsite(Websites, "gravethieves.txt", "Grave Thieves", "GraveThieves", "Service for stealing valuables from graves.", true, 1);
+		this.AddTriplePageWebsite(Websites, "greetmysisters.txt", "Greet My Sisters", "GreetMySisters", "Family selling their daughters for pleasure.", "greetmysisterssisters.txt", "sisters.html", "greetmysistersorder.txt", "order.html", true, 5);
+		this.AddDoublePageWebsite(Websites, "hiddencams.txt", "Hidden Cams", "HiddenCams", "Website dedicated to spying people.", "hiddencamsorder.txt", "order.html", false, -1);
+		this.AddDoublePageWebsite(Websites, "hotburners.txt", "Hot Burners", "HotBurners", "Gun dealer site.", "hotburnersorder.txt", "order.html", false, -1);
+		this.AddSinglePageWebsite(Websites, "legion.txt", "Legion", "Legion", "Weird cryptic webpage", false, -1);
+		this.AddTriplePageWebsite(Websites, "organmart.txt", "Organ Mart", "OrganMart", "Fucked up people selling organs for a lot of money.", "organmartproducts.txt", "products.html", "organmartorder.txt", "order.html", true, 4);
+		this.AddDoublePageWebsite(Websites, "passportsrus.txt", "Passports R Us", "PassportsRUs", "Fake passport site.", "passportsrusorder.txt", "order.html", false, -1);
+		this.AddSinglePageWebsite(Websites, "shadowwebportal.txt", "Shadow Web Portal", "ShadowWeb", "Mysterious Shadow Web access point", true, 2);
+		this.AddQuadriplePageWebsite(Websites, "tangodown.txt", "Tango Down", "TangoDown", "Hitman for hire website.", "tangodownpayment.txt", "payment.html", "tangodownresults.txt", "results.html", "tangodownhire.txt", "hire.html", true, 0);
+		this.AddSinglePageWebsite(Websites, "takedownman.txt", "Takedownman", "TakedownMan", "Look at all of them he took down...", false, -1);
+		this.AddSinglePageWebsite(Websites, "testicalmutilation.txt", "Testical Mutilation", "TesticalMutilation", "A woman’s fantasy of \"punishing men\" blog post.", true, 3);
+		this.AddDoublePageWebsite(Websites, "themuhgel.txt", "The Muhgel", "TheMuhgel", "Sells slaves of all types and ages.", "themuhgelorder.txt", "order.html", true, 1);
 		return Websites;
 	}
 
 	private void AddFakeWebsites(List<WebSiteDefinition> Websites)
 	{
-		Websites.Add(this.FakeWebPageStructure("133734", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Alphabit Market", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("ANN Hoster", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("ANN Wallet", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Beam Info", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Black Hat Post", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("BLACKHOST", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Black Wire", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("CannabisWorld", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Charlie EU", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Cheap Cigs", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("ChosenAwake", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Claffis", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("ClickClick Dead", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Cotton Road", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Decrypt You", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Deepweed", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("DoubleUP", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Dream Place", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Easy Paybuddy", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Family Drug Shop", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Flame", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Gnumped", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Hail Satan", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Hidden Questions", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Hotel ANN", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Illuminati", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Mobile Market", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("NudeYouTubers", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Parasite", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Paybuddy Dolla", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Pay Blocker", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("PirateHACKERS", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Pounds", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Rent A Hacker", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Shiwa", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Steroid Queen", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("The Bunker", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("The Butcher", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("The Gatekeeper", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("The Info Exchange", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("The Pedo Handbook", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Upper Earth", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Vess", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("Weed Post", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("XXXTEENXXX", "", 9778));
-		Websites.Add(this.FakeWebPageStructure("zeroDay", "", 9778));
+		Websites.Add(this.FakeWebPageStructure("133734", "133733734", 9778));
+		Websites.Add(this.FakeWebPageStructure("Alphabit Market", "Marketplace for illegal deals.", 9778));
+		Websites.Add(this.FakeWebPageStructure("ANN Hoster", "Web portal for countless services through ANN.", 9778));
+		Websites.Add(this.FakeWebPageStructure("ANN Wallet", "Crypto services through ANN.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Beam Info", "Conspiracy heaven.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Black Hat Post", "Hackers doxxing people for money.", 9778));
+		Websites.Add(this.FakeWebPageStructure("BLACKHOST", "Platform to host more obscure content.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Black Wire", "Shady business web service.", 9778));
+		Websites.Add(this.FakeWebPageStructure("CannabisWorld", "The one and only place for high quality cannabis.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Charlie EU", "One crazy persons internet goals.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Cheap Cigs", "Very cheap cigs.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Claffis", "Convoluted music-based puzzle webpage.", 9778));
+		Websites.Add(this.FakeWebPageStructure("ClickClick Dead", "Don’t click!", 9778));
+		Websites.Add(this.FakeWebPageStructure("Decrypt You", "Portal for ransom and hostage.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Deepweed", "Storepage for only the best type of weed.", 9778));
+		Websites.Add(this.FakeWebPageStructure("DoubleUP", "Betting and bidding monopoly of the Deep Web.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Easy Paybuddy", "Rigged payment service.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Euthanasia Legion", "Some weird people believing in superiority.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Final Thought", "Not the kind of suicide hotline you're thinking.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Gnumped", "Headhunters chasing innocent people.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Hidden Questions", "Anonymous forum for questions and answers.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Hotel ANN", "Anoynmous hotel reservation.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Mobile Market", "Phone market place.", 9778));
+		Websites.Add(this.FakeWebPageStructure("NudeYouTubers", "Horny for video influencers?", 9778));
+		Websites.Add(this.FakeWebPageStructure("Parasite", "Minorities cleansing blog post.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Paybuddy Dolla", "Payment service website.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Pay Blocker", "Self-explanatory.", 9778));
+		Websites.Add(this.FakeWebPageStructure("PirateHACKERS", "Central chainpoint for hacker organisations.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Pounds", "Pounds, literally.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Rent A Hacker", "Dishonorable services only.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Shiwa", "?????", 9778));
+		Websites.Add(this.FakeWebPageStructure("Steroid Queen", "Steroid marketplace.", 9778));
+		Websites.Add(this.FakeWebPageStructure("TH3 1NV3ST1G4T10N", "IT community forum.", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Bunker", "Largest gun store front.", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Gatekeeper", "Mysterious gateway containing secret information.", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Info Exchange", "Largest information stock market on the Deep Web.", 9778));
+		Websites.Add(this.FakeWebPageStructure("The Pedo Handbook", "Tutorial blog for pedophile activities.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Upper Earth", "Ridiculous sect preaching for the end of the world.", 9778));
+		Websites.Add(this.FakeWebPageStructure("Vess", "Vess?", 9778));
+		Websites.Add(this.FakeWebPageStructure("Weed Post", "Cheep weed store front.", 9778));
+		Websites.Add(this.FakeWebPageStructure("XXXTEENXXX", "Does this really require an explanation?", 9778));
+		Websites.Add(this.FakeWebPageStructure("zeroDay", "Blog post of a hacker about exploits and other applications.", 9778));
 	}
 
 	private WebSiteDefinition FakeWebPageStructure(string name, string desc, int id)
@@ -94,7 +90,7 @@ public class WebsiteExtension
 		return webSiteDefinition;
 	}
 
-	private void AddSinglePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description)
+	private void AddSinglePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, bool isTimed, int timeWindow)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -117,7 +113,11 @@ public class WebsiteExtension
 		webSiteDefinition.DoNotTap = false;
 		webSiteDefinition.isStatic = false;
 		webSiteDefinition.HasWindow = false;
-		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		if (timeWindow == -1)
+		{
+			timeWindow = 0;
+		}
+		webSiteDefinition.WindowTime = (WEBSITE_WINDOW_TIME)timeWindow;
 		webSiteDefinition.PageTitle = pageName;
 		webSiteDefinition.PageDesc = description;
 		webSiteDefinition.PageURL = string.Empty;
@@ -131,7 +131,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddDoublePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2)
+	private void AddDoublePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, bool isTimed, int timeWindow)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -167,9 +167,13 @@ public class WebsiteExtension
 		webSiteDefinition.DoNotTap = false;
 		webSiteDefinition.isStatic = false;
 		webSiteDefinition.HasWindow = false;
-		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		if (timeWindow == -1)
+		{
+			timeWindow = 0;
+		}
+		webSiteDefinition.WindowTime = (WEBSITE_WINDOW_TIME)timeWindow;
 		webSiteDefinition.PageTitle = pageName;
-		webSiteDefinition.PageDesc = "";
+		webSiteDefinition.PageDesc = description;
 		webSiteDefinition.PageURL = string.Empty;
 		webSiteDefinition.DocumentRoot = documentName;
 		webSiteDefinition.HoldsSecondWikiLink = false;
@@ -182,7 +186,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddTriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3)
+	private void AddTriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, bool isTimed, int timeWindow)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -231,9 +235,13 @@ public class WebsiteExtension
 		webSiteDefinition.DoNotTap = false;
 		webSiteDefinition.isStatic = false;
 		webSiteDefinition.HasWindow = false;
-		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		if (timeWindow == -1)
+		{
+			timeWindow = 0;
+		}
+		webSiteDefinition.WindowTime = (WEBSITE_WINDOW_TIME)timeWindow;
 		webSiteDefinition.PageTitle = pageName;
-		webSiteDefinition.PageDesc = "";
+		webSiteDefinition.PageDesc = description;
 		webSiteDefinition.PageURL = string.Empty;
 		webSiteDefinition.DocumentRoot = documentName;
 		webSiteDefinition.HoldsSecondWikiLink = false;
@@ -247,7 +255,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddQuadriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4)
+	private void AddQuadriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, bool isTimed, int timeWindow)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -309,9 +317,13 @@ public class WebsiteExtension
 		webSiteDefinition.DoNotTap = false;
 		webSiteDefinition.isStatic = false;
 		webSiteDefinition.HasWindow = false;
-		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		if (timeWindow == -1)
+		{
+			timeWindow = 0;
+		}
+		webSiteDefinition.WindowTime = (WEBSITE_WINDOW_TIME)timeWindow;
 		webSiteDefinition.PageTitle = pageName;
-		webSiteDefinition.PageDesc = "";
+		webSiteDefinition.PageDesc = description;
 		webSiteDefinition.PageURL = string.Empty;
 		webSiteDefinition.DocumentRoot = documentName;
 		webSiteDefinition.HoldsSecondWikiLink = false;

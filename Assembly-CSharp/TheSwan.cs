@@ -16,12 +16,10 @@ public class TheSwan
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
 		this.SwanClock = (ModsManager.Nightmare ? 0.5f : 1.5f);
 		GameManager.TimeSlinger.FireTimer(18f, new Action(this.StartCountdown), 0);
-		if (DataManager.LeetMode && !ModsManager.EasyModeActive)
-		{
-			GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST!!!");
-			return;
-		}
 		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: 4 8 15 16 23 42");
+		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: SW4N");
+		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: DH4RMA");
+		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: H4TCH");
 	}
 
 	private void StartCountdown()
@@ -116,7 +114,7 @@ public class TheSwan
 		this.SwanSFX.AudioClip = DownloadTIFiles.SwanReset;
 		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
-		CurrencyManager.AddCurrency(UnityEngine.Random.Range(3.82f, 16.15f));
+		CurrencyManager.AddCurrency(UnityEngine.Random.Range(1.82f, 4.15f));
 		if (UnityEngine.Random.Range(0, 100) < (DataManager.LeetMode ? 60 : 90) || ModsManager.EasyModeActive || TheSwan.extOn)
 		{
 			TheSwan.extOn = false;

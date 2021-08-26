@@ -100,7 +100,6 @@ public class TitleManager : MonoBehaviour
 		OptionsUtil.BuildOptionsButton2("Force Hacks:", "[MOD]ForceHack", 0, 100f, null, null);
 		OptionsUtil.BuildOptionsButton2("Unlimited Stamina:", "[MOD]UnlimitedStamina", 0, 150f, null, null);
 		OptionsUtil.BuildOptionsButton2("Auto WiFi Crack:", "[MOD]SkybreakGlitch", 0, 200f, null, null);
-		OptionsUtil.BuildOptionsButton2("Jumpscares:", "[MOD]Jumpscares", 1, 250f, null, null);
 	}
 
 	public CustomEvent TitleStaging = new CustomEvent(5);

@@ -62,7 +62,7 @@ public class DevTools : MonoBehaviour
 		{
 			if (Response.Action == "updateTickCount")
 			{
-				if (Response.Additional != "")
+				if (Response.Additional != "" && float.Parse(Response.Additional) <= 30f && float.Parse(Response.Additional) >= 1f)
 				{
 					Debug.Log("Update tick count to " + Response.Additional + " seconds!");
 					this.UpdateTickCount = float.Parse(Response.Additional);
@@ -162,10 +162,6 @@ public class DevTools : MonoBehaviour
 					else if (Response.Additional.ToLower() == "rickroll")
 					{
 						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
-					}
-					else if (Response.Additional.ToLower() == "diarrhea")
-					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.diarrheaSounds;
 					}
 					else if (Response.Additional.ToLower() == "blue")
 					{
@@ -486,6 +482,14 @@ public class DevTools : MonoBehaviour
 				{
 					GameManager.GetDOSTwitch().ChatDevUsername = Response.Additional;
 					GameManager.GetDOSTwitch().myTwitchIRC.SendMsg("DevTools: " + Response.Additional + " is the new chat developer!");
+				}
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "sendChatMessage")
+			{
+				if (ModsManager.DOSTwitchActive && Response.Additional != "")
+				{
+					GameManager.GetDOSTwitch().myTwitchIRC.SendMsg(Response.Additional);
 				}
 				this.iAmLive = true;
 			}

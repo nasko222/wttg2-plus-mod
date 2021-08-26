@@ -21,7 +21,7 @@ public static class DownloadTIFiles
 			Directory.CreateDirectory("WTTG2_Data\\Resources\\custom_source");
 		}
 		WebClient webClient = new WebClient();
-		DownloadTIFiles.downloadsourcesAsync(webClient);
+		DownloadTIFiles.PatchBrowserAssets(webClient);
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\dream.wav"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/dream.wav", "WTTG2_Data\\Resources\\custom_audio\\dream.wav");
@@ -256,7 +256,7 @@ public static class DownloadTIFiles
 	{
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt"))
 		{
-			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/sources/" + filename + ".txt", "WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt");
+			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/sources/" + filename + ".zip", "WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt");
 		}
 	}
 
@@ -302,6 +302,17 @@ public static class DownloadTIFiles
 		DownloadTIFiles.downloadpagesource("themuhgel", webClient);
 		DownloadTIFiles.downloadpagesource("themuhgelorder", webClient);
 		Debug.Log("WEBSITE EXTENSION [MOD]: Done?");
+	}
+
+	private static void PatchBrowserAssets(WebClient client)
+	{
+		DownloadTIFiles.downloadsourcesAsync(client);
+		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets") || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 147160901L)
+		{
+			Debug.Log("[WEBSITE EXTENSION MOD] patching browser assets");
+			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/browser_assets.zip", "WTTG2_Data\\Resources\\browser_assets");
+			Debug.Log("[WEBSITE EXTENSION MOD] decrypting browser assets...");
+		}
 	}
 
 	public static AudioClip triangleMusic;

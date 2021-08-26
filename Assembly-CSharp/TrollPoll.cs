@@ -6,11 +6,11 @@ public class TrollPoll
 {
 	public void BeginVote()
 	{
-		int num = UnityEngine.Random.Range(0, 17);
-		int num2 = UnityEngine.Random.Range(0, 17);
+		int num = UnityEngine.Random.Range(0, 16);
+		int num2 = UnityEngine.Random.Range(0, 16);
 		do
 		{
-			num2 = UnityEngine.Random.Range(0, 17);
+			num2 = UnityEngine.Random.Range(0, 16);
 		}
 		while (num == num2);
 		TrollPoll.firstTrollSound = (TrollPoll.TROLL_SOUNDS)num;
@@ -148,9 +148,6 @@ public class TrollPoll
 		case TrollPoll.TROLL_SOUNDS.RICKROLL:
 			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
 			break;
-		case TrollPoll.TROLL_SOUNDS.DIARRHEA:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.diarrheaSounds;
-			break;
 		case TrollPoll.TROLL_SOUNDS.BLUE:
 			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.blueMusic;
 			break;
@@ -208,7 +205,6 @@ public class TrollPoll
 		CHUNGUS,
 		GNOME,
 		RICKROLL,
-		DIARRHEA,
 		BLUE,
 		COFFIN,
 		CRAB,

@@ -277,22 +277,47 @@ public class AnnBehaviour : WindowBehaviour
 			KEY_DISCOVERY_MODES keyDiscoverMode = pageDef.KeyDiscoverMode;
 			if (pageDef.isWTTG1Website)
 			{
-				this.myBrowser.CallFunction("PickHotSpot", new JSONNode[]
+				if (keyDiscoverMode == KEY_DISCOVERY_MODES.PLAIN_SIGHT)
 				{
-					string.Empty
-				});
-				this.myBrowser.RegisterFunction("HotSpotHit", delegate(JSONNode args)
-				{
-					GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
 					int num = pageDef.HashIndex + 1;
 					this.myBrowser.CallFunction("PlaceKey", new JSONNode[]
 					{
 						num.ToString() + " - " + pageDef.HashValue.ToString()
 					});
-				});
+					return;
+				}
+				if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_PLAIN_SIGHT)
+				{
+					this.myBrowser.CallFunction("PickHotSpot", new JSONNode[]
+					{
+						string.Empty
+					});
+					this.myBrowser.RegisterFunction("HotSpotHit", delegate(JSONNode args)
+					{
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+						int num2 = pageDef.HashIndex + 1;
+						this.myBrowser.CallFunction("PlaceKey", new JSONNode[]
+						{
+							num2.ToString() + " - " + pageDef.HashValue.ToString()
+						});
+					});
+					return;
+				}
+				if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_FILE)
+				{
+					this.myBrowser.CallFunction("PickHotSpot", new JSONNode[]
+					{
+						string.Empty
+					});
+					this.myBrowser.RegisterFunction("HotSpotHit", delegate(JSONNode args)
+					{
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key" + (pageDef.HashIndex + 1).ToString() + ".txt", (pageDef.HashIndex + 1).ToString() + " - " + pageDef.HashValue);
+					});
+				}
 				return;
 			}
-			if (keyDiscoverMode != KEY_DISCOVERY_MODES.PLAIN_SIGHT)
+			else if (keyDiscoverMode != KEY_DISCOVERY_MODES.PLAIN_SIGHT)
 			{
 				if (keyDiscoverMode == KEY_DISCOVERY_MODES.CLICK_TO_PLAIN_SIGHT)
 				{

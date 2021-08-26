@@ -489,22 +489,19 @@ public class TheCloud : MonoBehaviour
 
 	private void prepWebsites()
 	{
-		new WebsiteExtension().ExtendWebsites(this.Websites);
 		for (int i = 0; i < this.Websites.Count; i++)
 		{
-			if (this.Websites[i].isFake)
+			if (this.Websites[i].isFake && (this.Websites[i].PageTitle == "BathRoom Cams" || this.Websites[i].PageTitle == "Burned At The Stake" || this.Websites[i].PageTitle == "Cheap Surgery" || this.Websites[i].PageTitle == "Flesh Trade" || this.Websites[i].PageTitle == "Hot Burners" || this.Websites[i].PageTitle == "Legion" || this.Websites[i].PageTitle == "Passports R US" || this.Websites[i].PageTitle == "Tango Down"))
 			{
-				if (this.Websites[i].PageTitle == "BathRoom Cams" || this.Websites[i].PageTitle == "Burned At The Stake" || this.Websites[i].PageTitle == "Cheap Surgery" || this.Websites[i].PageTitle == "Flesh Trade" || this.Websites[i].PageTitle == "Hot Burners" || this.Websites[i].PageTitle == "Legion" || this.Websites[i].PageTitle == "Passports R Us" || this.Websites[i].PageTitle == "Tango Down")
-				{
-					this.Websites[i].PageTitle = "null";
-				}
-				this.Websites[i].PageDesc = "null";
+				this.Websites[i].PageDesc = "IF YOU SEE THIS, ITS A GLITCH XD -nasko (btw fierce is a furry)";
+				this.Websites.Remove(this.Websites[i]);
 			}
-			else
+			if (this.Websites[i].PageTitle == "Chosen Awake")
 			{
-				this.Websites[i].PageDesc = "null";
+				this.Websites[i].PageDesc = "How would you tell the world?";
 			}
 		}
+		new WebsiteExtension().ExtendWebsites(this.Websites);
 		this.myWebSitesData = DataManager.Load<WebSitesData>(2020);
 		if (this.myWebSitesData == null)
 		{
