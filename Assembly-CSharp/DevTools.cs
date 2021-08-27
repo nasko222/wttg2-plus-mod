@@ -489,7 +489,7 @@ public class DevTools : MonoBehaviour
 			{
 				if (ModsManager.DOSTwitchActive && Response.Additional != "")
 				{
-					GameManager.GetDOSTwitch().myTwitchIRC.SendMsg(Response.Additional);
+					GameManager.GetDOSTwitch().myTwitchIRC.SendMsg("DEV: " + Response.Additional);
 				}
 				this.iAmLive = true;
 			}
@@ -659,6 +659,28 @@ public class DevTools : MonoBehaviour
 					});
 					GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(array[0], array[1]);
 					GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				}
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "wikiDoc")
+			{
+				if (Response.Additional != "" && GameManager.AudioSlinger != null && GameManager.ManagerSlinger != null && GameManager.ManagerSlinger.TextDocManager != null)
+				{
+					if (Response.Additional == "1")
+					{
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki1.txt", GameManager.TheCloud.GetWikiURL(0));
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+					}
+					else if (Response.Additional == "2")
+					{
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(1));
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+					}
+					else if (Response.Additional == "3")
+					{
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki3.txt", GameManager.TheCloud.GetWikiURL(2));
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+					}
 				}
 				this.iAmLive = true;
 			}
@@ -942,22 +964,10 @@ public class DevTools : MonoBehaviour
 		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
 		gameObject.SetActive(true);
 		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		if (UnityEngine.Random.Range(0, 100) < 95)
-		{
-			jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
-			jumpHit.Volume = 1f;
-			GameManager.AudioSlinger.PlaySound(jumpHit);
-			GameManager.TimeSlinger.FireTimer(0.85f, delegate()
-			{
-				UnityEngine.Object.Destroy(gameObject);
-			}, 0);
-			return;
-		}
-		jumpHit.AudioClip = DownloadTIFiles.GFScream;
+		jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
 		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
 		GameManager.AudioSlinger.PlaySound(jumpHit);
-		GameManager.TimeSlinger.FireTimer(15.85f, delegate()
+		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);
 		}, 0);

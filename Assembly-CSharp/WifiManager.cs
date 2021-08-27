@@ -393,7 +393,10 @@ public class WifiManager : MonoBehaviour
 
 	private void Awake()
 	{
-		this.AddNewWiFi();
+		if (ModsManager.ContentExtension)
+		{
+			this.AddNewWiFi();
+		}
 		this.myID = base.transform.position.GetHashCode();
 		this.activeWifiHotSpot = this.wifiHotSpots[0];
 		GameManager.ManagerSlinger.WifiManager = this;

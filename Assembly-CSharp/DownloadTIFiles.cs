@@ -87,11 +87,6 @@ public static class DownloadTIFiles
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/hackermans.wav", "WTTG2_Data\\Resources\\custom_audio\\hackermans.wav");
 			Debug.Log("hackermans does not exist, downloading...");
 		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\diarrhea.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/diarrhea.wav", "WTTG2_Data\\Resources\\custom_audio\\diarrhea.wav");
-			Debug.Log("diarrhea does not exist, downloading...");
-		}
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\party.wav"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/party.wav", "WTTG2_Data\\Resources\\custom_audio\\party.wav");
@@ -197,6 +192,31 @@ public static class DownloadTIFiles
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/conga.wav", "WTTG2_Data\\Resources\\custom_audio\\conga.wav");
 			Debug.Log("[CONTENT] conga open up does not exist, downloading...");
 		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\forsaken.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/forsaken.wav", "WTTG2_Data\\Resources\\custom_audio\\forsaken.wav");
+			Debug.Log("[Website Audio] Forsaken Gifts does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\legion.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/legion.wav", "WTTG2_Data\\Resources\\custom_audio\\legion.wav");
+			Debug.Log("[Website Audio] Legion does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\tango.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/tango.wav", "WTTG2_Data\\Resources\\custom_audio\\tango.wav");
+			Debug.Log("[Website Audio] Tango Down does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\takedownman.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/takedownman.wav", "WTTG2_Data\\Resources\\custom_audio\\takedownman.wav");
+			Debug.Log("[Website Audio] TakedownMan does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\testical.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/testical.wav", "WTTG2_Data\\Resources\\custom_audio\\testical.wav");
+			Debug.Log("[Website Audio] Testical Mutilation does not exist, downloading...");
+		}
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\freddy.png"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/freddy.png", "WTTG2_Data\\Resources\\custom_tex\\freddy.png");
@@ -237,6 +257,11 @@ public static class DownloadTIFiles
 		DownloadTIFiles.XOR = WavUtility.ToAudioClip("xor.wav");
 		DownloadTIFiles.Challenger = WavUtility.ToAudioClip("challenger.wav");
 		DownloadTIFiles.Conga = WavUtility.ToAudioClip("conga.wav");
+		DownloadTIFiles.ForsakenGifts = WavUtility.ToAudioClip("forsaken.wav");
+		DownloadTIFiles.Legion = WavUtility.ToAudioClip("legion.wav");
+		DownloadTIFiles.TangoDown = WavUtility.ToAudioClip("tango.wav");
+		DownloadTIFiles.TakedownMan = WavUtility.ToAudioClip("takedownman.wav");
+		DownloadTIFiles.TesticalMutilation = WavUtility.ToAudioClip("testical.wav");
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 	}
 
@@ -386,4 +411,14 @@ public static class DownloadTIFiles
 	public static AudioClip Challenger;
 
 	public static AudioClip Conga;
+
+	public static AudioClip ForsakenGifts;
+
+	public static AudioClip Legion;
+
+	public static AudioClip TangoDown;
+
+	public static AudioClip TakedownMan;
+
+	public static AudioClip TesticalMutilation;
 }

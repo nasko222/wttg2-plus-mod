@@ -13,4 +13,6 @@ public class WebSiteData
 	public bool IsTapped { get; set; }
 
 	public List<WebPageData> Pages { get; set; }
+
+	public bool DoNotList { get; set; }
 }

@@ -254,6 +254,7 @@ public class AnnBehaviour : WindowBehaviour
 	{
 		if (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().HasMusic)
 		{
+			this.checkCustomMusicAudio(GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower(), GameManager.TheCloud.GetCurrentWebPageDef());
 			GameManager.AudioSlinger.PlaySound(GameManager.TheCloud.GetCurrentWebPageDef().AudioFile);
 		}
 	}
@@ -706,6 +707,45 @@ public class AnnBehaviour : WindowBehaviour
 		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "the prey") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "theprey"))
 		{
 			EnemyManager.CultManager.attemptSpawn();
+		}
+	}
+
+	private void checkCustomMusicAudio(string pagename, WebPageDefinition definition)
+	{
+		if (pagename == "vacation")
+		{
+			definition.AudioFile.AudioClip = TheCloud.VacationSound;
+			definition.AudioFile.Loop = true;
+			return;
+		}
+		if (pagename == "legion")
+		{
+			definition.AudioFile.AudioClip = DownloadTIFiles.Legion;
+			definition.AudioFile.Loop = false;
+			return;
+		}
+		if (pagename == "forsaken gifts")
+		{
+			definition.AudioFile.AudioClip = DownloadTIFiles.ForsakenGifts;
+			definition.AudioFile.Loop = true;
+			return;
+		}
+		if (pagename == "takedownman")
+		{
+			definition.AudioFile.AudioClip = DownloadTIFiles.TakedownMan;
+			definition.AudioFile.Loop = true;
+			return;
+		}
+		if (pagename == "tango down")
+		{
+			definition.AudioFile.AudioClip = DownloadTIFiles.TangoDown;
+			definition.AudioFile.Loop = true;
+			return;
+		}
+		if (pagename == "testical mutilation")
+		{
+			definition.AudioFile.AudioClip = DownloadTIFiles.TesticalMutilation;
+			definition.AudioFile.Loop = false;
 		}
 	}
 

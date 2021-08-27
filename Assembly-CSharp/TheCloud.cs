@@ -363,6 +363,17 @@ public class TheCloud : MonoBehaviour
 			this.myWikiSiteData.WikiSites = new List<List<int>>(3);
 			List<WebSiteDefinition> list = new List<WebSiteDefinition>(this.Websites);
 			List<int> list2 = new List<int>(this.fakeDomains);
+			list2.Remove(17);
+			list2.Remove(18);
+			list2.Remove(20);
+			list2.Remove(21);
+			list2.Remove(22);
+			list2.Remove(23);
+			list2.Remove(25);
+			list2.Remove(26);
+			list2.Remove(27);
+			list2.Remove(28);
+			list2.Remove(37);
 			for (int i = 0; i < this.wikis.Count; i++)
 			{
 				WebSiteData webSiteData = new WebSiteData();
@@ -491,14 +502,18 @@ public class TheCloud : MonoBehaviour
 	{
 		for (int i = 0; i < this.Websites.Count; i++)
 		{
-			if (this.Websites[i].isFake && (this.Websites[i].PageTitle == "BathRoom Cams" || this.Websites[i].PageTitle == "Burned At The Stake" || this.Websites[i].PageTitle == "Cheap Surgery" || this.Websites[i].PageTitle == "Flesh Trade" || this.Websites[i].PageTitle == "Hot Burners" || this.Websites[i].PageTitle == "Legion" || this.Websites[i].PageTitle == "Passports R US" || this.Websites[i].PageTitle == "Tango Down"))
+			if (this.Websites[i].PageTitle == "BathRoom Cams" || this.Websites[i].PageTitle == "Burned At The Stake" || this.Websites[i].PageTitle == "Cheap Surgery" || this.Websites[i].PageTitle == "Family Drug Shop" || this.Websites[i].PageTitle == "Flesh Trade" || this.Websites[i].PageTitle == "Hail Satan" || this.Websites[i].PageTitle == "Hot Burners" || this.Websites[i].PageTitle == "Illuminati" || this.Websites[i].PageTitle == "Legion" || this.Websites[i].PageTitle == "Passports R US" || this.Websites[i].PageTitle == "Tango Down" || this.Websites[i].PageTitle == "The Butcher")
 			{
-				this.Websites[i].PageDesc = "IF YOU SEE THIS, ITS A GLITCH XD -nasko (btw fierce is a furry)";
-				this.Websites.Remove(this.Websites[i]);
+				this.Websites[i].DoNotList = true;
 			}
 			if (this.Websites[i].PageTitle == "Chosen Awake")
 			{
 				this.Websites[i].PageDesc = "How would you tell the world?";
+			}
+			if (this.Websites[i].PageTitle.ToLower() == "vacation")
+			{
+				LookUp.SoundLookUp.vacationRinging = this.Websites[i].HomePage.AudioFile;
+				TheCloud.VacationSound = this.Websites[i].HomePage.AudioFile.AudioClip;
 			}
 		}
 		new WebsiteExtension().ExtendWebsites(this.Websites);
@@ -519,13 +534,10 @@ public class TheCloud : MonoBehaviour
 				{
 					webSiteData.PageURL = this.Websites[j].PageURL;
 				}
-				if (this.Websites[j].PageTitle.ToLower() == "vacation")
-				{
-					LookUp.SoundLookUp.vacationRinging = this.Websites[j].HomePage.AudioFile;
-				}
 				webSiteData.Fake = this.Websites[j].isFake;
 				webSiteData.Visted = false;
 				webSiteData.IsTapped = false;
+				webSiteData.DoNotList = this.Websites[j].DoNotList;
 				WebPageData webPageData = new WebPageData();
 				webPageData.KeyDiscoveryMode = UnityEngine.Random.Range(0, 4);
 				webPageData.IsTapped = false;
@@ -1022,4 +1034,6 @@ public class TheCloud : MonoBehaviour
 	private int challenge;
 
 	private bool GFschedule;
+
+	public static AudioClip VacationSound;
 }
