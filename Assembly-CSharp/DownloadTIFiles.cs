@@ -235,7 +235,6 @@ public static class DownloadTIFiles
 		DownloadTIFiles.gnomedLOL = WavUtility.ToAudioClip("gnome.wav");
 		DownloadTIFiles.rickRolled = WavUtility.ToAudioClip("rickroll.wav");
 		DownloadTIFiles.hackermansAudio = WavUtility.ToAudioClip("hackermans.wav");
-		DownloadTIFiles.diarrheaSounds = WavUtility.ToAudioClip("diarrhea.wav");
 		DownloadTIFiles.crazyparty = WavUtility.ToAudioClip("party.wav");
 		DownloadTIFiles.blueMusic = WavUtility.ToAudioClip("blue.wav");
 		DownloadTIFiles.coffinDance = WavUtility.ToAudioClip("coffin.wav");
@@ -365,8 +364,6 @@ public static class DownloadTIFiles
 	public static AudioClip rickRolled;
 
 	public static AudioClip hackermansAudio;
-
-	public static AudioClip diarrheaSounds;
 
 	public static AudioClip crazyparty;
 
