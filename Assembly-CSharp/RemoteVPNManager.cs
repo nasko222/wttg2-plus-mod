@@ -186,7 +186,7 @@ public class RemoteVPNManager : MonoBehaviour
 		}
 		for (int k = 0; k < this.vpnCurrencies.Length; k++)
 		{
-			if (ModsManager.ContentExtension && this.vpnCurrencies[k].GenerateTime == 163f)
+			if (this.vpnCurrencies[k].GenerateTime == 163f)
 			{
 				this.vpnCurrencies[k].GenerateDOSCoinValue = 5.32f;
 				this.vpnCurrencies[k].GenerateTime = 132f;

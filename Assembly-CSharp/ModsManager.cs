@@ -69,22 +69,6 @@ public static class ModsManager
 		{
 			ModsManager.Trolling = false;
 		}
-		if (PlayerPrefs.GetInt("[MOD]Content", 1) == 1)
-		{
-			ModsManager.ContentExtension = true;
-		}
-		else
-		{
-			ModsManager.ContentExtension = false;
-		}
-		if (PlayerPrefs.GetInt("[MOD]Websites", 1) == 1)
-		{
-			ModsManager.Websites = true;
-		}
-		else
-		{
-			ModsManager.Websites = false;
-		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
 

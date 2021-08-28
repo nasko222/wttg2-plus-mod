@@ -254,7 +254,7 @@ public class AnnBehaviour : WindowBehaviour
 	{
 		if (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().HasMusic)
 		{
-			this.checkCustomMusicAudio(GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower(), GameManager.TheCloud.GetCurrentWebPageDef());
+			this.checkCustomMusicAudio(GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower(), GameManager.TheCloud.GetCurrentWebPageDef(), GameManager.TheCloud.GetCurrentWebPageDef().FileName.ToLower());
 			GameManager.AudioSlinger.PlaySound(GameManager.TheCloud.GetCurrentWebPageDef().AudioFile);
 		}
 	}
@@ -700,50 +700,52 @@ public class AnnBehaviour : WindowBehaviour
 
 	private void thePrey()
 	{
-		if (!ModsManager.ContentExtension)
-		{
-			return;
-		}
 		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "the prey") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "theprey"))
 		{
 			EnemyManager.CultManager.attemptSpawn();
 		}
 	}
 
-	private void checkCustomMusicAudio(string pagename, WebPageDefinition definition)
+	private void checkCustomMusicAudio(string pagename, WebPageDefinition definition, string htmlFile)
 	{
-		if (pagename == "vacation")
+		if (pagename == "vacation" && htmlFile == "index.html")
 		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = TheCloud.VacationSound;
 			definition.AudioFile.Loop = true;
 			return;
 		}
-		if (pagename == "legion")
+		if (pagename == "legion" && htmlFile == "index.html")
 		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.Legion;
 			definition.AudioFile.Loop = false;
 			return;
 		}
-		if (pagename == "forsaken gifts")
+		if (pagename == "forsaken gifts" && htmlFile == "index.html")
 		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.ForsakenGifts;
 			definition.AudioFile.Loop = true;
 			return;
 		}
-		if (pagename == "takedownman")
+		if (pagename == "takedownman" && htmlFile == "index.html")
 		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.TakedownMan;
 			definition.AudioFile.Loop = true;
 			return;
 		}
-		if (pagename == "tango down")
+		if (pagename == "tango down" && htmlFile == "index.html")
 		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.TangoDown;
 			definition.AudioFile.Loop = true;
 			return;
 		}
-		if (pagename == "testical mutilation")
+		if (pagename == "testical mutilation" && htmlFile == "index.html")
 		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.TesticalMutilation;
 			definition.AudioFile.Loop = false;
 		}

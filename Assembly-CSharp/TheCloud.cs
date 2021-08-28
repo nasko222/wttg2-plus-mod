@@ -502,10 +502,6 @@ public class TheCloud : MonoBehaviour
 	{
 		for (int i = 0; i < this.Websites.Count; i++)
 		{
-			if (this.Websites[i].PageTitle == "BathRoom Cams" || this.Websites[i].PageTitle == "Burned At The Stake" || this.Websites[i].PageTitle == "Cheap Surgery" || this.Websites[i].PageTitle == "Family Drug Shop" || this.Websites[i].PageTitle == "Flesh Trade" || this.Websites[i].PageTitle == "Hail Satan" || this.Websites[i].PageTitle == "Hot Burners" || this.Websites[i].PageTitle == "Illuminati" || this.Websites[i].PageTitle == "Legion" || this.Websites[i].PageTitle == "Passports R US" || this.Websites[i].PageTitle == "Tango Down" || this.Websites[i].PageTitle == "The Butcher")
-			{
-				this.Websites[i].DoNotList = true;
-			}
 			if (this.Websites[i].PageTitle == "Chosen Awake")
 			{
 				this.Websites[i].PageDesc = "How would you tell the world?";
@@ -513,7 +509,11 @@ public class TheCloud : MonoBehaviour
 			if (this.Websites[i].PageTitle.ToLower() == "vacation")
 			{
 				LookUp.SoundLookUp.vacationRinging = this.Websites[i].HomePage.AudioFile;
-				TheCloud.VacationSound = this.Websites[i].HomePage.AudioFile.AudioClip;
+				if (!TheCloud.VacationFIX)
+				{
+					TheCloud.VacationFIX = true;
+					TheCloud.VacationSound = this.Websites[i].HomePage.AudioFile.AudioClip;
+				}
 			}
 		}
 		new WebsiteExtension().ExtendWebsites(this.Websites);
@@ -537,7 +537,6 @@ public class TheCloud : MonoBehaviour
 				webSiteData.Fake = this.Websites[j].isFake;
 				webSiteData.Visted = false;
 				webSiteData.IsTapped = false;
-				webSiteData.DoNotList = this.Websites[j].DoNotList;
 				WebPageData webPageData = new WebPageData();
 				webPageData.KeyDiscoveryMode = UnityEngine.Random.Range(0, 4);
 				webPageData.IsTapped = false;
@@ -745,6 +744,7 @@ public class TheCloud : MonoBehaviour
 		this.prepBookmarks();
 		this.prepTheMasterKey();
 		this.tapSites();
+		this.challenge = -1;
 		if (ModsManager.DevToolsActive)
 		{
 			this.myDevTools = new DevTools();
@@ -762,7 +762,6 @@ public class TheCloud : MonoBehaviour
 			Debug.Log("Twitch integration is active");
 			return;
 		}
-		this.challenge = -1;
 		Debug.Log("DOSTwitch is disabled");
 	}
 
@@ -776,14 +775,7 @@ public class TheCloud : MonoBehaviour
 			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].deliveryTimeMax = GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].deliveryTimeMin;
 			TheCloud.vpnFIX = true;
 		}
-		if (ModsManager.ContentExtension)
-		{
-			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[1];
-		}
-		else
-		{
-			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[0];
-		}
+		GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[1];
 		if (ModsManager.ShowGodSpot)
 		{
 			Debug.Log("TheCloud - Show God Spot is ON");
@@ -913,6 +905,7 @@ public class TheCloud : MonoBehaviour
 
 	public void TenTwentyMode()
 	{
+		this.challenge = 0;
 		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
 		jumpHit.AudioClip = DownloadTIFiles.XOR;
 		jumpHit.Volume = 1f;
@@ -1036,4 +1029,6 @@ public class TheCloud : MonoBehaviour
 	private bool GFschedule;
 
 	public static AudioClip VacationSound;
+
+	private static bool VacationFIX;
 }

@@ -5,10 +5,6 @@ public class DOSDrainer
 {
 	public void tryConsume()
 	{
-		if (!ModsManager.ContentExtension)
-		{
-			return;
-		}
 		if (!this.consuming)
 		{
 			GameManager.TimeSlinger.FireTimer(1.5f, new Action(this.Consume), 0);

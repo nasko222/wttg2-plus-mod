@@ -25,7 +25,7 @@ public class TenantTrackManager : MonoBehaviour
 
 	public bool CheckIfFemaleTenant(int UnitNumber)
 	{
-		return UnitNumber != 0 && (this.tenantLookUp[UnitNumber].tenantSex == 1 || this.tenantLookUp[UnitNumber].canBeTagged);
+		return UnitNumber != 0 && this.tenantLookUp[UnitNumber].canBeTagged;
 	}
 
 	private void takeInput()
