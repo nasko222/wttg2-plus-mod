@@ -1,5 +1,5 @@
-# wttg2-twitch-integration
-A Twitch Integration Mod for WTTG2. Now Open Source
+# wttg2-plus-mod
+WTTG2+ Is a mod that originally was a Twitch Integration mod, but now features much more, as a new websites, new viruses, and soon a new killer.
 
 If you want to install use FierceThundr's installer for automatic installation. https://github.com/FierceThundr/wttg2-integration-installer
 Also join discord for downloading releases. I won't put any releases here. https://discord.gg/fcufAUXcnm
