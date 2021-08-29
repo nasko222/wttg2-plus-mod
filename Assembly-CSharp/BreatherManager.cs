@@ -19,6 +19,10 @@ public class BreatherManager : MonoBehaviour
 			else
 			{
 				int num = UnityEngine.Random.Range(0, 100);
+				if (ModsManager.UnlimitedStamina)
+				{
+					num -= 15;
+				}
 				switch (this.keyDiscoveryCount)
 				{
 				case 0:

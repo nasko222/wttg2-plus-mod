@@ -391,7 +391,7 @@ public class TheCloud : MonoBehaviour
 			{
 				Dictionary<int, string> dictionary = new Dictionary<int, string>(20);
 				List<int> list3 = new List<int>(20);
-				int num = 15;
+				int num = 20;
 				if (k != 0)
 				{
 					if (k != 1)
@@ -459,7 +459,7 @@ public class TheCloud : MonoBehaviour
 						num2++;
 					}
 				}
-				for (int num3 = 0; num3 < 10; num3++)
+				for (int num3 = 0; num3 < 20; num3++)
 				{
 					int index3 = UnityEngine.Random.Range(0, list2.Count);
 					dictionary.Add(list2[index3], this.Websites[list2[index3]].PageTitle);
@@ -694,7 +694,7 @@ public class TheCloud : MonoBehaviour
 						int hashIndex2 = dictionary[text2];
 						if (webSiteDefinition2.SubPages.Count > 0)
 						{
-							if (UnityEngine.Random.Range(0, 10) == 3)
+							if (UnityEngine.Random.Range(0, 4) == 3)
 							{
 								webSiteDefinition2.HomePage.IsTapped = true;
 								webSiteDefinition2.HomePage.HashIndex = hashIndex2;

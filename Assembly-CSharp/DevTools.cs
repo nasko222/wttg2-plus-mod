@@ -966,6 +966,7 @@ public class DevTools : MonoBehaviour
 		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
 		jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
 		jumpHit.Volume = 1f;
+		jumpHit.Loop = false;
 		GameManager.AudioSlinger.PlaySound(jumpHit);
 		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
 		{
