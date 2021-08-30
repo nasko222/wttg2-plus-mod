@@ -157,7 +157,7 @@ public class DOSTwitch : MonoBehaviour
 	private void displayTwitchConnected()
 	{
 		Debug.Log("Twitch Integration Now Live! FeelsGoodMan");
-		this.myTwitchIRC.SendMsg("WTTG2+ Mod by nasko222 [v1.23-beta8] - Twitch Integration Live - FeelsGoodMan Clap");
+		this.myTwitchIRC.SendMsg("WTTG2+ Mod by nasko222 [v1.23-beta9] - Twitch Integration Live - FeelsGoodMan Clap");
 		DOSTwitch.dosTwitchEnabled = true;
 		Debug.Log("DOSTwitch was enabled and put in an instance.");
 	}

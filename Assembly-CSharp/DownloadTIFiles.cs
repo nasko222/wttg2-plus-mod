@@ -217,6 +217,16 @@ public static class DownloadTIFiles
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/testical.wav", "WTTG2_Data\\Resources\\custom_audio\\testical.wav");
 			Debug.Log("[Website Audio] Testical Mutilation does not exist, downloading...");
 		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\hailsatan.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/hailsatan.wav", "WTTG2_Data\\Resources\\custom_audio\\hailsatan.wav");
+			Debug.Log("[Website Audio] Hail Satan does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\illuminati.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/illuminati.wav", "WTTG2_Data\\Resources\\custom_audio\\illuminati.wav");
+			Debug.Log("[Website Audio] Illuminati does not exist, downloading...");
+		}
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\freddy.png"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/freddy.png", "WTTG2_Data\\Resources\\custom_tex\\freddy.png");
@@ -261,6 +271,8 @@ public static class DownloadTIFiles
 		DownloadTIFiles.TangoDown = WavUtility.ToAudioClip("tango.wav");
 		DownloadTIFiles.TakedownMan = WavUtility.ToAudioClip("takedownman.wav");
 		DownloadTIFiles.TesticalMutilation = WavUtility.ToAudioClip("testical.wav");
+		DownloadTIFiles.HailSatan = WavUtility.ToAudioClip("hailsatan.wav");
+		DownloadTIFiles.Illuminati = WavUtility.ToAudioClip("illuminati.wav");
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 	}
 
@@ -325,13 +337,46 @@ public static class DownloadTIFiles
 		DownloadTIFiles.downloadpagesource("testicalmutilation", webClient);
 		DownloadTIFiles.downloadpagesource("themuhgel", webClient);
 		DownloadTIFiles.downloadpagesource("themuhgelorder", webClient);
+		DownloadTIFiles.downloadpagesource("blackhatpost", webClient);
+		DownloadTIFiles.downloadpagesource("blackhatpostsubmit", webClient);
+		DownloadTIFiles.downloadpagesource("familydrugshop", webClient);
+		DownloadTIFiles.downloadpagesource("familydrugshopabout", webClient);
+		DownloadTIFiles.downloadpagesource("familydrugshopfaq", webClient);
+		DownloadTIFiles.downloadpagesource("familydrugshoporder", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatan", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatancontact", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatanfaq", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatanlinks", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatanmembers", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatanpics", webClient);
+		DownloadTIFiles.downloadpagesource("hailsatanvids", webClient);
+		DownloadTIFiles.downloadpagesource("illuminati", webClient);
+		DownloadTIFiles.downloadpagesource("nudeyoutubers", webClient);
+		DownloadTIFiles.downloadpagesource("steroidqueen", webClient);
+		DownloadTIFiles.downloadpagesource("steroidqueenorder", webClient);
+		DownloadTIFiles.downloadpagesource("steroidqueenproducts", webClient);
+		DownloadTIFiles.downloadpagesource("thebutcher", webClient);
+		DownloadTIFiles.downloadpagesource("thebutcherbeheading", webClient);
+		DownloadTIFiles.downloadpagesource("thebutcherbleeding", webClient);
+		DownloadTIFiles.downloadpagesource("thebutchergutting", webClient);
+		DownloadTIFiles.downloadpagesource("thebutcherhanging", webClient);
+		DownloadTIFiles.downloadpagesource("thebutcherprep", webClient);
+		DownloadTIFiles.downloadpagesource("thebutcherskinning", webClient);
+		DownloadTIFiles.downloadpagesource("weedpost", webClient);
+		DownloadTIFiles.downloadpagesource("weedpostorder", webClient);
+		DownloadTIFiles.downloadpagesource("zeroday", webClient);
+		DownloadTIFiles.downloadpagesource("zerodaycode", webClient);
+		DownloadTIFiles.downloadpagesource("zerodayexploits", webClient);
+		DownloadTIFiles.downloadpagesource("zerodayleaks", webClient);
+		DownloadTIFiles.downloadpagesource("zerodayrant", webClient);
+		DownloadTIFiles.downloadpagesource("zerodayscripts", webClient);
 		Debug.Log("WEBSITE EXTENSION [MOD]: Done?");
 	}
 
 	private static void PatchBrowserAssets(WebClient client)
 	{
 		DownloadTIFiles.downloadsourcesAsync(client);
-		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets") || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 147160901L)
+		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets") || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 147160901L || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 186954744L)
 		{
 			Debug.Log("[WEBSITE EXTENSION MOD] patching browser assets");
 			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/browser_assets.zip", "WTTG2_Data\\Resources\\browser_assets");
@@ -418,4 +463,8 @@ public static class DownloadTIFiles
 	public static AudioClip TakedownMan;
 
 	public static AudioClip TesticalMutilation;
+
+	public static AudioClip HailSatan;
+
+	public static AudioClip Illuminati;
 }

@@ -96,7 +96,7 @@ public class TitleManager : MonoBehaviour
 		Transform transform2 = GameObject.Find("GameOptions").transform;
 		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("NuidtyTitle"));
 		gameObject.transform.position = new Vector2(transform.position.x + 600f, transform.position.y + 200f);
-		gameObject.GetComponent<TextMeshProUGUI>().text = "WTTG2+ Mod by nasko222 [v1.23-beta8]";
+		gameObject.GetComponent<TextMeshProUGUI>().text = "WTTG2+ Mod by nasko222 [v1.23-beta9]";
 		gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject.transform.SetParent(transform2);
 		OptionsUtil.BuildOptionsButton("Twitch Integration:", "[MOD]TTVInt", 1, 50f, null, null);

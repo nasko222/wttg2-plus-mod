@@ -124,6 +124,10 @@ public class HackerManager : MonoBehaviour
 
 	public void RollHack()
 	{
+		if (!ModsManager.ForceHackingEnabled)
+		{
+			return;
+		}
 		if (UnityEngine.Random.Range(0f, 100f) <= 10f && !this.rollHackFroze)
 		{
 			if (!DataManager.LeetMode)
@@ -136,12 +140,8 @@ public class HackerManager : MonoBehaviour
 				}
 			}
 			this.triggerHack();
-			if (ModsManager.ForceHackingEnabled)
-			{
-				return;
-			}
 			this.rollHackFroze = true;
-			GameManager.TimeSlinger.FireTimer(300f, delegate()
+			GameManager.TimeSlinger.FireTimer(180f, delegate()
 			{
 				this.rollHackFroze = false;
 			}, 0);

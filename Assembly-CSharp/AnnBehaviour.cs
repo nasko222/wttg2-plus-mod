@@ -749,6 +749,18 @@ public class AnnBehaviour : WindowBehaviour
 			definition.AudioFile.AudioClip = DownloadTIFiles.TesticalMutilation;
 			definition.AudioFile.Loop = false;
 		}
+		if (pagename == "hail satan" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.HailSatan;
+			definition.AudioFile.Loop = false;
+		}
+		if (pagename == "illuminati" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.Illuminati;
+			definition.AudioFile.Loop = false;
+		}
 	}
 
 	public int BOOKMARK_TAB_START_POOL_COUNT = 10;

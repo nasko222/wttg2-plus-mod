@@ -199,7 +199,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "trollLockPick")
 			{
-				if (LookUp.Doors != null && ModsManager.Trolling)
+				if (LookUp.Doors != null)
 				{
 					LookUp.Doors.MainDoor.AudioHub.PlaySound(LookUp.SoundLookUp.DoorKnobSFX);
 					if (ModsManager.EasyModeActive)
@@ -212,7 +212,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "trollScanner")
 			{
-				if (PoliceScannerBehaviour.Ins != null && ModsManager.Trolling && EnemyManager.PoliceManager != null)
+				if (PoliceScannerBehaviour.Ins != null && EnemyManager.PoliceManager != null)
 				{
 					EnemyManager.PoliceManager.TrollPoliceScanner();
 				}
