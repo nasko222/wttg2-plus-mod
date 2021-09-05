@@ -227,11 +227,27 @@ public static class DownloadTIFiles
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/illuminati.wav", "WTTG2_Data\\Resources\\custom_audio\\illuminati.wav");
 			Debug.Log("[Website Audio] Illuminati does not exist, downloading...");
 		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\enigma.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/enigma.wav", "WTTG2_Data\\Resources\\custom_audio\\enigma.wav");
+			Debug.Log("[Website Audio] Enigma does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\theart.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/theart.wav", "WTTG2_Data\\Resources\\custom_audio\\theart.wav");
+			Debug.Log("[Website Audio] The Art does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/cannabisworld.wav", "WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav");
+			Debug.Log("[Website Audio] Cannabis World does not exist, downloading...");
+		}
 		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\freddy.png"))
 		{
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/freddy.png", "WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 			Debug.Log("[CONTENT] freddy does not exist, downloading...");
 		}
+		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.triangleMusic = WavUtility.ToAudioClip("triangle.wav");
 		DownloadTIFiles.dreamRunningMusic = WavUtility.ToAudioClip("dream.wav");
 		DownloadTIFiles.nyanCatMusic = WavUtility.ToAudioClip("nyancat.wav");
@@ -273,7 +289,9 @@ public static class DownloadTIFiles
 		DownloadTIFiles.TesticalMutilation = WavUtility.ToAudioClip("testical.wav");
 		DownloadTIFiles.HailSatan = WavUtility.ToAudioClip("hailsatan.wav");
 		DownloadTIFiles.Illuminati = WavUtility.ToAudioClip("illuminati.wav");
-		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
+		DownloadTIFiles.Enigma = WavUtility.ToAudioClip("enigma.wav");
+		DownloadTIFiles.TheArt = WavUtility.ToAudioClip("theart.wav");
+		DownloadTIFiles.Cannabisworld = WavUtility.ToAudioClip("cannabisworld.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -370,13 +388,29 @@ public static class DownloadTIFiles
 		DownloadTIFiles.downloadpagesource("zerodayleaks", webClient);
 		DownloadTIFiles.downloadpagesource("zerodayrant", webClient);
 		DownloadTIFiles.downloadpagesource("zerodayscripts", webClient);
+		DownloadTIFiles.downloadpagesource("cannabisworld", webClient);
+		DownloadTIFiles.downloadpagesource("cannabisworldorder", webClient);
+		DownloadTIFiles.downloadpagesource("decryptyou", webClient);
+		DownloadTIFiles.downloadpagesource("enigma", webClient);
+		DownloadTIFiles.downloadpagesource("euthanasialegion", webClient);
+		DownloadTIFiles.downloadpagesource("euthanasialegionabout", webClient);
+		DownloadTIFiles.downloadpagesource("euthanasialegionorder", webClient);
+		DownloadTIFiles.downloadpagesource("euthanasialegionproducts", webClient);
+		DownloadTIFiles.downloadpagesource("euthanasialegionservice", webClient);
+		DownloadTIFiles.downloadpagesource("finalthoughts", webClient);
+		DownloadTIFiles.downloadpagesource("finalthoughtscontact", webClient);
+		DownloadTIFiles.downloadpagesource("nucleardream", webClient);
+		DownloadTIFiles.downloadpagesource("rentahacker", webClient);
+		DownloadTIFiles.downloadpagesource("rentahackererror", webClient);
+		DownloadTIFiles.downloadpagesource("rentahackerproducts", webClient);
+		DownloadTIFiles.downloadpagesource("theart", webClient);
 		Debug.Log("WEBSITE EXTENSION [MOD]: Done?");
 	}
 
 	private static void PatchBrowserAssets(WebClient client)
 	{
 		DownloadTIFiles.downloadsourcesAsync(client);
-		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets") || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 147160901L || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 186954744L)
+		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets") || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 147160901L || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 186954744L || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 205607568L)
 		{
 			Debug.Log("[WEBSITE EXTENSION MOD] patching browser assets");
 			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/browser_assets.zip", "WTTG2_Data\\Resources\\browser_assets");
@@ -467,4 +501,10 @@ public static class DownloadTIFiles
 	public static AudioClip HailSatan;
 
 	public static AudioClip Illuminati;
+
+	public static AudioClip Enigma;
+
+	public static AudioClip TheArt;
+
+	public static AudioClip Cannabisworld;
 }

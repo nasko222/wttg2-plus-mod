@@ -753,12 +753,30 @@ public class AnnBehaviour : WindowBehaviour
 		{
 			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.HailSatan;
-			definition.AudioFile.Loop = false;
+			definition.AudioFile.Loop = true;
 		}
 		if (pagename == "illuminati" && htmlFile == "index.html")
 		{
 			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.Illuminati;
+			definition.AudioFile.Loop = false;
+		}
+		if (pagename == "enigma" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.Enigma;
+			definition.AudioFile.Loop = false;
+		}
+		if (pagename == "cannabisworld" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.Cannabisworld;
+			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "the art" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.TheArt;
 			definition.AudioFile.Loop = false;
 		}
 	}
