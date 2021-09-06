@@ -459,7 +459,7 @@ public class TheCloud : MonoBehaviour
 						num2++;
 					}
 				}
-				for (int num3 = 0; num3 < 20; num3++)
+				for (int num3 = 0; num3 < 10; num3++)
 				{
 					int index3 = UnityEngine.Random.Range(0, list2.Count);
 					dictionary.Add(list2[index3], this.Websites[list2[index3]].PageTitle);
@@ -505,6 +505,11 @@ public class TheCloud : MonoBehaviour
 			if (this.Websites[i].PageTitle == "Chosen Awake")
 			{
 				this.Websites[i].PageDesc = "How would you tell the world?";
+			}
+			if (this.Websites[i].PageTitle == "Illumanti")
+			{
+				this.Websites[i].PageTitle = "Illumination";
+				this.Websites[i].PageDesc = "Website dedicated to showing people's \"bright\" future.";
 			}
 			if (this.Websites[i].PageTitle.ToLower() == "vacation")
 			{

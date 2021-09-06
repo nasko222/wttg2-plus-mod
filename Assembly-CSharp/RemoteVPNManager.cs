@@ -52,6 +52,16 @@ public class RemoteVPNManager : MonoBehaviour
 		if (productID == HARDWARE_PRODUCTS.REMOTE_VPN)
 		{
 			this.spawnRemoteVPN();
+			return;
+		}
+		if (productID == HARDWARE_PRODUCTS.REMOTE_VPN_LEVEL2)
+		{
+			RemoteVPNObject.RemoteVPNLevel = 2;
+			return;
+		}
+		if (productID == HARDWARE_PRODUCTS.REMOTE_VPN_LEVEL3)
+		{
+			RemoteVPNObject.RemoteVPNLevel = 3;
 		}
 	}
 

@@ -187,7 +187,7 @@ public class DevTools : MonoBehaviour
 					TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
 					TrollPoll.trollAudio.Loop = false;
 					TrollPoll.trollAudio.LoopCount = 0;
-					TrollPoll.trollAudio.Volume = 0.1337f;
+					TrollPoll.trollAudio.Volume = 0.333f;
 					TrollPoll.isTrollPlaying = true;
 					GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 300f, delegate()
 					{
@@ -223,7 +223,7 @@ public class DevTools : MonoBehaviour
 				if (ModsManager.Trolling && GameManager.AudioSlinger != null)
 				{
 					AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-					jumpHit.Volume = 0.99f;
+					jumpHit.Volume = 0.666f;
 					jumpHit.Loop = false;
 					if (Response.Additional.ToLower() == "mlg")
 					{

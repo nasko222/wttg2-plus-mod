@@ -165,7 +165,7 @@ public class TrollPoll
 		TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
 		TrollPoll.trollAudio.Loop = false;
 		TrollPoll.trollAudio.LoopCount = 0;
-		TrollPoll.trollAudio.Volume = 0.1337f;
+		TrollPoll.trollAudio.Volume = 0.333f;
 		TrollPoll.isTrollPlaying = true;
 		GameManager.AudioSlinger.PlaySound(TrollPoll.trollAudio);
 		GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 300f, new Action(this.stopPlayingSound), 0);

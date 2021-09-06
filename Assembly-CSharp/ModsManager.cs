@@ -95,4 +95,6 @@ public static class ModsManager
 	public static bool Jumpscares;
 
 	public static bool Websites;
+
+	public static readonly string ModVersion = "1.23-pre2";
 }

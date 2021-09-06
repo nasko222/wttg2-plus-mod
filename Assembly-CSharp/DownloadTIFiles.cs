@@ -247,7 +247,19 @@ public static class DownloadTIFiles
 			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/freddy.png", "WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 			Debug.Log("[CONTENT] freddy does not exist, downloading...");
 		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/remoteVPNlvl2.png", "WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png");
+			Debug.Log("[CONTENT] remoteVPNlvl2 does not exist, downloading...");
+		}
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/remoteVPNlvl3.png", "WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png");
+			Debug.Log("[CONTENT] remoteVPNlvl3 does not exist, downloading...");
+		}
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
+		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
+		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.triangleMusic = WavUtility.ToAudioClip("triangle.wav");
 		DownloadTIFiles.dreamRunningMusic = WavUtility.ToAudioClip("dream.wav");
 		DownloadTIFiles.nyanCatMusic = WavUtility.ToAudioClip("nyancat.wav");
@@ -418,6 +430,12 @@ public static class DownloadTIFiles
 		}
 	}
 
+	public static Sprite LoadNewSprite(string FilePath, float PixelsPerUnit = 100f, SpriteMeshType spriteType = SpriteMeshType.Tight)
+	{
+		Texture2D texture2D = DownloadTIFiles.LoadPNG(FilePath);
+		return Sprite.Create(texture2D, new Rect(0f, 0f, (float)texture2D.width, (float)texture2D.height), new Vector2(0f, 0f), PixelsPerUnit, 0u, spriteType);
+	}
+
 	public static AudioClip triangleMusic;
 
 	public static AudioClip dreamRunningMusic;
@@ -507,4 +525,8 @@ public static class DownloadTIFiles
 	public static AudioClip TheArt;
 
 	public static AudioClip Cannabisworld;
+
+	public static Sprite RemoteVPNLevel2;
+
+	public static Sprite RemoteVPNLevel3;
 }
