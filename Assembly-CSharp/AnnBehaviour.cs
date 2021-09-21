@@ -779,6 +779,12 @@ public class AnnBehaviour : WindowBehaviour
 			definition.AudioFile.AudioClip = DownloadTIFiles.TheArt;
 			definition.AudioFile.Loop = false;
 		}
+		if (pagename == "nuclear dream" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.NuclearDream;
+			definition.AudioFile.Loop = false;
+		}
 	}
 
 	public int BOOKMARK_TAB_START_POOL_COUNT = 10;

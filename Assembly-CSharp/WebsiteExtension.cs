@@ -10,7 +10,16 @@ public class WebsiteExtension
 		this.dynamicId = 2000;
 		this.dynamicId++;
 		this.AddFakeWebsites(Websites);
-		this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false);
+		if (OptionDataHook.Ins.Options.Nudity)
+		{
+			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false);
+			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueen", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false);
+		}
+		else
+		{
+			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCamsNN", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false);
+			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueenNN", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false);
+		}
 		this.AddDoublePageWebsite(Websites, "blackhatpost.txt", "Black Hat Post", "BlackHatPost", "Hackers doxxing people for money.", "blackhatpostsubmit.txt", "submit.html", false, -1, false, false);
 		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "Group of people who hunt down \"witches\"", true, 4, false);
 		this.AddDoublePageWebsite(Websites, "cannabisworld.txt", "CannabisWorld", "CannabisWorld", "The one and only place for high quality cannabis.", "cannabisworldorder.txt", "order.html", false, -1, true, false);
@@ -32,17 +41,19 @@ public class WebsiteExtension
 		this.AddDoublePageWebsite(Websites, "hiddencams.txt", "Hidden Cams", "HiddenCams", "Website dedicated to spying people.", "hiddencamsorder.txt", "order.html", false, -1, false, false);
 		this.AddDoublePageWebsite(Websites, "hotburners.txt", "Hot Burners", "HotBurners", "Gun dealer site.", "hotburnersorder.txt", "order.html", false, -1, false, false);
 		this.AddSinglePageWebsite(Websites, "illuminati.txt", "Illuminati", "Illuminati", "333", true, 1, true);
+		this.AddSinglePageWebsite(Websites, "itersanguinis.txt", "Iter Sanguinis", "IterSanguinis", "Poem to embrace the way of the blood.", false, -1, false);
 		this.AddSinglePageWebsite(Websites, "legion.txt", "Legion", "Legion", "Weird cryptic webpage", false, -1, true);
-		this.AddSinglePageWebsite(Websites, "nucleardream.txt", "Nuclear Dream", "NuclearDream", "Dude sells atomic arsenal to the highest bidder.", true, 5, false);
+		this.AddSinglePageWebsite(Websites, "nucleardream.txt", "Nuclear Dream", "NuclearDream", "Dude sells atomic arsenal to the highest bidder.", true, 5, true);
 		this.AddSinglePageWebsite(Websites, "nudeyoutubers.txt", "NudeYoutubers", "NudeYoutubers", "Horny for video influencers?", true, 1, false);
 		this.AddTriplePageWebsite(Websites, "organmart.txt", "Organ Mart", "OrganMart", "Fucked up people selling organs for a lot of money.", "organmartproducts.txt", "products.html", "organmartorder.txt", "order.html", false, -1, false, false, false);
 		this.AddDoublePageWebsite(Websites, "passportsrus.txt", "Passports R US", "PassportsRUs", "Fake passport site.", "passportsrusorder.txt", "order.html", false, -1, false, false);
 		this.AddTriplePageWebsite(Websites, "rentahacker.txt", "Rent A Hacker", "RentAHacker", "Dishonorable services only.", "rentahackererror.txt", "error.html", "rentahackerproducts.txt", "products.html", false, -1, false, false, false);
 		this.AddSinglePageWebsite(Websites, "shadowwebportal.txt", "Shadow Web Portal", "ShadowWeb", "Mysterious Shadow Web access point", true, 5, false);
+		this.AddDoublePageWebsite(Websites, "shithole.txt", "Shithole", "Shithole", "People sharing public restroom stories.", "shitholeolder.txt", "older.html", false, -1, false, false);
 		this.AddQuadriplePageWebsite(Websites, "tangodown.txt", "Tango Down", "TangoDown", "Hitman for hire website.", "tangodownpayment.txt", "payment.html", "tangodownresults.txt", "results.html", "tangodownhire.txt", "hire.html", true, 0, true, false, false, false);
-		this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueen", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false);
 		this.AddSinglePageWebsite(Websites, "takedownman.txt", "Takedownman", "TakedownMan", "Look at all of them he took down...", false, -1, true);
 		this.AddSinglePageWebsite(Websites, "testicalmutilation.txt", "Testical Mutilation", "TesticalMutilation", "A woman’s fantasy of \"punishing men\" blog post.", true, 3, true);
+		this.AddDoublePageWebsite(Websites, "theinvestigation.txt", "TH3 1NV3ST1G4T10N", "TheInvestigation", "IT community forum.", "theinvestigationerror.txt", "error.html", true, 4, false, false);
 		this.AddSinglePageWebsite(Websites, "theart.txt", "The Art", "RickRoll", "The art of what???", false, -1, true);
 		this.AddSeptuplePageWebsite(Websites, "thebutcher.txt", "The Butcher", "TheButcher", "Proper ways of butchering a human body.", "thebutcherbeheading.txt", "beheading.html", "thebutcherbleeding.txt", "bleeding.html", "thebutchergutting.txt", "gutting.html", "thebutcherhanging.txt", "hanging.html", "thebutcherprep.txt", "prep.html", "thebutcherskinning.txt", "skinning.html", false, -1, false, false, false, false, false, false, false);
 		this.AddDoublePageWebsite(Websites, "themuhgel.txt", "The Muhgel", "TheMuhgel", "Sells slaves of all types and ages.", "themuhgelorder.txt", "order.html", false, -1, false, false);
@@ -76,7 +87,6 @@ public class WebsiteExtension
 		Websites.Add(this.FakeWebPageStructure("Hidden Questions", "Anonymous forum for questions and answers.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Hidden Wallet", "Secure DOSCoins wallet.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Hotel ANN", "Anoynmous hotel reservation.", 9778));
-		Websites.Add(this.FakeWebPageStructure("Iter Sanguinis", "Poem to embrace the way of the blood.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Jason’s Will", "No idea what that crazy guy wants to achieve.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Joe’s Slaughterhouse", "Tutorial on consistent dismemberment of humans and animals.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Mobile Market", "Phone market place.", 9778));
@@ -91,7 +101,6 @@ public class WebsiteExtension
 		Websites.Add(this.FakeWebPageStructure("Shadefield", "The Instagram stalker platform of the Deep Web.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Shiwa", "?????", 9778));
 		Websites.Add(this.FakeWebPageStructure("T.I.M.'s Masterclass", "Lone professional shades unique into gathering techniques.", 9778));
-		Websites.Add(this.FakeWebPageStructure("TH3 1NV3ST1G4T10N", "IT community forum.", 9778));
 		Websites.Add(this.FakeWebPageStructure("Testing Grounds LSD", "Laboratory with humans subjected to all types of drugs.", 9778));
 		Websites.Add(this.FakeWebPageStructure("The Bunker", "Largest gun store front.", 9778));
 		Websites.Add(this.FakeWebPageStructure("The Gatekeeper", "Mysterious gateway containing secret information.", 9778));

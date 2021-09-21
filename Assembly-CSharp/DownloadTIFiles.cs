@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net;
 using LutoniteMods;
 using UnityEngine;
 
@@ -8,255 +7,151 @@ public static class DownloadTIFiles
 {
 	public static void startDownloadingFiles()
 	{
-		if (!Directory.Exists("WTTG2_Data\\Resources\\custom_audio"))
-		{
-			Directory.CreateDirectory("WTTG2_Data\\Resources\\custom_audio");
-		}
-		if (!Directory.Exists("WTTG2_Data\\Resources\\custom_tex"))
-		{
-			Directory.CreateDirectory("WTTG2_Data\\Resources\\custom_tex");
-		}
-		if (!Directory.Exists("WTTG2_Data\\Resources\\custom_source"))
-		{
-			Directory.CreateDirectory("WTTG2_Data\\Resources\\custom_source");
-		}
-		WebClient webClient = new WebClient();
-		DownloadTIFiles.PatchBrowserAssets(webClient);
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\dream.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/dream.wav", "WTTG2_Data\\Resources\\custom_audio\\dream.wav");
-			Debug.Log("dream does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\triangle.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/triangle.wav", "WTTG2_Data\\Resources\\custom_audio\\triangle.wav");
-			Debug.Log("triangle does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\nyancat.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/nyancat.wav", "WTTG2_Data\\Resources\\custom_audio\\nyancat.wav");
-			Debug.Log("nyancat does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\polishcow.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/polishcow.wav", "WTTG2_Data\\Resources\\custom_audio\\polishcow.wav");
-			Debug.Log("polishcow does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\stickbug.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/stickbug.wav", "WTTG2_Data\\Resources\\custom_audio\\stickbug.wav");
-			Debug.Log("stickbug does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\vacation.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/vacation.wav", "WTTG2_Data\\Resources\\custom_audio\\vacation.wav");
-			Debug.Log("vacation does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\keyboard.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/keyboard.wav", "WTTG2_Data\\Resources\\custom_audio\\keyboard.wav");
-			Debug.Log("keyboard does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\jebaited.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/jebaited.wav", "WTTG2_Data\\Resources\\custom_audio\\jebaited.wav");
-			Debug.Log("jebaited does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\stal.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/stal.wav", "WTTG2_Data\\Resources\\custom_audio\\stal.wav");
-			Debug.Log("stal does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\chungus.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/chungus.wav", "WTTG2_Data\\Resources\\custom_audio\\chungus.wav");
-			Debug.Log("chungus does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\gnome.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/gnome.wav", "WTTG2_Data\\Resources\\custom_audio\\gnome.wav");
-			Debug.Log("gnome does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\rickroll.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/rickroll.wav", "WTTG2_Data\\Resources\\custom_audio\\rickroll.wav");
-			Debug.Log("rickroll does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\hackermans.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/hackermans.wav", "WTTG2_Data\\Resources\\custom_audio\\hackermans.wav");
-			Debug.Log("hackermans does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\party.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/party.wav", "WTTG2_Data\\Resources\\custom_audio\\party.wav");
-			Debug.Log("party does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\blue.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/blue.wav", "WTTG2_Data\\Resources\\custom_audio\\blue.wav");
-			Debug.Log("blue does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\coffin.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/coffin.wav", "WTTG2_Data\\Resources\\custom_audio\\coffin.wav");
-			Debug.Log("coffin does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\crab.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/crab.wav", "WTTG2_Data\\Resources\\custom_audio\\crab.wav");
-			Debug.Log("crab does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\thomas.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/troll/thomas.wav", "WTTG2_Data\\Resources\\custom_audio\\thomas.wav");
-			Debug.Log("thomas does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\alarm.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/alarm.wav", "WTTG2_Data\\Resources\\custom_audio\\alarm.wav");
-			Debug.Log("[CONTENT] alarm does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\beep.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/beep.wav", "WTTG2_Data\\Resources\\custom_audio\\beep.wav");
-			Debug.Log("[CONTENT] beep does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\reset.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/reset.wav", "WTTG2_Data\\Resources\\custom_audio\\reset.wav");
-			Debug.Log("[CONTENT] reset does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\failsafe.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/failsafe.wav", "WTTG2_Data\\Resources\\custom_audio\\failsafe.wav");
-			Debug.Log("[CONTENT] failsafe does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\systemFailure.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/systemFailure.wav", "WTTG2_Data\\Resources\\custom_audio\\systemFailure.wav");
-			Debug.Log("[CONTENT] systemFailure does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\gflaugh.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/gflaugh.wav", "WTTG2_Data\\Resources\\custom_audio\\gflaugh.wav");
-			Debug.Log("[CONTENT] gflaugh does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\gfpresence.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/gfpresence.wav", "WTTG2_Data\\Resources\\custom_audio\\gfpresence.wav");
-			Debug.Log("[CONTENT] gfpresence does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\gfscream.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/gfscream.wav", "WTTG2_Data\\Resources\\custom_audio\\gfscream.wav");
-			Debug.Log("[CONTENT] gfscream does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\mlg.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/mlg.wav", "WTTG2_Data\\Resources\\custom_audio\\mlg.wav");
-			Debug.Log("[CONTENT] mlg does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\bblaugh.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/bblaugh.wav", "WTTG2_Data\\Resources\\custom_audio\\bblaugh.wav");
-			Debug.Log("[CONTENT] bblaugh does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\virus.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/virus.wav", "WTTG2_Data\\Resources\\custom_audio\\virus.wav");
-			Debug.Log("[CONTENT] virus does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\swamp.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/swamp.wav", "WTTG2_Data\\Resources\\custom_audio\\swamp.wav");
-			Debug.Log("[CONTENT] swampu does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\fbi.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/fbi.wav", "WTTG2_Data\\Resources\\custom_audio\\fbi.wav");
-			Debug.Log("[CONTENT] fbi open up does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\xor.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/xor.wav", "WTTG2_Data\\Resources\\custom_audio\\xor.wav");
-			Debug.Log("[CONTENT] XOR open up does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\challenger.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/challenger.wav", "WTTG2_Data\\Resources\\custom_audio\\challenger.wav");
-			Debug.Log("[CONTENT] challenger open up does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\conga.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/conga.wav", "WTTG2_Data\\Resources\\custom_audio\\conga.wav");
-			Debug.Log("[CONTENT] conga open up does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\forsaken.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/forsaken.wav", "WTTG2_Data\\Resources\\custom_audio\\forsaken.wav");
-			Debug.Log("[Website Audio] Forsaken Gifts does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\legion.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/legion.wav", "WTTG2_Data\\Resources\\custom_audio\\legion.wav");
-			Debug.Log("[Website Audio] Legion does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\tango.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/tango.wav", "WTTG2_Data\\Resources\\custom_audio\\tango.wav");
-			Debug.Log("[Website Audio] Tango Down does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\takedownman.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/takedownman.wav", "WTTG2_Data\\Resources\\custom_audio\\takedownman.wav");
-			Debug.Log("[Website Audio] TakedownMan does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\testical.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/testical.wav", "WTTG2_Data\\Resources\\custom_audio\\testical.wav");
-			Debug.Log("[Website Audio] Testical Mutilation does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\hailsatan.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/hailsatan.wav", "WTTG2_Data\\Resources\\custom_audio\\hailsatan.wav");
-			Debug.Log("[Website Audio] Hail Satan does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\illuminati.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/illuminati.wav", "WTTG2_Data\\Resources\\custom_audio\\illuminati.wav");
-			Debug.Log("[Website Audio] Illuminati does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\enigma.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/enigma.wav", "WTTG2_Data\\Resources\\custom_audio\\enigma.wav");
-			Debug.Log("[Website Audio] Enigma does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\theart.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/theart.wav", "WTTG2_Data\\Resources\\custom_audio\\theart.wav");
-			Debug.Log("[Website Audio] The Art does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/audio/cannabisworld.wav", "WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav");
-			Debug.Log("[Website Audio] Cannabis World does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\freddy.png"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/freddy.png", "WTTG2_Data\\Resources\\custom_tex\\freddy.png");
-			Debug.Log("[CONTENT] freddy does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/remoteVPNlvl2.png", "WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png");
-			Debug.Log("[CONTENT] remoteVPNlvl2 does not exist, downloading...");
-		}
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png"))
-		{
-			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/content/remoteVPNlvl3.png", "WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png");
-			Debug.Log("[CONTENT] remoteVPNlvl3 does not exist, downloading...");
-		}
+		DownloadTIFiles.CheckIfDirectoryExists("WTTG2_Data\\Resources\\custom_audio");
+		DownloadTIFiles.CheckIfDirectoryExists("WTTG2_Data\\Resources\\custom_tex");
+		DownloadTIFiles.CheckIfDirectoryExists("WTTG2_Data\\Resources\\custom_source");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\dream.wav", "dream.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\triangle.wav", "triangle.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\nyancat.wav", "nyancat.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\polishcow.wav", "polishcow.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\stickbug.wav", "stickbug.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\vacation.wav", "vacation.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\keyboard.wav", "keyboard.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\jebaited.wav", "jebaited.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\stal.wav", "stal.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\chungus.wav", "chungus.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\gnome.wav", "gnome.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\rickroll.wav", "rickroll.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\hackermans.wav", "hackermans.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\party.wav", "party.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\blue.wav", "blue.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\coffin.wav", "coffin.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\crab.wav", "crab.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\thomas.wav", "thomas.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\alarm.wav", "alarm.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\beep.wav", "beep.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\reset.wav", "reset.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\failsafe.wav", "failsafe.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\systemFailure.wav", "systemFailure.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\gflaugh.wav", "gflaugh.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\gfpresence.wav", "gfpresence.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\gfscream.wav", "gfscream.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\mlg.wav", "mlg.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\bblaugh.wav", "bblaugh.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\virus.wav", "virus.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\swamp.wav", "swamp.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\fbi.wav", "fbi.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\xor.wav", "xor.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\challenger.wav", "challenger.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\conga.wav", "conga.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\forsaken.wav", "forsaken.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\legion.wav", "legion.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\tango.wav", "tango.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\takedownman.wav", "takedownman.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\testical.wav", "testical.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\hailsatan.wav", "hailsatan.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\illuminati.wav", "illuminati.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\enigma.wav", "enigma.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\theart.wav", "theart.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav", "cannabisworld.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\nuclear.wav", "nuclear.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\freddy.png", "freddy.png");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", "remoteVPNlvl2.png");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "remoteVPNlvl3.png");
+		DownloadTIFiles.CheckSourceCodeExistance("bathroomcams");
+		DownloadTIFiles.CheckSourceCodeExistance("bathroomcamsaccess");
+		DownloadTIFiles.CheckSourceCodeExistance("bathroomcamscams");
+		DownloadTIFiles.CheckSourceCodeExistance("blackhatpost");
+		DownloadTIFiles.CheckSourceCodeExistance("blackhatpostsubmit");
+		DownloadTIFiles.CheckSourceCodeExistance("burnedatthestake");
+		DownloadTIFiles.CheckSourceCodeExistance("cannabisworld");
+		DownloadTIFiles.CheckSourceCodeExistance("cannabisworldorder");
+		DownloadTIFiles.CheckSourceCodeExistance("cheapsurgery");
+		DownloadTIFiles.CheckSourceCodeExistance("cheapsurgerycontact");
+		DownloadTIFiles.CheckSourceCodeExistance("darkbook");
+		DownloadTIFiles.CheckSourceCodeExistance("deathlog");
+		DownloadTIFiles.CheckSourceCodeExistance("decryptyou");
+		DownloadTIFiles.CheckSourceCodeExistance("doctormurder");
+		DownloadTIFiles.CheckSourceCodeExistance("enigma");
+		DownloadTIFiles.CheckSourceCodeExistance("eurofirearms");
+		DownloadTIFiles.CheckSourceCodeExistance("eurofirearmsorder");
+		DownloadTIFiles.CheckSourceCodeExistance("eurofirearmsproducts");
+		DownloadTIFiles.CheckSourceCodeExistance("euthanasialegion");
+		DownloadTIFiles.CheckSourceCodeExistance("euthanasialegionabout");
+		DownloadTIFiles.CheckSourceCodeExistance("euthanasialegionorder");
+		DownloadTIFiles.CheckSourceCodeExistance("euthanasialegionproducts");
+		DownloadTIFiles.CheckSourceCodeExistance("euthanasialegionservice");
+		DownloadTIFiles.CheckSourceCodeExistance("familydrugshop");
+		DownloadTIFiles.CheckSourceCodeExistance("familydrugshopabout");
+		DownloadTIFiles.CheckSourceCodeExistance("familydrugshopfaq");
+		DownloadTIFiles.CheckSourceCodeExistance("familydrugshoporder");
+		DownloadTIFiles.CheckSourceCodeExistance("finalthoughts");
+		DownloadTIFiles.CheckSourceCodeExistance("finalthoughtscontact");
+		DownloadTIFiles.CheckSourceCodeExistance("fleshtrade");
+		DownloadTIFiles.CheckSourceCodeExistance("forsakengifts");
+		DownloadTIFiles.CheckSourceCodeExistance("forsakengiftsgifts");
+		DownloadTIFiles.CheckSourceCodeExistance("forsakengiftsorder");
+		DownloadTIFiles.CheckSourceCodeExistance("gravethieves");
+		DownloadTIFiles.CheckSourceCodeExistance("greetmysisters");
+		DownloadTIFiles.CheckSourceCodeExistance("greetmysistersorder");
+		DownloadTIFiles.CheckSourceCodeExistance("greetmysisterssisters");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatan");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatancontact");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatanfaq");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatanlinks");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatanmembers");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatanpics");
+		DownloadTIFiles.CheckSourceCodeExistance("hailsatanvids");
+		DownloadTIFiles.CheckSourceCodeExistance("hiddencams");
+		DownloadTIFiles.CheckSourceCodeExistance("hiddencamsorder");
+		DownloadTIFiles.CheckSourceCodeExistance("hotburners");
+		DownloadTIFiles.CheckSourceCodeExistance("hotburnersorder");
+		DownloadTIFiles.CheckSourceCodeExistance("illuminati");
+		DownloadTIFiles.CheckSourceCodeExistance("itersanguinis");
+		DownloadTIFiles.CheckSourceCodeExistance("legion");
+		DownloadTIFiles.CheckSourceCodeExistance("nucleardream");
+		DownloadTIFiles.CheckSourceCodeExistance("nudeyoutubers");
+		DownloadTIFiles.CheckSourceCodeExistance("organmart");
+		DownloadTIFiles.CheckSourceCodeExistance("organmartorder");
+		DownloadTIFiles.CheckSourceCodeExistance("organmartproducts");
+		DownloadTIFiles.CheckSourceCodeExistance("passportsrus");
+		DownloadTIFiles.CheckSourceCodeExistance("passportsrusorder");
+		DownloadTIFiles.CheckSourceCodeExistance("rentahacker");
+		DownloadTIFiles.CheckSourceCodeExistance("rentahackererror");
+		DownloadTIFiles.CheckSourceCodeExistance("rentahackerproducts");
+		DownloadTIFiles.CheckSourceCodeExistance("shadowwebportal");
+		DownloadTIFiles.CheckSourceCodeExistance("shithole");
+		DownloadTIFiles.CheckSourceCodeExistance("shitholeolder");
+		DownloadTIFiles.CheckSourceCodeExistance("steroidqueen");
+		DownloadTIFiles.CheckSourceCodeExistance("steroidqueenorder");
+		DownloadTIFiles.CheckSourceCodeExistance("steroidqueenproducts");
+		DownloadTIFiles.CheckSourceCodeExistance("takedownman");
+		DownloadTIFiles.CheckSourceCodeExistance("tangodown");
+		DownloadTIFiles.CheckSourceCodeExistance("tangodownhire");
+		DownloadTIFiles.CheckSourceCodeExistance("tangodownpayment");
+		DownloadTIFiles.CheckSourceCodeExistance("tangodownresults");
+		DownloadTIFiles.CheckSourceCodeExistance("testicalmutilation");
+		DownloadTIFiles.CheckSourceCodeExistance("theart");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutcher");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutcherbeheading");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutcherbleeding");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutchergutting");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutcherhanging");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutcherprep");
+		DownloadTIFiles.CheckSourceCodeExistance("thebutcherskinning");
+		DownloadTIFiles.CheckSourceCodeExistance("theinvestigation");
+		DownloadTIFiles.CheckSourceCodeExistance("theinvestigationerror");
+		DownloadTIFiles.CheckSourceCodeExistance("themuhgel");
+		DownloadTIFiles.CheckSourceCodeExistance("themuhgelorder");
+		DownloadTIFiles.CheckSourceCodeExistance("weedpost");
+		DownloadTIFiles.CheckSourceCodeExistance("weedpostorder");
+		DownloadTIFiles.CheckSourceCodeExistance("zeroday");
+		DownloadTIFiles.CheckSourceCodeExistance("zerodaycode");
+		DownloadTIFiles.CheckSourceCodeExistance("zerodayexploits");
+		DownloadTIFiles.CheckSourceCodeExistance("zerodayleaks");
+		DownloadTIFiles.CheckSourceCodeExistance("zerodayrant");
+		DownloadTIFiles.CheckSourceCodeExistance("zerodayscripts");
+		DownloadTIFiles.CheckBrowserAssetsCorrectSize(234167936L);
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
@@ -304,6 +199,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.Enigma = WavUtility.ToAudioClip("enigma.wav");
 		DownloadTIFiles.TheArt = WavUtility.ToAudioClip("theart.wav");
 		DownloadTIFiles.Cannabisworld = WavUtility.ToAudioClip("cannabisworld.wav");
+		DownloadTIFiles.NuclearDream = WavUtility.ToAudioClip("nuclear.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -318,122 +214,45 @@ public static class DownloadTIFiles
 		return texture2D;
 	}
 
-	private static void downloadpagesource(string filename, WebClient client)
-	{
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt"))
-		{
-			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/sources/" + filename + ".zip", "WTTG2_Data\\Resources\\custom_source\\" + filename + ".txt");
-		}
-	}
-
-	private static void downloadsourcesAsync(WebClient webClient)
-	{
-		DownloadTIFiles.downloadpagesource("bathroomcams", webClient);
-		DownloadTIFiles.downloadpagesource("bathroomcamsaccess", webClient);
-		DownloadTIFiles.downloadpagesource("bathroomcamscams", webClient);
-		DownloadTIFiles.downloadpagesource("burnedatthestake", webClient);
-		DownloadTIFiles.downloadpagesource("cheapsurgery", webClient);
-		DownloadTIFiles.downloadpagesource("cheapsurgerycontact", webClient);
-		DownloadTIFiles.downloadpagesource("darkbook", webClient);
-		DownloadTIFiles.downloadpagesource("deathlog", webClient);
-		DownloadTIFiles.downloadpagesource("doctormurder", webClient);
-		DownloadTIFiles.downloadpagesource("eurofirearms", webClient);
-		DownloadTIFiles.downloadpagesource("eurofirearmsorder", webClient);
-		DownloadTIFiles.downloadpagesource("eurofirearmsproducts", webClient);
-		DownloadTIFiles.downloadpagesource("fleshtrade", webClient);
-		DownloadTIFiles.downloadpagesource("forsakengifts", webClient);
-		DownloadTIFiles.downloadpagesource("forsakengiftsgifts", webClient);
-		DownloadTIFiles.downloadpagesource("forsakengiftsorder", webClient);
-		DownloadTIFiles.downloadpagesource("gravethieves", webClient);
-		DownloadTIFiles.downloadpagesource("greetmysisters", webClient);
-		DownloadTIFiles.downloadpagesource("greetmysistersorder", webClient);
-		DownloadTIFiles.downloadpagesource("greetmysisterssisters", webClient);
-		DownloadTIFiles.downloadpagesource("hiddencams", webClient);
-		DownloadTIFiles.downloadpagesource("hiddencamsorder", webClient);
-		DownloadTIFiles.downloadpagesource("hotburners", webClient);
-		DownloadTIFiles.downloadpagesource("hotburnersorder", webClient);
-		DownloadTIFiles.downloadpagesource("legion", webClient);
-		DownloadTIFiles.downloadpagesource("organmart", webClient);
-		DownloadTIFiles.downloadpagesource("organmartorder", webClient);
-		DownloadTIFiles.downloadpagesource("organmartproducts", webClient);
-		DownloadTIFiles.downloadpagesource("passportsrus", webClient);
-		DownloadTIFiles.downloadpagesource("passportsrusorder", webClient);
-		DownloadTIFiles.downloadpagesource("shadowwebportal", webClient);
-		DownloadTIFiles.downloadpagesource("takedownman", webClient);
-		DownloadTIFiles.downloadpagesource("tangodown", webClient);
-		DownloadTIFiles.downloadpagesource("tangodownhire", webClient);
-		DownloadTIFiles.downloadpagesource("tangodownpayment", webClient);
-		DownloadTIFiles.downloadpagesource("tangodownresults", webClient);
-		DownloadTIFiles.downloadpagesource("testicalmutilation", webClient);
-		DownloadTIFiles.downloadpagesource("themuhgel", webClient);
-		DownloadTIFiles.downloadpagesource("themuhgelorder", webClient);
-		DownloadTIFiles.downloadpagesource("blackhatpost", webClient);
-		DownloadTIFiles.downloadpagesource("blackhatpostsubmit", webClient);
-		DownloadTIFiles.downloadpagesource("familydrugshop", webClient);
-		DownloadTIFiles.downloadpagesource("familydrugshopabout", webClient);
-		DownloadTIFiles.downloadpagesource("familydrugshopfaq", webClient);
-		DownloadTIFiles.downloadpagesource("familydrugshoporder", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatan", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatancontact", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatanfaq", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatanlinks", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatanmembers", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatanpics", webClient);
-		DownloadTIFiles.downloadpagesource("hailsatanvids", webClient);
-		DownloadTIFiles.downloadpagesource("illuminati", webClient);
-		DownloadTIFiles.downloadpagesource("nudeyoutubers", webClient);
-		DownloadTIFiles.downloadpagesource("steroidqueen", webClient);
-		DownloadTIFiles.downloadpagesource("steroidqueenorder", webClient);
-		DownloadTIFiles.downloadpagesource("steroidqueenproducts", webClient);
-		DownloadTIFiles.downloadpagesource("thebutcher", webClient);
-		DownloadTIFiles.downloadpagesource("thebutcherbeheading", webClient);
-		DownloadTIFiles.downloadpagesource("thebutcherbleeding", webClient);
-		DownloadTIFiles.downloadpagesource("thebutchergutting", webClient);
-		DownloadTIFiles.downloadpagesource("thebutcherhanging", webClient);
-		DownloadTIFiles.downloadpagesource("thebutcherprep", webClient);
-		DownloadTIFiles.downloadpagesource("thebutcherskinning", webClient);
-		DownloadTIFiles.downloadpagesource("weedpost", webClient);
-		DownloadTIFiles.downloadpagesource("weedpostorder", webClient);
-		DownloadTIFiles.downloadpagesource("zeroday", webClient);
-		DownloadTIFiles.downloadpagesource("zerodaycode", webClient);
-		DownloadTIFiles.downloadpagesource("zerodayexploits", webClient);
-		DownloadTIFiles.downloadpagesource("zerodayleaks", webClient);
-		DownloadTIFiles.downloadpagesource("zerodayrant", webClient);
-		DownloadTIFiles.downloadpagesource("zerodayscripts", webClient);
-		DownloadTIFiles.downloadpagesource("cannabisworld", webClient);
-		DownloadTIFiles.downloadpagesource("cannabisworldorder", webClient);
-		DownloadTIFiles.downloadpagesource("decryptyou", webClient);
-		DownloadTIFiles.downloadpagesource("enigma", webClient);
-		DownloadTIFiles.downloadpagesource("euthanasialegion", webClient);
-		DownloadTIFiles.downloadpagesource("euthanasialegionabout", webClient);
-		DownloadTIFiles.downloadpagesource("euthanasialegionorder", webClient);
-		DownloadTIFiles.downloadpagesource("euthanasialegionproducts", webClient);
-		DownloadTIFiles.downloadpagesource("euthanasialegionservice", webClient);
-		DownloadTIFiles.downloadpagesource("finalthoughts", webClient);
-		DownloadTIFiles.downloadpagesource("finalthoughtscontact", webClient);
-		DownloadTIFiles.downloadpagesource("nucleardream", webClient);
-		DownloadTIFiles.downloadpagesource("rentahacker", webClient);
-		DownloadTIFiles.downloadpagesource("rentahackererror", webClient);
-		DownloadTIFiles.downloadpagesource("rentahackerproducts", webClient);
-		DownloadTIFiles.downloadpagesource("theart", webClient);
-		Debug.Log("WEBSITE EXTENSION [MOD]: Done?");
-	}
-
-	private static void PatchBrowserAssets(WebClient client)
-	{
-		DownloadTIFiles.downloadsourcesAsync(client);
-		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets") || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 147160901L || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 186954744L || new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length <= 205607568L)
-		{
-			Debug.Log("[WEBSITE EXTENSION MOD] patching browser assets");
-			client.DownloadFile("http://naskogdps17.7m.pl/wttg/browser/browser_assets.zip", "WTTG2_Data\\Resources\\browser_assets");
-			Debug.Log("[WEBSITE EXTENSION MOD] decrypting browser assets...");
-		}
-	}
-
 	public static Sprite LoadNewSprite(string FilePath, float PixelsPerUnit = 100f, SpriteMeshType spriteType = SpriteMeshType.Tight)
 	{
 		Texture2D texture2D = DownloadTIFiles.LoadPNG(FilePath);
 		return Sprite.Create(texture2D, new Rect(0f, 0f, (float)texture2D.width, (float)texture2D.height), new Vector2(0f, 0f), PixelsPerUnit, 0u, spriteType);
+	}
+
+	private static void CheckIfDirectoryExists(string dirPath)
+	{
+		if (!Directory.Exists(dirPath))
+		{
+			Debug.Log("FATAL ERROR: " + dirPath + " does not exist!");
+		}
+	}
+
+	private static void CheckIfFileExists(string filePath, string fileName)
+	{
+		if (!File.Exists(filePath))
+		{
+			Debug.Log("FATAL ERROR: " + fileName + " does not exist!");
+			Application.Quit();
+		}
+	}
+
+	private static void CheckBrowserAssetsCorrectSize(long theSize)
+	{
+		if (new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length != theSize)
+		{
+			Debug.Log("FATAL ERROR: Browser assets has the incorrect size!");
+			Application.Quit();
+		}
+	}
+
+	private static void CheckSourceCodeExistance(string source)
+	{
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_source\\" + source + ".txt"))
+		{
+			Debug.Log("FATAL ERROR: " + source + ".txt does not exist in the sources folder");
+			Application.Quit();
+		}
 	}
 
 	public static AudioClip triangleMusic;
@@ -529,4 +348,6 @@ public static class DownloadTIFiles
 	public static Sprite RemoteVPNLevel2;
 
 	public static Sprite RemoteVPNLevel3;
+
+	public static AudioClip NuclearDream;
 }
