@@ -94,7 +94,18 @@ public class RemoteVPNPlacementBehaviour : MonoBehaviour
 					{
 						if (ModsManager.ShowGodSpot)
 						{
-							this.remoteVPNPlacementBeh.GoBlue();
+							if (DataManager.LeetMode && RemoteVPNObject.RemoteVPNLevel != 3)
+							{
+								this.remoteVPNPlacementBeh.GoGreenGlitchy((RemoteVPNObject.RemoteVPNLevel == 1) ? 8 : 16);
+							}
+							else
+							{
+								this.remoteVPNPlacementBeh.GoGreen();
+							}
+						}
+						else if (DataManager.LeetMode && RemoteVPNObject.RemoteVPNLevel != 3)
+						{
+							this.remoteVPNPlacementBeh.GoRedGlitchy((RemoteVPNObject.RemoteVPNLevel == 1) ? 8 : 16);
 						}
 						else
 						{
@@ -103,11 +114,29 @@ public class RemoteVPNPlacementBehaviour : MonoBehaviour
 					}
 					else if (vpnvalues >= 1000f && vpnvalues < 2700f)
 					{
-						this.remoteVPNPlacementBeh.GoRed();
+						if (DataManager.LeetMode && RemoteVPNObject.RemoteVPNLevel != 3)
+						{
+							this.remoteVPNPlacementBeh.GoRedGlitchy((RemoteVPNObject.RemoteVPNLevel == 1) ? 8 : 16);
+						}
+						else
+						{
+							this.remoteVPNPlacementBeh.GoRed();
+						}
 					}
 					else if (vpnvalues < 1000f && vpnvalues > 300f)
 					{
-						this.remoteVPNPlacementBeh.GoOrange();
+						if (DataManager.LeetMode && RemoteVPNObject.RemoteVPNLevel != 3)
+						{
+							this.remoteVPNPlacementBeh.GoOrangeGlitchy((RemoteVPNObject.RemoteVPNLevel == 1) ? 8 : 16);
+						}
+						else
+						{
+							this.remoteVPNPlacementBeh.GoOrange();
+						}
+					}
+					else if (DataManager.LeetMode && RemoteVPNObject.RemoteVPNLevel != 3)
+					{
+						this.remoteVPNPlacementBeh.GoGreenGlitchy((RemoteVPNObject.RemoteVPNLevel == 1) ? 8 : 16);
 					}
 					else
 					{

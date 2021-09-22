@@ -88,11 +88,65 @@ public class ShadowMarketBehaviour : WindowBehaviour
 	protected new void Start()
 	{
 		base.Start();
+		this.addRemoteVPNLevel2();
+		this.addRemoteVPNLevel3();
 	}
 
 	protected new void OnDestroy()
 	{
 		base.OnDestroy();
+	}
+
+	private void addRemoteVPNLevel2()
+	{
+		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
+		shadowMarketProductDefinition.deliveryTimeMin = 45f;
+		shadowMarketProductDefinition.deliveryTimeMax = 75f;
+		shadowMarketProductDefinition.id = 6301;
+		shadowMarketProductDefinition.isDiscounted = false;
+		shadowMarketProductDefinition.productDesc = "Looking to score even more DOS coins? We got you covered! This upgraded device will use an advanced script to accquire 2x DOS coins when placed. Does upgrade any previously purchased VPNs.";
+		shadowMarketProductDefinition.productHasLimitPurchases = true;
+		shadowMarketProductDefinition.productID = HARDWARE_PRODUCTS.REMOTE_VPN_LEVEL2;
+		shadowMarketProductDefinition.productMaxPurchaseAmount = 1;
+		shadowMarketProductDefinition.productName = "Remote VPN Level 2";
+		shadowMarketProductDefinition.productRequiresOtherProduct = false;
+		shadowMarketProductDefinition.productSprite = DownloadTIFiles.RemoteVPNLevel2;
+		if (ModsManager.EasyModeActive)
+		{
+			shadowMarketProductDefinition.productPrice = 50f;
+		}
+		else
+		{
+			shadowMarketProductDefinition.productPrice = 75f;
+		}
+		ShadowMarketBehaviour.vpn2 = shadowMarketProductDefinition;
+		this.myProducts.Add(shadowMarketProductDefinition);
+	}
+
+	private void addRemoteVPNLevel3()
+	{
+		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
+		shadowMarketProductDefinition.deliveryTimeMin = 65f;
+		shadowMarketProductDefinition.deliveryTimeMax = 115f;
+		shadowMarketProductDefinition.id = 6302;
+		shadowMarketProductDefinition.isDiscounted = false;
+		shadowMarketProductDefinition.productDesc = "Are you even more desperate for that cash? Are you trying to never run out of money in these hard times while wanting to do absolutely nothing? Look no further with this top tier performance!";
+		shadowMarketProductDefinition.productHasLimitPurchases = true;
+		shadowMarketProductDefinition.productID = HARDWARE_PRODUCTS.REMOTE_VPN_LEVEL3;
+		shadowMarketProductDefinition.productMaxPurchaseAmount = 1;
+		shadowMarketProductDefinition.productName = "Remote VPN Level 3";
+		shadowMarketProductDefinition.productRequiresOtherProduct = true;
+		shadowMarketProductDefinition.productToOwn = ShadowMarketBehaviour.vpn2;
+		shadowMarketProductDefinition.productSprite = DownloadTIFiles.RemoteVPNLevel3;
+		if (ModsManager.EasyModeActive)
+		{
+			shadowMarketProductDefinition.productPrice = 80f;
+		}
+		else
+		{
+			shadowMarketProductDefinition.productPrice = 125f;
+		}
+		this.myProducts.Add(shadowMarketProductDefinition);
 	}
 
 	private GameObject productsHolder;
@@ -108,4 +162,6 @@ public class ShadowMarketBehaviour : WindowBehaviour
 	private List<ShadowProductObject> currentProducts = new List<ShadowProductObject>();
 
 	private bool productsAreBuilt;
+
+	private static ShadowMarketProductDefinition vpn2;
 }

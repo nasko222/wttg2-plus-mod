@@ -746,18 +746,6 @@ public class DevTools : MonoBehaviour
 				}
 				this.iAmLive = true;
 			}
-			else if (Response.Action == "changeVPN")
-			{
-				if (GameManager.ManagerSlinger.RemoteVPNManager != null && Response.Additional != "" && RemoteVPNObject.ObjectBuilt)
-				{
-					int num5 = int.Parse(Response.Additional);
-					if (num5 >= 1 || num5 <= 3)
-					{
-						RemoteVPNObject.RemoteVPNLevel = num5;
-					}
-				}
-				this.iAmLive = true;
-			}
 			else if (Response.Action == "whitehat")
 			{
 				if (GameManager.HackerManager != null && InventoryManager.GetProductCount(SOFTWARE_PRODUCTS.BACKDOOR) > 0)
