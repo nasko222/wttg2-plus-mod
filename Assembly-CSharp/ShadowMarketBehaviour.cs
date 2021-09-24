@@ -100,8 +100,8 @@ public class ShadowMarketBehaviour : WindowBehaviour
 	private void addRemoteVPNLevel2()
 	{
 		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
-		shadowMarketProductDefinition.deliveryTimeMin = 45f;
-		shadowMarketProductDefinition.deliveryTimeMax = 75f;
+		shadowMarketProductDefinition.deliveryTimeMin = 105f;
+		shadowMarketProductDefinition.deliveryTimeMax = 115f;
 		shadowMarketProductDefinition.id = 6301;
 		shadowMarketProductDefinition.isDiscounted = false;
 		shadowMarketProductDefinition.productDesc = "Looking to score even more DOS coins? We got you covered! This upgraded device will use an advanced script to accquire 2x DOS coins when placed. Does upgrade any previously purchased VPNs.";
@@ -126,8 +126,8 @@ public class ShadowMarketBehaviour : WindowBehaviour
 	private void addRemoteVPNLevel3()
 	{
 		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
-		shadowMarketProductDefinition.deliveryTimeMin = 65f;
-		shadowMarketProductDefinition.deliveryTimeMax = 115f;
+		shadowMarketProductDefinition.deliveryTimeMin = 165f;
+		shadowMarketProductDefinition.deliveryTimeMax = 195f;
 		shadowMarketProductDefinition.id = 6302;
 		shadowMarketProductDefinition.isDiscounted = false;
 		shadowMarketProductDefinition.productDesc = "Are you even more desperate for that cash? Are you trying to never run out of money in these hard times while wanting to do absolutely nothing? Look no further with this top tier performance!";
@@ -144,7 +144,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		}
 		else
 		{
-			shadowMarketProductDefinition.productPrice = 125f;
+			shadowMarketProductDefinition.productPrice = 120f;
 		}
 		this.myProducts.Add(shadowMarketProductDefinition);
 	}
