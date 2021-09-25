@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using ZenFulcrum.EmbeddedBrowser;
 
 public class DocHook : MonoBehaviour
@@ -44,6 +45,30 @@ public class DocHook : MonoBehaviour
 
 	private void Awake()
 	{
+		if (this.documentData.Title == "memD3FR4G3R")
+		{
+			this.documentData.Title = "Hacks";
+			this.documentData.DocFolder = "DocHackers";
+			foreach (Text text in UnityEngine.Object.FindObjectsOfType<Text>())
+			{
+				if (text.text == "memD3FR4G3R")
+				{
+					text.text = " Hacks";
+				}
+			}
+		}
+		if (this.documentData.Title == "stackPUSHER")
+		{
+			this.documentData.Title = "Viruses";
+			this.documentData.DocFolder = "DocVirusTypes";
+			foreach (Text text2 in UnityEngine.Object.FindObjectsOfType<Text>())
+			{
+				if (text2.text == "stackPUSHER")
+				{
+					text2.text = " Viruses";
+				}
+			}
+		}
 		this.docURL = "localGame://" + this.documentData.DocFolder + "/index.html";
 		this.docBrowser.onLoad += this.pageLoaded;
 		SteamSlinger.Ins.AddTutDoc(this.documentData.GetHashCode());
@@ -52,7 +77,7 @@ public class DocHook : MonoBehaviour
 	private const string BASE_DOC_URL = "localGame://";
 
 	[SerializeField]
-	private DocDefinition documentData;
+	public DocDefinition documentData;
 
 	[SerializeField]
 	private Browser docBrowser;

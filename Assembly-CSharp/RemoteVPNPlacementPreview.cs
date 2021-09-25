@@ -87,15 +87,15 @@ public class RemoteVPNPlacementPreview : MonoBehaviour
 
 	public void GoOOrange()
 	{
-		Color o = new Color32(byte.MaxValue, 165, 0, 1);
-		this.myMat.SetColor("_EmissionColor", o);
+		Color value = new Color32(byte.MaxValue, 165, 0, 1);
+		this.myMat.SetColor("_EmissionColor", value);
 		LookUp.PlayerUI.RemoteVPNIcon.GetComponent<Image>().sprite = LookUp.PlayerUI.RemoteVPNOneBar;
 	}
 
 	public void GoLime()
 	{
-		Color o = new Color32(191, byte.MaxValue, 0, 1);
-		this.myMat.SetColor("_EmissionColor", o);
+		Color value = new Color32(191, byte.MaxValue, 0, 1);
+		this.myMat.SetColor("_EmissionColor", value);
 		LookUp.PlayerUI.RemoteVPNIcon.GetComponent<Image>().sprite = LookUp.PlayerUI.RemoteVPNTwoBar;
 	}
 

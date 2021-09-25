@@ -38,19 +38,34 @@ public class TutorialStartBehaviour : TutorialStepper
 	public void ShowNoirIcon()
 	{
 		this.noirIconCG.alpha = 1f;
-		if (!DataManager.LeetMode)
-		{
-			this.ShowDocIcons();
-		}
+		this.ShowDocIcons();
 		WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 		WindowManager.Get(SOFTWARE_PRODUCTS.ZERODAY).Launch();
 	}
 
 	public void ShowDocIcons()
 	{
-		for (int i = 0; i < this.docIconCGs.Length; i++)
+		if (DataManager.LeetMode)
 		{
-			this.docIconCGs[i].alpha = 1f;
+			for (int i = 0; i < this.docIconCGs.Length; i++)
+			{
+				this.docIconCGs[i].gameObject.SetActive(false);
+				this.docIconCGs[i].alpha = 0f;
+			}
+			return;
+		}
+		for (int j = 0; j < this.docIconCGs.Length; j++)
+		{
+			if (j != 4 && j != 7)
+			{
+				this.docIconCGs[j].gameObject.SetActive(true);
+				this.docIconCGs[j].alpha = 1f;
+			}
+			else
+			{
+				this.docIconCGs[j].gameObject.SetActive(false);
+				this.docIconCGs[j].alpha = 0f;
+			}
 		}
 	}
 

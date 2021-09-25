@@ -55,6 +55,9 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\theart.wav", "theart.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav", "cannabisworld.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\nuclear.wav", "nuclear.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\rosesdestruction.wav", "rosesdestruction.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\freedom.wav", "freedom.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\funky.wav", "funky.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\freddy.png", "freddy.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", "remoteVPNlvl2.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "remoteVPNlvl3.png");
@@ -63,6 +66,8 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("bathroomcamscams");
 		DownloadTIFiles.CheckSourceCodeExistance("blackhatpost");
 		DownloadTIFiles.CheckSourceCodeExistance("blackhatpostsubmit");
+		DownloadTIFiles.CheckSourceCodeExistance("bleedforme");
+		DownloadTIFiles.CheckSourceCodeExistance("bleedformeerror");
 		DownloadTIFiles.CheckSourceCodeExistance("burnedatthestake");
 		DownloadTIFiles.CheckSourceCodeExistance("cannabisworld");
 		DownloadTIFiles.CheckSourceCodeExistance("cannabisworldorder");
@@ -72,6 +77,8 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("deathlog");
 		DownloadTIFiles.CheckSourceCodeExistance("decryptyou");
 		DownloadTIFiles.CheckSourceCodeExistance("doctormurder");
+		DownloadTIFiles.CheckSourceCodeExistance("doscoingenerator");
+		DownloadTIFiles.CheckSourceCodeExistance("doscoingeneratorerror");
 		DownloadTIFiles.CheckSourceCodeExistance("enigma");
 		DownloadTIFiles.CheckSourceCodeExistance("eurofirearms");
 		DownloadTIFiles.CheckSourceCodeExistance("eurofirearmsorder");
@@ -91,6 +98,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("forsakengifts");
 		DownloadTIFiles.CheckSourceCodeExistance("forsakengiftsgifts");
 		DownloadTIFiles.CheckSourceCodeExistance("forsakengiftsorder");
+		DownloadTIFiles.CheckSourceCodeExistance("funnymonke");
 		DownloadTIFiles.CheckSourceCodeExistance("gravethieves");
 		DownloadTIFiles.CheckSourceCodeExistance("greetmysisters");
 		DownloadTIFiles.CheckSourceCodeExistance("greetmysistersorder");
@@ -104,11 +112,24 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("hailsatanvids");
 		DownloadTIFiles.CheckSourceCodeExistance("hiddencams");
 		DownloadTIFiles.CheckSourceCodeExistance("hiddencamsorder");
+		DownloadTIFiles.CheckSourceCodeExistance("hiddenquestions");
+		DownloadTIFiles.CheckSourceCodeExistance("hiddenquestions1");
+		DownloadTIFiles.CheckSourceCodeExistance("hiddenquestions2");
+		DownloadTIFiles.CheckSourceCodeExistance("hiddenquestions3");
 		DownloadTIFiles.CheckSourceCodeExistance("hotburners");
 		DownloadTIFiles.CheckSourceCodeExistance("hotburnersorder");
 		DownloadTIFiles.CheckSourceCodeExistance("illuminati");
 		DownloadTIFiles.CheckSourceCodeExistance("itersanguinis");
 		DownloadTIFiles.CheckSourceCodeExistance("legion");
+		DownloadTIFiles.CheckSourceCodeExistance("masterclass");
+		DownloadTIFiles.CheckSourceCodeExistance("masterclassdogeater");
+		DownloadTIFiles.CheckSourceCodeExistance("masterclassjessica");
+		DownloadTIFiles.CheckSourceCodeExistance("masterclassjimmy");
+		DownloadTIFiles.CheckSourceCodeExistance("masterclassreviews");
+		DownloadTIFiles.CheckSourceCodeExistance("masterclasssakura");
+		DownloadTIFiles.CheckSourceCodeExistance("necroconvert");
+		DownloadTIFiles.CheckSourceCodeExistance("necroconvertabout");
+		DownloadTIFiles.CheckSourceCodeExistance("necroconvertservices");
 		DownloadTIFiles.CheckSourceCodeExistance("nucleardream");
 		DownloadTIFiles.CheckSourceCodeExistance("nudeyoutubers");
 		DownloadTIFiles.CheckSourceCodeExistance("organmart");
@@ -119,6 +140,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("rentahacker");
 		DownloadTIFiles.CheckSourceCodeExistance("rentahackererror");
 		DownloadTIFiles.CheckSourceCodeExistance("rentahackerproducts");
+		DownloadTIFiles.CheckSourceCodeExistance("rosesdestruction");
 		DownloadTIFiles.CheckSourceCodeExistance("shadowwebportal");
 		DownloadTIFiles.CheckSourceCodeExistance("shithole");
 		DownloadTIFiles.CheckSourceCodeExistance("shitholeolder");
@@ -143,6 +165,14 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("theinvestigationerror");
 		DownloadTIFiles.CheckSourceCodeExistance("themuhgel");
 		DownloadTIFiles.CheckSourceCodeExistance("themuhgelorder");
+		DownloadTIFiles.CheckSourceCodeExistance("vengeanceangel");
+		DownloadTIFiles.CheckSourceCodeExistance("vengeanceangelfollowers");
+		DownloadTIFiles.CheckSourceCodeExistance("vengeanceangelfreedom");
+		DownloadTIFiles.CheckSourceCodeExistance("vengeanceangelpower");
+		DownloadTIFiles.CheckSourceCodeExistance("vengeanceangelresults");
+		DownloadTIFiles.CheckSourceCodeExistance("vengeanceangelwill");
+		DownloadTIFiles.CheckSourceCodeExistance("warehouserenter");
+		DownloadTIFiles.CheckSourceCodeExistance("warehouserenterrent");
 		DownloadTIFiles.CheckSourceCodeExistance("weedpost");
 		DownloadTIFiles.CheckSourceCodeExistance("weedpostorder");
 		DownloadTIFiles.CheckSourceCodeExistance("zeroday");
@@ -151,7 +181,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayleaks");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayrant");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayscripts");
-		DownloadTIFiles.CheckBrowserAssetsCorrectSize(234167936L);
+		DownloadTIFiles.CheckBrowserAssetsCorrectSize(260491730L);
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
@@ -200,6 +230,9 @@ public static class DownloadTIFiles
 		DownloadTIFiles.TheArt = WavUtility.ToAudioClip("theart.wav");
 		DownloadTIFiles.Cannabisworld = WavUtility.ToAudioClip("cannabisworld.wav");
 		DownloadTIFiles.NuclearDream = WavUtility.ToAudioClip("nuclear.wav");
+		DownloadTIFiles.RosesDestruction = WavUtility.ToAudioClip("rosesdestruction.wav");
+		DownloadTIFiles.Freedom = WavUtility.ToAudioClip("freedom.wav");
+		DownloadTIFiles.Funky = WavUtility.ToAudioClip("funky.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -350,4 +383,10 @@ public static class DownloadTIFiles
 	public static Sprite RemoteVPNLevel3;
 
 	public static AudioClip NuclearDream;
+
+	public static AudioClip RosesDestruction;
+
+	public static AudioClip Freedom;
+
+	public static AudioClip Funky;
 }

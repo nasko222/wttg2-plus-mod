@@ -511,6 +511,11 @@ public class TheCloud : MonoBehaviour
 				this.Websites[i].PageTitle = "Illumination";
 				this.Websites[i].PageDesc = "Website dedicated to showing people's \"bright\" future.";
 			}
+			if (this.Websites[i].PageTitle == "Roses Destruction")
+			{
+				this.Websites[i].PageTitle = "Rotten Meal";
+				this.Websites[i].PageDesc = "Weird ass people selling meal for canniballs.";
+			}
 			if (this.Websites[i].PageTitle.ToLower() == "vacation")
 			{
 				LookUp.SoundLookUp.vacationRinging = this.Websites[i].HomePage.AudioFile;
