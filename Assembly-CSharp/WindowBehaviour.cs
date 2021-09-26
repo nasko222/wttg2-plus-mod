@@ -3,6 +3,7 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class WindowBehaviour : MonoBehaviour
 {
@@ -47,6 +48,19 @@ public abstract class WindowBehaviour : MonoBehaviour
 		{
 			this.myData.Opened = true;
 			DataManager.Save<WindowData>(this.myData);
+		}
+		if (this.UniProductData != null)
+		{
+			if (this.UniProductData.ProductTitle == "memD3FR4G3R")
+			{
+				this.UniProductData.MinProductTitle = "Hacks";
+				this.SetWindowTitle("Hacks");
+			}
+			if (this.UniProductData.ProductTitle == "stackPUSHER")
+			{
+				this.UniProductData.MinProductTitle = "Viruses";
+				this.SetWindowTitle("Viruses");
+			}
 		}
 	}
 
@@ -240,6 +254,14 @@ public abstract class WindowBehaviour : MonoBehaviour
 
 	protected virtual void OnDestroy()
 	{
+	}
+
+	public void SetWindowTitle(string title)
+	{
+		foreach (object obj in this.Window.transform.Find("TopBar").Find("Title").transform)
+		{
+			((Transform)obj).GetComponent<Text>().text = title;
+		}
 	}
 
 	public SOFTWARE_PRODUCTS Product;

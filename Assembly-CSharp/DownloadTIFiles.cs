@@ -181,7 +181,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayleaks");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayrant");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayscripts");
-		DownloadTIFiles.CheckBrowserAssetsCorrectSize(260491730L);
+		DownloadTIFiles.CheckBrowserAssetsCorrectSize(260492275L);
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);

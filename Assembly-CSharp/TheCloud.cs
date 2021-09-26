@@ -608,10 +608,6 @@ public class TheCloud : MonoBehaviour
 		{
 			this.myBookMarksData = new BookMarksData(2021);
 			this.myBookMarksData.BookMarks = new Dictionary<int, BookmarkData>();
-			BookmarkData value = new BookmarkData("Adam's Twitter", "http://www.twitter.com/thewebpro");
-			BookmarkData value2 = new BookmarkData("Adam's YouTube", "http://www.youtube.com/c/ReflectStudios");
-			this.myBookMarksData.BookMarks.Add(14, value);
-			this.myBookMarksData.BookMarks.Add(15, value2);
 		}
 		this.bookmarks = new Dictionary<int, BookmarkData>(this.myBookMarksData.BookMarks.Count);
 		foreach (KeyValuePair<int, BookmarkData> keyValuePair in this.myBookMarksData.BookMarks)
@@ -865,10 +861,6 @@ public class TheCloud : MonoBehaviour
 			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[11].productPrice = 8f;
 		}
 		GameManager.TheCloud = this;
-		this.validDomains.Add("youtube.com");
-		this.validDomains.Add("twitch.tv");
-		this.validDomains.Add("twitter.com");
-		this.validDomains.Add("google.com");
 		GameManager.StageManager.Stage += this.stageMe;
 	}
 
