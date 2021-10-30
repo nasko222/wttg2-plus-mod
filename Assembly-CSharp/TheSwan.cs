@@ -114,7 +114,7 @@ public class TheSwan
 		this.SwanSFX.AudioClip = DownloadTIFiles.SwanReset;
 		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
-		CurrencyManager.AddCurrency(UnityEngine.Random.Range(1.82f, 4.15f));
+		CurrencyManager.AddCurrency(UnityEngine.Random.Range(3.82f, 9.15f));
 		if (UnityEngine.Random.Range(0, 100) < (DataManager.LeetMode ? 60 : 90) || ModsManager.EasyModeActive || TheSwan.extOn)
 		{
 			TheSwan.extOn = false;

@@ -874,6 +874,12 @@ public class DevTools : MonoBehaviour
 		}
 	}
 
+	public DevTools()
+	{
+		this.myHash = string.Empty;
+		this.domain = "http://naskogdps17.7m.pl/wttg/dev/";
+	}
+
 	private void Awake()
 	{
 		DevTools.Ins = this;
@@ -962,9 +968,9 @@ public class DevTools : MonoBehaviour
 		}, 0);
 	}
 
-	public string myHash = string.Empty;
+	public string myHash;
 
-	public string domain = "https://naskogdps17.7m.pl/wttg/dev/";
+	public string domain;
 
 	public float UpdateTickCount;
 

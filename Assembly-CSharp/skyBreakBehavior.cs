@@ -423,7 +423,7 @@ public class skyBreakBehavior : WindowBehaviour
 		}
 		else if (GameManager.HackerManager.theSwan._108 > 108f)
 		{
-			this.myTerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, "108:00!", 0f, 0f);
+			this.myTerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, "INACTIVE!", 0f, 0f);
 		}
 		else
 		{

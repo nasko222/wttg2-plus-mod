@@ -141,7 +141,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -183,7 +183,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition2 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -195,7 +195,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -239,7 +239,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition3 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -251,7 +251,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -263,7 +263,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -309,7 +309,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition4 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -321,7 +321,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -333,7 +333,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -345,7 +345,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = null;
+		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -393,7 +393,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition5 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -405,7 +405,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -417,7 +417,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -429,7 +429,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = null;
+		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -441,7 +441,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = null;
+		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -491,7 +491,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition6 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -503,7 +503,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -515,7 +515,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -527,7 +527,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = null;
+		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -539,7 +539,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = null;
+		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -551,7 +551,7 @@ public class WebsiteExtension
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition6.AudioFile = null;
+		webPageDefinition6.AudioFile = (hasMusic6 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition6.HasMusic = hasMusic6;
 		webPageDefinition6.FileName = html6;
 		webPageDefinition6.HashIndex = 0;
@@ -603,7 +603,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition7 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = null;
+		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -615,7 +615,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = null;
+		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -627,7 +627,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = null;
+		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -639,7 +639,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = null;
+		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -651,7 +651,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = null;
+		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -663,7 +663,7 @@ public class WebsiteExtension
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition6.AudioFile = null;
+		webPageDefinition6.AudioFile = (hasMusic6 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition6.HasMusic = hasMusic6;
 		webPageDefinition6.FileName = html6;
 		webPageDefinition6.HashIndex = 0;
@@ -675,7 +675,7 @@ public class WebsiteExtension
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition7.AudioFile = null;
+		webPageDefinition7.AudioFile = (hasMusic7 ? LookUp.SoundLookUp.vacationRinging : null);
 		webPageDefinition7.HasMusic = hasMusic7;
 		webPageDefinition7.FileName = html7;
 		webPageDefinition7.HashIndex = 0;

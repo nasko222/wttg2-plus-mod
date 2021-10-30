@@ -103,7 +103,7 @@ public class KeyPoll
 			return;
 		}
 		KeyPoll.keyManipulatorData = kEY_CUE_MODE;
-		GameManager.TimeSlinger.FireTimer(600f, new Action(SpeedPoll.DevDisableManipulator), 0);
+		GameManager.TimeSlinger.FireTimer(600f, new Action(KeyPoll.DevDisableManipulator), 0);
 	}
 
 	public DOSTwitch myDOSTwitch;
