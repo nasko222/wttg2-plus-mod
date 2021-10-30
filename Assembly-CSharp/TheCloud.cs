@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using ZenFulcrum.EmbeddedBrowser;
 
 public class TheCloud : MonoBehaviour
@@ -966,6 +967,20 @@ public class TheCloud : MonoBehaviour
 			return;
 		}
 		this.challenge = -1;
+	}
+
+	public void SpawnManipulatorIcon(float timeFor, Sprite icon, float widthOffset, float heightOffset)
+	{
+		GameObject gameObject = new GameObject();
+		gameObject.AddComponent<Image>().sprite = icon;
+		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
+		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)Screen.width - widthOffset, heightOffset, 0f);
+		gameObject.SetActive(true);
+		gameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+		GameManager.TimeSlinger.FireTimer(timeFor, delegate()
+		{
+			UnityEngine.Object.Destroy(gameObject);
+		}, 0);
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);

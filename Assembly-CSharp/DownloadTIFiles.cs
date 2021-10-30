@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using LutoniteMods;
 using UnityEngine;
 
@@ -61,6 +62,10 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\freddy.png", "freddy.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", "remoteVPNlvl2.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "remoteVPNlvl3.png");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "redkey.png");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "greenkey.png");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "redclock.png");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "greenclock.png");
 		DownloadTIFiles.CheckSourceCodeExistance("bathroomcams");
 		DownloadTIFiles.CheckSourceCodeExistance("bathroomcamsaccess");
 		DownloadTIFiles.CheckSourceCodeExistance("bathroomcamscams");
@@ -185,6 +190,10 @@ public static class DownloadTIFiles
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
+		DownloadTIFiles.RedKey = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\redkey.png", 100f, SpriteMeshType.Tight);
+		DownloadTIFiles.GreenKey = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\greenkey.png", 100f, SpriteMeshType.Tight);
+		DownloadTIFiles.RedClock = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\redclock.png", 100f, SpriteMeshType.Tight);
+		DownloadTIFiles.GreenClock = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\greenclock.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.triangleMusic = WavUtility.ToAudioClip("triangle.wav");
 		DownloadTIFiles.dreamRunningMusic = WavUtility.ToAudioClip("dream.wav");
 		DownloadTIFiles.nyanCatMusic = WavUtility.ToAudioClip("nyancat.wav");
@@ -233,6 +242,13 @@ public static class DownloadTIFiles
 		DownloadTIFiles.RosesDestruction = WavUtility.ToAudioClip("rosesdestruction.wav");
 		DownloadTIFiles.Freedom = WavUtility.ToAudioClip("freedom.wav");
 		DownloadTIFiles.Funky = WavUtility.ToAudioClip("funky.wav");
+		WebClient webClient = new WebClient();
+		if (!File.Exists("WTTG2_Data\\Resources\\custom_audio\\owl.wav"))
+		{
+			webClient.DownloadFile("http://naskogdps17.7m.pl/wttg/owl.wav", "WTTG2_Data\\Resources\\custom_audio\\owl.wav");
+			Debug.Log("ooOOOoooOOooo spooky!");
+		}
+		DownloadTIFiles.Owl = WavUtility.ToAudioClip("owl.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -389,4 +405,14 @@ public static class DownloadTIFiles
 	public static AudioClip Freedom;
 
 	public static AudioClip Funky;
+
+	public static Sprite RedKey;
+
+	public static Sprite GreenKey;
+
+	public static Sprite RedClock;
+
+	public static Sprite GreenClock;
+
+	public static AudioClip Owl;
 }

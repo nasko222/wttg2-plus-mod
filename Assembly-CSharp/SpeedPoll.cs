@@ -85,6 +85,7 @@ public class SpeedPoll
 		}
 		SpeedPoll.speedManipulatorData = nET_SPEED;
 		SpeedPoll.speedManipulatorActive = true;
+		GameManager.TheCloud.SpawnManipulatorIcon(300f, (nET_SPEED == TWITCH_NET_SPEED.FAST) ? DownloadTIFiles.GreenClock : DownloadTIFiles.RedClock, (KeyPoll.keyManipulatorData == KEY_CUE_MODE.DEFAULT) ? 40f : 120f, 50f);
 		GameManager.TimeSlinger.FireTimer(300f, new Action(this.DisableManipulator), 0);
 	}
 
@@ -122,6 +123,7 @@ public class SpeedPoll
 		}
 		SpeedPoll.speedManipulatorData = nET_SPEED;
 		SpeedPoll.speedManipulatorActive = true;
+		GameManager.TheCloud.SpawnManipulatorIcon(600f, (nET_SPEED == TWITCH_NET_SPEED.FAST) ? DownloadTIFiles.GreenClock : DownloadTIFiles.RedClock, (KeyPoll.keyManipulatorData == KEY_CUE_MODE.DEFAULT) ? 40f : 120f, 50f);
 		GameManager.TimeSlinger.FireTimer(600f, new Action(SpeedPoll.DevDisableManipulator), 0);
 	}
 

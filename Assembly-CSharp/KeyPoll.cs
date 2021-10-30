@@ -83,6 +83,7 @@ public class KeyPoll
 			return;
 		}
 		KeyPoll.keyManipulatorData = kEY_CUE_MODE;
+		GameManager.TheCloud.SpawnManipulatorIcon(300f, (kEY_CUE_MODE == KEY_CUE_MODE.ENABLED) ? DownloadTIFiles.GreenKey : DownloadTIFiles.RedKey, SpeedPoll.speedManipulatorActive ? 120f : 40f, 50f);
 		GameManager.TimeSlinger.FireTimer(300f, new Action(this.DisableManipulator), 0);
 	}
 
@@ -103,6 +104,7 @@ public class KeyPoll
 			return;
 		}
 		KeyPoll.keyManipulatorData = kEY_CUE_MODE;
+		GameManager.TheCloud.SpawnManipulatorIcon(600f, (kEY_CUE_MODE == KEY_CUE_MODE.ENABLED) ? DownloadTIFiles.GreenKey : DownloadTIFiles.RedKey, SpeedPoll.speedManipulatorActive ? 120f : 40f, 50f);
 		GameManager.TimeSlinger.FireTimer(600f, new Action(KeyPoll.DevDisableManipulator), 0);
 	}
 
