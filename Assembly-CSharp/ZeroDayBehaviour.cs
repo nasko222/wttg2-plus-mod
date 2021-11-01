@@ -107,11 +107,57 @@ public class ZeroDayBehaviour : WindowBehaviour
 	protected new void Start()
 	{
 		base.Start();
+		this.SpeedItem();
+		this.KeyItem();
 	}
 
 	protected new void OnDestroy()
 	{
 		base.OnDestroy();
+	}
+
+	private void SpeedItem()
+	{
+		ZeroDayProductDefinition zeroDayProductDefinition = new ZeroDayProductDefinition();
+		zeroDayProductDefinition.id = 6303;
+		zeroDayProductDefinition.installTime = 8f;
+		zeroDayProductDefinition.isDiscounted = false;
+		zeroDayProductDefinition.productDesc = "Do you have really high ping? This script may help you boost up your internet speed by 3 times. Active for 10 min.";
+		zeroDayProductDefinition.productID = SOFTWARE_PRODUCTS.SPEED_POWERUP;
+		zeroDayProductDefinition.productName = "P1NG_B005T.EXE";
+		zeroDayProductDefinition.productSprite = DownloadTIFiles.SpeedItem;
+		zeroDayProductDefinition.productRequiresOtherProduct = false;
+		zeroDayProductDefinition.productToOwn = null;
+		zeroDayProductDefinition.unlimtedUse = true;
+		if (ModsManager.EasyModeActive)
+		{
+			zeroDayProductDefinition.productPrice = 30f;
+			return;
+		}
+		zeroDayProductDefinition.productPrice = 50f;
+		this.myProducts.Add(zeroDayProductDefinition);
+	}
+
+	private void KeyItem()
+	{
+		ZeroDayProductDefinition zeroDayProductDefinition = new ZeroDayProductDefinition();
+		zeroDayProductDefinition.id = 6304;
+		zeroDayProductDefinition.installTime = 24f;
+		zeroDayProductDefinition.isDiscounted = false;
+		zeroDayProductDefinition.productDesc = "You want a key cue, but you don't wanna spend a lot money on? This is a demo version active for 10 minutes, to try in A.N.N.";
+		zeroDayProductDefinition.productID = SOFTWARE_PRODUCTS.KEY_POWERUP;
+		zeroDayProductDefinition.productName = "Temporary Key Cue";
+		zeroDayProductDefinition.productSprite = DownloadTIFiles.KeyItem;
+		zeroDayProductDefinition.productRequiresOtherProduct = false;
+		zeroDayProductDefinition.productToOwn = null;
+		zeroDayProductDefinition.unlimtedUse = true;
+		if (ModsManager.EasyModeActive)
+		{
+			zeroDayProductDefinition.productPrice = 80f;
+			return;
+		}
+		zeroDayProductDefinition.productPrice = 145f;
+		this.myProducts.Add(zeroDayProductDefinition);
 	}
 
 	private GameObject productsHolder;

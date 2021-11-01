@@ -8,6 +8,15 @@ public class backdoorTextHook : MonoBehaviour
 	private void softwareProductWasAdded(SOFTWARE_PRODUCTS ProductID)
 	{
 		this.myText.text = InventoryManager.GetProductCount(SOFTWARE_PRODUCTS.BACKDOOR).ToString();
+		if (ProductID == SOFTWARE_PRODUCTS.SPEED_POWERUP)
+		{
+			SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
+			return;
+		}
+		if (ProductID == SOFTWARE_PRODUCTS.KEY_POWERUP)
+		{
+			KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
+		}
 	}
 
 	private void softwareProductWasRemoved(SOFTWARE_PRODUCTS ProductID)

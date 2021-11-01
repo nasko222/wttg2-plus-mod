@@ -72,7 +72,6 @@ public class TimeKeeper : MonoBehaviour
 		{
 			this.gameMin = 0;
 			this.gameHour++;
-			this.halloween();
 		}
 		if (this.gameHour >= 16)
 		{
@@ -140,15 +139,6 @@ public class TimeKeeper : MonoBehaviour
 	{
 		GameManager.PauseManager.GamePaused -= this.playerHitPause;
 		GameManager.PauseManager.GameUnPaused -= this.playerHitUnPause;
-	}
-
-	private void halloween()
-	{
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.Volume = 0.42f;
-		jumpHit.Loop = false;
-		jumpHit.AudioClip = DownloadTIFiles.Owl;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
 	}
 
 	public CustomEvent<string> UpdateClockEvents = new CustomEvent<string>(3);
