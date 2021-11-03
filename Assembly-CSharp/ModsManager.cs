@@ -96,5 +96,5 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.3-beta3";
+	public static readonly string ModVersion = "1.3-beta4";
 }

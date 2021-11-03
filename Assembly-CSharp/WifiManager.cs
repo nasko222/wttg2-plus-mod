@@ -479,6 +479,7 @@ public class WifiManager : MonoBehaviour
 	{
 		WifiNetworkDefinition wifiNetworkDefinition = new WifiNetworkDefinition();
 		WifiNetworkDefinition wifiNetworkDefinition2 = new WifiNetworkDefinition();
+		WifiNetworkDefinition wifiNetworkDefinition3 = new WifiNetworkDefinition();
 		wifiNetworkDefinition.affectedByDosDrainer = false;
 		wifiNetworkDefinition.id = 101;
 		wifiNetworkDefinition.networkBSSID = "foobar";
@@ -523,8 +524,31 @@ public class WifiManager : MonoBehaviour
 		wifiNetworkDefinition2.networkStrength = 0;
 		wifiNetworkDefinition2.networkTrackProbability = 0.3f;
 		wifiNetworkDefinition2.networkTrackRate = 584f;
-		this.wifiHotSpots[0].myWifiNetworks.Add(wifiNetworkDefinition2);
+		wifiNetworkDefinition3.affectedByDosDrainer = false;
+		wifiNetworkDefinition3.id = 103;
+		wifiNetworkDefinition3.networkBSSID = "fierce";
+		wifiNetworkDefinition3.networkChannel = 12;
+		wifiNetworkDefinition3.networkCoolOffTime = 0f;
+		wifiNetworkDefinition3.networkInjectionAmount = 0;
+		wifiNetworkDefinition3.networkInjectionCoolOffTime = 0f;
+		wifiNetworkDefinition3.networkInjectionRandEnd = 0;
+		wifiNetworkDefinition3.networkInjectionRandStart = 0;
+		wifiNetworkDefinition3.networkIsOffline = false;
+		wifiNetworkDefinition3.networkMaxInjectionAmount = 0;
+		wifiNetworkDefinition3.networkName = "furrycon";
+		wifiNetworkDefinition3.networkOpenPort = 0;
+		wifiNetworkDefinition3.networkPassword = "fierce";
+		wifiNetworkDefinition3.networkPower = 69;
+		wifiNetworkDefinition3.networkRandPortEnd = 180;
+		wifiNetworkDefinition3.networkRandPortStart = 420;
+		wifiNetworkDefinition3.networkSecurity = WIFI_SECURITY.WEP;
+		wifiNetworkDefinition3.networkSignal = WIFI_SIGNAL_TYPE.W80211G;
+		wifiNetworkDefinition3.networkStrength = 3;
+		wifiNetworkDefinition3.networkTrackProbability = 0.62f;
+		wifiNetworkDefinition3.networkTrackRate = 621f;
 		this.wifiHotSpots[0].myWifiNetworks.Add(wifiNetworkDefinition);
+		this.wifiHotSpots[0].myWifiNetworks.Add(wifiNetworkDefinition2);
+		this.wifiHotSpots[1].myWifiNetworks.Add(wifiNetworkDefinition3);
 	}
 
 	public WifiNetworkDefinition defaultWifiNetwork;

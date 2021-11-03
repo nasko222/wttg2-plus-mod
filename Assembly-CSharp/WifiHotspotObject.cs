@@ -152,7 +152,14 @@ public class WifiHotspotObject : MonoBehaviour
 				}
 			}
 			this.myWifiNetworks[i].networkBSSID = wifiNetworkData.NetworkBSSID;
-			this.myWifiNetworks[i].networkPassword = wifiNetworkData.NetworkPassword;
+			if (this.myWifiNetworks[i].networkName == "furrycon")
+			{
+				this.myWifiNetworks[i].networkPassword = "fierce" + UnityEngine.Random.Range(10000, 99999).ToString();
+			}
+			else
+			{
+				this.myWifiNetworks[i].networkPassword = wifiNetworkData.NetworkPassword;
+			}
 			this.myWifiNetworks[i].networkOpenPort = wifiNetworkData.NetworkOpenPort;
 			this.myWifiNetworks[i].networkInjectionAmount = wifiNetworkData.NetworkInjectionAmount;
 			DataManager.Save<WifiNetworkData>(wifiNetworkData);
