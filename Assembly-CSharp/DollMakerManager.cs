@@ -491,6 +491,27 @@ public class DollMakerManager : MonoBehaviour
 		this.markerActive = true;
 	}
 
+	public void ThrowAllTenants()
+	{
+		for (int i = 0; i < GameManager.ManagerSlinger.TenantTrackManager.Tenants.Length; i++)
+		{
+			if (GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantUnit != 0)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantUnit.ToString(), string.Concat(new object[]
+				{
+					GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantName,
+					Environment.NewLine,
+					Environment.NewLine,
+					"Age: ",
+					GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantAge,
+					Environment.NewLine,
+					Environment.NewLine,
+					GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantNotes
+				}));
+			}
+		}
+	}
+
 	private const float DOLLMAKER_Y_OFFSET = 0.93429f;
 
 	[SerializeField]

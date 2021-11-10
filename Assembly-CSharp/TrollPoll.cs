@@ -6,11 +6,11 @@ public class TrollPoll
 {
 	public void BeginVote()
 	{
-		int num = UnityEngine.Random.Range(0, 16);
-		int num2 = UnityEngine.Random.Range(0, 16);
+		int num = UnityEngine.Random.Range(0, 15);
+		int num2 = UnityEngine.Random.Range(0, 15);
 		do
 		{
-			num2 = UnityEngine.Random.Range(0, 16);
+			num2 = UnityEngine.Random.Range(0, 15);
 		}
 		while (num == num2);
 		TrollPoll.firstTrollSound = (TrollPoll.TROLL_SOUNDS)num;
@@ -136,17 +136,8 @@ public class TrollPoll
 		case TrollPoll.TROLL_SOUNDS.RUNNING:
 			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.dreamRunningMusic;
 			break;
-		case TrollPoll.TROLL_SOUNDS.STAL:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.minecraftStalMusic;
-			break;
 		case TrollPoll.TROLL_SOUNDS.CHUNGUS:
 			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.bigChungusMusic;
-			break;
-		case TrollPoll.TROLL_SOUNDS.GNOME:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.gnomedLOL;
-			break;
-		case TrollPoll.TROLL_SOUNDS.RICKROLL:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
 			break;
 		case TrollPoll.TROLL_SOUNDS.BLUE:
 			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.blueMusic;
@@ -160,6 +151,12 @@ public class TrollPoll
 		case TrollPoll.TROLL_SOUNDS.THOMAS:
 			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.thomasDankEngine;
 			break;
+		case TrollPoll.TROLL_SOUNDS.ELEVATOR:
+			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.minecraftStalMusic;
+			break;
+		case TrollPoll.TROLL_SOUNDS.KAPPA:
+			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
+			break;
 		}
 		TrollPoll.trollAudio.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
 		TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
@@ -168,7 +165,7 @@ public class TrollPoll
 		TrollPoll.trollAudio.Volume = 0.333f;
 		TrollPoll.isTrollPlaying = true;
 		GameManager.AudioSlinger.PlaySound(TrollPoll.trollAudio);
-		GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 300f, new Action(this.stopPlayingSound), 0);
+		GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 110f, new Action(this.stopPlayingSound), 0);
 	}
 
 	private void stopPlayingSound()
@@ -201,13 +198,12 @@ public class TrollPoll
 		JEBAITED,
 		KEYBOARDCAT,
 		RUNNING,
-		STAL,
 		CHUNGUS,
-		GNOME,
-		RICKROLL,
 		BLUE,
 		COFFIN,
 		CRAB,
-		THOMAS
+		THOMAS,
+		ELEVATOR,
+		KAPPA
 	}
 }

@@ -774,6 +774,7 @@ public class TheCloud : MonoBehaviour
 
 	private void Awake()
 	{
+		this.GFschedule = false;
 		ZeroDayProductObject.isDiscountOn = false;
 		ShadowProductObject.isDiscountOn = false;
 		if (!TheCloud.vpnFIX)
@@ -935,11 +936,13 @@ public class TheCloud : MonoBehaviour
 		{
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
+			GameManager.TimeSlinger.FireTimer(2f, new Action(GameManager.TheCloud.ScheduleGoldenFreddy), 0);
 			return;
 		}
 		if (this.challenge == 2)
 		{
 			GameManager.TimeSlinger.FireTimer(2f, new Action(EnemyManager.DollMakerManager.ForceMarker), 0);
+			GameManager.TimeSlinger.FireTimer(2f, new Action(EnemyManager.DollMakerManager.ThrowAllTenants), 0);
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
@@ -961,8 +964,17 @@ public class TheCloud : MonoBehaviour
 				this.ForceKeyDiscover();
 				this.ForceKeyDiscover();
 				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
+				this.ForceKeyDiscover();
 			}
 			this.challenge++;
+			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
+			return;
+		}
+		if (this.challenge == 5)
+		{
+			this.challenge++;
+			AdamLOLHook.Ins.Spawn();
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
 		}
@@ -977,7 +989,56 @@ public class TheCloud : MonoBehaviour
 		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)Screen.width - widthOffset, heightOffset, 0f);
 		gameObject.SetActive(true);
 		gameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
+		jumpHit.AudioClip = DownloadTIFiles.ManipulatorSound;
+		jumpHit.Volume = 1f;
+		jumpHit.Loop = false;
+		GameManager.AudioSlinger.PlaySound(jumpHit);
 		GameManager.TimeSlinger.FireTimer(timeFor, delegate()
+		{
+			UnityEngine.Object.Destroy(gameObject);
+		}, 0);
+	}
+
+	public void ScheduleGoldenFreddy()
+	{
+		if (!this.GFschedule)
+		{
+			this.GFschedule = true;
+			GameManager.TimeSlinger.FireTimer(45f, new Action(this.ScheduleGoldenFreddy), 0);
+			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
+			jumpHit.AudioClip = DownloadTIFiles.GFPresence;
+			jumpHit.Volume = 0.8f;
+			jumpHit.Loop = false;
+			GameManager.AudioSlinger.PlaySound(jumpHit);
+			return;
+		}
+		if (StateManager.PlayerState != PLAYER_STATE.PEEPING)
+		{
+			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(150f, 350f), new Action(this.ScheduleGoldenFreddy), 0);
+			this.SpawnGF();
+			return;
+		}
+		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(5f, 20f), new Action(this.ScheduleGoldenFreddy), 0);
+	}
+
+	private void SpawnGF()
+	{
+		GameObject gameObject = new GameObject();
+		gameObject.AddComponent<Image>().sprite = Sprite.Create(DownloadTIFiles.Freddy, new Rect(0f, 0f, (float)DownloadTIFiles.Freddy.width, (float)DownloadTIFiles.Freddy.height), new Vector2(0.5f, 0.5f), 100f);
+		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
+		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)(Screen.width / 2), (float)(Screen.height / 2), 0f);
+		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.x);
+		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.y);
+		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.z);
+		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
+		gameObject.SetActive(true);
+		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
+		jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
+		jumpHit.Volume = 1f;
+		jumpHit.Loop = false;
+		GameManager.AudioSlinger.PlaySound(jumpHit);
+		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);
 		}, 0);

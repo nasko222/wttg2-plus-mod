@@ -140,7 +140,7 @@ public class skyBreakWEPBehavior : MonoBehaviour
 		if (ModsManager.SBGlitch)
 		{
 			flag = false;
-			setLine = "Auto WiFi Crack is enabled. Probe is disabled.";
+			setLine = "Warning! Probe Skip is enabled. Instead of probing, use crack <BSSID> <CH>";
 		}
 		if (array.Length < 4 && !ModsManager.SBGlitch)
 		{

@@ -147,7 +147,7 @@ public class DevTools : MonoBehaviour
 					{
 						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.dreamRunningMusic;
 					}
-					else if (Response.Additional.ToLower() == "stal")
+					else if (Response.Additional.ToLower() == "elevator")
 					{
 						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.minecraftStalMusic;
 					}
@@ -155,11 +155,7 @@ public class DevTools : MonoBehaviour
 					{
 						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.bigChungusMusic;
 					}
-					else if (Response.Additional.ToLower() == "gnome")
-					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.gnomedLOL;
-					}
-					else if (Response.Additional.ToLower() == "rickroll")
+					else if (Response.Additional.ToLower() == "kappa")
 					{
 						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
 					}
@@ -189,7 +185,7 @@ public class DevTools : MonoBehaviour
 					TrollPoll.trollAudio.LoopCount = 0;
 					TrollPoll.trollAudio.Volume = 0.333f;
 					TrollPoll.isTrollPlaying = true;
-					GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 300f, delegate()
+					GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 110f, delegate()
 					{
 						TrollPoll.isTrollPlaying = false;
 					}, 0);
@@ -252,6 +248,22 @@ public class DevTools : MonoBehaviour
 					else if (Response.Additional.ToLower() == "conga")
 					{
 						jumpHit.AudioClip = DownloadTIFiles.Conga;
+					}
+					else if (Response.Additional.ToLower() == "gnome")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.gnomedLOL;
+					}
+					else if (Response.Additional.ToLower() == "owl")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.Owl;
+					}
+					else if (Response.Additional.ToLower() == "startup")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.StartupSound;
+					}
+					else if (Response.Additional.ToLower() == "shutdown")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.ShutdownSound;
 					}
 					else
 					{
@@ -421,7 +433,6 @@ public class DevTools : MonoBehaviour
 				{
 					ModsManager.Nightmare = true;
 					GameManager.TheCloud.TenTwentyMode();
-					GameManager.TimeSlinger.FireTimer(22f, new Action(this.ScheduleGoldenFreddy), 0);
 				}
 				this.iAmLive = true;
 			}

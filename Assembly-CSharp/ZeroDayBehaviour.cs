@@ -108,7 +108,6 @@ public class ZeroDayBehaviour : WindowBehaviour
 	{
 		base.Start();
 		this.SpeedItem();
-		this.KeyItem();
 	}
 
 	protected new void OnDestroy()

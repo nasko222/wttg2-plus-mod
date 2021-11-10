@@ -134,7 +134,7 @@ public class skyBreakWPA2Behavior : MonoBehaviour
 		if (ModsManager.SBGlitch)
 		{
 			flag = false;
-			setLine = "Auto WiFi Crack is enabled. Inject is disabled.";
+			setLine = "Warning! Inject Skip is enabled. Instead of injecting, use crack <BSSID> <CH>";
 		}
 		if (array.Length < 4 && !ModsManager.SBGlitch)
 		{

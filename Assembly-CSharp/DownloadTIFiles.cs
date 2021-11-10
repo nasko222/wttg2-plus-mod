@@ -18,10 +18,10 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\vacation.wav", "vacation.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\keyboard.wav", "keyboard.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\jebaited.wav", "jebaited.wav");
-		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\stal.wav", "stal.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\elevator.wav", "elevator.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\chungus.wav", "chungus.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\gnome.wav", "gnome.wav");
-		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\rickroll.wav", "rickroll.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\kappa.wav", "kappa.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\hackermans.wav", "hackermans.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\party.wav", "party.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\blue.wav", "blue.wav");
@@ -41,6 +41,10 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\virus.wav", "virus.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\swamp.wav", "swamp.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\fbi.wav", "fbi.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\owl.wav", "owl.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\manipulator.wav", "manipulator.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\startup.wav", "startup.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\shutdown.wav", "shutdown.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\xor.wav", "xor.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\challenger.wav", "challenger.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\conga.wav", "conga.wav");
@@ -54,6 +58,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\enigma.wav", "enigma.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\theart.wav", "theart.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\cannabisworld.wav", "cannabisworld.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\foeoe.wav", "foeoe.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\nuclear.wav", "nuclear.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\rosesdestruction.wav", "rosesdestruction.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\freedom.wav", "freedom.wav");
@@ -187,7 +192,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayleaks");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayrant");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayscripts");
-		DownloadTIFiles.CheckBrowserAssetsCorrectSize(260492275L);
+		DownloadTIFiles.CheckBrowserAssetsCorrectSize(263184997L);
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
@@ -205,10 +210,10 @@ public static class DownloadTIFiles
 		DownloadTIFiles.vacationMusic = WavUtility.ToAudioClip("vacation.wav");
 		DownloadTIFiles.keyboardCatMusic = WavUtility.ToAudioClip("keyboard.wav");
 		DownloadTIFiles.jebaitedSong = WavUtility.ToAudioClip("jebaited.wav");
-		DownloadTIFiles.minecraftStalMusic = WavUtility.ToAudioClip("stal.wav");
+		DownloadTIFiles.minecraftStalMusic = WavUtility.ToAudioClip("elevator.wav");
 		DownloadTIFiles.bigChungusMusic = WavUtility.ToAudioClip("chungus.wav");
 		DownloadTIFiles.gnomedLOL = WavUtility.ToAudioClip("gnome.wav");
-		DownloadTIFiles.rickRolled = WavUtility.ToAudioClip("rickroll.wav");
+		DownloadTIFiles.rickRolled = WavUtility.ToAudioClip("kappa.wav");
 		DownloadTIFiles.hackermansAudio = WavUtility.ToAudioClip("hackermans.wav");
 		DownloadTIFiles.crazyparty = WavUtility.ToAudioClip("party.wav");
 		DownloadTIFiles.blueMusic = WavUtility.ToAudioClip("blue.wav");
@@ -239,12 +244,17 @@ public static class DownloadTIFiles
 		DownloadTIFiles.HailSatan = WavUtility.ToAudioClip("hailsatan.wav");
 		DownloadTIFiles.Illuminati = WavUtility.ToAudioClip("illuminati.wav");
 		DownloadTIFiles.Enigma = WavUtility.ToAudioClip("enigma.wav");
+		DownloadTIFiles._41818 = WavUtility.ToAudioClip("foeoe.wav");
 		DownloadTIFiles.TheArt = WavUtility.ToAudioClip("theart.wav");
 		DownloadTIFiles.Cannabisworld = WavUtility.ToAudioClip("cannabisworld.wav");
 		DownloadTIFiles.NuclearDream = WavUtility.ToAudioClip("nuclear.wav");
 		DownloadTIFiles.RosesDestruction = WavUtility.ToAudioClip("rosesdestruction.wav");
 		DownloadTIFiles.Freedom = WavUtility.ToAudioClip("freedom.wav");
 		DownloadTIFiles.Funky = WavUtility.ToAudioClip("funky.wav");
+		DownloadTIFiles.Owl = WavUtility.ToAudioClip("owl.wav");
+		DownloadTIFiles.ManipulatorSound = WavUtility.ToAudioClip("manipulator.wav");
+		DownloadTIFiles.ShutdownSound = WavUtility.ToAudioClip("shutdown.wav");
+		DownloadTIFiles.StartupSound = WavUtility.ToAudioClip("startup.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -413,4 +423,14 @@ public static class DownloadTIFiles
 	public static Sprite SpeedItem;
 
 	public static Sprite KeyItem;
+
+	public static AudioClip Owl;
+
+	public static AudioClip ManipulatorSound;
+
+	public static AudioClip _41818;
+
+	public static AudioClip ShutdownSound;
+
+	public static AudioClip StartupSound;
 }

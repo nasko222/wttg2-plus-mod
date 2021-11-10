@@ -20,11 +20,13 @@ public class WebsiteExtension
 			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCamsNN", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false);
 			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueenNN", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false);
 		}
+		this.AddSinglePageWebsite(Websites, "41818.txt", "41818", "41818", "They are coming... No one is safe anymore!", true, 2, true);
 		this.AddDoublePageWebsite(Websites, "blackhatpost.txt", "Black Hat Post", "BlackHatPost", "Hackers doxxing people for money.", "blackhatpostsubmit.txt", "submit.html", false, -1, false, false);
 		this.AddDoublePageWebsite(Websites, "bleedforme.txt", "Bleed for me", "BleedForMe", "Become a donator.", "bleedformeerror.txt", "error.html", false, -1, false, false);
 		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "Group of people who hunt down \"witches\"", true, 4, false);
 		this.AddDoublePageWebsite(Websites, "cannabisworld.txt", "CannabisWorld", "CannabisWorld", "The one and only place for high quality cannabis.", "cannabisworldorder.txt", "order.html", false, -1, true, false);
 		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "Shady doctors selling cheap surgery.", "cheapsurgerycontact.txt", "contact.html", false, -1, false, false);
+		this.AddDoublePageWebsite(Websites, "classyexchange.txt", "Classy Exchange", "ClassyExchange", "Businessman offering \"middleman\" service", "classyexchangeinfo.txt", "info.html", false, -1, false, false);
 		this.AddSinglePageWebsite(Websites, "darkbook.txt", "Darkbook", "Darkbook", "The facebook of the dark web.", false, -1, false);
 		this.AddSinglePageWebsite(Websites, "deathlog.txt", "Death Log", "Deathlog", "\"Person finds dead people\" blog post collection.", false, -1, false);
 		this.AddSinglePageWebsite(Websites, "decryptyou.txt", "Decrypt You", "DecryptYou", "Portal for ransom and hostage.", true, 4, false);

@@ -771,7 +771,7 @@ public class AnnBehaviour : WindowBehaviour
 		{
 			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.Cannabisworld;
-			definition.AudioFile.Loop = true;
+			definition.AudioFile.Loop = false;
 		}
 		if (pagename == "the art" && htmlFile == "index.html")
 		{
@@ -802,6 +802,12 @@ public class AnnBehaviour : WindowBehaviour
 			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
 			definition.AudioFile.AudioClip = DownloadTIFiles.Funky;
 			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "41818" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles._41818;
+			definition.AudioFile.Loop = false;
 		}
 	}
 
