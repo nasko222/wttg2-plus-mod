@@ -16,7 +16,7 @@ public class DOSDrainer
 	{
 		if (CurrencyManager.CurrentCurrency >= 10f && GameManager.ManagerSlinger.WifiManager.getCurrentWiFi() != null && GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer && (GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().networkStrength > 0 || ModsManager.SBGlitch))
 		{
-			CurrencyManager.RemoveCurrency(UnityEngine.Random.Range(0.75f, 1.25f));
+			CurrencyManager.RemoveCurrency(ModsManager.Nightmare ? UnityEngine.Random.Range(1f, 5f) : UnityEngine.Random.Range(0.75f, 1.25f));
 			GameManager.HackerManager.BlackHatSound2S();
 		}
 		this.consuming = false;

@@ -10,8 +10,7 @@ public class NotesBehaviour : WindowBehaviour
 		{
 			if (NoteToAdd == "20/20/20/20" && !ModsManager.Nightmare)
 			{
-				ModsManager.Nightmare = true;
-				GameManager.TheCloud.TenTwentyMode();
+				GameManager.TheCloud.attemptNightmare();
 			}
 			if (this.noteData != null)
 			{

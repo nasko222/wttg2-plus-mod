@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class VirusPoll
 {
@@ -63,16 +62,8 @@ public class VirusPoll
 			}
 			if (num == 1)
 			{
-				if (UnityEngine.Random.Range(0, 100) > 90 && !GameManager.HackerManager.theSwan.isActivatedBefore)
-				{
-					GameManager.HackerManager.theSwan.ActivateTheSwan();
-					this.myDOSTwitch.myTwitchIRC.SendMsg("Player's computer got infected by TH3SW4N!");
-				}
-				else
-				{
-					GameManager.HackerManager.virusManager.ForceVirus();
-					this.myDOSTwitch.myTwitchIRC.SendMsg("Player's computer got 1 virus installed!");
-				}
+				GameManager.HackerManager.virusManager.ForceVirus();
+				this.myDOSTwitch.myTwitchIRC.SendMsg("Player's computer got 1 virus installed!");
 			}
 			else
 			{

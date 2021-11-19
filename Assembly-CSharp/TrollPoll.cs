@@ -165,7 +165,7 @@ public class TrollPoll
 		TrollPoll.trollAudio.Volume = 0.333f;
 		TrollPoll.isTrollPlaying = true;
 		GameManager.AudioSlinger.PlaySound(TrollPoll.trollAudio);
-		GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 110f, new Action(this.stopPlayingSound), 0);
+		GameManager.TimeSlinger.FireTimer((DataManager.LeetMode || ModsManager.Nightmare) ? 30f : 110f, new Action(this.stopPlayingSound), 0);
 	}
 
 	private void stopPlayingSound()

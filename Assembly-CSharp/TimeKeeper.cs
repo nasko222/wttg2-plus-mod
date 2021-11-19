@@ -10,10 +10,18 @@ public class TimeKeeper : MonoBehaviour
 		if (this.gameHour > 11)
 		{
 			text += " AM";
+			if (this.gameMin == 0 && UnityEngine.Random.Range(0, 100) <= 5)
+			{
+				GameManager.HackerManager.theSwan.ActivateTheSwan();
+			}
 		}
 		else
 		{
 			text += " PM";
+			if (ModsManager.Nightmare && UnityEngine.Random.Range(0, 1000) < 5 && GameManager.ManagerSlinger.WifiManager != null && GameManager.ManagerSlinger.WifiManager.getCurrentWiFi() != null)
+			{
+				GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer = true;
+			}
 		}
 		return text;
 	}

@@ -16,7 +16,14 @@ public class DOSTwitch : MonoBehaviour
 		if (this.EarlyGamePollWindowActive && Time.time - this.EarlyGamePollTimeStamp >= this.EarlyGamePollTimeWindow)
 		{
 			this.EarlyGamePollWindowActive = false;
-			this.triggerEarlyGamePoll();
+			if (ModsManager.Nightmare)
+			{
+				this.triggerDiscountPoll();
+			}
+			else
+			{
+				this.triggerEarlyGamePoll();
+			}
 			this.generateVirusPollWindow();
 		}
 		if (this.discountPollWindowActive && Time.time - this.discountPollTimeStamp >= this.discountPollTimeWindow)
@@ -558,11 +565,11 @@ public class DOSTwitch : MonoBehaviour
 		}
 		if (array[0] == "tenant")
 		{
-			TenantDefinition tenantDefinition;
+			TenantData tenantDefinition;
 			do
 			{
-				int num = UnityEngine.Random.Range(0, GameManager.ManagerSlinger.TenantTrackManager.Tenants.Length);
-				tenantDefinition = GameManager.ManagerSlinger.TenantTrackManager.Tenants[num];
+				int num = UnityEngine.Random.Range(0, GameManager.ManagerSlinger.TenantTrackManager.TenantDatas.Length);
+				tenantDefinition = GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[num];
 			}
 			while (tenantDefinition.tenantUnit == 0);
 			GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);

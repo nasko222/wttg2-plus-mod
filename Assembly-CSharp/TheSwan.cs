@@ -114,8 +114,8 @@ public class TheSwan
 		this.SwanSFX.AudioClip = DownloadTIFiles.SwanReset;
 		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
-		CurrencyManager.AddCurrency(UnityEngine.Random.Range(3.82f, 9.15f));
-		if (UnityEngine.Random.Range(0, 100) < (DataManager.LeetMode ? 60 : 90) || ModsManager.EasyModeActive || TheSwan.extOn)
+		CurrencyManager.AddCurrency(UnityEngine.Random.Range(2.5f * this.SwanClock * this.SwanClock, 3.5f * this.SwanClock * this.SwanClock));
+		if (UnityEngine.Random.Range(0, 100) < ((DataManager.LeetMode || ModsManager.Nightmare) ? 60 : 90) || ModsManager.EasyModeActive || TheSwan.extOn)
 		{
 			TheSwan.extOn = false;
 			return;
@@ -140,7 +140,14 @@ public class TheSwan
 		GameManager.BehaviourManager.NotesBehaviour.ClearNotes();
 		double num = (double)CurrencyManager.CurrentCurrency;
 		float num2 = UnityEngine.Random.Range(0.5f, 0.9f);
-		CurrencyManager.RemoveCurrency((float)Math.Round(num * (double)num2, 3));
+		if (ModsManager.Nightmare)
+		{
+			CurrencyManager.RemoveCurrency(CurrencyManager.CurrentCurrency);
+		}
+		else
+		{
+			CurrencyManager.RemoveCurrency((float)Math.Round(num * (double)num2, 3));
+		}
 		if (ComputerPowerHook.Ins.PowerOn)
 		{
 			ComputerPowerHook.Ins.ShutDownComputerInsantly();

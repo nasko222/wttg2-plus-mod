@@ -226,6 +226,7 @@ public class TenantTrackManager : MonoBehaviour
 					{
 						TenantData item = new TenantData(this.clintData);
 						list.Add(item);
+						this.tenantList.Add(item);
 					}
 					else if (this.floors[j] != 1 || k != 2)
 					{
@@ -233,6 +234,10 @@ public class TenantTrackManager : MonoBehaviour
 						TenantDefinition tenantDefinition = this.avaibleTenants[num];
 						tenantDefinition.tenantUnit = this.floors[j] * 100 + (k + 1);
 						list.Add(new TenantData(tenantDefinition)
+						{
+							tenantIndex = num
+						});
+						this.tenantList.Add(new TenantData(tenantDefinition)
 						{
 							tenantIndex = num
 						});
@@ -250,8 +255,9 @@ public class TenantTrackManager : MonoBehaviour
 			{
 				this.tenantLookUp.Add(keyValuePair.Value[l].tenantUnit, keyValuePair.Value[l]);
 				this.tenants[keyValuePair.Value[l].tenantIndex].tenantUnit = keyValuePair.Value[l].tenantUnit;
-				if (keyValuePair.Value[l].tenantSex == 1 || keyValuePair.Value[l].canBeTagged)
+				if (keyValuePair.Value[l].tenantSex != 1)
 				{
+					bool canBeTagged = keyValuePair.Value[l].canBeTagged;
 				}
 			}
 			this.tenantData.Add(keyValuePair.Key, keyValuePair.Value);
@@ -322,6 +328,22 @@ public class TenantTrackManager : MonoBehaviour
 			return 65f;
 		}
 		return 35f;
+	}
+
+	public TenantDefinition[] TenantsAvailable
+	{
+		get
+		{
+			return this.avaibleTenants.ToArray();
+		}
+	}
+
+	public TenantData[] TenantDatas
+	{
+		get
+		{
+			return this.tenantList.ToArray();
+		}
 	}
 
 	[SerializeField]
@@ -432,4 +454,6 @@ public class TenantTrackManager : MonoBehaviour
 	private int myID;
 
 	private TenantTrackData myData;
+
+	public List<TenantData> tenantList;
 }

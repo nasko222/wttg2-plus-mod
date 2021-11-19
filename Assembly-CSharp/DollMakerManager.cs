@@ -153,6 +153,10 @@ public class DollMakerManager : MonoBehaviour
 	private void activateMarkerTime()
 	{
 		this.markerWindow = UnityEngine.Random.Range(this.myData.MarkerCoolTimeMin, this.myData.MarkerCoolTimeMax);
+		if (ModsManager.Nightmare)
+		{
+			this.markerWindow *= 0.5f;
+		}
 		this.markerTimeStamp = Time.time;
 		this.markerActive = true;
 	}
@@ -286,7 +290,7 @@ public class DollMakerManager : MonoBehaviour
 		this.myDollMakerData.ActiveUnitNumber = 0;
 		if (this.myDollMakerData.CurrentVictims < this.myData.TargetVictimCount || ModsManager.Nightmare)
 		{
-			float duration = UnityEngine.Random.Range(this.myData.MarkerResetTimeMin / 2f, this.myData.MarkerResetTimeMax / 2f);
+			float duration = UnityEngine.Random.Range(this.myData.MarkerResetTimeMin / (ModsManager.Nightmare ? 4f : 2f), this.myData.MarkerResetTimeMax / (ModsManager.Nightmare ? 4f : 2f));
 			GameManager.TimeSlinger.FireTimer(duration, new Action(this.rePlaceMarker), 0);
 			CurrencyManager.AddCurrency(GameManager.ManagerSlinger.TenantTrackManager.CheckDollMakerPrice(this.PriceUnit));
 		}
@@ -493,20 +497,20 @@ public class DollMakerManager : MonoBehaviour
 
 	public void ThrowAllTenants()
 	{
-		for (int i = 0; i < GameManager.ManagerSlinger.TenantTrackManager.Tenants.Length; i++)
+		for (int i = 0; i < GameManager.ManagerSlinger.TenantTrackManager.TenantDatas.Length; i++)
 		{
-			if (GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantUnit != 0)
+			if (GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[i].tenantUnit != 0)
 			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantUnit.ToString(), string.Concat(new object[]
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[i].tenantUnit.ToString(), string.Concat(new object[]
 				{
-					GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantName,
+					GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[i].tenantName,
 					Environment.NewLine,
 					Environment.NewLine,
 					"Age: ",
-					GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantAge,
+					GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[i].tenantAge,
 					Environment.NewLine,
 					Environment.NewLine,
-					GameManager.ManagerSlinger.TenantTrackManager.Tenants[i].tenantNotes
+					GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[i].tenantNotes
 				}));
 			}
 		}

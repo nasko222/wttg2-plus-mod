@@ -767,9 +767,16 @@ public class TheCloud : MonoBehaviour
 			this.myDOSTwitch = new DOSTwitch();
 			this.PrepTwitchIntegration(this.myDOSTwitch);
 			Debug.Log("Twitch integration is active");
-			return;
 		}
-		Debug.Log("DOSTwitch is disabled");
+		else
+		{
+			Debug.Log("DOSTwitch is disabled");
+		}
+		this.nightmarePossible = true;
+		GameManager.TimeSlinger.FireTimer(120f, delegate()
+		{
+			this.nightmarePossible = false;
+		}, 0);
 	}
 
 	private void Awake()
@@ -1044,6 +1051,15 @@ public class TheCloud : MonoBehaviour
 		}, 0);
 	}
 
+	public void attemptNightmare()
+	{
+		if (this.nightmarePossible)
+		{
+			ModsManager.Nightmare = true;
+			this.TenTwentyMode();
+		}
+	}
+
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);
 
 	private const string NOT_FOUND_URL = "localGame://NotFound/index.html";
@@ -1109,4 +1125,6 @@ public class TheCloud : MonoBehaviour
 	public static AudioClip VacationSound;
 
 	private static bool VacationFIX;
+
+	private bool nightmarePossible;
 }

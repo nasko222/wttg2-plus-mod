@@ -113,11 +113,11 @@ public class EarlyGamePoll
 
 	private void DropTenant()
 	{
-		TenantDefinition tenantDefinition;
+		TenantData tenantDefinition;
 		do
 		{
-			int num = UnityEngine.Random.Range(0, GameManager.ManagerSlinger.TenantTrackManager.Tenants.Length);
-			tenantDefinition = GameManager.ManagerSlinger.TenantTrackManager.Tenants[num];
+			int num = UnityEngine.Random.Range(0, GameManager.ManagerSlinger.TenantTrackManager.TenantDatas.Length);
+			tenantDefinition = GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[num];
 		}
 		while (tenantDefinition.tenantUnit == 0);
 		GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
