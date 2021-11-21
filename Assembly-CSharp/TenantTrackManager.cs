@@ -319,6 +319,10 @@ public class TenantTrackManager : MonoBehaviour
 
 	public float CheckDollMakerPrice(int UnitNumber)
 	{
+		if (ModsManager.Nightmare)
+		{
+			return 15f;
+		}
 		if (this.tenantLookUp[UnitNumber].tenantSex == 0 || this.tenantLookUp[UnitNumber].tenantAge < 18 || this.tenantLookUp[UnitNumber].tenantName == "Kylie Hogan")
 		{
 			return 135f;

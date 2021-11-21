@@ -185,7 +185,14 @@ public class CultManager : MonoBehaviour
 
 	private void generateNormalSpawnWindow()
 	{
-		this.normalSpawnFireWindow = UnityEngine.Random.Range(this.data.NormalSpawnFireWindowMin, this.data.NormalSpawnFireWindowMax);
+		if (ModsManager.Nightmare)
+		{
+			this.normalSpawnFireWindow = UnityEngine.Random.Range(60f, 180f);
+		}
+		else
+		{
+			this.normalSpawnFireWindow = UnityEngine.Random.Range(this.data.NormalSpawnFireWindowMin, this.data.NormalSpawnFireWindowMax);
+		}
 		this.normalSpawnTimeStamp = Time.time;
 		this.normalSpawnFireWindowActive = true;
 	}

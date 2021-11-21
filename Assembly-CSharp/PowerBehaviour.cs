@@ -102,7 +102,7 @@ public class PowerBehaviour : MonoBehaviour
 	private void generateFireWindow()
 	{
 		this.fireWindow = UnityEngine.Random.Range(this.fireWindowMin, this.fireWindowMax);
-		if (DataManager.LeetMode)
+		if (DataManager.LeetMode || ModsManager.Nightmare)
 		{
 			this.fireWindow *= 0.4f;
 		}

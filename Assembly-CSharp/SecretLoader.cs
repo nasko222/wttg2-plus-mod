@@ -53,10 +53,10 @@ public class SecretLoader : MonoBehaviour
 			{
 				base.StartCoroutine(this.loadWorld(this.secretWorldID));
 			}, 0);
-			if (DevTools.Ins != null)
+			if (DancingLoader.Ins != null)
 			{
-				UnityEngine.Object.Destroy(DevTools.Ins.gameObject);
-				DevTools.Ins = null;
+				UnityEngine.Object.Destroy(DancingLoader.Ins.gameObject);
+				DancingLoader.Ins = null;
 				return;
 			}
 		}

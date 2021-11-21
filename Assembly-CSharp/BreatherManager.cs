@@ -9,7 +9,7 @@ public class BreatherManager : MonoBehaviour
 	public void PlayerSpawnedToDeadDrop()
 	{
 		DataManager.LockSave = true;
-		if (this.firstProductWasPickedUp && this.threatsActive && EnemyManager.State == ENEMY_STATE.IDLE)
+		if ((this.firstProductWasPickedUp || ModsManager.Nightmare) && this.threatsActive && EnemyManager.State == ENEMY_STATE.IDLE)
 		{
 			bool flag;
 			if ((DevTools.Ins != null && DevTools.Ins.forceBreather) || ModsManager.Nightmare)

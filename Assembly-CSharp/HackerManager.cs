@@ -124,13 +124,9 @@ public class HackerManager : MonoBehaviour
 
 	public void RollHack()
 	{
-		if (!ModsManager.ForceHackingEnabled)
-		{
-			return;
-		}
 		if (UnityEngine.Random.Range(0f, 100f) <= 10f && !this.rollHackFroze)
 		{
-			if (!DataManager.LeetMode)
+			if (!DataManager.LeetMode || !ModsManager.Nightmare)
 			{
 				this.rollCount++;
 				if (this.rollCount >= 3)
@@ -141,7 +137,7 @@ public class HackerManager : MonoBehaviour
 			}
 			this.triggerHack();
 			this.rollHackFroze = true;
-			GameManager.TimeSlinger.FireTimer(180f, delegate()
+			GameManager.TimeSlinger.FireTimer(240f, delegate()
 			{
 				this.rollHackFroze = false;
 			}, 0);
@@ -166,6 +162,11 @@ public class HackerManager : MonoBehaviour
 
 	private void presentHackAni()
 	{
+		if (ModsManager.Nightmare)
+		{
+			this.godHack = true;
+			this.twitchGodHack = true;
+		}
 		CursorManager.Ins.SwitchToHackerCursor();
 		GameManager.AudioSlinger.MuteAudioLayer(AUDIO_LAYER.WEBSITE);
 		LookUp.DesktopUI.DesktopGraphicRaycaster.enabled = false;
@@ -259,7 +260,7 @@ public class HackerManager : MonoBehaviour
 
 	private void presentHacked()
 	{
-		if (this.twitchGodHack && DataManager.LeetMode)
+		if (this.twitchGodHack && (DataManager.LeetMode || ModsManager.Nightmare))
 		{
 			EnvironmentManager.PowerBehaviour.ForcePowerOff();
 			EnvironmentManager.PowerBehaviour.ResetPowerTripTime();
@@ -435,6 +436,10 @@ public class HackerManager : MonoBehaviour
 				if (DataManager.LeetMode)
 				{
 					num = 33.37f;
+				}
+				else if (ModsManager.Nightmare)
+				{
+					num = 19.87f;
 				}
 				else
 				{

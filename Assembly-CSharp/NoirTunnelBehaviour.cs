@@ -96,6 +96,84 @@ public class NoirTunnelBehaviour : WindowBehaviour
 
 	private void presentLocation()
 	{
+		if (ModsManager.EasyModeActive)
+		{
+			this.presentLocationEZ();
+			CultComputerJumper.Ins.AddLightsOffJump();
+			return;
+		}
+		if (!ModsManager.Nightmare)
+		{
+			GameManager.AudioSlinger.MuteAudioLayer(AUDIO_LAYER.WEBSITE);
+			LookUp.DesktopUI.DesktopGraphicRaycaster.enabled = false;
+			GameManager.AudioSlinger.PlaySound(this.showLocationSFX);
+			this.hackerOverlayCG.blocksRaycasts = true;
+			this.hackerOverlayCG.ignoreParentGroups = true;
+			computerController.Ins.SetMasterLock(true);
+			ComputerCameraManager.Ins.TriggerShowEndLocation();
+			GameManager.TimeSlinger.FireTimer(3.98f, delegate()
+			{
+				ComputerCameraManager.Ins.ClearPostFXs();
+				this.hackerOverlayCG.alpha = 1f;
+				GameManager.AudioSlinger.PlaySound(GameManager.HackerManager.HackingTypeSFX);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 1.5f);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 2.3f);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 2.9f);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 5.5f);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 6.1f);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 6.7f);
+				GameManager.AudioSlinger.PlaySoundWithCustomDelay(GameManager.HackerManager.HackingTypeSFX, 7.3f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(out this.termLine1, TERMINAL_LINE_TYPE.TYPE, "> ./NOIRTUNNEL", 0.2f, 0f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(out this.termLine2, TERMINAL_LINE_TYPE.TYPE, "  Loading NOIRTUNNEL v2.15", 0.2f, 0.2f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(out this.termLine3, TERMINAL_LINE_TYPE.TYPE, "  Locating...", 0.2f, 0.4f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 0.5f, 0.5f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Location Found!", 0.6f, 1.5f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 2.2f, 0.1f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Lat: 41.064282", 0.6f, 2.3f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Lon: -71.877133", 0.6f, 2.9f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 3.5f, 0.1f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 3.5f, 0.1f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Incoming Message...", 0.6f, 5.5f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  Hey it's Adam.", 0.6f, 6.1f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  You found the location! Excellent work!", 0.6f, 6.7f);
+				GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  Head there now by exiting the lobby.", 0.6f, 7.3f);
+			}, 0);
+			GameManager.TimeSlinger.FireTimer(12f, delegate()
+			{
+				computerController.Ins.SetMasterLock(false);
+			}, 0);
+			return;
+		}
+		this.masterKeyText.text = "GG :-)";
+		GameManager.TheCloud.ForceInsanityEnding();
+	}
+
+	protected new void Awake()
+	{
+		this.masterKeyText = LookUp.DesktopUI.NOIR_TUNNEL_MASTER_KEY_INPUT;
+		this.unlockButton = LookUp.DesktopUI.NOIR_TUNNEL_UNLOCK_BUTTON;
+		this.cost1 = LookUp.DesktopUI.NOIR_TUNNEL_COST1;
+		this.cost2 = LookUp.DesktopUI.NOIR_TUNNEL_COST2;
+		this.unlockButton.onClick.AddListener(new UnityAction(this.veirfyKey));
+		this.cost1.text = 250f.ToString();
+		this.cost2.text = this.cost1.text;
+		base.Awake();
+	}
+
+	protected new void OnDestroy()
+	{
+		this.unlockButton.onClick.RemoveListener(new UnityAction(this.veirfyKey));
+		base.OnDestroy();
+	}
+
+	private void ReturnLoanOf(int amount)
+	{
+		CurrencyManager.RemoveCurrency((float)amount);
+		DOSCoinPoll.moneyLoan = 0;
+	}
+
+	private void presentLocationEZ()
+	{
 		GameManager.AudioSlinger.MuteAudioLayer(AUDIO_LAYER.WEBSITE);
 		LookUp.DesktopUI.DesktopGraphicRaycaster.enabled = false;
 		GameManager.AudioSlinger.PlaySound(this.showLocationSFX);
@@ -121,43 +199,19 @@ public class NoirTunnelBehaviour : WindowBehaviour
 			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 0.5f, 0.5f);
 			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Location Found!", 0.6f, 1.5f);
 			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 2.2f, 0.1f);
-			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Lat: 41.064282", 0.6f, 2.3f);
-			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Lon: -71.877133", 0.6f, 2.9f);
+			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  X: 00101100", 0.6f, 2.3f);
+			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Z: 10110100", 0.6f, 2.9f);
 			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 3.5f, 0.1f);
 			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.HARD, string.Empty, 3.5f, 0.1f);
 			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, "  Incoming Message...", 0.6f, 5.5f);
-			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  Hey it's Adam.", 0.6f, 6.1f);
-			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  You found the location! Excellent work!", 0.6f, 6.7f);
-			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  Head there now by exiting the lobby.", 0.6f, 7.3f);
+			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  Easy mode huh?", 0.6f, 6.1f);
+			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  You don't get to see the ending!", 0.6f, 6.7f);
+			GameManager.HackerManager.HackingTerminal.TerminalHelper.AddLine(TERMINAL_LINE_TYPE.TYPE, ">  Now look to the left and say goodbye!", 0.6f, 7.3f);
 		}, 0);
 		GameManager.TimeSlinger.FireTimer(12f, delegate()
 		{
 			computerController.Ins.SetMasterLock(false);
 		}, 0);
-	}
-
-	protected new void Awake()
-	{
-		this.masterKeyText = LookUp.DesktopUI.NOIR_TUNNEL_MASTER_KEY_INPUT;
-		this.unlockButton = LookUp.DesktopUI.NOIR_TUNNEL_UNLOCK_BUTTON;
-		this.cost1 = LookUp.DesktopUI.NOIR_TUNNEL_COST1;
-		this.cost2 = LookUp.DesktopUI.NOIR_TUNNEL_COST2;
-		this.unlockButton.onClick.AddListener(new UnityAction(this.veirfyKey));
-		this.cost1.text = 250f.ToString();
-		this.cost2.text = this.cost1.text;
-		base.Awake();
-	}
-
-	protected new void OnDestroy()
-	{
-		this.unlockButton.onClick.RemoveListener(new UnityAction(this.veirfyKey));
-		base.OnDestroy();
-	}
-
-	private void ReturnLoanOf(int amount)
-	{
-		CurrencyManager.RemoveCurrency((float)amount);
-		DOSCoinPoll.moneyLoan = 0;
 	}
 
 	[SerializeField]

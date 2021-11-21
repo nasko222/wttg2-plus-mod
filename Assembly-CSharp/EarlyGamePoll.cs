@@ -113,24 +113,24 @@ public class EarlyGamePoll
 
 	private void DropTenant()
 	{
-		TenantData tenantDefinition;
+		TenantData tenantData;
 		do
 		{
 			int num = UnityEngine.Random.Range(0, GameManager.ManagerSlinger.TenantTrackManager.TenantDatas.Length);
-			tenantDefinition = GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[num];
+			tenantData = GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[num];
 		}
-		while (tenantDefinition.tenantUnit == 0);
+		while (tenantData.tenantUnit == 0);
 		GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(tenantDefinition.tenantUnit.ToString(), string.Concat(new object[]
+		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(tenantData.tenantUnit.ToString(), string.Concat(new object[]
 		{
-			tenantDefinition.tenantName,
+			tenantData.tenantName,
 			Environment.NewLine,
 			Environment.NewLine,
 			"Age: ",
-			tenantDefinition.tenantAge,
+			tenantData.tenantAge,
 			Environment.NewLine,
 			Environment.NewLine,
-			tenantDefinition.tenantNotes
+			tenantData.tenantNotes
 		}));
 	}
 

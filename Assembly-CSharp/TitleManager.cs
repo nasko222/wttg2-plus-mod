@@ -109,13 +109,13 @@ public class TitleManager : MonoBehaviour
 		gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject.transform.SetParent(transform2);
 		OptionsUtil.BuildOptionsButton("Twitch Integration:", "[MOD]TTVInt", 1, 50f, null, null);
-		OptionsUtil.BuildOptionsButton("Troll Poll:", "[MOD]TrolloPollo", 1, 100f, null, null);
+		OptionsUtil.BuildOptionsButton("Memes and Music:", "[MOD]TrolloPollo", 1, 100f, null, null);
 		OptionsUtil.BuildOptionsButton("DevTools:", "[MOD]DevTools", 1, 150f, null, null);
 		OptionsUtil.BuildOptionsButton("Easy Mode:", "[MOD]EasyMode", 0, 200f, null, null);
 		OptionsUtil.BuildOptionsButton2("Show God Spot:", "[MOD]GODSpot", 0, 50f, null, null);
-		OptionsUtil.BuildOptionsButton2("Force Hacks:", "[MOD]ForceHack", 0, 100f, null, null);
-		OptionsUtil.BuildOptionsButton2("Unlimited Stamina:", "[MOD]UnlimitedStamina", 0, 150f, null, null);
-		OptionsUtil.BuildOptionsButton2("Probe/Inject Skip:", "[MOD]SkybreakGlitch", 0, 200f, null, null);
+		OptionsUtil.BuildOptionsButton2("Unlimited Stamina:", "[MOD]UnlimitedStamina", 0, 100f, null, null);
+		OptionsUtil.BuildOptionsButton2("Probe/Inject Skip:", "[MOD]SkybreakGlitch", 0, 150f, null, null);
+		OptionsUtil.BuildOptionsButton2("No Swan Parameter:", "[MOD]AntiSwanParameters", 0, 200f, null, null);
 	}
 
 	private void ShowModMenu()
@@ -154,7 +154,7 @@ public class TitleManager : MonoBehaviour
 		GameObject gameObject2 = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("NuidtyTitle"));
 		gameObject2.name = "modmenu2";
 		gameObject2.transform.position = new Vector2(transform.position.x - num, transform.position.y - num2 - 50f);
-		gameObject2.GetComponent<TextMeshProUGUI>().text = "Troll Poll - " + ((PlayerPrefs.GetInt("[MOD]TrolloPollo") == 1) ? "ON" : "OFF");
+		gameObject2.GetComponent<TextMeshProUGUI>().text = "Memes and Music - " + ((PlayerPrefs.GetInt("[MOD]TrolloPollo") == 1) ? "ON" : "OFF");
 		gameObject2.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject2.transform.SetParent(transform3);
 		GameObject gameObject3 = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("NuidtyTitle"));
@@ -176,21 +176,21 @@ public class TitleManager : MonoBehaviour
 		gameObject5.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject5.transform.SetParent(transform3);
 		GameObject gameObject6 = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("NuidtyTitle"));
-		gameObject6.name = "modmenu6";
+		gameObject6.name = "modmenu7";
 		gameObject6.transform.position = new Vector2(transform.position.x - num, transform.position.y - num2 - 250f);
-		gameObject6.GetComponent<TextMeshProUGUI>().text = "Force Hacks - " + ((PlayerPrefs.GetInt("[MOD]ForceHack") == 1) ? "ON" : "OFF");
+		gameObject6.GetComponent<TextMeshProUGUI>().text = "Unlimited Stamina - " + ((PlayerPrefs.GetInt("[MOD]UnlimitedStamina") == 1) ? "ON" : "OFF");
 		gameObject6.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject6.transform.SetParent(transform3);
 		GameObject gameObject7 = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("NuidtyTitle"));
-		gameObject7.name = "modmenu7";
+		gameObject7.name = "modmenu8";
 		gameObject7.transform.position = new Vector2(transform.position.x - num, transform.position.y - num2 - 300f);
-		gameObject7.GetComponent<TextMeshProUGUI>().text = "Unlimited Stamina - " + ((PlayerPrefs.GetInt("[MOD]UnlimitedStamina") == 1) ? "ON" : "OFF");
+		gameObject7.GetComponent<TextMeshProUGUI>().text = "Probe/Inject Skip - " + ((PlayerPrefs.GetInt("[MOD]SkybreakGlitch") == 1) ? "ON" : "OFF");
 		gameObject7.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject7.transform.SetParent(transform3);
 		GameObject gameObject8 = UnityEngine.Object.Instantiate<GameObject>(GameObject.Find("NuidtyTitle"));
-		gameObject8.name = "modmenu8";
+		gameObject8.name = "modmenu6";
 		gameObject8.transform.position = new Vector2(transform.position.x - num, transform.position.y - num2 - 350f);
-		gameObject8.GetComponent<TextMeshProUGUI>().text = "Auto WiFi Crack - " + ((PlayerPrefs.GetInt("[MOD]SkybreakGlitch") == 1) ? "ON" : "OFF");
+		gameObject8.GetComponent<TextMeshProUGUI>().text = "No Swan Parameter - " + ((PlayerPrefs.GetInt("[MOD]AntiSwanParameters") == 1) ? "ON" : "OFF");
 		gameObject8.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject8.transform.SetParent(transform3);
 	}

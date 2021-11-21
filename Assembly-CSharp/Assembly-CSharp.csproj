@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4A8A769-50C6-49EE-BE6F-81F0AA55F457}</ProjectGuid>
+    <ProjectGuid>{600579F5-FE1E-454B-AB27-819925990CCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -286,6 +286,7 @@
     <Compile Include="CursorManager.cs" />
     <Compile Include="CustomEvent.2.cs" />
     <Compile Include="CustomEvent.cs" />
+    <Compile Include="DancingLoader.cs" />
     <Compile Include="DataContainer.cs" />
     <Compile Include="DataLookUp.cs" />
     <Compile Include="DataManager.cs" />

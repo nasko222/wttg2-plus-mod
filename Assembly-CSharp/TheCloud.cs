@@ -777,6 +777,10 @@ public class TheCloud : MonoBehaviour
 		{
 			this.nightmarePossible = false;
 		}, 0);
+		GameManager.TimeSlinger.FireTimer(5f, delegate()
+		{
+			new GameObject("DancingLoader").AddComponent<DancingLoader>();
+		}, 0);
 	}
 
 	private void Awake()
@@ -798,14 +802,6 @@ public class TheCloud : MonoBehaviour
 		else
 		{
 			Debug.Log("TheCloud - Show God Spot is OFF");
-		}
-		if (ModsManager.ForceHackingEnabled)
-		{
-			Debug.Log("TheCloud - Force Hacking is ON");
-		}
-		else
-		{
-			Debug.Log("TheCloud - Force Hacking is OFF");
 		}
 		if (ModsManager.UnlimitedStamina)
 		{
@@ -934,16 +930,19 @@ public class TheCloud : MonoBehaviour
 		GameManager.AudioSlinger.PlaySound(jumpHit);
 		if (this.challenge == 0)
 		{
-			GameManager.TimeSlinger.FireTimer(2f, new Action(GameManager.HackerManager.theSwan.ActivateTheSwan), 0);
+			for (int i = 0; i < 8; i++)
+			{
+				this.ForceKeyDiscover();
+			}
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
 		}
 		if (this.challenge == 1)
 		{
+			GameManager.TimeSlinger.FireTimer(3f, new Action(EnemyManager.CultManager.attemptSpawn), 0);
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
-			GameManager.TimeSlinger.FireTimer(2f, new Action(GameManager.TheCloud.ScheduleGoldenFreddy), 0);
 			return;
 		}
 		if (this.challenge == 2)
@@ -956,32 +955,22 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 3)
 		{
-			GameManager.TimeSlinger.FireTimer(3f, new Action(EnemyManager.CultManager.attemptSpawn), 0);
+			AdamLOLHook.Ins.Spawn();
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
 		}
 		if (this.challenge == 4)
 		{
-			if (!DataManager.LeetMode)
-			{
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-				this.ForceKeyDiscover();
-			}
+			GameManager.TimeSlinger.FireTimer(2f, new Action(GameManager.TheCloud.ScheduleGoldenFreddy), 0);
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
 		}
 		if (this.challenge == 5)
 		{
+			GameManager.TimeSlinger.FireTimer(2f, new Action(GameManager.HackerManager.theSwan.ActivateTheSwan), 0);
 			this.challenge++;
-			AdamLOLHook.Ins.Spawn();
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
 		}
@@ -1060,6 +1049,59 @@ public class TheCloud : MonoBehaviour
 		}
 	}
 
+	public void spawnNoir(Vector3 Pos, Vector3 Rot)
+	{
+		this.dancingNoir.transform.localPosition = Pos;
+		this.dancingNoir.transform.localRotation = Quaternion.Euler(Rot);
+		this.dancingNoirSpawned = true;
+	}
+
+	public void despawnNoir()
+	{
+		this.dancingNoir.transform.localPosition = Vector3.zero;
+		this.dancingNoir.transform.localRotation = Quaternion.Euler(Vector3.zero);
+		this.dancingNoirSpawned = false;
+	}
+
+	public void instantinateNoir(Vector3 Pos, Vector3 Rot)
+	{
+		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(this.dancingNoir);
+		gameObject.transform.localPosition = Pos;
+		gameObject.transform.localRotation = Quaternion.Euler(Rot);
+	}
+
+	public void ForceInsanityEnding()
+	{
+		this.despawnNoir();
+		for (int i = 0; i < 20; i++)
+		{
+			this.instantinateNoir(new Vector3(UnityEngine.Random.Range(-5f, 5f), 39.582f, UnityEngine.Random.Range(-5f, 5f)), new Vector3(0f, UnityEngine.Random.Range(0f, 360f), 0f));
+		}
+		DevTools.InsanityMode = true;
+		if (TrollPoll.isTrollPlaying)
+		{
+			GameManager.AudioSlinger.KillSound(TrollPoll.trollAudio);
+		}
+		else
+		{
+			TrollPoll.isTrollPlaying = true;
+		}
+		TrollPoll.trollAudio = LookUp.SoundLookUp.JumpHit1;
+		TrollPoll.trollAudio.AudioClip = DownloadTIFiles.crazyparty;
+		TrollPoll.trollAudio.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
+		TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
+		TrollPoll.trollAudio.Loop = true;
+		TrollPoll.trollAudio.LoopCount = 3600;
+		TrollPoll.trollAudio.Volume = 1f;
+		EnemyManager.State = ENEMY_STATE.CULT;
+		GameManager.TimeSlinger.FireTimer(30f, delegate()
+		{
+			CultComputerJumper.Ins.AddLightsOffJump();
+		}, 0);
+		GameManager.AudioSlinger.PlaySoundWithCustomDelay(TrollPoll.trollAudio, 0.4f);
+		EnvironmentManager.PowerBehaviour.ForcePowerOff();
+	}
+
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);
 
 	private const string NOT_FOUND_URL = "localGame://NotFound/index.html";
@@ -1127,4 +1169,8 @@ public class TheCloud : MonoBehaviour
 	private static bool VacationFIX;
 
 	private bool nightmarePossible;
+
+	public GameObject dancingNoir;
+
+	public bool dancingNoirSpawned;
 }

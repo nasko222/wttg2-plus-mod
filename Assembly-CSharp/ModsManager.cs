@@ -37,14 +37,6 @@ public static class ModsManager
 		{
 			ModsManager.ShowGodSpot = false;
 		}
-		if (PlayerPrefs.GetInt("[MOD]ForceHack", 1) == 1)
-		{
-			ModsManager.ForceHackingEnabled = true;
-		}
-		else
-		{
-			ModsManager.ForceHackingEnabled = false;
-		}
 		if (PlayerPrefs.GetInt("[MOD]UnlimitedStamina", 1) == 1)
 		{
 			ModsManager.UnlimitedStamina = true;
@@ -68,6 +60,14 @@ public static class ModsManager
 		else
 		{
 			ModsManager.Trolling = false;
+		}
+		if (PlayerPrefs.GetInt("[MOD]AntiSwanParameters", 1) == 1)
+		{
+			ModsManager.NoParameter = true;
+		}
+		else
+		{
+			ModsManager.NoParameter = false;
 		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
@@ -96,5 +96,7 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.3-beta6";
+	public static readonly string ModVersion = "1.3-beta7";
+
+	public static bool NoParameter;
 }

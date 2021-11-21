@@ -19,7 +19,13 @@ public class TrollPoll
 		this.myDOSTwitch.myTwitchIRC.SendMsg("Troll Poll");
 		if (!ModsManager.Trolling)
 		{
-			this.myDOSTwitch.myTwitchIRC.SendMsg("Troll Poll is disabled! Sadge");
+			this.myDOSTwitch.myTwitchIRC.SendMsg("Memes and Music are disabled by the player! Sadge");
+			this.myDOSTwitch.setPollInactive();
+			return;
+		}
+		if (ModsManager.Nightmare)
+		{
+			this.myDOSTwitch.myTwitchIRC.SendMsg("Troll Poll is disabled on nightmare mode! Sadge");
 			this.myDOSTwitch.setPollInactive();
 			return;
 		}

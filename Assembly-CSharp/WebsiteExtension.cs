@@ -22,7 +22,7 @@ public class WebsiteExtension
 		}
 		this.AddSinglePageWebsite(Websites, "41818.txt", "41818", "41818", "They are coming... No one is safe anymore!", true, 2, true);
 		this.AddDoublePageWebsite(Websites, "blackhatpost.txt", "Black Hat Post", "BlackHatPost", "Hackers doxxing people for money.", "blackhatpostsubmit.txt", "submit.html", false, -1, false, false);
-		this.AddDoublePageWebsite(Websites, "bleedforme.txt", "Bleed for me", "BleedForMe", "Become a donator.", "bleedformeerror.txt", "error.html", false, -1, false, false);
+		this.AddDoublePageWebsite(Websites, "bleedforme.txt", "Bleed For Me", "BleedForMe", "Become a donator.", "bleedformeerror.txt", "error.html", false, -1, false, false);
 		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "Group of people who hunt down \"witches\"", true, 4, false);
 		this.AddDoublePageWebsite(Websites, "cannabisworld.txt", "CannabisWorld", "CannabisWorld", "The one and only place for high quality cannabis.", "cannabisworldorder.txt", "order.html", false, -1, true, false);
 		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "Shady doctors selling cheap surgery.", "cheapsurgerycontact.txt", "contact.html", false, -1, false, false);

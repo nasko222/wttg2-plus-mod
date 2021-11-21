@@ -8,9 +8,10 @@ public class NotesBehaviour : WindowBehaviour
 	{
 		if (NoteToAdd != string.Empty)
 		{
-			if (NoteToAdd == "20/20/20/20" && !ModsManager.Nightmare)
+			if (NoteToAdd == "20/20/20/20" && !ModsManager.Nightmare && !ModsManager.EasyModeActive && !DataManager.LeetMode)
 			{
 				GameManager.TheCloud.attemptNightmare();
+				this.ClearNotes();
 			}
 			if (this.noteData != null)
 			{
