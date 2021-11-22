@@ -38,6 +38,9 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\gfscream.wav", "gfscream.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\mlg.wav", "mlg.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\bblaugh.wav", "bblaugh.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\dogdoin.wav", "dogdoin.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\bruh.wav", "bruh.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\xfiles.wav", "xfiles.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\virus.wav", "virus.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\swamp.wav", "swamp.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\fbi.wav", "fbi.wav");
@@ -63,6 +66,12 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\rosesdestruction.wav", "rosesdestruction.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\freedom.wav", "freedom.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\funky.wav", "funky.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\beware.wav", "beware.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\dispatch.wav", "dispatch.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\cool.wav", "cool.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\beans.wav", "beans.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\clown.wav", "clown.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\whisper.wav", "whisper.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\freddy.png", "freddy.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", "remoteVPNlvl2.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "remoteVPNlvl3.png");
@@ -192,7 +201,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayleaks");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayrant");
 		DownloadTIFiles.CheckSourceCodeExistance("zerodayscripts");
-		DownloadTIFiles.CheckBrowserAssetsCorrectSize(263184997L);
+		DownloadTIFiles.CheckBrowserAssetsCorrectSize(280756713L);
 		DownloadTIFiles.Freddy = DownloadTIFiles.LoadPNG("WTTG2_Data\\Resources\\custom_tex\\freddy.png");
 		DownloadTIFiles.RemoteVPNLevel2 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
@@ -233,6 +242,9 @@ public static class DownloadTIFiles
 		DownloadTIFiles.YourComputerHasVirus = WavUtility.ToAudioClip("virus.wav");
 		DownloadTIFiles.WhatAreUDoingInMySwamp = WavUtility.ToAudioClip("swamp.wav");
 		DownloadTIFiles.FBIOpenUp = WavUtility.ToAudioClip("fbi.wav");
+		DownloadTIFiles.Bruh = WavUtility.ToAudioClip("bruh.wav");
+		DownloadTIFiles.DogDoin = WavUtility.ToAudioClip("dogdoin.wav");
+		DownloadTIFiles.IlluminatiTroll = WavUtility.ToAudioClip("xfiles.wav");
 		DownloadTIFiles.XOR = WavUtility.ToAudioClip("xor.wav");
 		DownloadTIFiles.Challenger = WavUtility.ToAudioClip("challenger.wav");
 		DownloadTIFiles.Conga = WavUtility.ToAudioClip("conga.wav");
@@ -255,6 +267,12 @@ public static class DownloadTIFiles
 		DownloadTIFiles.ManipulatorSound = WavUtility.ToAudioClip("manipulator.wav");
 		DownloadTIFiles.ShutdownSound = WavUtility.ToAudioClip("shutdown.wav");
 		DownloadTIFiles.StartupSound = WavUtility.ToAudioClip("startup.wav");
+		DownloadTIFiles.DispatchBeware = WavUtility.ToAudioClip("beware.wav");
+		DownloadTIFiles.DispatchMain = WavUtility.ToAudioClip("dispatch.wav");
+		DownloadTIFiles.BeansAudio = WavUtility.ToAudioClip("beans.wav");
+		DownloadTIFiles.CoolMusic = WavUtility.ToAudioClip("cool.wav");
+		DownloadTIFiles.ClownHAHAHA = WavUtility.ToAudioClip("clown.wav");
+		DownloadTIFiles.EvilWhisper = WavUtility.ToAudioClip("whisper.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -294,6 +312,11 @@ public static class DownloadTIFiles
 
 	private static void CheckBrowserAssetsCorrectSize(long theSize)
 	{
+		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets"))
+		{
+			Debug.Log("FATAL ERROR: Browser assets doesn't exist");
+			Application.Quit();
+		}
 		if (new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length != theSize)
 		{
 			Debug.Log("FATAL ERROR: Browser assets has the incorrect size!");
@@ -433,4 +456,22 @@ public static class DownloadTIFiles
 	public static AudioClip ShutdownSound;
 
 	public static AudioClip StartupSound;
+
+	public static AudioClip DispatchBeware;
+
+	public static AudioClip DispatchMain;
+
+	public static AudioClip BeansAudio;
+
+	public static AudioClip CoolMusic;
+
+	public static AudioClip ClownHAHAHA;
+
+	public static AudioClip EvilWhisper;
+
+	public static AudioClip Bruh;
+
+	public static AudioClip DogDoin;
+
+	public static AudioClip IlluminatiTroll;
 }

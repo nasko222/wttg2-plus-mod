@@ -124,6 +124,10 @@ public class WorldManager : MonoBehaviour
 	private void Update()
 	{
 		this.checkPlayerLocation();
+		if (DollMakerManager.Lucassed && (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY1 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY3 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY5 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY6 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY10))
+		{
+			EnemyManager.HitManManager.LucassedJump();
+		}
 	}
 
 	[SerializeField]

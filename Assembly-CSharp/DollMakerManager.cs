@@ -165,65 +165,65 @@ public class DollMakerManager : MonoBehaviour
 	{
 		StateManager.PlayerLocationChangeEvents.Event -= this.triggerMarkerTimesUp;
 		StateManager.PlayerStateChangeEvents.Event -= this.triggerMarkerTimesUp;
-		if ((EnemyManager.State == ENEMY_STATE.IDLE && EnvironmentManager.PowerState == POWER_STATE.ON) || (EnemyManager.State == ENEMY_STATE.DOLL_MAKER && EnvironmentManager.PowerState == POWER_STATE.ON))
-		{
-			if (StateManager.PlayerState != PLAYER_STATE.BUSY)
-			{
-				if (StateManager.PlayerLocation != PLAYER_LOCATION.UNKNOWN)
-				{
-					EnemyManager.State = ENEMY_STATE.DOLL_MAKER;
-					if (GameManager.ManagerSlinger.TenantTrackManager.CheckIfFemaleTenant(this.activeUnitNumber))
-					{
-						this.nextMarkerCheck();
-					}
-					else
-					{
-						EnvironmentManager.PowerBehaviour.LockedOut = true;
-						DataManager.LockSave = true;
-						DataManager.ClearGameData();
-						if (StateManager.PlayerState == PLAYER_STATE.DESK || StateManager.PlayerState == PLAYER_STATE.COMPUTER)
-						{
-							if (StateManager.PlayerState == PLAYER_STATE.COMPUTER)
-							{
-								this.dollMakerBehaviour.SpawnBehindDesk();
-								computerController.Ins.LeaveEvents.Event += this.triggerComputerJump;
-							}
-							else
-							{
-								GameManager.InteractionManager.LockInteraction();
-								this.dollMakerBehaviour.SpawnBehindDesk();
-								this.triggerComputerJump();
-								DollMakerDeskJumper.Ins.TriggerDeskJump();
-							}
-						}
-						else if (StateManager.PlayerLocation != PLAYER_LOCATION.DEAD_DROP && StateManager.PlayerLocation != PLAYER_LOCATION.DEAD_DROP_ROOM)
-						{
-							this.dollMakerBehaviour.TriggerAnim("triggerUniJumpIdle");
-							this.dollMakerBehaviour.NotInMeshEvents.Event += this.triggerBehindPlayerJump;
-							this.dollMakerBehaviour.InMeshEvents.Event += this.reRollBehindPlayerJump;
-							this.dollMakerBehaviour.AttemptSpawnBehindPlayer(roamController.Ins.transform, 0.93429f);
-						}
-						else
-						{
-							StateManager.PlayerLocationChangeEvents.Event += this.triggerMarkerTimesUp;
-						}
-					}
-				}
-				else
-				{
-					StateManager.PlayerLocationChangeEvents.Event += this.triggerMarkerTimesUp;
-				}
-			}
-			else
-			{
-				StateManager.PlayerStateChangeEvents.Event += this.triggerMarkerTimesUp;
-			}
-		}
-		else
+		if ((EnemyManager.State != ENEMY_STATE.IDLE || EnvironmentManager.PowerState != POWER_STATE.ON) && (EnemyManager.State != ENEMY_STATE.DOLL_MAKER || EnvironmentManager.PowerState != POWER_STATE.ON))
 		{
 			this.markerWindow = 60f;
 			this.markerTimeStamp = Time.time;
 			this.markerActive = true;
+			return;
+		}
+		if (StateManager.PlayerState == PLAYER_STATE.BUSY)
+		{
+			StateManager.PlayerStateChangeEvents.Event += this.triggerMarkerTimesUp;
+			return;
+		}
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.UNKNOWN)
+		{
+			StateManager.PlayerLocationChangeEvents.Event += this.triggerMarkerTimesUp;
+			return;
+		}
+		EnemyManager.State = ENEMY_STATE.DOLL_MAKER;
+		if (GameManager.ManagerSlinger.TenantTrackManager.CheckIfFemaleTenant(this.activeUnitNumber))
+		{
+			this.nextMarkerCheck();
+			return;
+		}
+		if (GameManager.ManagerSlinger.TenantTrackManager.CheckLucas(this.activeUnitNumber))
+		{
+			this.myDollMakerData.IsSatisfied = true;
+			EnemyManager.State = ENEMY_STATE.IDLE;
+			DollMakerManager.Lucassed = true;
+			return;
+		}
+		EnvironmentManager.PowerBehaviour.LockedOut = true;
+		DataManager.LockSave = true;
+		DataManager.ClearGameData();
+		if (StateManager.PlayerState == PLAYER_STATE.DESK || StateManager.PlayerState == PLAYER_STATE.COMPUTER)
+		{
+			if (StateManager.PlayerState == PLAYER_STATE.COMPUTER)
+			{
+				this.dollMakerBehaviour.SpawnBehindDesk();
+				computerController.Ins.LeaveEvents.Event += this.triggerComputerJump;
+				return;
+			}
+			GameManager.InteractionManager.LockInteraction();
+			this.dollMakerBehaviour.SpawnBehindDesk();
+			this.triggerComputerJump();
+			DollMakerDeskJumper.Ins.TriggerDeskJump();
+			return;
+		}
+		else
+		{
+			if (StateManager.PlayerLocation != PLAYER_LOCATION.DEAD_DROP && StateManager.PlayerLocation != PLAYER_LOCATION.DEAD_DROP_ROOM)
+			{
+				this.dollMakerBehaviour.TriggerAnim("triggerUniJumpIdle");
+				this.dollMakerBehaviour.NotInMeshEvents.Event += this.triggerBehindPlayerJump;
+				this.dollMakerBehaviour.InMeshEvents.Event += this.reRollBehindPlayerJump;
+				this.dollMakerBehaviour.AttemptSpawnBehindPlayer(roamController.Ins.transform, 0.93429f);
+				return;
+			}
+			StateManager.PlayerLocationChangeEvents.Event += this.triggerMarkerTimesUp;
+			return;
 		}
 	}
 
@@ -578,4 +578,6 @@ public class DollMakerManager : MonoBehaviour
 	private int PriceUnit;
 
 	private bool forced;
+
+	public static bool Lucassed;
 }

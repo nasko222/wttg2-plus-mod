@@ -263,6 +263,18 @@ public class DevTools : MonoBehaviour
 					{
 						jumpHit.AudioClip = DownloadTIFiles.ShutdownSound;
 					}
+					else if (Response.Additional.ToLower() == "bruh")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.Bruh;
+					}
+					else if (Response.Additional.ToLower() == "dogdoin")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.DogDoin;
+					}
+					else if (Response.Additional.ToLower() == "illuminati")
+					{
+						jumpHit.AudioClip = DownloadTIFiles.IlluminatiTroll;
+					}
 					else
 					{
 						jumpHit.AudioClip = DownloadTIFiles.MLGAirhorn;

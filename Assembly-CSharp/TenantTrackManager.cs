@@ -350,6 +350,11 @@ public class TenantTrackManager : MonoBehaviour
 		}
 	}
 
+	public bool CheckLucas(int UnitNumber)
+	{
+		return UnitNumber != 0 && this.tenantLookUp[UnitNumber].tenantName == "Lucas Holmes";
+	}
+
 	[SerializeField]
 	private Image systemLockedImage;
 

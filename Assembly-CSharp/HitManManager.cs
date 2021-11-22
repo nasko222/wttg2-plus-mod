@@ -427,6 +427,13 @@ public class HitManManager : MonoBehaviour
 		}
 	}
 
+	public void LucassedJump()
+	{
+		EnemyManager.State = ENEMY_STATE.HITMAN;
+		LookUp.Doors.MainDoor.DoorOpenEvent.AddListener(new UnityAction(this.mainDoorOutsideJump.Stage));
+		LookUp.Doors.MainDoor.DoorWasOpenedEvent.AddListener(new UnityAction(this.mainDoorOutsideJump.Execute));
+	}
+
 	[SerializeField]
 	private HitmanDataDefinition data;
 

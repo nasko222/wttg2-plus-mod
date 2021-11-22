@@ -901,6 +901,7 @@ public class TheCloud : MonoBehaviour
 		RemoteVPNObject.ObjectBuilt = false;
 		RemoteVPNObject.RemoteVPNLevel = 1;
 		DevTools.InsanityMode = false;
+		DollMakerManager.Lucassed = false;
 		ModsManager.Nightmare = false;
 		Debug.Log("TheCloud is disabled.");
 	}
@@ -1044,6 +1045,10 @@ public class TheCloud : MonoBehaviour
 	{
 		if (this.nightmarePossible)
 		{
+			if (DataManager.LeetMode)
+			{
+				return;
+			}
 			ModsManager.Nightmare = true;
 			this.TenTwentyMode();
 		}

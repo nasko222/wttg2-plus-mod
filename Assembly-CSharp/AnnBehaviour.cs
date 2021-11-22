@@ -809,6 +809,42 @@ public class AnnBehaviour : WindowBehaviour
 			definition.AudioFile.AudioClip = DownloadTIFiles._41818;
 			definition.AudioFile.Loop = false;
 		}
+		if (pagename == "dispatch" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.DispatchMain;
+			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "dispatch" && htmlFile == "beware.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.DispatchBeware;
+			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "doge" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.CoolMusic;
+			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "hermit's blog" && htmlFile == "warning.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.EvilWhisper;
+			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "mysterious playground" && htmlFile == "clown.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.ClownHAHAHA;
+			definition.AudioFile.Loop = true;
+		}
+		if (pagename == "beans" && htmlFile == "index.html")
+		{
+			definition.AudioFile = LookUp.SoundLookUp.vacationRinging;
+			definition.AudioFile.AudioClip = DownloadTIFiles.BeansAudio;
+			definition.AudioFile.Loop = true;
+		}
 	}
 
 	public int BOOKMARK_TAB_START_POOL_COUNT = 10;

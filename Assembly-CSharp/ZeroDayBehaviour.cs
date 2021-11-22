@@ -131,6 +131,7 @@ public class ZeroDayBehaviour : WindowBehaviour
 		if (ModsManager.EasyModeActive)
 		{
 			zeroDayProductDefinition.productPrice = 30f;
+			this.myProducts.Add(zeroDayProductDefinition);
 			return;
 		}
 		if (ModsManager.DOSTwitchActive)
@@ -158,7 +159,13 @@ public class ZeroDayBehaviour : WindowBehaviour
 		if (ModsManager.EasyModeActive)
 		{
 			zeroDayProductDefinition.productPrice = 80f;
+			this.myProducts.Add(zeroDayProductDefinition);
 			return;
+		}
+		if (ModsManager.DOSTwitchActive)
+		{
+			zeroDayProductDefinition.productRequiresOtherProduct = true;
+			zeroDayProductDefinition.productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[3];
 		}
 		zeroDayProductDefinition.productPrice = 145f;
 		this.myProducts.Add(zeroDayProductDefinition);

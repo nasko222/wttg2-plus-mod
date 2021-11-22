@@ -101,6 +101,10 @@ public class skyBreakWEPBehavior : MonoBehaviour
 				{
 					num2 *= 0.7f;
 				}
+				else if (ModsManager.Nightmare)
+				{
+					num2 *= 0.6f;
+				}
 				int num3 = (int)num2;
 				int num4 = Mathf.RoundToInt(secureNetworks[i].networkTrackProbability * 100f);
 				string setLine2 = string.Concat(new string[]
