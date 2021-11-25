@@ -6,7 +6,7 @@ public class SecretManager : MonoBehaviour
 {
 	public void HypeTextEnd()
 	{
-		if (DevTools.Ins == null)
+		if (DancingLoader.Ins == null)
 		{
 			this.currentHypeAni.DORewind();
 			this.currentHypeAni.gameObject.SetActive(false);
@@ -17,7 +17,7 @@ public class SecretManager : MonoBehaviour
 
 	private void rollHypeText()
 	{
-		if (DevTools.Ins == null)
+		if (DancingLoader.Ins == null)
 		{
 			int num = UnityEngine.Random.Range(0, this.HypeAnis.Length);
 			this.currentHypeAni = this.HypeAnis[num];
@@ -38,7 +38,7 @@ public class SecretManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (DevTools.Ins == null)
+		if (DancingLoader.Ins == null)
 		{
 			GameManager.PauseManager.GamePaused += this.gameWasPaused;
 			GameManager.PauseManager.GameUnPaused += this.gameWasUnPaused;
@@ -47,7 +47,7 @@ public class SecretManager : MonoBehaviour
 
 	private void Start()
 	{
-		if (SecretController.Ins != null && DevTools.Ins == null)
+		if (SecretController.Ins != null && DancingLoader.Ins == null)
 		{
 			GameManager.TimeSlinger.FireTimer(0.5f, delegate()
 			{

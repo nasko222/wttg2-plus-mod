@@ -11,7 +11,7 @@ public class NotesBehaviour : WindowBehaviour
 			if (NoteToAdd == "20/20/20/20" && !ModsManager.Nightmare && !ModsManager.EasyModeActive && !DataManager.LeetMode)
 			{
 				GameManager.TheCloud.attemptNightmare();
-				this.ClearNotes();
+				return;
 			}
 			if (this.noteData != null)
 			{

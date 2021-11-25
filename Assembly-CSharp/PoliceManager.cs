@@ -245,7 +245,14 @@ public class PoliceManager : MonoBehaviour
 		}
 		else if (ModsManager.Nightmare)
 		{
-			this.triggerTimeWindow *= 0.6f;
+			if (this.triggerTimeWindow > 350f)
+			{
+				this.triggerTimeWindow = 350f;
+			}
+			else
+			{
+				this.triggerTimeWindow *= 0.7f;
+			}
 		}
 		this.triggerTimeStamp = Time.time;
 		this.triggerActive = true;

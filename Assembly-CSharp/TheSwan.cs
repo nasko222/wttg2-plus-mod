@@ -17,6 +17,10 @@ public class TheSwan
 		this.SwanClock = (ModsManager.Nightmare ? 0.5f : 1.5f);
 		GameManager.TimeSlinger.FireTimer(18f, new Action(this.StartCountdown), 0);
 		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: 4 8 15 16 23 42");
+		if (ModsManager.NoParameter)
+		{
+			return;
+		}
 		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: SW4N");
 		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: DH4RMA");
 		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: H4TCH");
