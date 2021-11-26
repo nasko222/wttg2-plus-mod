@@ -35,6 +35,11 @@ public class LOLPYDiscManager : MonoBehaviour
 		if (productID == HARDWARE_PRODUCTS.FLOPPY_DISK)
 		{
 			this.spawnLOLPYDisc();
+			return;
+		}
+		if (productID == HARDWARE_PRODUCTS.SULPHUR)
+		{
+			SulphurInventory.AddSulphur(1);
 		}
 	}
 

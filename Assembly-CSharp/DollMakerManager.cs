@@ -497,6 +497,11 @@ public class DollMakerManager : MonoBehaviour
 
 	public void ThrowAllTenants()
 	{
+		if (ModsManager.Nightmare)
+		{
+			GameManager.ManagerSlinger.TenantTrackManager.UnLockSystem();
+			return;
+		}
 		for (int i = 0; i < GameManager.ManagerSlinger.TenantTrackManager.TenantDatas.Length; i++)
 		{
 			if (GameManager.ManagerSlinger.TenantTrackManager.TenantDatas[i].tenantUnit != 0)

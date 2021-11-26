@@ -203,6 +203,11 @@ public class PowerBehaviour : MonoBehaviour
 		this.ResetPowerTripTime();
 	}
 
+	public void ForceBombMakerPowerOff()
+	{
+		this.powerOff(false);
+	}
+
 	public bool LockedOut;
 
 	public CustomEvent PowerOffEvent = new CustomEvent(2);

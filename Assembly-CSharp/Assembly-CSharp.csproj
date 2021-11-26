@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6000D54E-E1AE-4761-8620-537DECAFB801}</ProjectGuid>
+    <ProjectGuid>{2CC279FF-9F84-4166-B58E-B081698E13DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -152,6 +152,7 @@
     <Compile Include="BlueWhisperBehaviour.cs" />
     <Compile Include="BlueWhisperData.cs" />
     <Compile Include="BlueWhisperManager.cs" />
+    <Compile Include="BombMakerManager.cs" />
     <Compile Include="BookmarkData.cs" />
     <Compile Include="BookMarksData.cs" />
     <Compile Include="BookmarkTABObject.cs" />
@@ -666,6 +667,7 @@
     <Compile Include="SteamStatsAndAchievements.cs" />
     <Compile Include="STEAM_ACHIEVEMENT.cs" />
     <Compile Include="StickySurface.cs" />
+    <Compile Include="SulphurInventory.cs" />
     <Compile Include="SurfaceFootStepSFXDefinition.cs" />
     <Compile Include="SurfaceTypeObject.cs" />
     <Compile Include="SURFACE_TYPE.cs" />

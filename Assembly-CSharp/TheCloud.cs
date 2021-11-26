@@ -781,6 +781,7 @@ public class TheCloud : MonoBehaviour
 		{
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
+		this.bombMaker = new BombMakerManager();
 	}
 
 	private void Awake()
@@ -1178,4 +1179,6 @@ public class TheCloud : MonoBehaviour
 	public GameObject dancingNoir;
 
 	public bool dancingNoirSpawned;
+
+	public BombMakerManager bombMaker;
 }

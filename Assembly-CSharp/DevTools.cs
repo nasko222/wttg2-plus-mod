@@ -437,6 +437,14 @@ public class DevTools : MonoBehaviour
 				}
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "BombMaker")
+			{
+				if (GameManager.TheCloud != null && GameManager.TheCloud.bombMaker != null)
+				{
+					GameManager.TheCloud.bombMaker.CheckSulphurInventory();
+				}
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "casual")
 			{
 				if (EnemyManager.BreatherManager != null && EnemyManager.CultManager != null && EnemyManager.DollMakerManager != null && EnemyManager.HitManManager != null && EnemyManager.PoliceManager != null && EnemyManager.State == ENEMY_STATE.IDLE)

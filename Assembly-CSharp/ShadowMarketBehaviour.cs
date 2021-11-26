@@ -90,6 +90,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		base.Start();
 		this.addRemoteVPNLevel2();
 		this.addRemoteVPNLevel3();
+		this.addSulphurToMarket();
 	}
 
 	protected new void OnDestroy()
@@ -145,6 +146,31 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		else
 		{
 			shadowMarketProductDefinition.productPrice = 120f;
+		}
+		this.myProducts.Add(shadowMarketProductDefinition);
+	}
+
+	private void addSulphurToMarket()
+	{
+		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
+		shadowMarketProductDefinition.deliveryTimeMin = 60f;
+		shadowMarketProductDefinition.deliveryTimeMax = 85f;
+		shadowMarketProductDefinition.id = 6303;
+		shadowMarketProductDefinition.isDiscounted = false;
+		shadowMarketProductDefinition.productDesc = "Have you ever wanted to make a bomb? Does the thrill of destruction and smoking death of lives unworthy your concern move you? Look no further! With this package of basic sulphur you will get started!";
+		shadowMarketProductDefinition.productHasLimitPurchases = true;
+		shadowMarketProductDefinition.productID = HARDWARE_PRODUCTS.SULPHUR;
+		shadowMarketProductDefinition.productMaxPurchaseAmount = 5;
+		shadowMarketProductDefinition.productName = "Sulphur";
+		shadowMarketProductDefinition.productRequiresOtherProduct = false;
+		shadowMarketProductDefinition.productSprite = DownloadTIFiles.Sulphur;
+		if (ModsManager.EasyModeActive)
+		{
+			shadowMarketProductDefinition.productPrice = 55f;
+		}
+		else
+		{
+			shadowMarketProductDefinition.productPrice = 90f;
 		}
 		this.myProducts.Add(shadowMarketProductDefinition);
 	}

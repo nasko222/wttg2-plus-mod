@@ -72,6 +72,9 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\beans.wav", "beans.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\clown.wav", "clown.wav");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\whisper.wav", "whisper.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\bombmaker.wav", "bombmaker.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_audio\\explosion.wav", "explosion.wav");
+		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\sulphur.png", "sulphur.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\freddy.png", "freddy.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl2.png", "remoteVPNlvl2.png");
 		DownloadTIFiles.CheckIfFileExists("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", "remoteVPNlvl3.png");
@@ -233,6 +236,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.RemoteVPNLevel3 = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\remoteVPNlvl3.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.SpeedItem = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\speeditem.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.KeyItem = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\keyitem.png", 100f, SpriteMeshType.Tight);
+		DownloadTIFiles.Sulphur = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\sulphur.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RedKey = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\redkey.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.GreenKey = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\greenkey.png", 100f, SpriteMeshType.Tight);
 		DownloadTIFiles.RedClock = DownloadTIFiles.LoadNewSprite("WTTG2_Data\\Resources\\custom_tex\\redclock.png", 100f, SpriteMeshType.Tight);
@@ -299,6 +303,8 @@ public static class DownloadTIFiles
 		DownloadTIFiles.CoolMusic = WavUtility.ToAudioClip("cool.wav");
 		DownloadTIFiles.ClownHAHAHA = WavUtility.ToAudioClip("clown.wav");
 		DownloadTIFiles.EvilWhisper = WavUtility.ToAudioClip("whisper.wav");
+		DownloadTIFiles.BombmakerLaugh = WavUtility.ToAudioClip("bombmaker.wav");
+		DownloadTIFiles.Explosion = WavUtility.ToAudioClip("explosion.wav");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -500,4 +506,10 @@ public static class DownloadTIFiles
 	public static AudioClip DogDoin;
 
 	public static AudioClip IlluminatiTroll;
+
+	public static Sprite Sulphur;
+
+	public static AudioClip BombmakerLaugh;
+
+	public static AudioClip Explosion;
 }
