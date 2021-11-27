@@ -124,8 +124,9 @@ public class WorldManager : MonoBehaviour
 	private void Update()
 	{
 		this.checkPlayerLocation();
-		if (DollMakerManager.Lucassed && (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY1 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY3 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY5 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY6 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY10))
+		if (DollMakerManager.Lucassed && !WorldManager.LucasSpawnedToKill && (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY1 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY3 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY5 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY6 || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY10))
 		{
+			WorldManager.LucasSpawnedToKill = true;
 			EnemyManager.HitManManager.LucassedJump();
 		}
 	}
@@ -146,6 +147,8 @@ public class WorldManager : MonoBehaviour
 	private List<VPNVolume> currentVPNVolumes = new List<VPNVolume>(70);
 
 	private int worldIDIndex;
+
+	public static bool LucasSpawnedToKill;
 
 	public delegate void WorldManagerActions();
 }

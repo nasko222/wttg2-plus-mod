@@ -521,6 +521,18 @@ public class DollMakerManager : MonoBehaviour
 		}
 	}
 
+	public string MarkerDebug
+	{
+		get
+		{
+			if (this.markerWindow - (Time.time - this.markerTimeStamp) > 0f)
+			{
+				return ((int)(this.markerWindow - (Time.time - this.markerTimeStamp))).ToString();
+			}
+			return 0.ToString();
+		}
+	}
+
 	private const float DOLLMAKER_Y_OFFSET = 0.93429f;
 
 	[SerializeField]

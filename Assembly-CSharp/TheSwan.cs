@@ -170,6 +170,22 @@ public class TheSwan
 		CurrencyManager.RemoveCurrency((float)Math.Round(num * (double)num2, 3));
 	}
 
+	public string TheSwanDebug
+	{
+		get
+		{
+			if (!this.isActivatedBefore)
+			{
+				return 0.ToString();
+			}
+			if (this._108 > 0f)
+			{
+				return this._108.ToString();
+			}
+			return 0.ToString();
+		}
+	}
+
 	public AudioFileDefinition SwanSFX = LookUp.SoundLookUp.LoudDoorBang;
 
 	public bool isActivatedBefore;

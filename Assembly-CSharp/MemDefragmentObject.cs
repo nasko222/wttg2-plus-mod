@@ -10,6 +10,10 @@ public class MemDefragmentObject : MonoBehaviour
 
 	public void BuildMe(MemDefragLevelDefinition SetCurrentLevel)
 	{
+		if (SetCurrentLevel.MemoryCellCount > 4)
+		{
+			SetCurrentLevel.MemoryCellCount = 4;
+		}
 		int num = 0;
 		int num2 = 0;
 		int num3 = 0;

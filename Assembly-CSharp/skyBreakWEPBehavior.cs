@@ -101,12 +101,12 @@ public class skyBreakWEPBehavior : MonoBehaviour
 				{
 					num2 *= 0.7f;
 				}
-				else if (ModsManager.Nightmare)
+				string theString = ((int)num2).ToString();
+				if (ModsManager.Nightmare)
 				{
-					num2 *= 0.6f;
+					theString = "ERR";
 				}
-				int num3 = (int)num2;
-				int num4 = Mathf.RoundToInt(secureNetworks[i].networkTrackProbability * 100f);
+				int num3 = Mathf.RoundToInt(secureNetworks[i].networkTrackProbability * 100f);
 				string setLine2 = string.Concat(new string[]
 				{
 					MagicSlinger.FluffString(secureNetworks[i].networkName, " ", 20),
@@ -115,9 +115,9 @@ public class skyBreakWEPBehavior : MonoBehaviour
 					"  ",
 					MagicSlinger.FluffString(secureNetworks[i].networkChannel.ToString(), " ", 10),
 					"  ",
-					MagicSlinger.FluffString(num3.ToString(), " ", 10),
+					MagicSlinger.FluffString(theString, " ", 10),
 					"  ",
-					MagicSlinger.FluffString(num4.ToString() + "%", " ", 10),
+					MagicSlinger.FluffString(num3.ToString() + "%", " ", 10),
 					"  ",
 					MagicSlinger.FluffString(secureNetworks[i].networkPower.ToString(), " ", 10),
 					"  ",

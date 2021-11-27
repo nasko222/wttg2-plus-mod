@@ -877,6 +877,28 @@ public class TheCloud : MonoBehaviour
 			this.myDOSTwitch.Update();
 			this.myDOSTwitch.myTwitchIRC.Update();
 		}
+		if (ModsManager.DebugEnabled)
+		{
+			UIManager.ShowDebug(string.Concat(new string[]
+			{
+				"POILCE: ",
+				EnemyManager.PoliceManager.PoliceDebug,
+				" | CULT: ",
+				EnemyManager.CultManager.NoirDebug,
+				" | HITMAN: ",
+				EnemyManager.HitManManager.LucasDebug,
+				" | DOLL_MAKER: ",
+				EnemyManager.DollMakerManager.MarkerDebug,
+				" | HACK: ",
+				GameManager.HackerManager.HackDebug,
+				" | POWER: ",
+				EnvironmentManager.PowerBehaviour.PowerDebug,
+				" | SWAN: ",
+				GameManager.HackerManager.theSwan.TheSwanDebug,
+				" | STATE: ",
+				EnemyManager.State.ToString()
+			}));
+		}
 	}
 
 	private void PrepTwitchIntegration(DOSTwitch dOSTwitch)
@@ -903,6 +925,7 @@ public class TheCloud : MonoBehaviour
 		RemoteVPNObject.RemoteVPNLevel = 1;
 		DevTools.InsanityMode = false;
 		DollMakerManager.Lucassed = false;
+		WorldManager.LucasSpawnedToKill = false;
 		ModsManager.Nightmare = false;
 		Debug.Log("TheCloud is disabled.");
 	}

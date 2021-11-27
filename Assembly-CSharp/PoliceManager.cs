@@ -243,16 +243,9 @@ public class PoliceManager : MonoBehaviour
 		{
 			this.triggerTimeWindow *= 0.7f;
 		}
-		else if (ModsManager.Nightmare)
+		else if (ModsManager.Nightmare && this.triggerTimeWindow > 333f)
 		{
-			if (this.triggerTimeWindow > 350f)
-			{
-				this.triggerTimeWindow = 350f;
-			}
-			else
-			{
-				this.triggerTimeWindow *= 0.7f;
-			}
+			this.triggerTimeWindow = 333f;
 		}
 		this.triggerTimeStamp = Time.time;
 		this.triggerActive = true;
@@ -520,6 +513,18 @@ public class PoliceManager : MonoBehaviour
 		if (this.FireWarning != null)
 		{
 			this.FireWarning();
+		}
+	}
+
+	public string PoliceDebug
+	{
+		get
+		{
+			if (this.triggerTimeWindow - (Time.time - this.triggerTimeStamp) > 0f)
+			{
+				return ((int)(this.triggerTimeWindow - (Time.time - this.triggerTimeStamp))).ToString();
+			}
+			return 0.ToString();
 		}
 	}
 

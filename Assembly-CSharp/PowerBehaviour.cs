@@ -208,6 +208,18 @@ public class PowerBehaviour : MonoBehaviour
 		this.powerOff(false);
 	}
 
+	public string PowerDebug
+	{
+		get
+		{
+			if (this.fireWindow - (Time.time - this.fireWindowTimeStamp) > 0f)
+			{
+				return ((int)(this.fireWindow - (Time.time - this.fireWindowTimeStamp))).ToString();
+			}
+			return 0.ToString();
+		}
+	}
+
 	public bool LockedOut;
 
 	public CustomEvent PowerOffEvent = new CustomEvent(2);

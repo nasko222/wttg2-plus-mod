@@ -434,6 +434,18 @@ public class HitManManager : MonoBehaviour
 		LookUp.Doors.MainDoor.DoorWasOpenedEvent.AddListener(new UnityAction(this.mainDoorOutsideJump.Execute));
 	}
 
+	public string LucasDebug
+	{
+		get
+		{
+			if (this.fireWindow - (Time.time - this.fireTimeStamp) > 0f)
+			{
+				return ((int)(this.fireWindow - (Time.time - this.fireTimeStamp))).ToString();
+			}
+			return 0.ToString();
+		}
+	}
+
 	[SerializeField]
 	private HitmanDataDefinition data;
 

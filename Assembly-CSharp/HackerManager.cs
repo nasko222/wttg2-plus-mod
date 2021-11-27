@@ -689,6 +689,18 @@ public class HackerManager : MonoBehaviour
 		}, 0);
 	}
 
+	public string HackDebug
+	{
+		get
+		{
+			if (this.fireWindow - (Time.time - this.freezeAddTime - this.fireWindowTimeStamp) > 0f)
+			{
+				return ((int)(this.fireWindow - (Time.time - this.freezeAddTime - this.fireWindowTimeStamp))).ToString();
+			}
+			return 0.ToString();
+		}
+	}
+
 	public Canvas DesktopCanvas;
 
 	public GameObject HackerOverlay;
