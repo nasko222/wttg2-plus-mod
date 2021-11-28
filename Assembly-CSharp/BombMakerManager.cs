@@ -20,6 +20,12 @@ public class BombMakerManager
 
 	private void ScheduleAttack()
 	{
+		if (EnemyManager.State != ENEMY_STATE.IDLE)
+		{
+			GameManager.TimeSlinger.FireTimer(30f, new Action(this.ScheduleAttack), 0);
+			return;
+		}
+		EnemyManager.State = ENEMY_STATE.LOCKED;
 		if (StateManager.PlayerState == PLAYER_STATE.COMPUTER)
 		{
 			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;

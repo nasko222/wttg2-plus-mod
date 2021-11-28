@@ -248,6 +248,14 @@ public class MemDeFragHack : MonoBehaviour
 		{
 			this.myData.SkillPoints = this.MemDefragLevels[this.MemDefragLevels.Count - 1].SkillPointsRequired;
 		}
+		for (int i = 0; i < this.MemDefragLevels.Count; i++)
+		{
+			if (this.MemDefragLevels[i].MemoryCellCount > 4)
+			{
+				this.MemDefragLevels[i].MemoryCellCount = 4;
+				Debug.Log("Nerfed memory hack");
+			}
+		}
 	}
 
 	private void Awake()
