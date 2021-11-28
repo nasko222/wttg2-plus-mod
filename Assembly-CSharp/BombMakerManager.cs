@@ -26,6 +26,18 @@ public class BombMakerManager
 			return;
 		}
 		EnemyManager.State = ENEMY_STATE.LOCKED;
+		this.PerformAttack();
+	}
+
+	private void ExecExplosion()
+	{
+		DataManager.ClearGameData();
+		MainCameraHook.Ins.ClearARF(2f);
+		UIManager.TriggerHardGameOver("YOU DISAPPOINTED THE BOMB MAKER");
+	}
+
+	private void PerformAttack()
+	{
 		if (StateManager.PlayerState == PLAYER_STATE.COMPUTER)
 		{
 			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
@@ -37,13 +49,6 @@ public class BombMakerManager
 			GameManager.TimeSlinger.FireTimer(1.5f, new Action(this.ExecExplosion), 0);
 			return;
 		}
-		GameManager.TimeSlinger.FireTimer(30f, new Action(this.ScheduleAttack), 0);
-	}
-
-	private void ExecExplosion()
-	{
-		DataManager.ClearGameData();
-		MainCameraHook.Ins.ClearARF(2f);
-		UIManager.TriggerHardGameOver("YOU DISAPPOINTED THE BOMB MAKER");
+		GameManager.TimeSlinger.FireTimer(30f, new Action(this.PerformAttack), 0);
 	}
 }
