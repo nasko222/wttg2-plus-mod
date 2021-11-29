@@ -704,6 +704,11 @@ public class AnnBehaviour : WindowBehaviour
 		{
 			EnemyManager.CultManager.attemptSpawn();
 		}
+		if (((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "the bomb maker") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "thebombmaker")) && !BombMakerManager.BombMakerActive)
+		{
+			BombMakerManager.BombMakerActive = true;
+			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(60f, 150f), new Action(GameManager.TheCloud.bombMaker.BombMakerPayload), 0);
+		}
 	}
 
 	private void checkCustomMusicAudio(string pagename, WebPageDefinition definition, string htmlFile)

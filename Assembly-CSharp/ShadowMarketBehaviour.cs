@@ -166,11 +166,11 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		shadowMarketProductDefinition.productSprite = DownloadTIFiles.Sulphur;
 		if (ModsManager.EasyModeActive)
 		{
-			shadowMarketProductDefinition.productPrice = 55f;
+			shadowMarketProductDefinition.productPrice = 25f;
 		}
 		else
 		{
-			shadowMarketProductDefinition.productPrice = 90f;
+			shadowMarketProductDefinition.productPrice = 55f;
 		}
 		this.myProducts.Add(shadowMarketProductDefinition);
 	}

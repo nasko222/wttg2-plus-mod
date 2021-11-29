@@ -9,10 +9,10 @@ public class BreatherManager : MonoBehaviour
 	public void PlayerSpawnedToDeadDrop()
 	{
 		DataManager.LockSave = true;
-		if ((this.firstProductWasPickedUp || ModsManager.Nightmare) && this.threatsActive && EnemyManager.State == ENEMY_STATE.IDLE)
+		if (this.firstProductWasPickedUp && this.threatsActive && EnemyManager.State == ENEMY_STATE.IDLE)
 		{
 			bool flag;
-			if ((DevTools.Ins != null && DevTools.Ins.forceBreather) || ModsManager.Nightmare)
+			if (DevTools.Ins != null && DevTools.Ins.forceBreather)
 			{
 				flag = true;
 			}
@@ -20,6 +20,10 @@ public class BreatherManager : MonoBehaviour
 			{
 				int num = UnityEngine.Random.Range(0, 100);
 				if (ModsManager.UnlimitedStamina)
+				{
+					num -= 15;
+				}
+				if (ModsManager.Nightmare)
 				{
 					num -= 15;
 				}
@@ -60,8 +64,11 @@ public class BreatherManager : MonoBehaviour
 			if (flag)
 			{
 				EnemyManager.State = ENEMY_STATE.BREATHER;
-				int num2 = UnityEngine.Random.Range(0, this.audioQueSFXs.Length);
-				this.audioQueHub.PlaySoundCustomDelay(this.audioQueSFXs[num2], 2f);
+				if (!ModsManager.Nightmare)
+				{
+					int num2 = UnityEngine.Random.Range(0, this.audioQueSFXs.Length);
+					this.audioQueHub.PlaySoundCustomDelay(this.audioQueSFXs[num2], 2f);
+				}
 				this.breatherIsActive = true;
 				this.preLeaveTrigger.SetActive();
 				this.pickUpTrigger.SetActive();

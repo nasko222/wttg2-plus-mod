@@ -782,6 +782,7 @@ public class TheCloud : MonoBehaviour
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
 		this.bombMaker = new BombMakerManager();
+		BombMakerManager.BombMakerActive = false;
 	}
 
 	private void Awake()
@@ -926,6 +927,7 @@ public class TheCloud : MonoBehaviour
 		DevTools.InsanityMode = false;
 		DollMakerManager.Lucassed = false;
 		WorldManager.LucasSpawnedToKill = false;
+		BombMakerManager.BombMakerActive = false;
 		ModsManager.Nightmare = false;
 		Debug.Log("TheCloud is disabled.");
 	}
@@ -980,7 +982,8 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 3)
 		{
-			AdamLOLHook.Ins.Spawn();
+			BombMakerManager.BombMakerActive = true;
+			this.bombMaker.BombMakerPayload();
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
@@ -1034,13 +1037,13 @@ public class TheCloud : MonoBehaviour
 			GameManager.AudioSlinger.PlaySound(jumpHit);
 			return;
 		}
-		if (StateManager.PlayerState != PLAYER_STATE.PEEPING)
+		if (StateManager.PlayerState == PLAYER_STATE.PEEPING || StateManager.BeingHacked || EnemyManager.State == ENEMY_STATE.BREATHER)
 		{
-			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(150f, 350f), new Action(this.ScheduleGoldenFreddy), 0);
-			this.SpawnGF();
+			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(5f, 20f), new Action(this.ScheduleGoldenFreddy), 0);
 			return;
 		}
-		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(5f, 20f), new Action(this.ScheduleGoldenFreddy), 0);
+		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(150f, 350f), new Action(this.ScheduleGoldenFreddy), 0);
+		this.SpawnGF();
 	}
 
 	private void SpawnGF()

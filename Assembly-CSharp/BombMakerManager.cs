@@ -1,16 +1,29 @@
 ﻿using System;
+using UnityEngine;
 
 public class BombMakerManager
 {
 	public void CheckSulphurInventory()
 	{
+		if (StateManager.PlayerState != PLAYER_STATE.COMPUTER)
+		{
+			GameManager.TimeSlinger.FireTimer(30f, new Action(this.CheckSulphurInventory), 0);
+			return;
+		}
 		if (SulphurInventory.SulphurAmount <= 0)
 		{
 			this.ScheduleAttack();
 			return;
 		}
 		SulphurInventory.RemoveSulphur(1);
-		CurrencyManager.AddCurrency(35f);
+		if (ModsManager.Nightmare)
+		{
+			CurrencyManager.AddCurrency(20f);
+		}
+		else
+		{
+			CurrencyManager.AddCurrency(UnityEngine.Random.Range(35f, 65f));
+		}
 		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
 		jumpHit.Volume = 1f;
 		jumpHit.Loop = false;
@@ -51,4 +64,24 @@ public class BombMakerManager
 		}
 		GameManager.TimeSlinger.FireTimer(30f, new Action(this.PerformAttack), 0);
 	}
+
+	public void BombMakerPayload()
+	{
+		if (StateManager.PlayerState != PLAYER_STATE.COMPUTER)
+		{
+			GameManager.TimeSlinger.FireTimer(10f, new Action(this.BombMakerPayload), 0);
+			return;
+		}
+		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
+		jumpHit.Volume = 1f;
+		jumpHit.Loop = false;
+		jumpHit.AudioClip = DownloadTIFiles.BombmakerLaugh;
+		GameManager.AudioSlinger.PlaySound(jumpHit);
+		if (!ModsManager.Nightmare)
+		{
+			GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("BombMaker.txt", "Hello Clint, If you happen to be reading this, then you already know who I am. I hope you like my job. I saw you visited my bomb making website. You have to understand me, it takes a lot of time to make up all of these bombs, so I need some help from you. Acquire me some bomb materials, I will do the rest of my job. Do not fail me or I will explode you! HAHAHAHAHAHA!");
+		}
+	}
+
+	public static bool BombMakerActive;
 }

@@ -45,7 +45,7 @@ public class TheSwan
 			GameManager.TimeSlinger.FireTimer(1f, new Action(this.StartCountdown), 0);
 			return;
 		}
-		GameManager.TimeSlinger.FireTimer(this.SwanClock, new Action(this.StartCountdown), 0);
+		GameManager.TimeSlinger.FireTimer((this._108 >= 108f) ? 1f : this.SwanClock, new Action(this.StartCountdown), 0);
 		if (this._108 > 0f)
 		{
 			this._108 -= 1f;

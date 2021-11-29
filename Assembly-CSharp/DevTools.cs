@@ -441,7 +441,8 @@ public class DevTools : MonoBehaviour
 			{
 				if (GameManager.TheCloud != null && GameManager.TheCloud.bombMaker != null)
 				{
-					GameManager.TheCloud.bombMaker.CheckSulphurInventory();
+					BombMakerManager.BombMakerActive = true;
+					GameManager.TheCloud.bombMaker.BombMakerPayload();
 				}
 				this.iAmLive = true;
 			}

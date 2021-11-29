@@ -439,7 +439,7 @@ public class HackerManager : MonoBehaviour
 				}
 				else if (ModsManager.Nightmare)
 				{
-					num = 19.87f;
+					num = 50.2f;
 				}
 				else
 				{
