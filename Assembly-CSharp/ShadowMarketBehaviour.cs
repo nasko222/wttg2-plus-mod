@@ -153,8 +153,8 @@ public class ShadowMarketBehaviour : WindowBehaviour
 	private void addSulphurToMarket()
 	{
 		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
-		shadowMarketProductDefinition.deliveryTimeMin = 60f;
-		shadowMarketProductDefinition.deliveryTimeMax = 85f;
+		shadowMarketProductDefinition.deliveryTimeMin = 15f;
+		shadowMarketProductDefinition.deliveryTimeMax = 25f;
 		shadowMarketProductDefinition.id = 6303;
 		shadowMarketProductDefinition.isDiscounted = false;
 		shadowMarketProductDefinition.productDesc = "Have you ever wanted to make a bomb? Does the thrill of destruction and smoking death of lives unworthy your concern move you? Look no further! With this package of basic sulphur you will get started!";
@@ -166,11 +166,11 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		shadowMarketProductDefinition.productSprite = DownloadTIFiles.Sulphur;
 		if (ModsManager.EasyModeActive)
 		{
-			shadowMarketProductDefinition.productPrice = 25f;
+			shadowMarketProductDefinition.productPrice = 15f;
 		}
 		else
 		{
-			shadowMarketProductDefinition.productPrice = 55f;
+			shadowMarketProductDefinition.productPrice = 40f;
 		}
 		this.myProducts.Add(shadowMarketProductDefinition);
 	}

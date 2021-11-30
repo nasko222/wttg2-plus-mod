@@ -22,7 +22,7 @@ public class BombMakerManager
 		}
 		else
 		{
-			CurrencyManager.AddCurrency(UnityEngine.Random.Range(35f, 65f));
+			CurrencyManager.AddCurrency(UnityEngine.Random.Range(30f, 55f));
 		}
 		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
 		jumpHit.Volume = 1f;

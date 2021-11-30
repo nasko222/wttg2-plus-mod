@@ -10,7 +10,7 @@ public class TimeKeeper : MonoBehaviour
 		if (this.gameHour > 11)
 		{
 			text += " AM";
-			if ((this.gameMin == 0 || this.gameMin == 30) && UnityEngine.Random.Range(0, 100) <= 5)
+			if (this.gameHour < 16 && (this.gameMin == 0 || this.gameMin == 30) && UnityEngine.Random.Range(0, 100) <= 5)
 			{
 				GameManager.HackerManager.theSwan.ActivateTheSwan();
 			}
@@ -23,7 +23,7 @@ public class TimeKeeper : MonoBehaviour
 				GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer = true;
 			}
 		}
-		if (this.gameHour > 10 && this.gameMin == 0 && BombMakerManager.BombMakerActive)
+		if (this.gameHour > 10 && this.gameHour < 16 && this.gameMin == 0 && BombMakerManager.BombMakerActive)
 		{
 			GameManager.TheCloud.bombMaker.CheckSulphurInventory();
 		}

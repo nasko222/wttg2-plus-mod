@@ -982,8 +982,11 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 3)
 		{
-			BombMakerManager.BombMakerActive = true;
-			this.bombMaker.BombMakerPayload();
+			if (!BombMakerManager.BombMakerActive)
+			{
+				BombMakerManager.BombMakerActive = true;
+				this.bombMaker.BombMakerPayload();
+			}
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
@@ -1037,7 +1040,7 @@ public class TheCloud : MonoBehaviour
 			GameManager.AudioSlinger.PlaySound(jumpHit);
 			return;
 		}
-		if (StateManager.PlayerState == PLAYER_STATE.PEEPING || StateManager.BeingHacked || EnemyManager.State == ENEMY_STATE.BREATHER)
+		if (StateManager.PlayerState == PLAYER_STATE.PEEPING || StateManager.PlayerState == PLAYER_STATE.BRACE || StateManager.BeingHacked)
 		{
 			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(5f, 20f), new Action(this.ScheduleGoldenFreddy), 0);
 			return;

@@ -439,7 +439,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "BombMaker")
 			{
-				if (GameManager.TheCloud != null && GameManager.TheCloud.bombMaker != null)
+				if (GameManager.TheCloud != null && GameManager.TheCloud.bombMaker != null && !BombMakerManager.BombMakerActive)
 				{
 					BombMakerManager.BombMakerActive = true;
 					GameManager.TheCloud.bombMaker.BombMakerPayload();
