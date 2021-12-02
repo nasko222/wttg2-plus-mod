@@ -25,7 +25,7 @@ public class TrollPoll
 		}
 		if (ModsManager.Nightmare)
 		{
-			this.myDOSTwitch.myTwitchIRC.SendMsg("Troll Poll is disabled on nightmare mode! Sadge");
+			this.myDOSTwitch.myTwitchIRC.SendMsg("Troll Poll is disabled in nightmare mode! Sadge");
 			this.myDOSTwitch.setPollInactive();
 			return;
 		}

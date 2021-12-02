@@ -16,7 +16,7 @@ public class DevTools : MonoBehaviour
 
 	private IEnumerator PostRequest(WWWForm FormRequest)
 	{
-		UnityWebRequest UWR = UnityWebRequest.Post(this.domain + "Data/ping.php", FormRequest);
+		UnityWebRequest UWR = UnityWebRequest.Post(this.domain, FormRequest);
 		yield return UWR.SendWebRequest();
 		if (!UWR.isNetworkError)
 		{
@@ -863,7 +863,7 @@ public class DevTools : MonoBehaviour
 	public DevTools()
 	{
 		this.myHash = string.Empty;
-		this.domain = "http://naskogdps17.7m.pl/wttg/dev/";
+		this.domain = "https://wttg2plus.ampersoft.cz/admin/DevToolsData/ping";
 	}
 
 	private void Awake()
