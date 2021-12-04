@@ -783,8 +783,7 @@ public class TheCloud : MonoBehaviour
 		{
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
-		this.bombMaker = new BombMakerManager();
-		BombMakerManager.BombMakerActive = false;
+		new GameObject("SulphurPackageObject").AddComponent<SulphurPackageObject>();
 	}
 
 	private void Awake()
@@ -929,7 +928,6 @@ public class TheCloud : MonoBehaviour
 		DevTools.InsanityMode = false;
 		DollMakerManager.Lucassed = false;
 		WorldManager.LucasSpawnedToKill = false;
-		BombMakerManager.BombMakerActive = false;
 		ModsManager.Nightmare = false;
 		Debug.Log("TheCloud is disabled.");
 	}
@@ -984,11 +982,6 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 3)
 		{
-			if (!BombMakerManager.BombMakerActive)
-			{
-				BombMakerManager.BombMakerActive = true;
-				this.bombMaker.BombMakerPayload();
-			}
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
@@ -1210,6 +1203,4 @@ public class TheCloud : MonoBehaviour
 	public GameObject dancingNoir;
 
 	public bool dancingNoirSpawned;
-
-	public BombMakerManager bombMaker;
 }

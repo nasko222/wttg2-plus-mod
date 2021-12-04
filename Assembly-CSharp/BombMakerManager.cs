@@ -82,6 +82,4 @@ public class BombMakerManager
 			GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("BombMaker.txt", "Hello Clint, If you happen to be reading this, then you already know who I am. I hope you like my job. I saw you visited my bomb making website. You have to understand me, it takes a lot of time to make up all of these bombs, so I need some help from you. Acquire me some bomb materials, I will do the rest of my job. Do not fail me or I will explode you! HAHAHAHAHAHA!");
 		}
 	}
-
-	public static bool BombMakerActive;
 }

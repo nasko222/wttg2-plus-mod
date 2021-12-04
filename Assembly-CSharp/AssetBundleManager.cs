@@ -19,6 +19,8 @@ public static class AssetBundleManager
 		AssetBundleManager.customTex = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\custom_tex.assets");
 		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\custom_source.assets");
 		AssetBundleManager.customSource = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\custom_source.assets");
+		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\WTTG2Plus.assets");
+		AssetBundleManager.WTTG2PlusProps = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\WTTG2Plus.assets");
 	}
 
 	private static void CheckAssetExistance(string path)
@@ -42,4 +44,6 @@ public static class AssetBundleManager
 	public static AssetBundle customTex;
 
 	public static AssetBundle customSource;
+
+	public static AssetBundle WTTG2PlusProps;
 }

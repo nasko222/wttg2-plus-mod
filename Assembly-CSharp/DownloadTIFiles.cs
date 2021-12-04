@@ -1,12 +1,10 @@
 ﻿using System;
-using System.IO;
 using UnityEngine;
 
 public static class DownloadTIFiles
 {
 	public static void startDownloadingFiles()
 	{
-		DownloadTIFiles.CheckBrowserAssetsCorrectSize(280756713L);
 		DownloadTIFiles.Freddy = AssetBundleManager.customTex.LoadAsset<Sprite>("freddy.png").texture;
 		DownloadTIFiles.RemoteVPNLevel2 = AssetBundleManager.customTex.LoadAsset<Sprite>("remoteVPNlvl2.png");
 		DownloadTIFiles.RemoteVPNLevel3 = AssetBundleManager.customTex.LoadAsset<Sprite>("remoteVPNlvl3.png");
@@ -83,46 +81,7 @@ public static class DownloadTIFiles
 		DownloadTIFiles.Explosion = AssetBundleManager.customAudio.LoadAsset<AudioClip>("explosion.wav");
 		DownloadTIFiles.BombMakerRoamKiller = AssetBundleManager.Bombmaker.LoadAsset<GameObject>("BombMakerHallwayJump.prefab");
 		DownloadTIFiles.BombMakerApartmentKiller = AssetBundleManager.Bombmaker.LoadAsset<GameObject>("BombMakerApartmentJump.prefab");
-	}
-
-	private static void CheckIfDirectoryExists(string dirPath)
-	{
-		if (!Directory.Exists(dirPath))
-		{
-			Debug.Log("FATAL ERROR: " + dirPath + " does not exist!");
-		}
-	}
-
-	private static void CheckIfFileExists(string filePath, string fileName)
-	{
-		if (!File.Exists(filePath))
-		{
-			Debug.Log("FATAL ERROR: " + fileName + " does not exist!");
-			Application.Quit();
-		}
-	}
-
-	private static void CheckBrowserAssetsCorrectSize(long theSize)
-	{
-		if (!File.Exists("WTTG2_Data\\Resources\\browser_assets"))
-		{
-			Debug.Log("FATAL ERROR: Browser assets doesn't exist");
-			Application.Quit();
-		}
-		if (new FileInfo("WTTG2_Data\\Resources\\browser_assets").Length != theSize)
-		{
-			Debug.Log("FATAL ERROR: Browser assets has the incorrect size!");
-			Application.Quit();
-		}
-	}
-
-	private static void CheckSourceCodeExistance(string source)
-	{
-		if (!File.Exists("WTTG2_Data\\Resources\\custom_source\\" + source + ".txt"))
-		{
-			Debug.Log("FATAL ERROR: " + source + ".txt does not exist in the sources folder");
-			Application.Quit();
-		}
+		DownloadTIFiles.SulphurPackage = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("PackageBox.prefab");
 	}
 
 	public static AudioClip triangleMusic;
@@ -276,4 +235,6 @@ public static class DownloadTIFiles
 	public static GameObject BombMakerRoamKiller;
 
 	public static GameObject BombMakerApartmentKiller;
+
+	public static GameObject SulphurPackage;
 }

@@ -23,10 +23,6 @@ public class TimeKeeper : MonoBehaviour
 				GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer = true;
 			}
 		}
-		if (this.gameHour > 10 && this.gameHour < 16 && this.gameMin == 0 && BombMakerManager.BombMakerActive)
-		{
-			GameManager.TheCloud.bombMaker.CheckSulphurInventory();
-		}
 		return text;
 	}
 
