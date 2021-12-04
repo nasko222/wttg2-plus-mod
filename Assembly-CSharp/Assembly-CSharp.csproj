@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82282B20-064B-4875-B38C-9821FB4D5EF1}</ProjectGuid>
+    <ProjectGuid>{B6F35061-4011-44CC-8687-17DAE8E82BD9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -63,6 +63,9 @@
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II all mods\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II all mods\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II all mods\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
@@ -130,6 +133,7 @@
     <Compile Include="ANN_BTN_ACTIONS.cs" />
     <Compile Include="AppManager.cs" />
     <Compile Include="ASoft\WTTG2\OptionsUtil.cs" />
+    <Compile Include="AssetBundleManager.cs" />
     <Compile Include="AudioBehaviour.cs" />
     <Compile Include="AudioClipComparer.cs" />
     <Compile Include="AudioFileDefinition.cs" />
@@ -152,6 +156,15 @@
     <Compile Include="BlueWhisperBehaviour.cs" />
     <Compile Include="BlueWhisperData.cs" />
     <Compile Include="BlueWhisperManager.cs" />
+    <Compile Include="BombMakerApartmentJump.cs" />
+    <Compile Include="BombMakerBehindJump.cs" />
+    <Compile Include="BombMakerFloor10Jump.cs" />
+    <Compile Include="BombMakerFloor1Jump.cs" />
+    <Compile Include="BombMakerFloor3Jump.cs" />
+    <Compile Include="BombMakerFloor5Jump.cs" />
+    <Compile Include="BombMakerFloor6Jump.cs" />
+    <Compile Include="BombMakerFloor8Jump.cs" />
+    <Compile Include="BombMakerMainDoorJump.cs" />
     <Compile Include="BombMakerManager.cs" />
     <Compile Include="BookmarkData.cs" />
     <Compile Include="BookMarksData.cs" />

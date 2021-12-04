@@ -305,6 +305,8 @@ public static class DownloadTIFiles
 		DownloadTIFiles.EvilWhisper = WavUtility.ToAudioClip("whisper.wav");
 		DownloadTIFiles.BombmakerLaugh = WavUtility.ToAudioClip("bombmaker.wav");
 		DownloadTIFiles.Explosion = WavUtility.ToAudioClip("explosion.wav");
+		DownloadTIFiles.BombMakerRoamKiller = AssetBundleManager.Bombmaker.LoadAsset<GameObject>("BombMakerHallwayJump.prefab");
+		DownloadTIFiles.BombMakerApartmentKiller = AssetBundleManager.Bombmaker.LoadAsset<GameObject>("BombMakerApartmentJump.prefab");
 	}
 
 	public static Texture2D LoadPNG(string filePath)
@@ -512,4 +514,8 @@ public static class DownloadTIFiles
 	public static AudioClip BombmakerLaugh;
 
 	public static AudioClip Explosion;
+
+	public static GameObject BombMakerRoamKiller;
+
+	public static GameObject BombMakerApartmentKiller;
 }

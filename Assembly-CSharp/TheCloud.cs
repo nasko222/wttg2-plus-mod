@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using ZenFulcrum.EmbeddedBrowser;
 
@@ -524,6 +525,8 @@ public class TheCloud : MonoBehaviour
 				{
 					TheCloud.VacationFIX = true;
 					TheCloud.VacationSound = this.Websites[i].HomePage.AudioFile.AudioClip;
+					AssetBundleManager.BombMakerJumpSFX = UnityEngine.Object.Instantiate<AudioFileDefinition>(LookUp.SoundLookUp.JumpHit1);
+					AssetBundleManager.BombMakerJumpSFX.MyAudioLayer = AUDIO_LAYER.GAME_OVER;
 				}
 			}
 		}
@@ -783,6 +786,13 @@ public class TheCloud : MonoBehaviour
 		}, 0);
 		this.bombMaker = new BombMakerManager();
 		BombMakerManager.BombMakerActive = false;
+		BombMakerMainDoorJump @object = new BombMakerMainDoorJump();
+		BombMakerFloor8Jump object2 = new BombMakerFloor8Jump();
+		LookUp.Doors.MainDoor.DoorOpenEvent.AddListener(new UnityAction(@object.Stage));
+		LookUp.Doors.MainDoor.DoorWasOpenedEvent.AddListener(new UnityAction(@object.Execute));
+		LookUp.Doors.Door8.DoorOpenEvent.AddListener(new UnityAction(object2.Stage));
+		LookUp.Doors.Door8.DoorWasOpenedEvent.AddListener(new UnityAction(object2.Execute));
+		GameManager.TimeSlinger.FireTimer(10f, new Action(this.testing), 0);
 	}
 
 	private void Awake()
@@ -1135,6 +1145,11 @@ public class TheCloud : MonoBehaviour
 		}, 0);
 		GameManager.AudioSlinger.PlaySoundWithCustomDelay(TrollPoll.trollAudio, 0.4f);
 		EnvironmentManager.PowerBehaviour.ForcePowerOff();
+	}
+
+	private void testing()
+	{
+		ControllerManager.Get<roamController>(GAME_CONTROLLER.ROAM).transform.position = new Vector3(18.10953f, 40.51757f, -6.304061f);
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);

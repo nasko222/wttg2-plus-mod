@@ -5,6 +5,7 @@ public class GameManagerHook : MonoBehaviour
 {
 	private void Awake()
 	{
+		AssetBundleManager.LoadAssetBundles();
 		DownloadTIFiles.startDownloadingFiles();
 		ModsManager.ApplyMods();
 		GameManager.Instance.Init();

@@ -361,6 +361,15 @@ public class HitmanBehaviour : MonoBehaviour
 		this.ReachedEndPath.Clear();
 	}
 
+	public void GunFlashBombMaker()
+	{
+		AudioFileDefinition audioFileDefinition = UnityEngine.Object.Instantiate<AudioFileDefinition>(this.gunShotSFX);
+		audioFileDefinition.MyAudioLayer = AUDIO_LAYER.PLAYER;
+		audioFileDefinition.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
+		GameManager.AudioSlinger.PlaySound(audioFileDefinition);
+		UnityEngine.Object.Destroy(audioFileDefinition);
+	}
+
 	public static HitmanBehaviour Ins;
 
 	public CustomEvent GunFlashDoneEvents = new CustomEvent(2);
