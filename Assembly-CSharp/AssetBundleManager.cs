@@ -13,6 +13,12 @@ public static class AssetBundleManager
 		AssetBundleManager.loaded = true;
 		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\bombmaker.assets");
 		AssetBundleManager.Bombmaker = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\bombmaker.assets");
+		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\custom_audio.assets");
+		AssetBundleManager.customAudio = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\custom_audio.assets");
+		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\custom_tex.assets");
+		AssetBundleManager.customTex = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\custom_tex.assets");
+		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\custom_source.assets");
+		AssetBundleManager.customSource = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\custom_source.assets");
 	}
 
 	private static void CheckAssetExistance(string path)
@@ -30,4 +36,10 @@ public static class AssetBundleManager
 	public static bool loaded;
 
 	public static AudioFileDefinition BombMakerJumpSFX;
+
+	public static AssetBundle customAudio;
+
+	public static AssetBundle customTex;
+
+	public static AssetBundle customSource;
 }
