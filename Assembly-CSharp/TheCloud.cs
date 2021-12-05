@@ -517,17 +517,6 @@ public class TheCloud : MonoBehaviour
 				this.Websites[i].PageTitle = "Rotten Meal";
 				this.Websites[i].PageDesc = "Weird ass people selling meal for canniballs.";
 			}
-			if (this.Websites[i].PageTitle.ToLower() == "vacation")
-			{
-				LookUp.SoundLookUp.vacationRinging = this.Websites[i].HomePage.AudioFile;
-				if (!TheCloud.VacationFIX)
-				{
-					TheCloud.VacationFIX = true;
-					TheCloud.VacationSound = this.Websites[i].HomePage.AudioFile.AudioClip;
-					AssetBundleManager.BombMakerJumpSFX = UnityEngine.Object.Instantiate<AudioFileDefinition>(LookUp.SoundLookUp.JumpHit1);
-					AssetBundleManager.BombMakerJumpSFX.MyAudioLayer = AUDIO_LAYER.GAME_OVER;
-				}
-			}
 		}
 		new WebsiteExtension().ExtendWebsites(this.Websites);
 		this.myWebSitesData = DataManager.Load<WebSitesData>(2020);
@@ -779,11 +768,7 @@ public class TheCloud : MonoBehaviour
 		{
 			this.nightmarePossible = false;
 		}, 0);
-		GameManager.TimeSlinger.FireTimer(5f, delegate()
-		{
-			new GameObject("DancingLoader").AddComponent<DancingLoader>();
-		}, 0);
-		new GameObject("SulphurPackageObject").AddComponent<SulphurPackageObject>();
+		this.LoadMods();
 	}
 
 	private void Awake()
@@ -940,21 +925,13 @@ public class TheCloud : MonoBehaviour
 	public void TenTwentyMode()
 	{
 		this.challenge = 0;
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.AudioClip = DownloadTIFiles.XOR;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.xor);
 		GameManager.TimeSlinger.FireTimer(5f, new Action(this.NewChallenger), 0);
 	}
 
 	private void NewChallenger()
 	{
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.AudioClip = DownloadTIFiles.Challenger;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.challenger);
 		if (this.challenge == 0)
 		{
 			for (int i = 0; i < 8; i++)
@@ -1011,11 +988,7 @@ public class TheCloud : MonoBehaviour
 		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)Screen.width - widthOffset, heightOffset, 0f);
 		gameObject.SetActive(true);
 		gameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.AudioClip = DownloadTIFiles.ManipulatorSound;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.manipulator);
 		GameManager.TimeSlinger.FireTimer(timeFor, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);
@@ -1028,11 +1001,7 @@ public class TheCloud : MonoBehaviour
 		{
 			this.GFschedule = true;
 			GameManager.TimeSlinger.FireTimer(45f, new Action(this.ScheduleGoldenFreddy), 0);
-			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-			jumpHit.AudioClip = DownloadTIFiles.GFPresence;
-			jumpHit.Volume = 0.8f;
-			jumpHit.Loop = false;
-			GameManager.AudioSlinger.PlaySound(jumpHit);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gfpresence);
 			return;
 		}
 		if (StateManager.PlayerState == PLAYER_STATE.PEEPING || StateManager.PlayerState == PLAYER_STATE.BRACE || StateManager.BeingHacked)
@@ -1047,7 +1016,7 @@ public class TheCloud : MonoBehaviour
 	private void SpawnGF()
 	{
 		GameObject gameObject = new GameObject();
-		gameObject.AddComponent<Image>().sprite = Sprite.Create(DownloadTIFiles.Freddy, new Rect(0f, 0f, (float)DownloadTIFiles.Freddy.width, (float)DownloadTIFiles.Freddy.height), new Vector2(0.5f, 0.5f), 100f);
+		gameObject.AddComponent<Image>().sprite = Sprite.Create(CustomSpriteLookUp.freddy, new Rect(0f, 0f, (float)CustomSpriteLookUp.freddy.width, (float)CustomSpriteLookUp.freddy.height), new Vector2(0.5f, 0.5f), 100f);
 		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
 		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)(Screen.width / 2), (float)(Screen.height / 2), 0f);
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.x);
@@ -1055,11 +1024,7 @@ public class TheCloud : MonoBehaviour
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.z);
 		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
 		gameObject.SetActive(true);
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
 		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);
@@ -1116,20 +1081,23 @@ public class TheCloud : MonoBehaviour
 		{
 			TrollPoll.isTrollPlaying = true;
 		}
-		TrollPoll.trollAudio = LookUp.SoundLookUp.JumpHit1;
-		TrollPoll.trollAudio.AudioClip = DownloadTIFiles.crazyparty;
-		TrollPoll.trollAudio.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
-		TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
-		TrollPoll.trollAudio.Loop = true;
-		TrollPoll.trollAudio.LoopCount = 3600;
-		TrollPoll.trollAudio.Volume = 1f;
 		EnemyManager.State = ENEMY_STATE.CULT;
 		GameManager.TimeSlinger.FireTimer(30f, delegate()
 		{
 			CultComputerJumper.Ins.AddLightsOffJump();
 		}, 0);
-		GameManager.AudioSlinger.PlaySoundWithCustomDelay(TrollPoll.trollAudio, 0.4f);
+		GameManager.AudioSlinger.PlaySoundWithCustomDelay(CustomSoundLookUp.party, 0.4f);
 		EnvironmentManager.PowerBehaviour.ForcePowerOff();
+	}
+
+	private void LoadMods()
+	{
+		LookUp.SoundLookUp.JumpHit1.MyAudioLayer = AUDIO_LAYER.GAME_OVER;
+		GameManager.TimeSlinger.FireTimer(5f, delegate()
+		{
+			new GameObject("DancingLoader").AddComponent<DancingLoader>();
+		}, 0);
+		new GameObject("SulphurPackageObject").AddComponent<SulphurPackageObject>();
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);
@@ -1193,10 +1161,6 @@ public class TheCloud : MonoBehaviour
 	private int challenge;
 
 	private bool GFschedule;
-
-	public static AudioClip VacationSound;
-
-	private static bool VacationFIX;
 
 	private bool nightmarePossible;
 

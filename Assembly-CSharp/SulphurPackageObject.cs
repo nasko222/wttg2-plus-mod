@@ -8,7 +8,7 @@ public class SulphurPackageObject : MonoBehaviour
 		SulphurPackageObject.Ins = this;
 		for (int i = 0; i < this.packages.Length; i++)
 		{
-			this.packages[i] = UnityEngine.Object.Instantiate<GameObject>(DownloadTIFiles.SulphurPackage);
+			this.packages[i] = UnityEngine.Object.Instantiate<GameObject>(CustomObjectLookUp.PackageBox);
 		}
 		this.packages[0].transform.position = new Vector3(-0.808f, 40.648f, -0.224f);
 		this.packages[1].transform.position = new Vector3(-0.813f, 40.849f, -0.224f);
@@ -21,7 +21,7 @@ public class SulphurPackageObject : MonoBehaviour
 		for (int j = 0; j < this.packages.Length; j++)
 		{
 			this.packages[j].transform.localScale = new Vector3(0.413f, 0.323f, 0.35f);
-			this.packages[j].SetActive(false);
+			this.packages[j].SetActive(true);
 		}
 	}
 

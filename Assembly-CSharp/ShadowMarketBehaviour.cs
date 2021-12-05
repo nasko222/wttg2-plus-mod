@@ -111,7 +111,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		shadowMarketProductDefinition.productMaxPurchaseAmount = 1;
 		shadowMarketProductDefinition.productName = "Remote VPN Level 2";
 		shadowMarketProductDefinition.productRequiresOtherProduct = false;
-		shadowMarketProductDefinition.productSprite = DownloadTIFiles.RemoteVPNLevel2;
+		shadowMarketProductDefinition.productSprite = CustomSpriteLookUp.remoteVPNlvl2;
 		if (ModsManager.EasyModeActive)
 		{
 			shadowMarketProductDefinition.productPrice = 50f;
@@ -138,7 +138,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		shadowMarketProductDefinition.productName = "Remote VPN Level 3";
 		shadowMarketProductDefinition.productRequiresOtherProduct = true;
 		shadowMarketProductDefinition.productToOwn = ShadowMarketBehaviour.vpn2;
-		shadowMarketProductDefinition.productSprite = DownloadTIFiles.RemoteVPNLevel3;
+		shadowMarketProductDefinition.productSprite = CustomSpriteLookUp.remoteVPNlvl3;
 		if (ModsManager.EasyModeActive)
 		{
 			shadowMarketProductDefinition.productPrice = 80f;
@@ -163,7 +163,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		shadowMarketProductDefinition.productMaxPurchaseAmount = 5;
 		shadowMarketProductDefinition.productName = "Sulphur";
 		shadowMarketProductDefinition.productRequiresOtherProduct = false;
-		shadowMarketProductDefinition.productSprite = DownloadTIFiles.Sulphur;
+		shadowMarketProductDefinition.productSprite = CustomSpriteLookUp.sulphur;
 		if (ModsManager.EasyModeActive)
 		{
 			shadowMarketProductDefinition.productPrice = 15f;

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B99DA3F4-26E9-4D29-9191-FD29C79B34B1}</ProjectGuid>
+    <ProjectGuid>{11021D9B-87C4-4218-9E5F-B1A49F5F4A62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -132,6 +132,7 @@
     <Compile Include="AnnURLInputBehaviour.cs" />
     <Compile Include="ANN_BTN_ACTIONS.cs" />
     <Compile Include="AppManager.cs" />
+    <Compile Include="ASoft\WTTG2\AFDManager.cs" />
     <Compile Include="ASoft\WTTG2\OptionsUtil.cs" />
     <Compile Include="AssetBundleManager.cs" />
     <Compile Include="AudioBehaviour.cs" />
@@ -166,7 +167,6 @@
     <Compile Include="BombMakerFloor6Jump.cs" />
     <Compile Include="BombMakerFloor8Jump.cs" />
     <Compile Include="BombMakerMainDoorJump.cs" />
-    <Compile Include="BombMakerManager.cs" />
     <Compile Include="BookmarkData.cs" />
     <Compile Include="BookMarksData.cs" />
     <Compile Include="BookmarkTABObject.cs" />
@@ -301,6 +301,9 @@
     <Compile Include="CursorManager.cs" />
     <Compile Include="CustomEvent.2.cs" />
     <Compile Include="CustomEvent.cs" />
+    <Compile Include="CustomObjectLookUp.cs" />
+    <Compile Include="CustomSoundLookUp.cs" />
+    <Compile Include="CustomSpriteLookUp.cs" />
     <Compile Include="DancingLoader.cs" />
     <Compile Include="DataContainer.cs" />
     <Compile Include="DataLookUp.cs" />
@@ -344,7 +347,6 @@
     <Compile Include="DOSDrainer.cs" />
     <Compile Include="DOSTween.cs" />
     <Compile Include="DOSTwitch.cs" />
-    <Compile Include="DownloadTIFiles.cs" />
     <Compile Include="DragUniWindowBehaviour.cs" />
     <Compile Include="DragWindowBehaviour.cs" />
     <Compile Include="DroneBehaviour.cs" />

@@ -112,76 +112,70 @@ public class DevTools : MonoBehaviour
 			{
 				if (GameManager.AudioSlinger != null && Response.Additional != "" && !TrollPoll.isTrollPlaying && ModsManager.Trolling)
 				{
-					TrollPoll.trollAudio = LookUp.SoundLookUp.JumpHit1;
 					if (Response.Additional.ToLower() == "vacation")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.vacationMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.vacation;
 					}
 					else if (Response.Additional.ToLower() == "triangle")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.triangleMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.triangle;
 					}
 					else if (Response.Additional.ToLower() == "polishcow")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.polishCowMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.polishcow;
 					}
 					else if (Response.Additional.ToLower() == "nyancat")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.nyanCatMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.nyancat;
 					}
 					else if (Response.Additional.ToLower() == "stickbug")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.stickBugMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.stickbug;
 					}
 					else if (Response.Additional.ToLower() == "jebaited")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.jebaitedSong;
+						TrollPoll.trollAudio = CustomSoundLookUp.jebaited;
 					}
 					else if (Response.Additional.ToLower() == "keyboardcat")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.keyboardCatMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.keyboard;
 					}
 					else if (Response.Additional.ToLower() == "running")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.dreamRunningMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.dream;
 					}
 					else if (Response.Additional.ToLower() == "elevator")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.minecraftStalMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.elevator;
 					}
 					else if (Response.Additional.ToLower() == "chungus")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.bigChungusMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.chungus;
 					}
 					else if (Response.Additional.ToLower() == "kappa")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
+						TrollPoll.trollAudio = CustomSoundLookUp.kappa;
 					}
 					else if (Response.Additional.ToLower() == "blue")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.blueMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.blue;
 					}
 					else if (Response.Additional.ToLower() == "coffin")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.coffinDance;
+						TrollPoll.trollAudio = CustomSoundLookUp.coffin;
 					}
 					else if (Response.Additional.ToLower() == "crab")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.crabRave;
+						TrollPoll.trollAudio = CustomSoundLookUp.crab;
 					}
 					else if (Response.Additional.ToLower() == "thomas")
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.thomasDankEngine;
+						TrollPoll.trollAudio = CustomSoundLookUp.thomas;
 					}
 					else
 					{
-						TrollPoll.trollAudio.AudioClip = DownloadTIFiles.vacationMusic;
+						TrollPoll.trollAudio = CustomSoundLookUp.vacation;
 					}
-					TrollPoll.trollAudio.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
-					TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
-					TrollPoll.trollAudio.Loop = false;
-					TrollPoll.trollAudio.LoopCount = 0;
-					TrollPoll.trollAudio.Volume = 0.333f;
 					TrollPoll.isTrollPlaying = true;
 					GameManager.TimeSlinger.FireTimer(DataManager.LeetMode ? 30f : 110f, delegate()
 					{
@@ -216,70 +210,64 @@ public class DevTools : MonoBehaviour
 			{
 				if (ModsManager.Trolling && GameManager.AudioSlinger != null)
 				{
-					AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-					jumpHit.Volume = 0.666f;
-					jumpHit.Loop = false;
+					AudioFileDefinition audioFile;
 					if (Response.Additional.ToLower() == "mlg")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.MLGAirhorn;
+						audioFile = CustomSoundLookUp.mlg;
 					}
 					else if (Response.Additional.ToLower() == "balloonboy")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.BalloonBoy;
+						audioFile = CustomSoundLookUp.bblaugh;
 					}
 					else if (Response.Additional.ToLower() == "virus")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.YourComputerHasVirus;
+						audioFile = CustomSoundLookUp.virus;
 					}
 					else if (Response.Additional.ToLower() == "swamp")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.WhatAreUDoingInMySwamp;
-					}
-					else if (Response.Additional.ToLower() == "swan")
-					{
-						jumpHit.AudioClip = DownloadTIFiles.SwanFailsafe;
+						audioFile = CustomSoundLookUp.swamp;
 					}
 					else if (Response.Additional.ToLower() == "fbi")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.FBIOpenUp;
+						audioFile = CustomSoundLookUp.fbi;
 					}
 					else if (Response.Additional.ToLower() == "conga")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.Conga;
+						audioFile = CustomSoundLookUp.conga;
 					}
 					else if (Response.Additional.ToLower() == "gnome")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.gnomedLOL;
+						audioFile = CustomSoundLookUp.gnome;
 					}
 					else if (Response.Additional.ToLower() == "owl")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.Owl;
+						audioFile = CustomSoundLookUp.owl;
 					}
 					else if (Response.Additional.ToLower() == "startup")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.StartupSound;
+						audioFile = CustomSoundLookUp.startup;
 					}
 					else if (Response.Additional.ToLower() == "shutdown")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.ShutdownSound;
+						audioFile = CustomSoundLookUp.shutdown;
 					}
 					else if (Response.Additional.ToLower() == "bruh")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.Bruh;
+						audioFile = CustomSoundLookUp.bruh;
 					}
 					else if (Response.Additional.ToLower() == "dogdoin")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.DogDoin;
+						audioFile = CustomSoundLookUp.dogdoin;
 					}
 					else if (Response.Additional.ToLower() == "illuminati")
 					{
-						jumpHit.AudioClip = DownloadTIFiles.IlluminatiTroll;
+						audioFile = CustomSoundLookUp.illuminati;
 					}
 					else
 					{
-						jumpHit.AudioClip = DownloadTIFiles.MLGAirhorn;
+						audioFile = CustomSoundLookUp.mlg;
 					}
-					GameManager.AudioSlinger.PlaySound(jumpHit);
+					GameManager.AudioSlinger.PlaySound(audioFile);
 				}
 				this.iAmLive = true;
 			}
@@ -868,11 +856,7 @@ public class DevTools : MonoBehaviour
 		{
 			this.GFschedule = true;
 			GameManager.TimeSlinger.FireTimer(45f, new Action(this.ScheduleGoldenFreddy), 0);
-			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-			jumpHit.AudioClip = DownloadTIFiles.GFPresence;
-			jumpHit.Volume = 0.8f;
-			jumpHit.Loop = false;
-			GameManager.AudioSlinger.PlaySound(jumpHit);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
 			return;
 		}
 		if (StateManager.PlayerState != PLAYER_STATE.PEEPING)
@@ -887,7 +871,7 @@ public class DevTools : MonoBehaviour
 	private void SpawnGF()
 	{
 		GameObject gameObject = new GameObject();
-		gameObject.AddComponent<Image>().sprite = Sprite.Create(DownloadTIFiles.Freddy, new Rect(0f, 0f, (float)DownloadTIFiles.Freddy.width, (float)DownloadTIFiles.Freddy.height), new Vector2(0.5f, 0.5f), 100f);
+		gameObject.AddComponent<Image>().sprite = Sprite.Create(CustomSpriteLookUp.freddy, new Rect(0f, 0f, (float)CustomSpriteLookUp.freddy.width, (float)CustomSpriteLookUp.freddy.height), new Vector2(0.5f, 0.5f), 100f);
 		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
 		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)(Screen.width / 2), (float)(Screen.height / 2), 0f);
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.x);
@@ -895,11 +879,7 @@ public class DevTools : MonoBehaviour
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.z);
 		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
 		gameObject.SetActive(true);
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.AudioClip = DownloadTIFiles.GFLaugh;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
 		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);

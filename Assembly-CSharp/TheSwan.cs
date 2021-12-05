@@ -9,9 +9,7 @@ public class TheSwan
 		{
 			return;
 		}
-		this.SwanSFX.MyAudioHub = AUDIO_HUB.COMPUTER_HUB;
-		this.SwanSFX.AudioClip = DownloadTIFiles.SwanFailsafe;
-		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.failsafe);
 		this.isActivatedBefore = true;
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
 		this.SwanClock = (ModsManager.Nightmare ? 0.5f : 1.5f);
@@ -30,8 +28,7 @@ public class TheSwan
 	{
 		if (this.firstTIME)
 		{
-			this.SwanSFX.AudioClip = DownloadTIFiles.SwanReset;
-			GameManager.AudioSlinger.PlaySound(this.SwanSFX);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.reset);
 			this.firstTIME = false;
 			skyBreakBehavior.SwanNumbers[0] = 4;
 			skyBreakBehavior.SwanNumbers[1] = 8;
@@ -60,21 +57,18 @@ public class TheSwan
 	{
 		if (this._108 < 10f && this._108 > 0f)
 		{
-			this.SwanSFX.AudioClip = DownloadTIFiles.SwanAlarm;
-			GameManager.AudioSlinger.PlaySound(this.SwanSFX);
-			GameManager.AudioSlinger.PlaySoundWithCustomDelay(this.SwanSFX, 0.5f);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.alarm);
+			GameManager.AudioSlinger.PlaySoundWithCustomDelay(CustomSoundLookUp.alarm, 0.5f);
 			return;
 		}
 		if (this._108 >= 10f && this._108 <= 20f)
 		{
-			this.SwanSFX.AudioClip = DownloadTIFiles.SwanAlarm;
-			GameManager.AudioSlinger.PlaySound(this.SwanSFX);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.alarm);
 			return;
 		}
 		if (this._108 > 20f && this._108 <= 60f)
 		{
-			this.SwanSFX.AudioClip = DownloadTIFiles.SwanBeep;
-			GameManager.AudioSlinger.PlaySound(this.SwanSFX);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.beep);
 		}
 	}
 
@@ -82,7 +76,6 @@ public class TheSwan
 	{
 		TheSwan.extOn = false;
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
-		this.SwanSFX.AudioClip = DownloadTIFiles.SwanFailure;
 		skyBreakBehavior.SwanNumbers[0] = 4;
 		skyBreakBehavior.SwanNumbers[1] = 8;
 		skyBreakBehavior.SwanNumbers[2] = 15;
@@ -101,7 +94,7 @@ public class TheSwan
 		{
 			this.skyBreak.CauseSystemFailure();
 		}
-		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.systemFailure);
 		this.TakeSwanDOSB4();
 		GameManager.TimeSlinger.FireTimer(11f, delegate()
 		{
@@ -116,8 +109,7 @@ public class TheSwan
 		{
 			return;
 		}
-		this.SwanSFX.AudioClip = DownloadTIFiles.SwanReset;
-		GameManager.AudioSlinger.PlaySound(this.SwanSFX);
+		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.reset);
 		this._108 = (float)UnityEngine.Random.Range(108, 324);
 		CurrencyManager.AddCurrency(UnityEngine.Random.Range(2.5f * this.SwanClock * this.SwanClock, 3.5f * this.SwanClock * this.SwanClock));
 		if (UnityEngine.Random.Range(0, 100) < ((DataManager.LeetMode || ModsManager.Nightmare) ? 60 : 90) || ModsManager.NoParameter || TheSwan.extOn)
@@ -185,8 +177,6 @@ public class TheSwan
 			return 0.ToString();
 		}
 	}
-
-	public AudioFileDefinition SwanSFX = LookUp.SoundLookUp.LoudDoorBang;
 
 	public bool isActivatedBefore;
 

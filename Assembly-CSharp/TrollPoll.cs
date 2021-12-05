@@ -115,60 +115,54 @@ public class TrollPoll
 		{
 			return;
 		}
-		TrollPoll.trollAudio = LookUp.SoundLookUp.JumpHit1;
 		switch (theSound)
 		{
 		case TrollPoll.TROLL_SOUNDS.VACATION:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.vacationMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.vacation;
 			break;
 		case TrollPoll.TROLL_SOUNDS.TRIANGLE:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.triangleMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.triangle;
 			break;
 		case TrollPoll.TROLL_SOUNDS.POLISHCOW:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.polishCowMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.polishcow;
 			break;
 		case TrollPoll.TROLL_SOUNDS.NYANCAT:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.nyanCatMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.nyancat;
 			break;
 		case TrollPoll.TROLL_SOUNDS.STICKBUG:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.stickBugMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.stickbug;
 			break;
 		case TrollPoll.TROLL_SOUNDS.JEBAITED:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.jebaitedSong;
+			TrollPoll.trollAudio = CustomSoundLookUp.jebaited;
 			break;
 		case TrollPoll.TROLL_SOUNDS.KEYBOARDCAT:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.keyboardCatMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.keyboard;
 			break;
 		case TrollPoll.TROLL_SOUNDS.RUNNING:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.dreamRunningMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.dream;
 			break;
 		case TrollPoll.TROLL_SOUNDS.CHUNGUS:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.bigChungusMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.chungus;
 			break;
 		case TrollPoll.TROLL_SOUNDS.BLUE:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.blueMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.blue;
 			break;
 		case TrollPoll.TROLL_SOUNDS.COFFIN:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.coffinDance;
+			TrollPoll.trollAudio = CustomSoundLookUp.coffin;
 			break;
 		case TrollPoll.TROLL_SOUNDS.CRAB:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.crabRave;
+			TrollPoll.trollAudio = CustomSoundLookUp.crab;
 			break;
 		case TrollPoll.TROLL_SOUNDS.THOMAS:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.thomasDankEngine;
+			TrollPoll.trollAudio = CustomSoundLookUp.thomas;
 			break;
 		case TrollPoll.TROLL_SOUNDS.ELEVATOR:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.minecraftStalMusic;
+			TrollPoll.trollAudio = CustomSoundLookUp.elevator;
 			break;
 		case TrollPoll.TROLL_SOUNDS.KAPPA:
-			TrollPoll.trollAudio.AudioClip = DownloadTIFiles.rickRolled;
+			TrollPoll.trollAudio = CustomSoundLookUp.kappa;
 			break;
 		}
-		TrollPoll.trollAudio.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
-		TrollPoll.trollAudio.MyAudioLayer = AUDIO_LAYER.PLAYER;
-		TrollPoll.trollAudio.Loop = false;
-		TrollPoll.trollAudio.LoopCount = 0;
-		TrollPoll.trollAudio.Volume = 0.333f;
 		TrollPoll.isTrollPlaying = true;
 		GameManager.AudioSlinger.PlaySound(TrollPoll.trollAudio);
 		GameManager.TimeSlinger.FireTimer((DataManager.LeetMode || ModsManager.Nightmare) ? 30f : 110f, new Action(this.stopPlayingSound), 0);

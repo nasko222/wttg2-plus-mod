@@ -158,7 +158,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -200,7 +200,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -212,7 +212,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -256,7 +256,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -268,7 +268,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -280,7 +280,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -326,7 +326,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -338,7 +338,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -350,7 +350,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
@@ -362,7 +362,7 @@ public class WebsiteExtension
 		webPageDefinition4.HashValue = string.Empty;
 		webPageDefinition4.IsTapped = false;
 		webPageDefinition4.PageEvent = null;
-		webPageDefinition4.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source4).text;
+		webPageDefinition4.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source4).text;
 		webPageDefinition4.PageName = pageName;
 		webPageDefinition4.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -410,7 +410,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -422,7 +422,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -434,7 +434,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
@@ -446,7 +446,7 @@ public class WebsiteExtension
 		webPageDefinition4.HashValue = string.Empty;
 		webPageDefinition4.IsTapped = false;
 		webPageDefinition4.PageEvent = null;
-		webPageDefinition4.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source4).text;
+		webPageDefinition4.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source4).text;
 		webPageDefinition4.PageName = pageName;
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
@@ -458,7 +458,7 @@ public class WebsiteExtension
 		webPageDefinition5.HashValue = string.Empty;
 		webPageDefinition5.IsTapped = false;
 		webPageDefinition5.PageEvent = null;
-		webPageDefinition5.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source5).text;
+		webPageDefinition5.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source5).text;
 		webPageDefinition5.PageName = pageName;
 		webPageDefinition5.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -508,7 +508,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -520,7 +520,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -532,7 +532,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
@@ -544,7 +544,7 @@ public class WebsiteExtension
 		webPageDefinition4.HashValue = string.Empty;
 		webPageDefinition4.IsTapped = false;
 		webPageDefinition4.PageEvent = null;
-		webPageDefinition4.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source4).text;
+		webPageDefinition4.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source4).text;
 		webPageDefinition4.PageName = pageName;
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
@@ -556,7 +556,7 @@ public class WebsiteExtension
 		webPageDefinition5.HashValue = string.Empty;
 		webPageDefinition5.IsTapped = false;
 		webPageDefinition5.PageEvent = null;
-		webPageDefinition5.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source5).text;
+		webPageDefinition5.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source5).text;
 		webPageDefinition5.PageName = pageName;
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
@@ -568,7 +568,7 @@ public class WebsiteExtension
 		webPageDefinition6.HashValue = string.Empty;
 		webPageDefinition6.IsTapped = false;
 		webPageDefinition6.PageEvent = null;
-		webPageDefinition6.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source6).text;
+		webPageDefinition6.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source6).text;
 		webPageDefinition6.PageName = pageName;
 		webPageDefinition6.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -620,7 +620,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -632,7 +632,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -644,7 +644,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
@@ -656,7 +656,7 @@ public class WebsiteExtension
 		webPageDefinition4.HashValue = string.Empty;
 		webPageDefinition4.IsTapped = false;
 		webPageDefinition4.PageEvent = null;
-		webPageDefinition4.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source4).text;
+		webPageDefinition4.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source4).text;
 		webPageDefinition4.PageName = pageName;
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
@@ -668,7 +668,7 @@ public class WebsiteExtension
 		webPageDefinition5.HashValue = string.Empty;
 		webPageDefinition5.IsTapped = false;
 		webPageDefinition5.PageEvent = null;
-		webPageDefinition5.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source5).text;
+		webPageDefinition5.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source5).text;
 		webPageDefinition5.PageName = pageName;
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
@@ -680,7 +680,7 @@ public class WebsiteExtension
 		webPageDefinition6.HashValue = string.Empty;
 		webPageDefinition6.IsTapped = false;
 		webPageDefinition6.PageEvent = null;
-		webPageDefinition6.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source6).text;
+		webPageDefinition6.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source6).text;
 		webPageDefinition6.PageName = pageName;
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
@@ -692,7 +692,7 @@ public class WebsiteExtension
 		webPageDefinition7.HashValue = string.Empty;
 		webPageDefinition7.IsTapped = false;
 		webPageDefinition7.PageEvent = null;
-		webPageDefinition7.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source7).text;
+		webPageDefinition7.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source7).text;
 		webPageDefinition7.PageName = pageName;
 		webPageDefinition7.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -746,7 +746,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -758,7 +758,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -770,7 +770,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
@@ -782,7 +782,7 @@ public class WebsiteExtension
 		webPageDefinition4.HashValue = string.Empty;
 		webPageDefinition4.IsTapped = false;
 		webPageDefinition4.PageEvent = null;
-		webPageDefinition4.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source4).text;
+		webPageDefinition4.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source4).text;
 		webPageDefinition4.PageName = pageName;
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
@@ -794,7 +794,7 @@ public class WebsiteExtension
 		webPageDefinition5.HashValue = string.Empty;
 		webPageDefinition5.IsTapped = false;
 		webPageDefinition5.PageEvent = null;
-		webPageDefinition5.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source5).text;
+		webPageDefinition5.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source5).text;
 		webPageDefinition5.PageName = pageName;
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
@@ -806,7 +806,7 @@ public class WebsiteExtension
 		webPageDefinition6.HashValue = string.Empty;
 		webPageDefinition6.IsTapped = false;
 		webPageDefinition6.PageEvent = null;
-		webPageDefinition6.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source6).text;
+		webPageDefinition6.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source6).text;
 		webPageDefinition6.PageName = pageName;
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
@@ -818,7 +818,7 @@ public class WebsiteExtension
 		webPageDefinition7.HashValue = string.Empty;
 		webPageDefinition7.IsTapped = false;
 		webPageDefinition7.PageEvent = null;
-		webPageDefinition7.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source7).text;
+		webPageDefinition7.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source7).text;
 		webPageDefinition7.PageName = pageName;
 		webPageDefinition7.isWTTG1Website = true;
 		webPageDefinition8.id = this.dynamicId;
@@ -830,7 +830,7 @@ public class WebsiteExtension
 		webPageDefinition8.HashValue = string.Empty;
 		webPageDefinition8.IsTapped = false;
 		webPageDefinition8.PageEvent = null;
-		webPageDefinition8.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source8).text;
+		webPageDefinition8.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source8).text;
 		webPageDefinition8.PageName = pageName;
 		webPageDefinition8.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;
@@ -886,7 +886,7 @@ public class WebsiteExtension
 		webPageDefinition.HashValue = string.Empty;
 		webPageDefinition.IsTapped = false;
 		webPageDefinition.PageEvent = null;
-		webPageDefinition.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source).text;
+		webPageDefinition.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source).text;
 		webPageDefinition.PageName = pageName;
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
@@ -898,7 +898,7 @@ public class WebsiteExtension
 		webPageDefinition2.HashValue = string.Empty;
 		webPageDefinition2.IsTapped = false;
 		webPageDefinition2.PageEvent = null;
-		webPageDefinition2.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source2).text;
+		webPageDefinition2.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source2).text;
 		webPageDefinition2.PageName = pageName;
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
@@ -910,7 +910,7 @@ public class WebsiteExtension
 		webPageDefinition3.HashValue = string.Empty;
 		webPageDefinition3.IsTapped = false;
 		webPageDefinition3.PageEvent = null;
-		webPageDefinition3.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source3).text;
+		webPageDefinition3.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source3).text;
 		webPageDefinition3.PageName = pageName;
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
@@ -922,7 +922,7 @@ public class WebsiteExtension
 		webPageDefinition4.HashValue = string.Empty;
 		webPageDefinition4.IsTapped = false;
 		webPageDefinition4.PageEvent = null;
-		webPageDefinition4.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source4).text;
+		webPageDefinition4.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source4).text;
 		webPageDefinition4.PageName = pageName;
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
@@ -934,7 +934,7 @@ public class WebsiteExtension
 		webPageDefinition5.HashValue = string.Empty;
 		webPageDefinition5.IsTapped = false;
 		webPageDefinition5.PageEvent = null;
-		webPageDefinition5.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source5).text;
+		webPageDefinition5.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source5).text;
 		webPageDefinition5.PageName = pageName;
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
@@ -946,7 +946,7 @@ public class WebsiteExtension
 		webPageDefinition6.HashValue = string.Empty;
 		webPageDefinition6.IsTapped = false;
 		webPageDefinition6.PageEvent = null;
-		webPageDefinition6.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source6).text;
+		webPageDefinition6.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source6).text;
 		webPageDefinition6.PageName = pageName;
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
@@ -958,7 +958,7 @@ public class WebsiteExtension
 		webPageDefinition7.HashValue = string.Empty;
 		webPageDefinition7.IsTapped = false;
 		webPageDefinition7.PageEvent = null;
-		webPageDefinition7.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source7).text;
+		webPageDefinition7.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source7).text;
 		webPageDefinition7.PageName = pageName;
 		webPageDefinition7.isWTTG1Website = true;
 		webPageDefinition8.id = this.dynamicId;
@@ -970,7 +970,7 @@ public class WebsiteExtension
 		webPageDefinition8.HashValue = string.Empty;
 		webPageDefinition8.IsTapped = false;
 		webPageDefinition8.PageEvent = null;
-		webPageDefinition8.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source8).text;
+		webPageDefinition8.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source8).text;
 		webPageDefinition8.PageName = pageName;
 		webPageDefinition8.isWTTG1Website = true;
 		webPageDefinition9.id = this.dynamicId;
@@ -982,7 +982,7 @@ public class WebsiteExtension
 		webPageDefinition9.HashValue = string.Empty;
 		webPageDefinition9.IsTapped = false;
 		webPageDefinition9.PageEvent = null;
-		webPageDefinition9.PageHTML = AssetBundleManager.customSource.LoadAsset<TextAsset>(source9).text;
+		webPageDefinition9.PageHTML = AssetBundleManager.WTTG2PlusProps.LoadAsset<TextAsset>(source9).text;
 		webPageDefinition9.PageName = pageName;
 		webPageDefinition9.isWTTG1Website = true;
 		webSiteDefinition.id = this.dynamicId;

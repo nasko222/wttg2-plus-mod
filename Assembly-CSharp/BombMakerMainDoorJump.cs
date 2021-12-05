@@ -5,12 +5,12 @@ public class BombMakerMainDoorJump : Jump
 {
 	protected override void DoStage()
 	{
-		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(DownloadTIFiles.BombMakerApartmentKiller, Vector3.zero, Quaternion.identity);
+		GameObject gameObject = UnityEngine.Object.Instantiate<GameObject>(CustomObjectLookUp.BombMakerApartmentJump, Vector3.zero, Quaternion.identity);
 		gameObject.transform.position = new Vector3(-2.282f, 39.75f, -4.09f);
 		gameObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 210f, 0f));
 		HitmanRoamJumper.Ins.TriggerMainDoorOutSideJump();
 		BombMakerApartmentJump BMAJ = gameObject.GetComponent<BombMakerApartmentJump>();
-		GameManager.AudioSlinger.PlaySoundWithCustomDelay(AssetBundleManager.BombMakerJumpSFX, 0.3f);
+		GameManager.AudioSlinger.PlaySoundWithCustomDelay(LookUp.SoundLookUp.JumpHit1, 0.3f);
 		GameManager.TimeSlinger.FireTimer(0.5f, delegate()
 		{
 			BMAJ.ShoulderRotate();

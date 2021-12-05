@@ -608,7 +608,7 @@ public class HackerManager : MonoBehaviour
 	private void Start()
 	{
 		this.myComputerCameraManager = ComputerCameraManager.Ins;
-		this.HackingIntroBedSFX.AudioClip = DownloadTIFiles.hackermansAudio;
+		this.HackingIntroBedSFX.AudioClip = CustomSoundLookUp.hackermans;
 	}
 
 	private void Update()

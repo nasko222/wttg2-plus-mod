@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using ASoft.WTTG2;
 using UnityEngine;
 
 public class StageManager : MonoBehaviour
@@ -148,6 +149,7 @@ public class StageManager : MonoBehaviour
 		{
 			DataManager.LeetMode = true;
 		}
+		new GameObject("AFDManager").AddComponent<AFDManager>();
 	}
 
 	private void Start()
