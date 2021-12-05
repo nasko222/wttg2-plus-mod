@@ -70,7 +70,20 @@ public static class EnemyManager
 		EnemyManager._cultManager = null;
 		EnemyManager._dollMakerManager = null;
 		EnemyManager._breatherManager = null;
+		EnemyManager._bombMakerManager = null;
 		GC.Collect();
+	}
+
+	public static BombMakerManager BombMakerManager
+	{
+		get
+		{
+			return EnemyManager._bombMakerManager;
+		}
+		set
+		{
+			EnemyManager._bombMakerManager = value;
+		}
 	}
 
 	public static ENEMY_STATE State;
@@ -84,4 +97,6 @@ public static class EnemyManager
 	private static DollMakerManager _dollMakerManager;
 
 	private static BreatherManager _breatherManager;
+
+	private static BombMakerManager _bombMakerManager;
 }

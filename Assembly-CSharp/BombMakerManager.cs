@@ -1,85 +1,119 @@
 ﻿using System;
 using UnityEngine;
 
-public class BombMakerManager
+public class BombMakerManager : MonoBehaviour
 {
-	public void CheckSulphurInventory()
+	public void ReleaseTheBombMaker()
 	{
-		if (StateManager.PlayerState != PLAYER_STATE.COMPUTER)
+		if (!this.bombMakerReleased)
 		{
-			GameManager.TimeSlinger.FireTimer(30f, new Action(this.CheckSulphurInventory), 0);
+			this.SulphurTaken = 0;
+			GameManager.StageManager.ManuallyActivateThreats();
+			this.bombMakerReleased = true;
+			this.activateSulphurTime();
+		}
+	}
+
+	private void triggerBombMakerKill()
+	{
+		if (EnemyManager.State != ENEMY_STATE.IDLE || EnvironmentManager.PowerState != POWER_STATE.ON || StateManager.PlayerLocation == PLAYER_LOCATION.UNKNOWN)
+		{
+			this.sulphurWindow = 40f;
+			this.sulphurTimeStamp = Time.time;
+			this.sulphurActive = true;
 			return;
 		}
-		if (SulphurInventory.SulphurAmount <= 0)
+		EnvironmentManager.PowerBehaviour.LockedOut = true;
+		DataManager.LockSave = true;
+		DataManager.ClearGameData();
+		EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.BATH_ROOM || StateManager.PlayerLocation == PLAYER_LOCATION.OUTSIDE)
 		{
-			this.ScheduleAttack();
+			Debug.Log("pc jumpscare foo");
+			Debug.Log("hallway 8 jumpscare foo");
 			return;
 		}
-		SulphurInventory.RemoveSulphur(1);
+		BombMakerBehaviour.Ins.StageBombMakerOutsideKill();
+	}
+
+	private void activateSulphurTime()
+	{
+		this.sulphurWindow = UnityEngine.Random.Range(this.bmData.SulphurCoolTimeMin, this.bmData.SulphurCoolTimeMax);
 		if (ModsManager.Nightmare)
 		{
-			CurrencyManager.AddCurrency(20f);
+			this.sulphurWindow *= 0.6f;
 		}
-		else
-		{
-			CurrencyManager.AddCurrency(UnityEngine.Random.Range(30f, 55f));
-		}
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		jumpHit.AudioClip = DownloadTIFiles.BombmakerLaugh;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
+		this.sulphurTimeStamp = Time.time;
+		this.sulphurActive = true;
 	}
 
-	private void ScheduleAttack()
+	private void triggerSulphurTimesUp()
 	{
-		if (EnemyManager.State != ENEMY_STATE.IDLE)
+		if ((EnemyManager.State != ENEMY_STATE.IDLE || EnvironmentManager.PowerState != POWER_STATE.ON) && (EnemyManager.State != ENEMY_STATE.BOMB_MAKER || EnvironmentManager.PowerState != POWER_STATE.ON))
 		{
-			GameManager.TimeSlinger.FireTimer(30f, new Action(this.ScheduleAttack), 0);
+			this.sulphurWindow = 40f;
+			this.sulphurTimeStamp = Time.time;
+			this.sulphurActive = true;
 			return;
 		}
-		EnemyManager.State = ENEMY_STATE.LOCKED;
-		this.PerformAttack();
-	}
-
-	private void ExecExplosion()
-	{
-		DataManager.ClearGameData();
-		MainCameraHook.Ins.ClearARF(2f);
-		UIManager.TriggerHardGameOver("YOU DISAPPOINTED THE BOMB MAKER");
-	}
-
-	private void PerformAttack()
-	{
-		if (StateManager.PlayerState == PLAYER_STATE.COMPUTER)
+		EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
+		if (SulphurInventory.SulphurAmount <= 0)
 		{
-			AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-			jumpHit.Volume = 1f;
-			jumpHit.Loop = false;
-			jumpHit.AudioClip = DownloadTIFiles.Explosion;
-			GameManager.AudioSlinger.PlaySound(jumpHit);
-			EnvironmentManager.PowerBehaviour.ForceBombMakerPowerOff();
-			GameManager.TimeSlinger.FireTimer(1.5f, new Action(this.ExecExplosion), 0);
+			this.triggerBombMakerKill();
 			return;
 		}
-		GameManager.TimeSlinger.FireTimer(30f, new Action(this.PerformAttack), 0);
+		EnemyManager.State = ENEMY_STATE.IDLE;
+		SulphurInventory.RemoveSulphur(1);
+		Debug.Log("laugh foo");
+		CurrencyManager.AddCurrency(ModsManager.EasyModeActive ? 20f : 65f);
+		if (this.SulphurTaken < 5)
+		{
+			this.SulphurTaken++;
+			this.activateSulphurTime();
+		}
 	}
 
-	public void BombMakerPayload()
+	private void Awake()
 	{
-		if (StateManager.PlayerState != PLAYER_STATE.COMPUTER)
+		EnemyManager.BombMakerManager = this;
+		this.myID = base.transform.position.GetHashCode();
+	}
+
+	private void Update()
+	{
+		if (this.sulphurActive && Time.time - this.sulphurTimeStamp >= this.sulphurWindow)
 		{
-			GameManager.TimeSlinger.FireTimer(10f, new Action(this.BombMakerPayload), 0);
-			return;
-		}
-		AudioFileDefinition jumpHit = LookUp.SoundLookUp.JumpHit1;
-		jumpHit.Volume = 1f;
-		jumpHit.Loop = false;
-		jumpHit.AudioClip = DownloadTIFiles.BombmakerLaugh;
-		GameManager.AudioSlinger.PlaySound(jumpHit);
-		if (!ModsManager.Nightmare)
-		{
-			GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("BombMaker.txt", "Hello Clint, If you happen to be reading this, then you already know who I am. I hope you like my job. I saw you visited my bomb making website. You have to understand me, it takes a lot of time to make up all of these bombs, so I need some help from you. Acquire me some bomb materials, I will do the rest of my job. Do not fail me or I will explode you! HAHAHAHAHAHA!");
+			this.sulphurActive = false;
+			this.triggerSulphurTimesUp();
 		}
 	}
+
+	private void OnDestroy()
+	{
+		EnemyManager.BombMakerManager = null;
+		Debug.Log("[BombMaker Mod] Unloaded successfully");
+	}
+
+	private float sulphurTimeStamp;
+
+	private float sulphurWindow;
+
+	private bool bombMakerReleased;
+
+	private bool bombMakerActivated;
+
+	private bool sulphurActive;
+
+	private int myID;
+
+	private bool forced;
+
+	[HideInInspector]
+	public BombMakerBehaviour bombMakerBehaviour;
+
+	[HideInInspector]
+	public BombMakerDataDefinition bmData;
+
+	[HideInInspector]
+	public int SulphurTaken;
 }

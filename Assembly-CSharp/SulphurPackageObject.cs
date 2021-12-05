@@ -36,58 +36,11 @@ public class SulphurPackageObject : MonoBehaviour
 
 	public void UpdateSulphurPackages()
 	{
-		switch (SulphurInventory.SulphurAmount)
-		{
-		case 0:
-			this.packages[0].SetActive(false);
-			this.packages[1].SetActive(false);
-			this.packages[2].SetActive(false);
-			this.packages[3].SetActive(false);
-			this.packages[4].SetActive(false);
-			return;
-		case 1:
-			this.packages[0].SetActive(true);
-			this.packages[1].SetActive(false);
-			this.packages[2].SetActive(false);
-			this.packages[3].SetActive(false);
-			this.packages[4].SetActive(false);
-			return;
-		case 2:
-			this.packages[0].SetActive(true);
-			this.packages[1].SetActive(true);
-			this.packages[2].SetActive(false);
-			this.packages[3].SetActive(false);
-			this.packages[4].SetActive(false);
-			return;
-		case 3:
-			this.packages[0].SetActive(true);
-			this.packages[1].SetActive(true);
-			this.packages[2].SetActive(true);
-			this.packages[3].SetActive(false);
-			this.packages[4].SetActive(false);
-			return;
-		case 4:
-			this.packages[0].SetActive(true);
-			this.packages[1].SetActive(true);
-			this.packages[2].SetActive(true);
-			this.packages[3].SetActive(true);
-			this.packages[4].SetActive(false);
-			return;
-		case 5:
-			this.packages[0].SetActive(true);
-			this.packages[1].SetActive(true);
-			this.packages[2].SetActive(true);
-			this.packages[3].SetActive(true);
-			this.packages[4].SetActive(true);
-			return;
-		default:
-			this.packages[0].SetActive(false);
-			this.packages[1].SetActive(false);
-			this.packages[2].SetActive(false);
-			this.packages[3].SetActive(false);
-			this.packages[4].SetActive(false);
-			return;
-		}
+		this.packages[0].SetActive(SulphurInventory.SulphurAmount >= 1);
+		this.packages[1].SetActive(SulphurInventory.SulphurAmount >= 2);
+		this.packages[2].SetActive(SulphurInventory.SulphurAmount >= 3);
+		this.packages[3].SetActive(SulphurInventory.SulphurAmount >= 4);
+		this.packages[4].SetActive(SulphurInventory.SulphurAmount >= 5);
 	}
 
 	[HideInInspector]
