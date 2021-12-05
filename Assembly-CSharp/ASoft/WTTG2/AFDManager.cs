@@ -120,7 +120,7 @@ namespace ASoft.WTTG2
 			audioFileDefinition.AudioClip = AFDClip;
 			audioFileDefinition.Volume = 1f;
 			audioFileDefinition.Loop = true;
-			audioFileDefinition.LoopCount = 3600;
+			audioFileDefinition.LoopCount = -1;
 			if (this.currentAFDs.ContainsKey(AFDName))
 			{
 				this.currentAFDs[AFDName] = audioFileDefinition;
@@ -142,6 +142,7 @@ namespace ASoft.WTTG2
 			audioFileDefinition.MyAudioLayer = AUDIO_LAYER.WEBSITE;
 			audioFileDefinition.AudioClip = AFDClip;
 			audioFileDefinition.Loop = loop;
+			audioFileDefinition.LoopCount = -1;
 			if (this.currentAFDs.ContainsKey(AFDName))
 			{
 				this.currentAFDs[AFDName] = audioFileDefinition;
