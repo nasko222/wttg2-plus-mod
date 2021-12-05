@@ -11,74 +11,74 @@ public class WebsiteExtension
 		this.AddFakeWebsites(Websites);
 		if (OptionDataHook.Ins.Options.Nudity)
 		{
-			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false);
-			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueen", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false);
+			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false, null, null, null);
+			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueen", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false, null, null, null);
 		}
 		else
 		{
-			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCamsNN", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false);
-			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueenNN", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false);
+			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCamsNN", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false, null, null, null);
+			this.AddTriplePageWebsite(Websites, "steroidqueen.txt", "Steroid Queen", "SteroidQueenNN", "Steroid marketplace.", "steroidqueenorder.txt", "order.html", "steroidqueenproducts.txt", "products.html", false, -1, false, false, false, null, null, null);
 		}
-		this.AddSinglePageWebsite(Websites, "41818.txt", "41818", "41818", "They are coming... No one is safe anymore!", true, 2, true);
-		this.AddSinglePageWebsite(Websites, "beans.txt", "Beans", "Beans", "Beans", false, -1, true);
-		this.AddDoublePageWebsite(Websites, "blackhatpost.txt", "Black Hat Post", "BlackHatPost", "Hackers doxxing people for money.", "blackhatpostsubmit.txt", "submit.html", false, -1, false, false);
-		this.AddDoublePageWebsite(Websites, "bleedforme.txt", "Bleed For Me", "BleedForMe", "Become a donator.", "bleedformeerror.txt", "error.html", false, -1, false, false);
-		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "Group of people who hunt down \"witches\"", true, 4, false);
-		this.AddDoublePageWebsite(Websites, "cannabisworld.txt", "CannabisWorld", "CannabisWorld", "The one and only place for high quality cannabis.", "cannabisworldorder.txt", "order.html", false, -1, true, false);
-		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "Shady doctors selling cheap surgery.", "cheapsurgerycontact.txt", "contact.html", false, -1, false, false);
-		this.AddDoublePageWebsite(Websites, "classyexchange.txt", "Classy Exchange", "ClassyExchange", "Businessman offering \"middleman\" service", "classyexchangeinfo.txt", "info.html", false, -1, false, false);
-		this.AddDoublePageWebsite(Websites, "creditcardmart.txt", "Credit Card Mart", "CreditCardMart", "A marketplace for stolen credit cards.", "creditcardmartorder.txt", "order.html", false, -1, false, false);
-		this.AddSinglePageWebsite(Websites, "darkbook.txt", "Darkbook", "Darkbook", "The facebook of the dark web.", false, -1, false);
-		this.AddSinglePageWebsite(Websites, "deathlog.txt", "Death Log", "Deathlog", "\"Person finds dead people\" blog post collection.", false, -1, false);
-		this.AddSinglePageWebsite(Websites, "decryptyou.txt", "Decrypt You", "DecryptYou", "Portal for ransom and hostage.", true, 4, false);
-		this.AddTriplePageWebsite(Websites, "dispatch.txt", "Dispatch", "Dispatch", "Creepy number stations decrypt blog post.", "dispatchtable.txt", "table.html", "dispatchbeware.txt", "beware.html", true, 5, true, false, true);
-		this.AddSinglePageWebsite(Websites, "doctormurder.txt", "Doctor Murder", "DoctorMurder", "Professional murder service for hire.", true, 5, false);
-		this.AddSinglePageWebsite(Websites, "doge.txt", "DOGE", "DOGE", "WOW!", false, -1, true);
-		this.AddDoublePageWebsite(Websites, "doscoingenerator.txt", "DOSCoin Generator", "DOSCoinGenerator", "Shady exploit for mining DOSCoins for free.", "doscoingeneratorerror.txt", "error.html", false, -1, false, false);
-		this.AddSinglePageWebsite(Websites, "enigma.txt", "Enigma", "Enigma", "Puzzle to solve the cosmos.", true, 3, true);
-		this.AddTriplePageWebsite(Websites, "eurofirearms.txt", "Euro Firearms", "EuroFirearms", "The European weapons store front.", "eurofirearmsproducts.txt", "products.html", "eurofirearmsorder.txt", "order.html", false, -1, false, false, false);
-		this.AddQuintiplePageWebsite(Websites, "euthanasialegion.txt", "Euthanasia Legion", "EuthanasiaLegion", "Some weird people believing in superiority.", "euthanasialegionabout.txt", "about.html", "euthanasialegionorder.txt", "order.html", "euthanasialegionproducts.txt", "products.html", "euthanasialegionservice.txt", "service.html", false, -1, false, false, false, false, false);
-		this.AddQuadriplePageWebsite(Websites, "familydrugshop.txt", "Family Drug Shop", "FamilyDrugShop", "Family owned drug store.", "familydrugshopabout.txt", "about.html", "familydrugshopfaq.txt", "faq.html", "familydrugshoporder.txt", "order.html", false, -1, false, false, false, false);
-		this.AddQuadriplePageWebsite(Websites, "feetparadise.txt", "Feet Paradise", "FeetParadise", "Stock feet images website.", "feetparadisephotos.txt", "photos.html", "feetparadisepremium.txt", "premium.html", "feetparadiseerror.txt", "error.html", false, -1, false, false, false, false);
-		this.AddDoublePageWebsite(Websites, "finalthoughts.txt", "Final Thoughts", "FinalThoughts", "Not the kind of suicide hotline you're thinking.", "finalthoughtscontact.txt", "contact.html", false, -1, false, false);
-		this.AddSinglePageWebsite(Websites, "fleshtrade.txt", "Flesh Trade", "FleshTrade", "Comunity looking for memebers to trade human flesh.", false, -1, false);
-		this.AddTriplePageWebsite(Websites, "forsakengifts.txt", "Forsaken Gifts", "ForsakenGifts", "Storefront for a very special type of gift.", "forsakengiftsgifts.txt", "gifts.html", "forsakengiftsorder.txt", "order.html", false, -1, true, false, false);
-		this.AddSinglePageWebsite(Websites, "funnymonke.txt", "FUNNY MONKE", "FunnyMonke", "Very funky!", false, -1, true);
-		this.AddSinglePageWebsite(Websites, "gravethieves.txt", "Grave Thieves", "GraveThieves", "Service for stealing valuables from graves.", true, 4, false);
-		this.AddTriplePageWebsite(Websites, "greetmysisters.txt", "Greet My Sisters", "GreetMySisters", "Family selling their daughters for pleasure.", "greetmysisterssisters.txt", "sisters.html", "greetmysistersorder.txt", "order.html", true, 2, false, false, false);
-		this.AddSeptuplePageWebsite(Websites, "hailsatan.txt", "Hail Satan", "HailSatan", "Satanistic worship web portal.", "hailsatancontact.txt", "contact.html", "hailsatanfaq.txt", "faq.html", "hailsatanlinks.txt", "links.html", "hailsatanmembers.txt", "members.html", "hailsatanpics.txt", "pics.html", "hailsatanvids.txt", "vids.html", false, -1, true, false, false, false, false, false, false);
-		this.AddSinglePageWebsite(Websites, "haunteddolls.txt", "Haunted Dolls", "HauntedDolls", "Some random guys passionated about creepy dolls.", false, -1, false);
-		this.AddDoublePageWebsite(Websites, "hermitblog.txt", "Hermit's Blog", "HermitBlog", "Some crazy old man sharing forbidden knowledge.", "hermitblogwarning.txt", "warning.html", true, 2, false, true);
-		this.AddDoublePageWebsite(Websites, "hiddencams.txt", "Hidden Cams", "HiddenCams", "Website dedicated to spying people.", "hiddencamsorder.txt", "order.html", false, -1, false, false);
-		this.AddQuadriplePageWebsite(Websites, "hiddenquestions.txt", "Hidden Questions", "HiddenQuestions", "What are the answers?", "hiddenquestions1.txt", "question1.html", "hiddenquestions2.txt", "question2.html", "hiddenquestions3.txt", "question3.html", true, 2, false, false, false, false);
-		this.AddDoublePageWebsite(Websites, "hotburners.txt", "Hot Burners", "HotBurners", "Gun dealer site.", "hotburnersorder.txt", "order.html", false, -1, false, false);
-		this.AddSinglePageWebsite(Websites, "illuminati.txt", "Illuminati", "Illuminati", "333", true, 1, true);
-		this.AddSinglePageWebsite(Websites, "itersanguinis.txt", "Iter Sanguinis", "IterSanguinis", "Poem to embrace the way of the blood.", false, -1, false);
-		this.AddSinglePageWebsite(Websites, "legion.txt", "Legion", "Legion", "Weird cryptic webpage", false, -1, true);
-		this.AddSixtuplePageWebsite(Websites, "masterclass.txt", "T.I.M.'s Masterclass", "Masterclass", "Lone professional shades unique into gathering techniques.", "masterclassdogeater.txt", "dogeater.html", "masterclassjessica.txt", "jessica.html", "masterclassjimmy.txt", "jimmy.html", "masterclassreviews.txt", "reviews.html", "masterclasssakura.txt", "sakura.html", false, -1, false, false, false, false, false, false);
-		this.AddNinePageWebsite(Websites, "mp.txt", "Mysterious Playground", "MysteriousPlayground", "Weird collection of shapeshifting images.", "mpbear.txt", "bear.html", "mpclown.txt", "clown.html", "mpeyes.txt", "eyes.html", "mpfakemain.txt", "fakemain.html", "mpnothing.txt", "nothing.html", "mppatrick.txt", "patrick.html", "mpskull.txt", "skull.html", "mpsmile.txt", "smile.html", false, -1, false, false, true, false, false, false, false, false, false);
-		this.AddTriplePageWebsite(Websites, "necroconvert.txt", "Necro Convert", "NecroConvert", "Organisation selling \"repurposed\" dead tissue", "necroconvertabout.txt", "about.html", "necroconvertservices.txt", "services.html", false, -1, false, false, false);
-		this.AddSinglePageWebsite(Websites, "nucleardream.txt", "Nuclear Dream", "NuclearDream", "Dude sells atomic arsenal to the highest bidder.", true, 5, true);
-		this.AddSinglePageWebsite(Websites, "nudeyoutubers.txt", "NudeYoutubers", "NudeYoutubers", "Horny for video influencers?", true, 1, false);
-		this.AddTriplePageWebsite(Websites, "organmart.txt", "Organ Mart", "OrganMart", "Fucked up people selling organs for a lot of money.", "organmartproducts.txt", "products.html", "organmartorder.txt", "order.html", false, -1, false, false, false);
-		this.AddDoublePageWebsite(Websites, "passportsrus.txt", "Passports R US", "PassportsRUs", "Fake passport site.", "passportsrusorder.txt", "order.html", false, -1, false, false);
-		this.AddDoublePageWebsite(Websites, "peeguidance.txt", "Pee Guidance", "PeeGuidance", "Tutorial on correct positions in public restrooms.", "peeguidancelogin.txt", "login.html", false, -1, false, false);
-		this.AddTriplePageWebsite(Websites, "rentahacker.txt", "Rent A Hacker", "RentAHacker", "Dishonorable services only.", "rentahackererror.txt", "error.html", "rentahackerproducts.txt", "products.html", false, -1, false, false, false);
-		this.AddSinglePageWebsite(Websites, "rosesdestruction.txt", "Roses Destruction", "RosesDestruction", "Just fucked up...", true, 5, true);
-		this.AddSinglePageWebsite(Websites, "shadowwebportal.txt", "Shadow Web Portal", "ShadowWeb", "Mysterious Shadow Web access point", true, 5, false);
-		this.AddDoublePageWebsite(Websites, "shithole.txt", "Shithole", "Shithole", "People sharing public restroom stories.", "shitholeolder.txt", "older.html", false, -1, false, false);
-		this.AddQuadriplePageWebsite(Websites, "tangodown.txt", "Tango Down", "TangoDown", "Hitman for hire website.", "tangodownpayment.txt", "payment.html", "tangodownresults.txt", "results.html", "tangodownhire.txt", "hire.html", true, 0, true, false, false, false);
-		this.AddSinglePageWebsite(Websites, "takedownman.txt", "Takedownman", "TakedownMan", "Look at all of them he took down...", false, -1, true);
-		this.AddSinglePageWebsite(Websites, "testicalmutilation.txt", "Testical Mutilation", "TesticalMutilation", "A woman’s fantasy of \"punishing men\" blog post.", true, 3, true);
-		this.AddDoublePageWebsite(Websites, "theinvestigation.txt", "TH3 1NV3ST1G4T10N", "TheInvestigation", "IT community forum.", "theinvestigationerror.txt", "error.html", true, 4, false, false);
-		this.AddSinglePageWebsite(Websites, "theart.txt", "The Art", "RickRoll", "The art of what???", false, -1, true);
-		this.AddSinglePageWebsite(Websites, "thebigredbutton.txt", "The Big Red Button", "TheBigRedButton", "Dangerous button! Don't press it!", false, -1, false);
-		this.AddSeptuplePageWebsite(Websites, "thebutcher.txt", "The Butcher", "TheButcher", "Proper ways of butchering a human body.", "thebutcherbeheading.txt", "beheading.html", "thebutcherbleeding.txt", "bleeding.html", "thebutchergutting.txt", "gutting.html", "thebutcherhanging.txt", "hanging.html", "thebutcherprep.txt", "prep.html", "thebutcherskinning.txt", "skinning.html", false, -1, false, false, false, false, false, false, false);
-		this.AddDoublePageWebsite(Websites, "themuhgel.txt", "The Muhgel", "TheMuhgel", "Sells slaves of all types and ages.", "themuhgelorder.txt", "order.html", false, -1, false, false);
-		this.AddSixtuplePageWebsite(Websites, "vengeanceangel.txt", "Vengeance Angel", "VengeanceAngel", "Some random dead person who wants to purge the whole world.", "vengeanceangelwill.txt", "will.html", "vengeanceangelpower.txt", "power.html", "vengeanceangelfollowers.txt", "followers.html", "vengeanceangelresults.txt", "results.html", "vengeanceangelfreedom.txt", "freedom.html", false, -1, false, false, false, false, false, true);
-		this.AddDoublePageWebsite(Websites, "warehouserenter.txt", "Warehouse Renter", "WarehouseRenter", "Service for renting warehouses for all kinds of purpose.", "warehouserenterrent.txt", "rent.html", false, -1, false, false);
-		this.AddDoublePageWebsite(Websites, "weedpost.txt", "Weed Post", "WeedPost", "Cheep weed store front.", "weedpostorder.txt", "order.html", false, -1, false, false);
-		this.AddSixtuplePageWebsite(Websites, "zeroday.txt", "zeroDay", "zeroDay", "Blog post of a hacker about exploits and other applications.", "zerodaycode.txt", "code.html", "zerodayexploits.txt", "exploits.html", "zerodayleaks.txt", "leaks.html", "zerodayrant.txt", "rant.html", "zerodayscripts.txt", "scripts.html", false, -1, false, false, false, false, false, false);
+		this.AddSinglePageWebsite(Websites, "41818.txt", "41818", "41818", "They are coming... No one is safe anymore!", true, 2, true, CustomSoundLookUp.foeoe);
+		this.AddSinglePageWebsite(Websites, "beans.txt", "Beans", "Beans", "Beans", false, -1, true, CustomSoundLookUp.beans);
+		this.AddDoublePageWebsite(Websites, "blackhatpost.txt", "Black Hat Post", "BlackHatPost", "Hackers doxxing people for money.", "blackhatpostsubmit.txt", "submit.html", false, -1, false, false, null, null);
+		this.AddDoublePageWebsite(Websites, "bleedforme.txt", "Bleed For Me", "BleedForMe", "Become a donator.", "bleedformeerror.txt", "error.html", false, -1, false, false, null, null);
+		this.AddSinglePageWebsite(Websites, "burnedatthestake.txt", "Burned At The Stake", "BurnedAtTheStake", "Group of people who hunt down \"witches\"", true, 4, false, null);
+		this.AddDoublePageWebsite(Websites, "cannabisworld.txt", "CannabisWorld", "CannabisWorld", "The one and only place for high quality cannabis.", "cannabisworldorder.txt", "order.html", false, -1, true, false, CustomSoundLookUp.cannabisworld, null);
+		this.AddDoublePageWebsite(Websites, "cheapsurgery.txt", "Cheap Surgery", "CheapSurgery", "Shady doctors selling cheap surgery.", "cheapsurgerycontact.txt", "contact.html", false, -1, false, false, null, null);
+		this.AddDoublePageWebsite(Websites, "classyexchange.txt", "Classy Exchange", "ClassyExchange", "Businessman offering \"middleman\" service", "classyexchangeinfo.txt", "info.html", false, -1, false, false, null, null);
+		this.AddDoublePageWebsite(Websites, "creditcardmart.txt", "Credit Card Mart", "CreditCardMart", "A marketplace for stolen credit cards.", "creditcardmartorder.txt", "order.html", false, -1, false, false, null, null);
+		this.AddSinglePageWebsite(Websites, "darkbook.txt", "Darkbook", "Darkbook", "The facebook of the dark web.", false, -1, false, null);
+		this.AddSinglePageWebsite(Websites, "deathlog.txt", "Death Log", "Deathlog", "\"Person finds dead people\" blog post collection.", false, -1, false, null);
+		this.AddSinglePageWebsite(Websites, "decryptyou.txt", "Decrypt You", "DecryptYou", "Portal for ransom and hostage.", true, 4, false, null);
+		this.AddTriplePageWebsite(Websites, "dispatch.txt", "Dispatch", "Dispatch", "Creepy number stations decrypt blog post.", "dispatchtable.txt", "table.html", "dispatchbeware.txt", "beware.html", true, 5, true, false, true, CustomSoundLookUp.dispatch, null, CustomSoundLookUp.beware);
+		this.AddSinglePageWebsite(Websites, "doctormurder.txt", "Doctor Murder", "DoctorMurder", "Professional murder service for hire.", true, 5, false, null);
+		this.AddSinglePageWebsite(Websites, "doge.txt", "DOGE", "DOGE", "WOW!", false, -1, true, CustomSoundLookUp.cool);
+		this.AddDoublePageWebsite(Websites, "doscoingenerator.txt", "DOSCoin Generator", "DOSCoinGenerator", "Shady exploit for mining DOSCoins for free.", "doscoingeneratorerror.txt", "error.html", false, -1, false, false, null, null);
+		this.AddSinglePageWebsite(Websites, "enigma.txt", "Enigma", "Enigma", "Puzzle to solve the cosmos.", true, 3, true, CustomSoundLookUp.enigma);
+		this.AddTriplePageWebsite(Websites, "eurofirearms.txt", "Euro Firearms", "EuroFirearms", "The European weapons store front.", "eurofirearmsproducts.txt", "products.html", "eurofirearmsorder.txt", "order.html", false, -1, false, false, false, null, null, null);
+		this.AddQuintiplePageWebsite(Websites, "euthanasialegion.txt", "Euthanasia Legion", "EuthanasiaLegion", "Some weird people believing in superiority.", "euthanasialegionabout.txt", "about.html", "euthanasialegionorder.txt", "order.html", "euthanasialegionproducts.txt", "products.html", "euthanasialegionservice.txt", "service.html", false, -1, false, false, false, false, false, null, null, null, null, null);
+		this.AddQuadriplePageWebsite(Websites, "familydrugshop.txt", "Family Drug Shop", "FamilyDrugShop", "Family owned drug store.", "familydrugshopabout.txt", "about.html", "familydrugshopfaq.txt", "faq.html", "familydrugshoporder.txt", "order.html", false, -1, false, false, false, false, null, null, null, null);
+		this.AddQuadriplePageWebsite(Websites, "feetparadise.txt", "Feet Paradise", "FeetParadise", "Stock feet images website.", "feetparadisephotos.txt", "photos.html", "feetparadisepremium.txt", "premium.html", "feetparadiseerror.txt", "error.html", false, -1, false, false, false, false, null, null, null, null);
+		this.AddDoublePageWebsite(Websites, "finalthoughts.txt", "Final Thoughts", "FinalThoughts", "Not the kind of suicide hotline you're thinking.", "finalthoughtscontact.txt", "contact.html", false, -1, false, false, null, null);
+		this.AddSinglePageWebsite(Websites, "fleshtrade.txt", "Flesh Trade", "FleshTrade", "Comunity looking for memebers to trade human flesh.", false, -1, false, null);
+		this.AddTriplePageWebsite(Websites, "forsakengifts.txt", "Forsaken Gifts", "ForsakenGifts", "Storefront for a very special type of gift.", "forsakengiftsgifts.txt", "gifts.html", "forsakengiftsorder.txt", "order.html", false, -1, true, false, false, CustomSoundLookUp.forsaken, null, null);
+		this.AddSinglePageWebsite(Websites, "funnymonke.txt", "FUNNY MONKE", "FunnyMonke", "Very funky!", false, -1, true, CustomSoundLookUp.funky);
+		this.AddSinglePageWebsite(Websites, "gravethieves.txt", "Grave Thieves", "GraveThieves", "Service for stealing valuables from graves.", true, 4, false, null);
+		this.AddTriplePageWebsite(Websites, "greetmysisters.txt", "Greet My Sisters", "GreetMySisters", "Family selling their daughters for pleasure.", "greetmysisterssisters.txt", "sisters.html", "greetmysistersorder.txt", "order.html", true, 2, false, false, false, null, null, null);
+		this.AddSeptuplePageWebsite(Websites, "hailsatan.txt", "Hail Satan", "HailSatan", "Satanistic worship web portal.", "hailsatancontact.txt", "contact.html", "hailsatanfaq.txt", "faq.html", "hailsatanlinks.txt", "links.html", "hailsatanmembers.txt", "members.html", "hailsatanpics.txt", "pics.html", "hailsatanvids.txt", "vids.html", false, -1, true, false, false, false, false, false, false, CustomSoundLookUp.hailsatan, null, null, null, null, null, null);
+		this.AddSinglePageWebsite(Websites, "haunteddolls.txt", "Haunted Dolls", "HauntedDolls", "Some random guys passionated about creepy dolls.", false, -1, false, null);
+		this.AddDoublePageWebsite(Websites, "hermitblog.txt", "Hermit's Blog", "HermitBlog", "Some crazy old man sharing forbidden knowledge.", "hermitblogwarning.txt", "warning.html", true, 2, false, true, null, CustomSoundLookUp.whisper);
+		this.AddDoublePageWebsite(Websites, "hiddencams.txt", "Hidden Cams", "HiddenCams", "Website dedicated to spying people.", "hiddencamsorder.txt", "order.html", false, -1, false, false, null, null);
+		this.AddQuadriplePageWebsite(Websites, "hiddenquestions.txt", "Hidden Questions", "HiddenQuestions", "What are the answers?", "hiddenquestions1.txt", "question1.html", "hiddenquestions2.txt", "question2.html", "hiddenquestions3.txt", "question3.html", true, 2, false, false, false, false, null, null, null, null);
+		this.AddDoublePageWebsite(Websites, "hotburners.txt", "Hot Burners", "HotBurners", "Gun dealer site.", "hotburnersorder.txt", "order.html", false, -1, false, false, null, null);
+		this.AddSinglePageWebsite(Websites, "illuminati.txt", "Illuminati", "Illuminati", "333", true, 1, true, CustomSoundLookUp.illuminati);
+		this.AddSinglePageWebsite(Websites, "itersanguinis.txt", "Iter Sanguinis", "IterSanguinis", "Poem to embrace the way of the blood.", false, -1, false, null);
+		this.AddSinglePageWebsite(Websites, "legion.txt", "Legion", "Legion", "Weird cryptic webpage", false, -1, true, CustomSoundLookUp.legion);
+		this.AddSixtuplePageWebsite(Websites, "masterclass.txt", "T.I.M.'s Masterclass", "Masterclass", "Lone professional shades unique into gathering techniques.", "masterclassdogeater.txt", "dogeater.html", "masterclassjessica.txt", "jessica.html", "masterclassjimmy.txt", "jimmy.html", "masterclassreviews.txt", "reviews.html", "masterclasssakura.txt", "sakura.html", false, -1, false, false, false, false, false, false, null, null, null, null, null, null);
+		this.AddNinePageWebsite(Websites, "mp.txt", "Mysterious Playground", "MysteriousPlayground", "Weird collection of shapeshifting images.", "mpbear.txt", "bear.html", "mpclown.txt", "clown.html", "mpeyes.txt", "eyes.html", "mpfakemain.txt", "fakemain.html", "mpnothing.txt", "nothing.html", "mppatrick.txt", "patrick.html", "mpskull.txt", "skull.html", "mpsmile.txt", "smile.html", false, -1, false, false, true, false, false, false, false, false, false, null, null, CustomSoundLookUp.clown, null, null, null, null, null, null);
+		this.AddTriplePageWebsite(Websites, "necroconvert.txt", "Necro Convert", "NecroConvert", "Organisation selling \"repurposed\" dead tissue", "necroconvertabout.txt", "about.html", "necroconvertservices.txt", "services.html", false, -1, false, false, false, null, null, null);
+		this.AddSinglePageWebsite(Websites, "nucleardream.txt", "Nuclear Dream", "NuclearDream", "Dude sells atomic arsenal to the highest bidder.", true, 5, true, CustomSoundLookUp.nuclear);
+		this.AddSinglePageWebsite(Websites, "nudeyoutubers.txt", "NudeYoutubers", "NudeYoutubers", "Horny for video influencers?", true, 1, false, null);
+		this.AddTriplePageWebsite(Websites, "organmart.txt", "Organ Mart", "OrganMart", "Fucked up people selling organs for a lot of money.", "organmartproducts.txt", "products.html", "organmartorder.txt", "order.html", false, -1, false, false, false, null, null, null);
+		this.AddDoublePageWebsite(Websites, "passportsrus.txt", "Passports R US", "PassportsRUs", "Fake passport site.", "passportsrusorder.txt", "order.html", false, -1, false, false, null, null);
+		this.AddDoublePageWebsite(Websites, "peeguidance.txt", "Pee Guidance", "PeeGuidance", "Tutorial on correct positions in public restrooms.", "peeguidancelogin.txt", "login.html", false, -1, false, false, null, null);
+		this.AddTriplePageWebsite(Websites, "rentahacker.txt", "Rent A Hacker", "RentAHacker", "Dishonorable services only.", "rentahackererror.txt", "error.html", "rentahackerproducts.txt", "products.html", false, -1, false, false, false, null, null, null);
+		this.AddSinglePageWebsite(Websites, "rosesdestruction.txt", "Roses Destruction", "RosesDestruction", "Just fucked up...", true, 5, true, CustomSoundLookUp.rosesdestruction);
+		this.AddSinglePageWebsite(Websites, "shadowwebportal.txt", "Shadow Web Portal", "ShadowWeb", "Mysterious Shadow Web access point", true, 5, false, null);
+		this.AddDoublePageWebsite(Websites, "shithole.txt", "Shithole", "Shithole", "People sharing public restroom stories.", "shitholeolder.txt", "older.html", false, -1, false, false, null, null);
+		this.AddQuadriplePageWebsite(Websites, "tangodown.txt", "Tango Down", "TangoDown", "Hitman for hire website.", "tangodownpayment.txt", "payment.html", "tangodownresults.txt", "results.html", "tangodownhire.txt", "hire.html", true, 0, true, false, false, false, CustomSoundLookUp.tango, null, null, null);
+		this.AddSinglePageWebsite(Websites, "takedownman.txt", "Takedownman", "TakedownMan", "Look at all of them he took down...", false, -1, true, CustomSoundLookUp.takedownman);
+		this.AddSinglePageWebsite(Websites, "testicalmutilation.txt", "Testical Mutilation", "TesticalMutilation", "A woman’s fantasy of \"punishing men\" blog post.", true, 3, true, CustomSoundLookUp.testical);
+		this.AddDoublePageWebsite(Websites, "theinvestigation.txt", "TH3 1NV3ST1G4T10N", "TheInvestigation", "IT community forum.", "theinvestigationerror.txt", "error.html", true, 4, false, false, null, null);
+		this.AddSinglePageWebsite(Websites, "theart.txt", "The Art", "RickRoll", "The art of what???", false, -1, true, CustomSoundLookUp.theart);
+		this.AddSinglePageWebsite(Websites, "thebigredbutton.txt", "The Big Red Button", "TheBigRedButton", "Dangerous button! Don't press it!", false, -1, false, null);
+		this.AddSeptuplePageWebsite(Websites, "thebutcher.txt", "The Butcher", "TheButcher", "Proper ways of butchering a human body.", "thebutcherbeheading.txt", "beheading.html", "thebutcherbleeding.txt", "bleeding.html", "thebutchergutting.txt", "gutting.html", "thebutcherhanging.txt", "hanging.html", "thebutcherprep.txt", "prep.html", "thebutcherskinning.txt", "skinning.html", false, -1, false, false, false, false, false, false, false, null, null, null, null, null, null, null);
+		this.AddDoublePageWebsite(Websites, "themuhgel.txt", "The Muhgel", "TheMuhgel", "Sells slaves of all types and ages.", "themuhgelorder.txt", "order.html", false, -1, false, false, null, null);
+		this.AddSixtuplePageWebsite(Websites, "vengeanceangel.txt", "Vengeance Angel", "VengeanceAngel", "Some random dead person who wants to purge the whole world.", "vengeanceangelwill.txt", "will.html", "vengeanceangelpower.txt", "power.html", "vengeanceangelfollowers.txt", "followers.html", "vengeanceangelresults.txt", "results.html", "vengeanceangelfreedom.txt", "freedom.html", false, -1, false, false, false, false, false, true, null, null, null, null, null, CustomSoundLookUp.freedom);
+		this.AddDoublePageWebsite(Websites, "warehouserenter.txt", "Warehouse Renter", "WarehouseRenter", "Service for renting warehouses for all kinds of purpose.", "warehouserenterrent.txt", "rent.html", false, -1, false, false, null, null);
+		this.AddDoublePageWebsite(Websites, "weedpost.txt", "Weed Post", "WeedPost", "Cheep weed store front.", "weedpostorder.txt", "order.html", false, -1, false, false, null, null);
+		this.AddSixtuplePageWebsite(Websites, "zeroday.txt", "zeroDay", "zeroDay", "Blog post of a hacker about exploits and other applications.", "zerodaycode.txt", "code.html", "zerodayexploits.txt", "exploits.html", "zerodayleaks.txt", "leaks.html", "zerodayrant.txt", "rant.html", "zerodayscripts.txt", "scripts.html", false, -1, false, false, false, false, false, false, null, null, null, null, null, null);
 		return Websites;
 	}
 
@@ -145,13 +145,13 @@ public class WebsiteExtension
 		return webSiteDefinition;
 	}
 
-	private void AddSinglePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, bool isTimed, int timeWindow, bool hasMusic1)
+	private void AddSinglePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, bool isTimed, int timeWindow, bool hasMusic1, AudioFileDefinition music1)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -186,14 +186,14 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddDoublePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2)
+	private void AddDoublePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, AudioFileDefinition music1, AudioFileDefinition music2)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
 		WebPageDefinition webPageDefinition2 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -205,7 +205,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -241,7 +241,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddTriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3)
+	private void AddTriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -249,7 +249,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition3 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -261,7 +261,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -273,7 +273,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -310,7 +310,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddQuadriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4)
+	private void AddQuadriplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3, AudioFileDefinition music4)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -319,7 +319,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition4 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -331,7 +331,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -343,7 +343,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -355,7 +355,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition4.AudioFile = music4;
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -393,7 +393,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddQuintiplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5)
+	private void AddQuintiplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3, AudioFileDefinition music4, AudioFileDefinition music5)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -403,7 +403,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition5 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -415,7 +415,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -427,7 +427,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -439,7 +439,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition4.AudioFile = music4;
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -451,7 +451,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition5.AudioFile = music5;
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -490,7 +490,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddSixtuplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6)
+	private void AddSixtuplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3, AudioFileDefinition music4, AudioFileDefinition music5, AudioFileDefinition music6)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -501,7 +501,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition6 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -513,7 +513,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -525,7 +525,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -537,7 +537,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition4.AudioFile = music4;
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -549,7 +549,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition5.AudioFile = music5;
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -561,7 +561,7 @@ public class WebsiteExtension
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition6.AudioFile = (hasMusic6 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition6.AudioFile = music6;
 		webPageDefinition6.HasMusic = hasMusic6;
 		webPageDefinition6.FileName = html6;
 		webPageDefinition6.HashIndex = 0;
@@ -601,7 +601,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddSeptuplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, string source7, string html7, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, bool hasMusic7)
+	private void AddSeptuplePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, string source7, string html7, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, bool hasMusic7, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3, AudioFileDefinition music4, AudioFileDefinition music5, AudioFileDefinition music6, AudioFileDefinition music7)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -613,7 +613,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition7 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -625,7 +625,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -637,7 +637,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -649,7 +649,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition4.AudioFile = music4;
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -661,7 +661,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition5.AudioFile = music5;
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -673,7 +673,7 @@ public class WebsiteExtension
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition6.AudioFile = (hasMusic6 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition6.AudioFile = music6;
 		webPageDefinition6.HasMusic = hasMusic6;
 		webPageDefinition6.FileName = html6;
 		webPageDefinition6.HashIndex = 0;
@@ -685,7 +685,7 @@ public class WebsiteExtension
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition7.AudioFile = (hasMusic7 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition7.AudioFile = music7;
 		webPageDefinition7.HasMusic = hasMusic7;
 		webPageDefinition7.FileName = html7;
 		webPageDefinition7.HashIndex = 0;
@@ -726,7 +726,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddEighthPageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, string source7, string html7, string source8, string html8, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, bool hasMusic7, bool hasMusic8)
+	private void AddEighthPageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, string source7, string html7, string source8, string html8, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, bool hasMusic7, bool hasMusic8, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3, AudioFileDefinition music4, AudioFileDefinition music5, AudioFileDefinition music6, AudioFileDefinition music7, AudioFileDefinition music8)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -739,7 +739,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition8 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -751,7 +751,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -763,7 +763,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -775,7 +775,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition4.AudioFile = music4;
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -787,7 +787,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition5.AudioFile = music5;
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -799,7 +799,7 @@ public class WebsiteExtension
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition6.AudioFile = (hasMusic6 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition6.AudioFile = music6;
 		webPageDefinition6.HasMusic = hasMusic6;
 		webPageDefinition6.FileName = html6;
 		webPageDefinition6.HashIndex = 0;
@@ -811,7 +811,7 @@ public class WebsiteExtension
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition7.AudioFile = (hasMusic7 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition7.AudioFile = music7;
 		webPageDefinition7.HasMusic = hasMusic7;
 		webPageDefinition7.FileName = html7;
 		webPageDefinition7.HashIndex = 0;
@@ -823,7 +823,7 @@ public class WebsiteExtension
 		webPageDefinition7.isWTTG1Website = true;
 		webPageDefinition8.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition8.AudioFile = (hasMusic8 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition8.AudioFile = music8;
 		webPageDefinition8.HasMusic = hasMusic8;
 		webPageDefinition8.FileName = html8;
 		webPageDefinition8.HashIndex = 0;
@@ -865,7 +865,7 @@ public class WebsiteExtension
 		Websites.Add(webSiteDefinition);
 	}
 
-	private void AddNinePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, string source7, string html7, string source8, string html8, string source9, string html9, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, bool hasMusic7, bool hasMusic8, bool hasMusic9)
+	private void AddNinePageWebsite(List<WebSiteDefinition> Websites, string source, string pageName, string documentName, string description, string source2, string html2, string source3, string html3, string source4, string html4, string source5, string html5, string source6, string html6, string source7, string html7, string source8, string html8, string source9, string html9, bool isTimed, int timeWindow, bool hasMusic1, bool hasMusic2, bool hasMusic3, bool hasMusic4, bool hasMusic5, bool hasMusic6, bool hasMusic7, bool hasMusic8, bool hasMusic9, AudioFileDefinition music1, AudioFileDefinition music2, AudioFileDefinition music3, AudioFileDefinition music4, AudioFileDefinition music5, AudioFileDefinition music6, AudioFileDefinition music7, AudioFileDefinition music8, AudioFileDefinition music9)
 	{
 		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
 		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
@@ -879,7 +879,7 @@ public class WebsiteExtension
 		WebPageDefinition webPageDefinition9 = ScriptableObject.CreateInstance<WebPageDefinition>();
 		webPageDefinition.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition.AudioFile = (hasMusic1 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition.AudioFile = music1;
 		webPageDefinition.HasMusic = hasMusic1;
 		webPageDefinition.FileName = "index.html";
 		webPageDefinition.HashIndex = 0;
@@ -891,7 +891,7 @@ public class WebsiteExtension
 		webPageDefinition.isWTTG1Website = true;
 		webPageDefinition2.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition2.AudioFile = (hasMusic2 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition2.AudioFile = music2;
 		webPageDefinition2.HasMusic = hasMusic2;
 		webPageDefinition2.FileName = html2;
 		webPageDefinition2.HashIndex = 0;
@@ -903,7 +903,7 @@ public class WebsiteExtension
 		webPageDefinition2.isWTTG1Website = true;
 		webPageDefinition3.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition3.AudioFile = (hasMusic3 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition3.AudioFile = music3;
 		webPageDefinition3.HasMusic = hasMusic3;
 		webPageDefinition3.FileName = html3;
 		webPageDefinition3.HashIndex = 0;
@@ -915,7 +915,7 @@ public class WebsiteExtension
 		webPageDefinition3.isWTTG1Website = true;
 		webPageDefinition4.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition4.AudioFile = (hasMusic4 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition4.AudioFile = music4;
 		webPageDefinition4.HasMusic = hasMusic4;
 		webPageDefinition4.FileName = html4;
 		webPageDefinition4.HashIndex = 0;
@@ -927,7 +927,7 @@ public class WebsiteExtension
 		webPageDefinition4.isWTTG1Website = true;
 		webPageDefinition5.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition5.AudioFile = (hasMusic5 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition5.AudioFile = music5;
 		webPageDefinition5.HasMusic = hasMusic5;
 		webPageDefinition5.FileName = html5;
 		webPageDefinition5.HashIndex = 0;
@@ -939,7 +939,7 @@ public class WebsiteExtension
 		webPageDefinition5.isWTTG1Website = true;
 		webPageDefinition6.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition6.AudioFile = (hasMusic6 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition6.AudioFile = music6;
 		webPageDefinition6.HasMusic = hasMusic6;
 		webPageDefinition6.FileName = html6;
 		webPageDefinition6.HashIndex = 0;
@@ -951,7 +951,7 @@ public class WebsiteExtension
 		webPageDefinition6.isWTTG1Website = true;
 		webPageDefinition7.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition7.AudioFile = (hasMusic7 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition7.AudioFile = music7;
 		webPageDefinition7.HasMusic = hasMusic7;
 		webPageDefinition7.FileName = html7;
 		webPageDefinition7.HashIndex = 0;
@@ -963,7 +963,7 @@ public class WebsiteExtension
 		webPageDefinition7.isWTTG1Website = true;
 		webPageDefinition8.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition8.AudioFile = (hasMusic8 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition8.AudioFile = music8;
 		webPageDefinition8.HasMusic = hasMusic8;
 		webPageDefinition8.FileName = html8;
 		webPageDefinition8.HashIndex = 0;
@@ -975,7 +975,7 @@ public class WebsiteExtension
 		webPageDefinition8.isWTTG1Website = true;
 		webPageDefinition9.id = this.dynamicId;
 		this.dynamicId++;
-		webPageDefinition9.AudioFile = (hasMusic9 ? LookUp.SoundLookUp.vacationRinging : null);
+		webPageDefinition9.AudioFile = music9;
 		webPageDefinition9.HasMusic = hasMusic9;
 		webPageDefinition9.FileName = html9;
 		webPageDefinition9.HashIndex = 0;

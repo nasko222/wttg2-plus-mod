@@ -22,7 +22,7 @@ public class BombMakerBehaviour : MonoBehaviour
 		LookUp.Doors.Door10.DoorWasOpenedEvent.AddListener(new UnityAction(this.BMF10j.Execute));
 	}
 
-	private void stageFloor8Jump()
+	public void stageFloor8Jump()
 	{
 		LookUp.Doors.Door8.DoorOpenEvent.AddListener(new UnityAction(this.BMF8j.Stage));
 		LookUp.Doors.Door8.DoorWasOpenedEvent.AddListener(new UnityAction(this.BMF8j.Execute));
@@ -46,7 +46,7 @@ public class BombMakerBehaviour : MonoBehaviour
 		LookUp.Doors.Door3.DoorWasOpenedEvent.AddListener(new UnityAction(this.BMF3j.Execute));
 	}
 
-	private void stageFloor1Jump()
+	public void stageFloor1Jump()
 	{
 		LookUp.Doors.Door1.DoorOpenEvent.AddListener(new UnityAction(this.BMF1j.Stage));
 		LookUp.Doors.Door1.DoorWasOpenedEvent.AddListener(new UnityAction(this.BMF1j.Execute));
@@ -101,7 +101,7 @@ public class BombMakerBehaviour : MonoBehaviour
 		}
 	}
 
-	private void stageApartmentJump()
+	public void stageApartmentJump()
 	{
 		LookUp.Doors.MainDoor.DoorOpenEvent.AddListener(new UnityAction(this.BMAj.Stage));
 		LookUp.Doors.MainDoor.DoorWasOpenedEvent.AddListener(new UnityAction(this.BMAj.Execute));

@@ -261,7 +261,7 @@ public class DevTools : MonoBehaviour
 					}
 					else if (Response.Additional.ToLower() == "illuminati")
 					{
-						audioFile = CustomSoundLookUp.illuminati;
+						audioFile = CustomSoundLookUp.xfiles;
 					}
 					else
 					{
@@ -856,7 +856,7 @@ public class DevTools : MonoBehaviour
 		{
 			this.GFschedule = true;
 			GameManager.TimeSlinger.FireTimer(45f, new Action(this.ScheduleGoldenFreddy), 0);
-			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gfpresence);
 			return;
 		}
 		if (StateManager.PlayerState != PLAYER_STATE.PEEPING)

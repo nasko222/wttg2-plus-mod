@@ -1097,7 +1097,19 @@ public class TheCloud : MonoBehaviour
 		{
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
-		new GameObject("SulphurPackageObject").AddComponent<SulphurPackageObject>();
+		if (ModsManager.SBGlitch)
+		{
+			new GameObject("BombMakerBehaviour").AddComponent<BombMakerBehaviour>();
+			BombMakerBehaviour.Ins.stageApartmentJump();
+			BombMakerBehaviour.Ins.stageFloor8Jump();
+			BombMakerBehaviour.Ins.stageFloor1Jump();
+			GameManager.TimeSlinger.FireTimer(10f, new Action(this.testing), 0);
+		}
+	}
+
+	private void testing()
+	{
+		ControllerManager.Get<roamController>(GAME_CONTROLLER.ROAM).transform.position = new Vector3(6.10953f, 40.51757f, 1.304061f);
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);

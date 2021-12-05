@@ -60,11 +60,13 @@ namespace ASoft.WTTG2
 		{
 			UnityEngine.Object.DontDestroyOnLoad(this);
 			AFDManager.Ins = this;
+			Debug.Log("AFDManager is loading...");
 		}
 
 		private void OnDestroy()
 		{
 			AFDManager.Ins = null;
+			Debug.Log("AFDManager was unloaded!");
 		}
 
 		public AudioFileDefinition AddSwanAudio(string AFDName, AudioClip AFDClip)
@@ -76,6 +78,7 @@ namespace ASoft.WTTG2
 			definition.id = num;
 			audioFileDefinition.AudioClip = AFDClip;
 			audioFileDefinition.MyAudioHub = AUDIO_HUB.COMPUTER_HUB;
+			audioFileDefinition.Volume = 0.5f;
 			if (this.currentAFDs.ContainsKey(AFDName))
 			{
 				this.currentAFDs[AFDName] = audioFileDefinition;

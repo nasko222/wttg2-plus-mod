@@ -1,10 +1,12 @@
 ﻿using System;
+using ASoft.WTTG2;
 using UnityEngine;
 
 public class GameManagerHook : MonoBehaviour
 {
 	private void Awake()
 	{
+		new GameObject("AFDManager").AddComponent<AFDManager>();
 		AssetBundleManager.LoadAssetBundles();
 		ModsManager.ApplyMods();
 		GameManager.Instance.Init();

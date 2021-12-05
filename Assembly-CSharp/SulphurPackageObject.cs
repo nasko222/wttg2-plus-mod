@@ -21,7 +21,7 @@ public class SulphurPackageObject : MonoBehaviour
 		for (int j = 0; j < this.packages.Length; j++)
 		{
 			this.packages[j].transform.localScale = new Vector3(0.413f, 0.323f, 0.35f);
-			this.packages[j].SetActive(true);
+			this.packages[j].SetActive(false);
 		}
 	}
 

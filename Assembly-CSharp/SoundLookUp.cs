@@ -6,6 +6,7 @@ public class SoundLookUp : MonoBehaviour
 	private void Awake()
 	{
 		LookUp.SoundLookUp = this;
+		AssetBundleManager.ProceedLoadingAFD();
 	}
 
 	public AudioFileDefinition MouseClick;
