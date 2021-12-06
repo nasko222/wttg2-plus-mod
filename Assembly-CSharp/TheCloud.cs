@@ -1097,6 +1097,7 @@ public class TheCloud : MonoBehaviour
 		{
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
+		new GameObject("BombMakerBehaviour").AddComponent<BombMakerBehaviour>();
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);

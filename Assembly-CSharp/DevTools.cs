@@ -337,6 +337,14 @@ public class DevTools : MonoBehaviour
 				}
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "BombMaker")
+			{
+				if (BombMakerBehaviour.Ins != null && EnemyManager.State == ENEMY_STATE.IDLE)
+				{
+					BombMakerBehaviour.Ins.StageBombMakerOutsideKill();
+				}
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "giveTenant")
 			{
 				if (GameManager.ManagerSlinger.TenantTrackManager != null)
