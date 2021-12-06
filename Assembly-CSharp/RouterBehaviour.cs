@@ -16,7 +16,9 @@ public class RouterBehaviour : MonoBehaviour
 		base.transform.rotation = Quaternion.Euler(Vector3.zero);
 		this.myMeshRenderer.enabled = false;
 		this.myInteractionHook.LeftClickAction += this.leftClickAction;
-		this.myMeshRenderer.material = this.matOff;
+		this.myInteractionHook.RightClickAction += this.rightClickAction;
+		this.myMeshRenderer.material = this.matReset;
+		this.routerHubSwitch = 0;
 	}
 
 	private void leftClickAction()
@@ -26,21 +28,45 @@ public class RouterBehaviour : MonoBehaviour
 
 	private void toggleRouter()
 	{
-		if (this.RouterIsActive)
+		if (this.RouterLocked)
 		{
+			return;
+		}
+		if (this.RouterIsActive && this.routerHubSwitch == 4)
+		{
+			this.routerHubSwitch = 0;
 			this.RouterIsActive = false;
-			this.myMeshRenderer.material = this.matOff;
+			this.myMeshRenderer.material = this.matReset;
 			this.myAudioHub.PlaySound(this.offSFX);
 			return;
 		}
 		this.RouterIsActive = true;
-		this.myMeshRenderer.material = this.matOn;
+		this.routerHubSwitch++;
+		switch (this.routerHubSwitch)
+		{
+		case 1:
+			this.myMeshRenderer.material = this.matOn;
+			break;
+		case 2:
+			this.myMeshRenderer.material = this.matOnLY2;
+			break;
+		case 3:
+			this.myMeshRenderer.material = this.matOnLY3;
+			break;
+		case 4:
+			this.myMeshRenderer.material = this.matOnLY4;
+			break;
+		default:
+			this.myMeshRenderer.material = this.matOnAll;
+			break;
+		}
 		this.myAudioHub.PlaySound(this.onSFX);
 	}
 
 	private void OnDestroy()
 	{
 		this.myInteractionHook.LeftClickAction -= this.leftClickAction;
+		this.myInteractionHook.RightClickAction -= this.rightClickAction;
 		UnityEngine.Object.Destroy(this.onSFX);
 		UnityEngine.Object.Destroy(this.offSFX);
 	}
@@ -51,6 +77,7 @@ public class RouterBehaviour : MonoBehaviour
 		this.myMeshRenderer.enabled = true;
 		this.RouterIsActive = true;
 		this.myMeshRenderer.material = this.matOn;
+		this.routerHubSwitch = 1;
 		base.transform.position = SetPOS;
 		base.transform.rotation = Quaternion.Euler(SetROT);
 		base.transform.localScale = SetSCL;
@@ -66,6 +93,47 @@ public class RouterBehaviour : MonoBehaviour
 	{
 		UIInteractionManager.Ins.HideKnob();
 		UIInteractionManager.Ins.HideLeftMouseButtonAction();
+	}
+
+	private void rightClickAction()
+	{
+		if (this.RouterIsActive && !this.RouterLocked)
+		{
+			this.RestartModem();
+		}
+	}
+
+	public void RestartModem()
+	{
+		this.RouterLocked = true;
+		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
+		GameManager.TimeSlinger.FireTimer(0.5f, delegate()
+		{
+			this.myMeshRenderer.material = this.matOn;
+		}, 0);
+		GameManager.TimeSlinger.FireTimer(1f, delegate()
+		{
+			this.myMeshRenderer.material = this.matOnLY2;
+		}, 0);
+		GameManager.TimeSlinger.FireTimer(1.5f, delegate()
+		{
+			this.myMeshRenderer.material = this.matOnLY3;
+		}, 0);
+		GameManager.TimeSlinger.FireTimer(2f, delegate()
+		{
+			this.myMeshRenderer.material = this.matOnLY4;
+		}, 0);
+		GameManager.TimeSlinger.FireTimer(2.5f, delegate()
+		{
+			this.myMeshRenderer.material = this.matOnAll;
+		}, 0);
+		GameManager.TimeSlinger.FireTimer(3f, delegate()
+		{
+			this.myMeshRenderer.material = this.matOn;
+			this.RouterIsActive = true;
+			this.routerHubSwitch = 1;
+			this.RouterLocked = false;
+		}, 0);
 	}
 
 	[HideInInspector]
@@ -96,4 +164,23 @@ public class RouterBehaviour : MonoBehaviour
 
 	[SerializeField]
 	private AudioHubObject myAudioHub;
+
+	[SerializeField]
+	private Material matOnLY2;
+
+	[SerializeField]
+	private Material matOnLY3;
+
+	[SerializeField]
+	private Material matOnLY4;
+
+	[SerializeField]
+	private Material matOnAll;
+
+	[SerializeField]
+	private Material matReset;
+
+	public int routerHubSwitch;
+
+	private bool RouterLocked;
 }

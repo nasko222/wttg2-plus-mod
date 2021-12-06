@@ -769,6 +769,7 @@ public class TheCloud : MonoBehaviour
 			this.nightmarePossible = false;
 		}, 0);
 		this.LoadMods();
+		RouterBehaviour.Ins.MoveMe(new Vector3(-5.66f, 39.1f, -1.93f), new Vector3(0f, -86f, 0f), new Vector3(0.45f, 0.45f, 0.45f));
 	}
 
 	private void Awake()

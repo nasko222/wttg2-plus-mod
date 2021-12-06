@@ -97,6 +97,7 @@ public static class AssetBundleManager
 		CustomSoundLookUp.polishcow = AFDManager.Ins.AddPlayerAFD("polishcow", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("polishcow.wav"), 0.35f);
 		CustomSoundLookUp.reset = AFDManager.Ins.AddSwanAudio("reset", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("reset.wav"));
 		CustomSoundLookUp.rosesdestruction = AFDManager.Ins.AddWebsiteAFD("rosesdestruction", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("rosesdestruction.wav"), false);
+		CustomSoundLookUp.routerreset = AFDManager.Ins.AddWebsiteAFD("routerreset", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("routerreset.wav"), false);
 		CustomSoundLookUp.shutdown = AFDManager.Ins.AddPlayerAFD("shutdown", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("shutdown.wav"), 0.5f);
 		CustomSoundLookUp.startup = AFDManager.Ins.AddPlayerAFD("startup", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("startup.wav"), 0.5f);
 		CustomSoundLookUp.stickbug = AFDManager.Ins.AddPlayerAFD("stickbug", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("stickbug.wav"), 0.35f);

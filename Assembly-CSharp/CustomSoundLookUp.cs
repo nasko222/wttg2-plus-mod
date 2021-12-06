@@ -124,4 +124,6 @@ public static class CustomSoundLookUp
 	public static AudioFileDefinition whisper;
 
 	public static AudioClip hackermans;
+
+	public static AudioFileDefinition routerreset;
 }
