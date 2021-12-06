@@ -91,6 +91,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		this.addRemoteVPNLevel2();
 		this.addRemoteVPNLevel3();
 		this.addSulphurToMarket();
+		this.addDWR921Router();
 	}
 
 	protected new void OnDestroy()
@@ -171,6 +172,31 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		else
 		{
 			shadowMarketProductDefinition.productPrice = 40f;
+		}
+		this.myProducts.Add(shadowMarketProductDefinition);
+	}
+
+	private void addDWR921Router()
+	{
+		ShadowMarketProductDefinition shadowMarketProductDefinition = new ShadowMarketProductDefinition();
+		shadowMarketProductDefinition.deliveryTimeMin = 150f;
+		shadowMarketProductDefinition.deliveryTimeMax = 180f;
+		shadowMarketProductDefinition.id = 6304;
+		shadowMarketProductDefinition.isDiscounted = false;
+		shadowMarketProductDefinition.productDesc = "Are you getting IP tracked by hackers? Do you have issues with your internet speed? This router guarantees secure untraceable connection and fast Automatic VPN. Look no further to get this device!";
+		shadowMarketProductDefinition.productHasLimitPurchases = true;
+		shadowMarketProductDefinition.productID = HARDWARE_PRODUCTS.ROUTER;
+		shadowMarketProductDefinition.productMaxPurchaseAmount = 1;
+		shadowMarketProductDefinition.productName = "DWR-921 Router";
+		shadowMarketProductDefinition.productRequiresOtherProduct = false;
+		shadowMarketProductDefinition.productSprite = CustomSpriteLookUp.router;
+		if (ModsManager.EasyModeActive)
+		{
+			shadowMarketProductDefinition.productPrice = 70f;
+		}
+		else
+		{
+			shadowMarketProductDefinition.productPrice = 140f;
 		}
 		this.myProducts.Add(shadowMarketProductDefinition);
 	}

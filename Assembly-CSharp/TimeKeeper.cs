@@ -20,6 +20,10 @@ public class TimeKeeper : MonoBehaviour
 			text += " PM";
 			if (ModsManager.Nightmare && UnityEngine.Random.Range(0, 1000) < 5 && GameManager.ManagerSlinger.WifiManager != null && GameManager.ManagerSlinger.WifiManager.getCurrentWiFi() != null)
 			{
+				if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+				{
+					return text;
+				}
 				GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer = true;
 			}
 		}

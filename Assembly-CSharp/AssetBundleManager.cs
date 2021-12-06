@@ -33,6 +33,7 @@ public static class AssetBundleManager
 		CustomObjectLookUp.BombMakerHallwayJump = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("BombMakerHallwayJump.prefab");
 		CustomObjectLookUp.BombMakerApartmentJump = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("BombMakerApartmentJump.prefab");
 		CustomObjectLookUp.PackageBox = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("PackageBox.prefab");
+		CustomObjectLookUp.Router = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("Router.prefab");
 	}
 
 	public static void ProceedLoadingSprites()
@@ -47,6 +48,7 @@ public static class AssetBundleManager
 		CustomSpriteLookUp.remoteVPNlvl3 = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("remoteVPNlvl3.png");
 		CustomSpriteLookUp.speeditem = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("speeditem.png");
 		CustomSpriteLookUp.sulphur = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("sulphur.png");
+		CustomSpriteLookUp.router = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("router.png");
 	}
 
 	public static void ProceedLoadingAFD()

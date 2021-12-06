@@ -71,6 +71,7 @@ public class LOLPYDiscManager : MonoBehaviour
 		GameManager.ManagerSlinger.ProductsManager.ShadowMarketProductWasActivated.Event += this.productWasPickedUp;
 		this.lolpyDiscIns = UnityEngine.Object.Instantiate<GameObject>(this.lolpyDiscObject, this.lolpyDiscParent).GetComponent<LOLPYDiscBehaviour>();
 		this.lolpyDiscIns.SoftBuild();
+		new GameObject("SulphurPackageObject").AddComponent<SulphurPackageObject>();
 	}
 
 	private void OnDestroy()

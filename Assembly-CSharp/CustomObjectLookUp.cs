@@ -8,4 +8,6 @@ public static class CustomObjectLookUp
 	public static GameObject BombMakerApartmentJump;
 
 	public static GameObject PackageBox;
+
+	public static GameObject Router;
 }

@@ -1,0 +1,99 @@
+﻿using System;
+using UnityEngine;
+
+public class RouterBehaviour : MonoBehaviour
+{
+	public void SoftBuild()
+	{
+		RouterBehaviour.Ins = this;
+		this.onSFX = UnityEngine.Object.Instantiate<AudioFileDefinition>(PoliceScannerBehaviour.Ins.onSFX);
+		this.offSFX = UnityEngine.Object.Instantiate<AudioFileDefinition>(PoliceScannerBehaviour.Ins.offSFX);
+		this.onSFX.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
+		this.onSFX.MyAudioLayer = AUDIO_LAYER.PLAYER;
+		this.offSFX.MyAudioHub = AUDIO_HUB.PLAYER_HUB;
+		this.offSFX.MyAudioLayer = AUDIO_LAYER.PLAYER;
+		base.transform.position = Vector3.zero;
+		base.transform.rotation = Quaternion.Euler(Vector3.zero);
+		this.myMeshRenderer.enabled = false;
+		this.myInteractionHook.LeftClickAction += this.leftClickAction;
+		this.myMeshRenderer.material = this.matOff;
+	}
+
+	private void leftClickAction()
+	{
+		this.toggleRouter();
+	}
+
+	private void toggleRouter()
+	{
+		if (this.RouterIsActive)
+		{
+			this.RouterIsActive = false;
+			this.myMeshRenderer.material = this.matOff;
+			this.myAudioHub.PlaySound(this.offSFX);
+			return;
+		}
+		this.RouterIsActive = true;
+		this.myMeshRenderer.material = this.matOn;
+		this.myAudioHub.PlaySound(this.onSFX);
+	}
+
+	private void OnDestroy()
+	{
+		this.myInteractionHook.LeftClickAction -= this.leftClickAction;
+		UnityEngine.Object.Destroy(this.onSFX);
+		UnityEngine.Object.Destroy(this.offSFX);
+	}
+
+	public void MoveMe(Vector3 SetPOS, Vector3 SetROT, Vector3 SetSCL)
+	{
+		this.Owned = true;
+		this.myMeshRenderer.enabled = true;
+		this.RouterIsActive = true;
+		this.myMeshRenderer.material = this.matOn;
+		base.transform.position = SetPOS;
+		base.transform.rotation = Quaternion.Euler(SetROT);
+		base.transform.localScale = SetSCL;
+	}
+
+	public void ShowInteractionIcon()
+	{
+		UIInteractionManager.Ins.ShowKnob();
+		UIInteractionManager.Ins.ShowLeftMouseButtonAction();
+	}
+
+	public void HideInteractionIcon()
+	{
+		UIInteractionManager.Ins.HideKnob();
+		UIInteractionManager.Ins.HideLeftMouseButtonAction();
+	}
+
+	[HideInInspector]
+	public bool Owned;
+
+	[HideInInspector]
+	public bool RouterIsActive;
+
+	[SerializeField]
+	private Material matOn;
+
+	[SerializeField]
+	private Material matOff;
+
+	public static RouterBehaviour Ins;
+
+	[HideInInspector]
+	public AudioFileDefinition onSFX;
+
+	[HideInInspector]
+	public AudioFileDefinition offSFX;
+
+	[SerializeField]
+	private MeshRenderer myMeshRenderer;
+
+	[SerializeField]
+	private InteractionHook myInteractionHook;
+
+	[SerializeField]
+	private AudioHubObject myAudioHub;
+}

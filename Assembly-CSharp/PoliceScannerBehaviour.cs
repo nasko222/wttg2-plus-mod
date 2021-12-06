@@ -91,14 +91,12 @@ public class PoliceScannerBehaviour : MonoBehaviour
 				this.myAudioHub.KillSound(this.currentPlayingClips[i].AudioClip);
 			}
 			this.myAudioHub.PlaySound(this.offSFX);
+			return;
 		}
-		else
-		{
-			this.myAudioHub.PlaySound(this.onSFX);
-			this.generateFireWindow();
-			this.scannerIsActive = true;
-			this.emsMat.EnableKeyword("_EMISSION");
-		}
+		this.myAudioHub.PlaySound(this.onSFX);
+		this.generateFireWindow();
+		this.scannerIsActive = true;
+		this.emsMat.EnableKeyword("_EMISSION");
 	}
 
 	private void generateFireWindow()
@@ -150,11 +148,9 @@ public class PoliceScannerBehaviour : MonoBehaviour
 
 	public static PoliceScannerBehaviour Ins;
 
-	[SerializeField]
-	private AudioFileDefinition onSFX;
+	public AudioFileDefinition onSFX;
 
-	[SerializeField]
-	private AudioFileDefinition offSFX;
+	public AudioFileDefinition offSFX;
 
 	[SerializeField]
 	private AudioFileDefinition[] policeBanterSFXS;

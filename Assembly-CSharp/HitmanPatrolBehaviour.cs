@@ -97,13 +97,16 @@ public class HitmanPatrolBehaviour : MonoBehaviour
 		{
 			num++;
 		}
+		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+		{
+			num++;
+		}
 		if (ComputerPowerHook.Ins.PowerOn)
 		{
 			GameManager.BehaviourManager.NotesBehaviour.ClearNotes();
-			float currentCurrency = CurrencyManager.CurrentCurrency;
+			double currentCurrency = (double)CurrencyManager.CurrentCurrency;
 			float num2 = UnityEngine.Random.Range(0.5f, 0.9f);
-			float setAMT = (float)Math.Round((double)(currentCurrency * num2), 3);
-			CurrencyManager.RemoveCurrency(setAMT);
+			CurrencyManager.RemoveCurrency((float)Math.Round(currentCurrency * (double)num2, 3));
 			num++;
 		}
 		for (int i = 0; i < this.lightsToCheck.Length; i++)

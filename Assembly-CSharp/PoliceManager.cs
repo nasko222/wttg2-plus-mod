@@ -247,6 +247,10 @@ public class PoliceManager : MonoBehaviour
 		{
 			this.triggerTimeWindow = 333f;
 		}
+		else if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive && this.triggerTimeWindow > 120f)
+		{
+			this.triggerTimeWindow = (ModsManager.Nightmare ? 690f : 1550f);
+		}
 		this.triggerTimeStamp = Time.time;
 		this.triggerActive = true;
 		this.warningActive = true;
@@ -269,6 +273,14 @@ public class PoliceManager : MonoBehaviour
 	{
 		int num = UnityEngine.Random.Range(0, 101);
 		int num2 = Mathf.RoundToInt(this.currentActiveWifiNetwork.networkTrackProbability * 100f);
+		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive && !DataManager.LeetMode && !ModsManager.Nightmare && this.currentActiveWifiNetwork.networkTrackProbability * 100f < 40f)
+		{
+			this.triggerTimeWindow = this.currentActiveWifiNetwork.networkTrackRate / 2f;
+			this.triggerTimeStamp = Time.time;
+			this.triggerActive = true;
+			this.warningActive = true;
+			return;
+		}
 		if (num < num2)
 		{
 			this.triggerAttack();
@@ -279,7 +291,7 @@ public class PoliceManager : MonoBehaviour
 			this.triggerAttack();
 			return;
 		}
-		this.triggerTimeWindow = this.currentActiveWifiNetwork.networkTrackRate;
+		this.triggerTimeWindow = this.currentActiveWifiNetwork.networkTrackRate / 2f;
 		this.triggerTimeStamp = Time.time;
 		this.triggerActive = true;
 		this.warningActive = true;

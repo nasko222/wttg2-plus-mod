@@ -42,7 +42,14 @@ public class TheSwan
 			GameManager.TimeSlinger.FireTimer(1f, new Action(this.StartCountdown), 0);
 			return;
 		}
-		GameManager.TimeSlinger.FireTimer((this._108 >= 108f) ? 1f : this.SwanClock, new Action(this.StartCountdown), 0);
+		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+		{
+			GameManager.TimeSlinger.FireTimer(1f, new Action(this.StartCountdown), 0);
+		}
+		else
+		{
+			GameManager.TimeSlinger.FireTimer((this._108 >= 108f) ? 1f : this.SwanClock, new Action(this.StartCountdown), 0);
+		}
 		if (this._108 > 0f)
 		{
 			this._108 -= 1f;
@@ -110,7 +117,14 @@ public class TheSwan
 			return;
 		}
 		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.reset);
-		this._108 = (float)UnityEngine.Random.Range(108, 324);
+		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+		{
+			this._108 = (float)UnityEngine.Random.Range(540, 864);
+		}
+		else
+		{
+			this._108 = (float)UnityEngine.Random.Range(108, 324);
+		}
 		CurrencyManager.AddCurrency(UnityEngine.Random.Range(2.5f * this.SwanClock * this.SwanClock, 3.5f * this.SwanClock * this.SwanClock));
 		if (UnityEngine.Random.Range(0, 100) < ((DataManager.LeetMode || ModsManager.Nightmare) ? 60 : 90) || ModsManager.NoParameter || TheSwan.extOn)
 		{

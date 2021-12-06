@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B635D9B1-2114-4D1A-8C42-E44C8BFFD2BD}</ProjectGuid>
+    <ProjectGuid>{6E4D5C76-183E-4B52-8945-9875B2C312C9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -626,6 +626,7 @@
     <Compile Include="roamController.cs" />
     <Compile Include="RotateAround.cs" />
     <Compile Include="RotateWardrobeDoorScrub.cs" />
+    <Compile Include="RouterBehaviour.cs" />
     <Compile Include="ScreenShot.cs" />
     <Compile Include="SecretController.cs" />
     <Compile Include="SecretLoader.cs" />

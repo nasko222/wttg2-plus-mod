@@ -22,4 +22,6 @@ public static class CustomSpriteLookUp
 	public static Sprite redclock;
 
 	public static Sprite greenclock;
+
+	public static Sprite router;
 }

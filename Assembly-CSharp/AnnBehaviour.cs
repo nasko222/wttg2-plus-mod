@@ -47,6 +47,14 @@ public class AnnBehaviour : WindowBehaviour
 				GameManager.TheCloud.ValidateURL(out callBackValue, setURL);
 				num = GameManager.ManagerSlinger.WifiManager.GenereatePageLoadingTime();
 			}
+			if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+			{
+				num /= 2f;
+			}
+			else if (RouterBehaviour.Ins.Owned && !RouterBehaviour.Ins.RouterIsActive)
+			{
+				num *= 1.5f;
+			}
 			LookUp.DesktopUI.ANN_WINDOW_HOME_BTN.setLock(true);
 			LookUp.DesktopUI.ANN_WINDOW_BACK_BTN.setLock(true);
 			LookUp.DesktopUI.ANN_WINDOW_FORWARD_BTN.setLock(true);
