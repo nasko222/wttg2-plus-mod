@@ -107,6 +107,7 @@ public class RouterBehaviour : MonoBehaviour
 	{
 		this.RouterLocked = true;
 		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
+		this.myMeshRenderer.material = this.matOff;
 		GameManager.TimeSlinger.FireTimer(0.5f, delegate()
 		{
 			this.myMeshRenderer.material = this.matOn;
