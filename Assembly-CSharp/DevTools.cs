@@ -206,6 +206,14 @@ public class DevTools : MonoBehaviour
 				}
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "trollRouter")
+			{
+				if (RouterBehaviour.Ins != null && EnemyManager.PoliceManager != null)
+				{
+					RouterBehaviour.Ins.trollReset();
+				}
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "shortTroll")
 			{
 				if (ModsManager.Trolling && GameManager.AudioSlinger != null)
@@ -744,19 +752,25 @@ public class DevTools : MonoBehaviour
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatScanner = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 5].myProductObject.shipItem();
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.shipItem();
+					}
+					else if (!ProductsManager.ownsWhitehatRemoteVPN2 && RemoteVPNObject.RemoteVPNLevel == 1)
+					{
+						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
+						ProductsManager.ownsWhitehatRemoteVPN2 = true;
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.shipItem();
+					}
+					else if (!ProductsManager.ownsWhitehatRouter && !RouterBehaviour.Ins.Owned)
+					{
+						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
+						ProductsManager.ownsWhitehatRemoteVPN2 = true;
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.shipItem();
 					}
 					else if (!ProductsManager.ownsWhitehatDongle2 && InventoryManager.WifiDongleLevel == WIFI_DONGLE_LEVEL.LEVEL1)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatDongle2 = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 9].myProductObject.shipItem();
-					}
-					else if (!ProductsManager.ownsWhitehatDongle3 && InventoryManager.WifiDongleLevel == WIFI_DONGLE_LEVEL.LEVEL2)
-					{
-						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
-						ProductsManager.ownsWhitehatDongle3 = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 8].myProductObject.shipItem();
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 11].myProductObject.shipItem();
 					}
 					else
 					{

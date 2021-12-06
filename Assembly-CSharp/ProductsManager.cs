@@ -290,4 +290,10 @@ public class ProductsManager : MonoBehaviour
 	public static bool ownsWhitehatDongle2;
 
 	public static bool ownsWhitehatDongle3;
+
+	public static bool ownsWhitehatRemoteVPN2;
+
+	public static bool ownsWhitehatRemoteVPN3;
+
+	public static bool ownsWhitehatRouter;
 }

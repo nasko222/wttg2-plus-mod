@@ -137,6 +137,11 @@ public class RouterBehaviour : MonoBehaviour
 		}, 0);
 	}
 
+	public void trollReset()
+	{
+		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
+	}
+
 	[HideInInspector]
 	public bool Owned;
 

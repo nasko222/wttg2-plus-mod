@@ -89,14 +89,12 @@ public static class UIManager
 		MainCameraHook.Ins.ClearARF(4f);
 		GameManager.TimeSlinger.FireTimer(5f, delegate()
 		{
-			if (DataManager.LeetMode)
+			if (DataManager.LeetMode || ModsManager.Nightmare)
 			{
 				SceneManager.LoadScene(7);
+				return;
 			}
-			else
-			{
-				SceneManager.LoadScene(5);
-			}
+			SceneManager.LoadScene(5);
 		}, 0);
 	}
 
