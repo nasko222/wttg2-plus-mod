@@ -91,12 +91,14 @@ public class RouterBehaviour : MonoBehaviour
 	{
 		UIInteractionManager.Ins.ShowKnob();
 		UIInteractionManager.Ins.ShowLeftMouseButtonAction();
+		UIInteractionManager.Ins.ShowRightMouseButtonAction();
 	}
 
 	public void HideInteractionIcon()
 	{
 		UIInteractionManager.Ins.HideKnob();
 		UIInteractionManager.Ins.HideLeftMouseButtonAction();
+		UIInteractionManager.Ins.HideRightMouseButtonAction();
 	}
 
 	private void rightClickAction()
