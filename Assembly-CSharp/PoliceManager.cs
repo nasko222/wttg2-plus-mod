@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
@@ -9,7 +8,6 @@ using UnityEngine.Events;
 
 public class PoliceManager : MonoBehaviour
 {
-	[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 	public event PoliceManager.WarningActions FireWarning;
 
 	private void TriggerRaidRoomRoam()
@@ -249,7 +247,25 @@ public class PoliceManager : MonoBehaviour
 		}
 		else if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive && this.triggerTimeWindow > 120f)
 		{
-			this.triggerTimeWindow = (ModsManager.Nightmare ? 690f : 1550f);
+			this.triggerTimeWindow = TheNetwork.networkTrackRate;
+			switch (RouterBehaviour.Ins.routerHubSwitch)
+			{
+			case 1:
+				this.triggerTimeWindow = (ModsManager.Nightmare ? 666f : (this.triggerTimeWindow * 2f));
+				break;
+			case 2:
+				this.triggerTimeWindow = (ModsManager.Nightmare ? 500f : (this.triggerTimeWindow * 1.5f));
+				break;
+			case 3:
+				this.triggerTimeWindow = (ModsManager.Nightmare ? 333f : (this.triggerTimeWindow * 1f));
+				break;
+			case 4:
+				this.triggerTimeWindow = (ModsManager.Nightmare ? 166f : (this.triggerTimeWindow * 0.5f));
+				break;
+			default:
+				this.triggerTimeWindow = (ModsManager.Nightmare ? 166f : (this.triggerTimeWindow * 0.5f));
+				break;
+			}
 		}
 		this.triggerTimeStamp = Time.time;
 		this.triggerActive = true;
@@ -260,10 +276,14 @@ public class PoliceManager : MonoBehaviour
 	{
 		this.triggerActive = false;
 		this.warningActive = false;
-		float setTimeLeft = this.triggerTimeWindow - (Time.time - this.triggerTimeStamp);
+		float num = this.triggerTimeWindow - (Time.time - this.triggerTimeStamp);
 		if (this.currentActiveWifiNetwork != null)
 		{
-			HotWifiNetwork value = new HotWifiNetwork(this.currentActiveWifiNetwork.GetHashCode(), this.networkHotTime, Time.time, setTimeLeft);
+			if (ModsManager.Nightmare && RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+			{
+				EnemyManager.PoliceManager.networkHotTime = 450f;
+			}
+			HotWifiNetwork value = new HotWifiNetwork(this.currentActiveWifiNetwork.GetHashCode(), this.networkHotTime, Time.time, num);
 			this.hotNetworks.Remove(this.currentActiveWifiNetwork);
 			this.hotNetworks.Add(this.currentActiveWifiNetwork, value);
 		}
@@ -273,7 +293,29 @@ public class PoliceManager : MonoBehaviour
 	{
 		int num = UnityEngine.Random.Range(0, 101);
 		int num2 = Mathf.RoundToInt(this.currentActiveWifiNetwork.networkTrackProbability * 100f);
-		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive && !DataManager.LeetMode && !ModsManager.Nightmare && this.currentActiveWifiNetwork.networkTrackProbability * 100f < 40f)
+		float num3 = 0f;
+		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+		{
+			switch (RouterBehaviour.Ins.routerHubSwitch)
+			{
+			case 1:
+				num3 = 40f;
+				break;
+			case 2:
+				num3 = 30f;
+				break;
+			case 3:
+				num3 = 20f;
+				break;
+			case 4:
+				num3 = 10f;
+				break;
+			default:
+				num3 = 4f;
+				break;
+			}
+		}
+		if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive && !DataManager.LeetMode && !ModsManager.Nightmare && this.currentActiveWifiNetwork.networkTrackProbability * 100f < num3)
 		{
 			this.triggerTimeWindow = this.currentActiveWifiNetwork.networkTrackRate / 2f;
 			this.triggerTimeStamp = Time.time;
@@ -312,70 +354,59 @@ public class PoliceManager : MonoBehaviour
 
 	private void processAttack()
 	{
-		if (!StateManager.BeingHacked && StateManager.PlayerState != PLAYER_STATE.PEEPING)
-		{
-			if (StateManager.PlayerState != PLAYER_STATE.BUSY)
-			{
-				if (StateManager.PlayerLocation != PLAYER_LOCATION.UNKNOWN)
-				{
-					EnemyManager.State = ENEMY_STATE.POILCE;
-					EnvironmentManager.PowerBehaviour.LockedOut = true;
-					DataManager.LockSave = true;
-					if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.OUTSIDE || StateManager.PlayerLocation == PLAYER_LOCATION.BATH_ROOM)
-					{
-						if (StateManager.PlayerState == PLAYER_STATE.COMPUTER || StateManager.PlayerState == PLAYER_STATE.DESK)
-						{
-							int num = UnityEngine.Random.Range(0, 100);
-							if (num < 25)
-							{
-								this.powerWasTripped = true;
-								EnvironmentManager.PowerBehaviour.ForcePowerOff();
-							}
-						}
-						this.spawnForRaid();
-						for (int i = 0; i < this.roomRaidTriggers.Length; i++)
-						{
-							this.roomRaidTriggers[i].SetActive();
-						}
-					}
-					else if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY8)
-					{
-						for (int j = 0; j < this.powerTripTriggers.Length; j++)
-						{
-							this.powerTripTriggers[j].SetActive();
-						}
-						this.Floor8DoorTrigger.DoorOpenEvent.AddListener(new UnityAction(this.triggerStairJumpPre));
-						this.Floor8DoorTrigger.DoorWasOpenedEvent.AddListener(new UnityAction(this.triggerStairJumpPost));
-						this.spawnInStairWay();
-					}
-					else
-					{
-						this.Floor8DoorTrigger.DoorOpenEvent.AddListener(new UnityAction(this.triggerFloor8PreJump));
-						this.Floor8DoorTrigger.DoorWasOpenedEvent.AddListener(new UnityAction(this.triggerFloor8DoorJump));
-						this.Floor8DoorTrigger.SetCustomOpenDoorTime(0.45f);
-						this.spawnSwatInHallWay8();
-					}
-				}
-				else
-				{
-					this.triggerTimeWindow = 10f;
-					this.triggerTimeStamp = Time.time;
-					this.triggerActive = true;
-				}
-			}
-			else
-			{
-				this.triggerTimeWindow = 5f;
-				this.triggerTimeStamp = Time.time;
-				this.triggerActive = true;
-			}
-		}
-		else
+		if (StateManager.BeingHacked || StateManager.PlayerState == PLAYER_STATE.PEEPING)
 		{
 			this.triggerTimeWindow = 30f;
 			this.triggerTimeStamp = Time.time;
 			this.triggerActive = true;
+			return;
 		}
+		if (StateManager.PlayerState == PLAYER_STATE.BUSY)
+		{
+			this.triggerTimeWindow = 5f;
+			this.triggerTimeStamp = Time.time;
+			this.triggerActive = true;
+			return;
+		}
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.UNKNOWN)
+		{
+			this.triggerTimeWindow = 10f;
+			this.triggerTimeStamp = Time.time;
+			this.triggerActive = true;
+			return;
+		}
+		EnemyManager.State = ENEMY_STATE.POILCE;
+		EnvironmentManager.PowerBehaviour.LockedOut = true;
+		DataManager.LockSave = true;
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.OUTSIDE || StateManager.PlayerLocation == PLAYER_LOCATION.BATH_ROOM)
+		{
+			if ((StateManager.PlayerState == PLAYER_STATE.COMPUTER || StateManager.PlayerState == PLAYER_STATE.DESK) && UnityEngine.Random.Range(0, 100) < 25)
+			{
+				this.powerWasTripped = true;
+				EnvironmentManager.PowerBehaviour.ForcePowerOff();
+			}
+			this.spawnForRaid();
+			for (int i = 0; i < this.roomRaidTriggers.Length; i++)
+			{
+				this.roomRaidTriggers[i].SetActive();
+			}
+			return;
+		}
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY8)
+		{
+			for (int j = 0; j < this.powerTripTriggers.Length; j++)
+			{
+				this.powerTripTriggers[j].SetActive();
+			}
+			this.Floor8DoorTrigger.DoorOpenEvent.AddListener(new UnityAction(this.triggerStairJumpPre));
+			this.Floor8DoorTrigger.DoorWasOpenedEvent.AddListener(new UnityAction(this.triggerStairJumpPost));
+			this.spawnInStairWay();
+			return;
+		}
+		this.Floor8DoorTrigger.DoorOpenEvent.AddListener(new UnityAction(this.triggerFloor8PreJump));
+		this.Floor8DoorTrigger.DoorWasOpenedEvent.AddListener(new UnityAction(this.triggerFloor8DoorJump));
+		this.Floor8DoorTrigger.SetCustomOpenDoorTime(0.45f);
+		this.spawnSwatInHallWay8();
 	}
 
 	private void triggerWarning()
@@ -450,6 +481,31 @@ public class PoliceManager : MonoBehaviour
 	private void Awake()
 	{
 		EnemyManager.PoliceManager = this;
+		if (ModsManager.EasyModeActive && !DataManager.LeetMode && !ModsManager.Nightmare)
+		{
+			this.networkHotTime = 60f;
+			Debug.Log("Playing Easy Mode, WiFi De-Track time changed to: " + this.networkHotTime);
+		}
+		else if (!ModsManager.EasyModeActive && !DataManager.LeetMode && !ModsManager.Nightmare)
+		{
+			this.networkHotTime = 120f;
+			Debug.Log("Playing Normal Mode, WiFi De-Track time changed to: " + this.networkHotTime);
+		}
+		else if (ModsManager.EasyModeActive && DataManager.LeetMode && !ModsManager.Nightmare)
+		{
+			this.networkHotTime = 180f;
+			Debug.Log("Playing Easy 1337 Mode, WiFi De-Track time changed to: " + this.networkHotTime);
+		}
+		else if (!ModsManager.EasyModeActive && DataManager.LeetMode && !ModsManager.Nightmare)
+		{
+			this.networkHotTime = 300f;
+			Debug.Log("Playing 1337 Mode, WiFi De-Track time changed to: " + this.networkHotTime);
+		}
+		else if (ModsManager.Nightmare)
+		{
+			this.networkHotTime = 900f;
+			Debug.Log("Playing Nightmare Mode, WiFi De-Track time changed to: " + this.networkHotTime);
+		}
 		this.swatManPool = new PooledStack<SwatManBehaviour>(delegate()
 		{
 			SwatManBehaviour component = UnityEngine.Object.Instantiate<GameObject>(this.swatManObject, this.swatParent).GetComponent<SwatManBehaviour>();
@@ -478,17 +534,26 @@ public class PoliceManager : MonoBehaviour
 				this.attemptAttack();
 			}
 		}
-		foreach (KeyValuePair<WifiNetworkDefinition, HotWifiNetwork> keyValuePair in this.hotNetworks)
+		using (Dictionary<WifiNetworkDefinition, HotWifiNetwork>.Enumerator enumerator = this.hotNetworks.GetEnumerator())
 		{
-			if (Time.time - keyValuePair.Value.TimeStamp >= keyValuePair.Value.HotTime)
+			while (enumerator.MoveNext())
 			{
-				this.hotNetworksToRemove.Enqueue(keyValuePair.Key);
+				KeyValuePair<WifiNetworkDefinition, HotWifiNetwork> keyValuePair = enumerator.Current;
+				if (Time.time - keyValuePair.Value.TimeStamp >= keyValuePair.Value.HotTime)
+				{
+					this.hotNetworksToRemove.Enqueue(keyValuePair.Key);
+				}
 			}
+			goto IL_D9;
 		}
-		while (this.hotNetworksToRemove.Count > 0)
+		IL_C2:
+		this.hotNetworks.Remove(this.hotNetworksToRemove.Dequeue());
+		IL_D9:
+		if (this.hotNetworksToRemove.Count <= 0)
 		{
-			this.hotNetworks.Remove(this.hotNetworksToRemove.Dequeue());
+			return;
 		}
+		goto IL_C2;
 	}
 
 	private void OnDestroy()
@@ -555,8 +620,8 @@ public class PoliceManager : MonoBehaviour
 	[SerializeField]
 	private float warningTime = 30f;
 
-	[SerializeField]
-	private float networkHotTime = 60f;
+	[HideInInspector]
+	public float networkHotTime;
 
 	[SerializeField]
 	private int SWAT_POOL_COUNT = 4;

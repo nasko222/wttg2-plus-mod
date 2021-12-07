@@ -49,11 +49,24 @@ public class AnnBehaviour : WindowBehaviour
 			}
 			if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
 			{
-				num /= 2f;
-			}
-			else if (RouterBehaviour.Ins.Owned && !RouterBehaviour.Ins.RouterIsActive)
-			{
-				num *= 1.5f;
+				switch (RouterBehaviour.Ins.routerHubSwitch)
+				{
+				case 1:
+					num /= 0.5f;
+					break;
+				case 2:
+					num /= 1f;
+					break;
+				case 3:
+					num /= 1.5f;
+					break;
+				case 4:
+					num /= 2f;
+					break;
+				default:
+					num /= 0.1f;
+					break;
+				}
 			}
 			LookUp.DesktopUI.ANN_WINDOW_HOME_BTN.setLock(true);
 			LookUp.DesktopUI.ANN_WINDOW_BACK_BTN.setLock(true);

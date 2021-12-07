@@ -28,6 +28,7 @@ public class PoliceScannerManager : MonoBehaviour
 		this.policeScanerIns = UnityEngine.Object.Instantiate<GameObject>(this.policeScannerObject, this.policeScanerParent).GetComponent<PoliceScannerBehaviour>();
 		this.policeScanerIns.SoftBuild();
 		UnityEngine.Object.Instantiate<GameObject>(CustomObjectLookUp.Router).GetComponent<RouterBehaviour>().SoftBuild();
+		RouterBehaviour.Ins.MoveMe(new Vector3(-5.66f, 39.1f, -1.93f), new Vector3(0f, -86f, 0f), new Vector3(0.45f, 0.45f, 0.45f));
 	}
 
 	private void OnDestroy()

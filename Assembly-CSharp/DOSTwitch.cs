@@ -354,14 +354,21 @@ public class DOSTwitch : MonoBehaviour
 
 	private void triggerDiscountPoll()
 	{
-		if (!this.pollActive)
+		if (this.pollActive)
 		{
-			this.currentPollAction = new Action<string, string>(this.myDiscountPoll.CastVote);
-			this.pollActive = true;
-			this.myDiscountPoll.BeginVote();
+			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(32f, 81f), new Action(this.triggerDiscountPoll), 0);
 			return;
 		}
-		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(32f, 81f), new Action(this.triggerDiscountPoll), 0);
+		if (ModsManager.Nightmare)
+		{
+			this.currentPollAction = new Action<string, string>(this.myDiscountPoll.CastVoteNightmare);
+			this.pollActive = true;
+			this.myDiscountPoll.BeginVoteNightmare();
+			return;
+		}
+		this.currentPollAction = new Action<string, string>(this.myDiscountPoll.CastVote);
+		this.pollActive = true;
+		this.myDiscountPoll.BeginVote();
 	}
 
 	private void generateDiscountPollWindow()

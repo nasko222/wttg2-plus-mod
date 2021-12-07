@@ -32,6 +32,10 @@ public class RouterBehaviour : MonoBehaviour
 		{
 			return;
 		}
+		if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+		{
+			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+		}
 		if (this.RouterIsActive && this.routerHubSwitch == 4)
 		{
 			this.routerHubSwitch = 0;
@@ -75,9 +79,9 @@ public class RouterBehaviour : MonoBehaviour
 	{
 		this.Owned = true;
 		this.myMeshRenderer.enabled = true;
-		this.RouterIsActive = true;
-		this.myMeshRenderer.material = this.matOn;
-		this.routerHubSwitch = 1;
+		this.RouterIsActive = false;
+		this.myMeshRenderer.material = this.matReset;
+		this.routerHubSwitch = 0;
 		base.transform.position = SetPOS;
 		base.transform.rotation = Quaternion.Euler(SetROT);
 		base.transform.localScale = SetSCL;
@@ -99,15 +103,22 @@ public class RouterBehaviour : MonoBehaviour
 	{
 		if (this.RouterIsActive && !this.RouterLocked)
 		{
+			if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+			{
+				GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+			}
 			this.RestartModem();
 		}
 	}
 
 	public void RestartModem()
 	{
+		int num = this.routerHubSwitch;
+		this.RouterIsActive = false;
+		this.routerHubSwitch = 0;
 		this.RouterLocked = true;
-		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
 		this.myMeshRenderer.material = this.matOff;
+		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
 		GameManager.TimeSlinger.FireTimer(0.5f, delegate()
 		{
 			this.myMeshRenderer.material = this.matOn;
@@ -132,7 +143,7 @@ public class RouterBehaviour : MonoBehaviour
 		{
 			this.myMeshRenderer.material = this.matOn;
 			this.RouterIsActive = true;
-			this.routerHubSwitch = 1;
+			this.routerHubSwitch = num;
 			this.RouterLocked = false;
 		}, 0);
 	}
@@ -186,6 +197,7 @@ public class RouterBehaviour : MonoBehaviour
 	[SerializeField]
 	private Material matReset;
 
+	[HideInInspector]
 	public int routerHubSwitch;
 
 	private bool RouterLocked;

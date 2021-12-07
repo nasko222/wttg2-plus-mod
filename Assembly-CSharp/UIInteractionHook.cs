@@ -195,11 +195,17 @@ public class UIInteractionHook : MonoBehaviour
 
 	public void ShowEBar()
 	{
-		UIInteractionManager.Ins.ShowEBar();
+		if (!ModsManager.UnlimitedStamina)
+		{
+			UIInteractionManager.Ins.ShowEBar();
+		}
 	}
 
 	public void HideEBar()
 	{
-		UIInteractionManager.Ins.HideEBar();
+		if (!ModsManager.UnlimitedStamina)
+		{
+			UIInteractionManager.Ins.HideEBar();
+		}
 	}
 }

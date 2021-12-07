@@ -96,9 +96,9 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.3-pre7";
+	public static readonly string ModVersion = "1.3-pre8";
 
 	public static bool NoParameter;
 
-	public static readonly bool DebugEnabled = false;
+	public static readonly bool DebugEnabled = true;
 }
