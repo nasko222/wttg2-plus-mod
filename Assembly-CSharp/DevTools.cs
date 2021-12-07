@@ -200,7 +200,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "trollScanner")
 			{
-				if (PoliceScannerBehaviour.Ins != null && EnemyManager.PoliceManager != null)
+				if (PoliceScannerBehaviour.Ins != null && EnemyManager.PoliceManager != null && PoliceScannerBehaviour.Ins.IsOn)
 				{
 					EnemyManager.PoliceManager.TrollPoliceScanner();
 				}
@@ -208,7 +208,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "trollRouter")
 			{
-				if (RouterBehaviour.Ins != null && EnemyManager.PoliceManager != null)
+				if (RouterBehaviour.Ins != null && EnemyManager.PoliceManager != null && RouterBehaviour.Ins.Owned)
 				{
 					RouterBehaviour.Ins.trollReset();
 				}

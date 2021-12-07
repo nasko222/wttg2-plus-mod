@@ -100,5 +100,5 @@ public static class ModsManager
 
 	public static bool NoParameter;
 
-	public static readonly bool DebugEnabled = true;
+	public static readonly bool DebugEnabled = false;
 }

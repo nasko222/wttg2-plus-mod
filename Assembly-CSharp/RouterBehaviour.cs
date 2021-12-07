@@ -114,6 +114,7 @@ public class RouterBehaviour : MonoBehaviour
 	public void RestartModem()
 	{
 		int num = this.routerHubSwitch;
+		Material material = this.myMeshRenderer.material;
 		this.RouterIsActive = false;
 		this.routerHubSwitch = 0;
 		this.RouterLocked = true;
@@ -141,7 +142,7 @@ public class RouterBehaviour : MonoBehaviour
 		}, 0);
 		GameManager.TimeSlinger.FireTimer(3f, delegate()
 		{
-			this.myMeshRenderer.material = this.matOn;
+			this.myMeshRenderer.material = material;
 			this.RouterIsActive = true;
 			this.routerHubSwitch = num;
 			this.RouterLocked = false;
