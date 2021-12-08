@@ -882,6 +882,8 @@ public class TheCloud : MonoBehaviour
 				EnvironmentManager.PowerBehaviour.PowerDebug,
 				" | SWAN: ",
 				GameManager.HackerManager.theSwan.TheSwanDebug,
+				" | FREEZE: ",
+				GameManager.HackerManager.HackFreezeDebug,
 				" | STATE: ",
 				EnemyManager.State.ToString()
 			}));

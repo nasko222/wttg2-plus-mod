@@ -32,20 +32,32 @@ public class RouterBehaviour : MonoBehaviour
 		{
 			return;
 		}
-		if (GameManager.ManagerSlinger.WifiManager.IsOnline)
-		{
-			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
-		}
 		if (this.RouterIsActive && this.routerHubSwitch == 4)
 		{
 			this.routerHubSwitch = 0;
 			this.RouterIsActive = false;
+			if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+			{
+				GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+			}
+			else
+			{
+				WifiMenuBehaviour.Ins.refreshNetworks();
+			}
 			this.myMeshRenderer.material = this.matReset;
 			this.myAudioHub.PlaySound(this.offSFX);
 			return;
 		}
 		this.RouterIsActive = true;
 		this.routerHubSwitch++;
+		if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+		{
+			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+		}
+		else
+		{
+			WifiMenuBehaviour.Ins.refreshNetworks();
+		}
 		switch (this.routerHubSwitch)
 		{
 		case 1:
@@ -105,10 +117,6 @@ public class RouterBehaviour : MonoBehaviour
 	{
 		if (this.RouterIsActive && !this.RouterLocked)
 		{
-			if (GameManager.ManagerSlinger.WifiManager.IsOnline)
-			{
-				GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
-			}
 			this.RestartModem();
 		}
 	}
@@ -120,6 +128,14 @@ public class RouterBehaviour : MonoBehaviour
 		this.RouterIsActive = false;
 		this.routerHubSwitch = 0;
 		this.RouterLocked = true;
+		if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+		{
+			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+		}
+		else
+		{
+			WifiMenuBehaviour.Ins.refreshNetworks();
+		}
 		this.myMeshRenderer.material = this.matOff;
 		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
 		GameManager.TimeSlinger.FireTimer(0.5f, delegate()
@@ -148,6 +164,12 @@ public class RouterBehaviour : MonoBehaviour
 			this.RouterIsActive = true;
 			this.routerHubSwitch = num;
 			this.RouterLocked = false;
+			if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+			{
+				GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+				return;
+			}
+			WifiMenuBehaviour.Ins.refreshNetworks();
 		}, 0);
 	}
 

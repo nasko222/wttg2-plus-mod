@@ -132,7 +132,7 @@ public class WiFiPoll
 			WiFiPoll.interactedWiFiNetworkSecurity = GameManager.ManagerSlinger.WifiManager.GetCurrentWifiNetworks()[index].networkSecurity;
 			GameManager.ManagerSlinger.WifiManager.GetCurrentWifiNetworks()[index].networkSecurity = WIFI_SECURITY.NONE;
 			this.myDOSTwitch.myTwitchIRC.SendMsg("Unlocking " + GameManager.ManagerSlinger.WifiManager.GetCurrentWifiNetworks()[index].networkName + "...");
-			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+			WifiMenuBehaviour.Ins.refreshNetworks();
 			WiFiPoll.interactedWiFiType = WiFiPoll.WiFiInteractionType.UNLOCKED;
 		}
 		else
@@ -154,7 +154,14 @@ public class WiFiPoll
 		WiFiPoll.interactedWiFiDefinition = GameManager.ManagerSlinger.WifiManager.getCurrentWiFi();
 		GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().networkStrength = -3;
 		this.myDOSTwitch.myTwitchIRC.SendMsg("Locking " + GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().networkName + "...");
-		GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+		if (GameManager.ManagerSlinger.WifiManager.IsOnline)
+		{
+			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
+		}
+		else
+		{
+			WifiMenuBehaviour.Ins.refreshNetworks();
+		}
 		WiFiPoll.interactedWiFiType = WiFiPoll.WiFiInteractionType.LOCKED;
 	}
 

@@ -1,12 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CultSeeAndHideSpawn : CultSpawner
 {
 	public void StageSpawn(Definition SetSpawnData)
 	{
-		LookUp.Doors.BalconyDoor.DoorOpenEvent.AddListener(new UnityAction(this.balcDoorFix));
 		this.currentSpawnData = (CultSpawnDefinition)SetSpawnData;
 		CultLooker.Ins.TargetLocation = this.currentSpawnData.Position;
 		this.stageEvents.Invoke(SetSpawnData);
@@ -91,12 +89,7 @@ public class CultSeeAndHideSpawn : CultSpawner
 
 	private void balcDoorFix()
 	{
-		LookUp.Doors.BalconyDoor.DoorOpenEvent.RemoveListener(new UnityAction(this.balcDoorFix));
-		GameManager.TimeSlinger.KillTimer(this.autoDespawnTimer);
-		this.lookAwayTimeActive = false;
-		CultLooker.Ins.CheckForVisible = false;
-		CultLooker.Ins.VisibleActions.Event -= this.resetLookAway;
-		base.DeSpawn();
+		Debug.Log("This line should never appear in the debug log. Balcony door glitch was fixed. If you see this, then there is something seriously wrong with the mod. Please report this bug immediately.");
 	}
 
 	protected new void Awake()

@@ -278,14 +278,14 @@ public class PoliceManager : MonoBehaviour
 	{
 		this.triggerActive = false;
 		this.warningActive = false;
-		float num = this.triggerTimeWindow - (Time.time - this.triggerTimeStamp);
+		float setTimeLeft = this.triggerTimeWindow - (Time.time - this.triggerTimeStamp);
 		if (this.currentActiveWifiNetwork != null)
 		{
 			if (ModsManager.Nightmare && RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
 			{
 				EnemyManager.PoliceManager.networkHotTime = 450f;
 			}
-			HotWifiNetwork value = new HotWifiNetwork(this.currentActiveWifiNetwork.GetHashCode(), this.networkHotTime, Time.time, num);
+			HotWifiNetwork value = new HotWifiNetwork(this.currentActiveWifiNetwork.GetHashCode(), this.networkHotTime, Time.time, setTimeLeft);
 			this.hotNetworks.Remove(this.currentActiveWifiNetwork);
 			this.hotNetworks.Add(this.currentActiveWifiNetwork, value);
 		}

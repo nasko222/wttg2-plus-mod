@@ -137,6 +137,10 @@ public class WifiManager : MonoBehaviour
 
 	public void DisconnectFromWifi()
 	{
+		if (!this.isOnline)
+		{
+			return;
+		}
 		this.isOnline = false;
 		this.currentWifiNetwork = null;
 		this.changeWifiBars(0);
@@ -190,7 +194,14 @@ public class WifiManager : MonoBehaviour
 		int wifiBoostLevel = InventoryManager.GetWifiBoostLevel();
 		for (int i = 0; i < this.activeWifiHotSpot.myWifiNetworks.Count; i++)
 		{
-			if (!this.activeWifiHotSpot.myWifiNetworks[i].networkIsOffline && (int)this.activeWifiHotSpot.myWifiNetworks[i].networkStrength + wifiBoostLevel > 0)
+			if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+			{
+				if (!this.activeWifiHotSpot.myWifiNetworks[i].networkIsOffline && (int)this.activeWifiHotSpot.myWifiNetworks[i].networkStrength + wifiBoostLevel > 0)
+				{
+					list.Add(this.activeWifiHotSpot.myWifiNetworks[i]);
+				}
+			}
+			else if (!this.activeWifiHotSpot.myWifiNetworks[i].networkIsOffline && (int)this.activeWifiHotSpot.myWifiNetworks[i].networkStrength + wifiBoostLevel > 0 && this.activeWifiHotSpot.myWifiNetworks[i].networkName != "TheProgrammingChair")
 			{
 				list.Add(this.activeWifiHotSpot.myWifiNetworks[i]);
 			}
@@ -205,7 +216,14 @@ public class WifiManager : MonoBehaviour
 		int wifiBoostLevel = InventoryManager.GetWifiBoostLevel();
 		for (int i = 0; i < myWifiNetworks.Count; i++)
 		{
-			if (!myWifiNetworks[i].networkIsOffline && myWifiNetworks[i].networkSecurity == SecuirtyType && (int)myWifiNetworks[i].networkStrength + wifiBoostLevel > 0)
+			if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
+			{
+				if (!myWifiNetworks[i].networkIsOffline && myWifiNetworks[i].networkSecurity == SecuirtyType && (int)myWifiNetworks[i].networkStrength + wifiBoostLevel > 0)
+				{
+					list.Add(myWifiNetworks[i]);
+				}
+			}
+			else if (!myWifiNetworks[i].networkIsOffline && myWifiNetworks[i].networkSecurity == SecuirtyType && (int)myWifiNetworks[i].networkStrength + wifiBoostLevel > 0 && myWifiNetworks[i].networkName != "TheProgrammingChair")
 			{
 				list.Add(myWifiNetworks[i]);
 			}
@@ -480,6 +498,7 @@ public class WifiManager : MonoBehaviour
 		WifiNetworkDefinition wifiNetworkDefinition = new WifiNetworkDefinition();
 		WifiNetworkDefinition wifiNetworkDefinition2 = new WifiNetworkDefinition();
 		WifiNetworkDefinition wifiNetworkDefinition3 = new WifiNetworkDefinition();
+		WifiNetworkDefinition wifiNetworkDefinition4 = new WifiNetworkDefinition();
 		wifiNetworkDefinition.affectedByDosDrainer = false;
 		wifiNetworkDefinition.id = 101;
 		wifiNetworkDefinition.networkBSSID = "foobar";
@@ -522,7 +541,7 @@ public class WifiManager : MonoBehaviour
 		wifiNetworkDefinition2.networkSecurity = WIFI_SECURITY.WPA;
 		wifiNetworkDefinition2.networkSignal = WIFI_SIGNAL_TYPE.W80211N;
 		wifiNetworkDefinition2.networkStrength = 0;
-		wifiNetworkDefinition2.networkTrackProbability = 0.3f;
+		wifiNetworkDefinition2.networkTrackProbability = 0.18f;
 		wifiNetworkDefinition2.networkTrackRate = 584f;
 		wifiNetworkDefinition3.affectedByDosDrainer = false;
 		wifiNetworkDefinition3.id = 103;
@@ -546,9 +565,33 @@ public class WifiManager : MonoBehaviour
 		wifiNetworkDefinition3.networkStrength = 3;
 		wifiNetworkDefinition3.networkTrackProbability = 0.62f;
 		wifiNetworkDefinition3.networkTrackRate = 621f;
+		wifiNetworkDefinition4.affectedByDosDrainer = false;
+		wifiNetworkDefinition4.id = 104;
+		wifiNetworkDefinition4.networkBSSID = "amper";
+		wifiNetworkDefinition4.networkChannel = 6;
+		wifiNetworkDefinition4.networkCoolOffTime = 0f;
+		wifiNetworkDefinition4.networkInjectionAmount = 0;
+		wifiNetworkDefinition4.networkInjectionCoolOffTime = 0f;
+		wifiNetworkDefinition4.networkInjectionRandEnd = 0;
+		wifiNetworkDefinition4.networkInjectionRandStart = 0;
+		wifiNetworkDefinition4.networkIsOffline = false;
+		wifiNetworkDefinition4.networkMaxInjectionAmount = 0;
+		wifiNetworkDefinition4.networkName = "TheProgrammingChair";
+		wifiNetworkDefinition4.networkOpenPort = 0;
+		wifiNetworkDefinition4.networkPassword = "amper";
+		wifiNetworkDefinition4.networkPower = 54;
+		wifiNetworkDefinition4.networkRandPortEnd = 110;
+		wifiNetworkDefinition4.networkRandPortStart = 150;
+		wifiNetworkDefinition4.networkSecurity = WIFI_SECURITY.WEP;
+		wifiNetworkDefinition4.networkSignal = WIFI_SIGNAL_TYPE.W80211B;
+		wifiNetworkDefinition4.networkStrength = 1;
+		wifiNetworkDefinition4.networkTrackProbability = 0.16f;
+		wifiNetworkDefinition4.networkTrackRate = 1454f;
 		this.wifiHotSpots[0].myWifiNetworks.Add(wifiNetworkDefinition);
 		this.wifiHotSpots[0].myWifiNetworks.Add(wifiNetworkDefinition2);
 		this.wifiHotSpots[1].myWifiNetworks.Add(wifiNetworkDefinition3);
+		this.wifiHotSpots[1].myWifiNetworks.Add(wifiNetworkDefinition4);
+		this.wifiHotSpots[3].myWifiNetworks.Add(wifiNetworkDefinition4);
 	}
 
 	public WifiNetworkDefinition defaultWifiNetwork;

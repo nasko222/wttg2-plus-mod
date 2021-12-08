@@ -841,7 +841,7 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "disconnectWifi")
 			{
-				if (GameManager.ManagerSlinger.WifiManager != null)
+				if (GameManager.ManagerSlinger.WifiManager != null && GameManager.ManagerSlinger.WifiManager.IsOnline)
 				{
 					GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
 				}

@@ -323,7 +323,7 @@ public class HackerManager : MonoBehaviour
 	private void generateFireWindow()
 	{
 		this.freezeAddTime = 0f;
-		this.freezeTimeStamp = 0f;
+		this.freezeTimeStamp = (GameManager.ManagerSlinger.WifiManager.IsOnline ? 0f : Time.time);
 		this.fireWindow = UnityEngine.Random.Range(this.fireWindowMin, this.fireWindowMax);
 		this.fireWindowTimeStamp = Time.time;
 		this.fireWindowActive = true;
@@ -698,6 +698,14 @@ public class HackerManager : MonoBehaviour
 				return ((int)(this.fireWindow - (Time.time - this.freezeAddTime - this.fireWindowTimeStamp))).ToString();
 			}
 			return 0.ToString();
+		}
+	}
+
+	public string HackFreezeDebug
+	{
+		get
+		{
+			return this.freezeAddTime.ToString() + " : " + this.freezeTimeStamp.ToString();
 		}
 	}
 

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class WifiMenuBehaviour : MonoBehaviour, IPointerExitHandler, IEventSystemHandler
 {
-	private void refreshNetworks()
+	public void refreshNetworks()
 	{
 		this.buildNetworks(GameManager.ManagerSlinger.WifiManager.GetCurrentWifiNetworks());
 	}
@@ -60,6 +60,7 @@ public class WifiMenuBehaviour : MonoBehaviour, IPointerExitHandler, IEventSyste
 
 	private void Awake()
 	{
+		WifiMenuBehaviour.Ins = this;
 		this.menuSepObject = UnityEngine.Object.Instantiate<GameObject>(this.WifiMenuSeperator, base.GetComponent<RectTransform>());
 		this.menuDisObject = UnityEngine.Object.Instantiate<GameObject>(this.WifiMenuDisconnect, base.GetComponent<RectTransform>());
 		this.menuSepObject.GetComponent<RectTransform>().anchoredPosition = this.menuOptOffScreenPOS;
@@ -117,4 +118,6 @@ public class WifiMenuBehaviour : MonoBehaviour, IPointerExitHandler, IEventSyste
 	private Vector2 menuSize = Vector2.zero;
 
 	private Vector2 menuOptOffScreenPOS = new Vector2(0f, 24f);
+
+	public static WifiMenuBehaviour Ins;
 }
