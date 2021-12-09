@@ -874,6 +874,8 @@ public class TheCloud : MonoBehaviour
 				EnemyManager.CultManager.NoirDebug,
 				" | HITMAN: ",
 				EnemyManager.HitManManager.LucasDebug,
+				" | BOMB_MAKER: ",
+				EnemyManager.BombMakerManager.SulphurDebug,
 				" | DOLL_MAKER: ",
 				EnemyManager.DollMakerManager.MarkerDebug,
 				" | HACK: ",
@@ -961,6 +963,7 @@ public class TheCloud : MonoBehaviour
 		}
 		if (this.challenge == 3)
 		{
+			GameManager.TimeSlinger.FireTimer(2f, new Action(EnemyManager.BombMakerManager.ReleaseTheBombMakerInstantly), 0);
 			this.challenge++;
 			GameManager.TimeSlinger.FireTimer(10f, new Action(this.NewChallenger), 0);
 			return;
@@ -1018,13 +1021,28 @@ public class TheCloud : MonoBehaviour
 	private void SpawnGF()
 	{
 		GameObject gameObject = new GameObject();
-		gameObject.AddComponent<Image>().sprite = Sprite.Create(CustomSpriteLookUp.freddy, new Rect(0f, 0f, (float)CustomSpriteLookUp.freddy.width, (float)CustomSpriteLookUp.freddy.height), new Vector2(0.5f, 0.5f), 100f);
+		gameObject.AddComponent<Image>().sprite = Sprite.Create(CustomSpriteLookUp.freddy, new Rect(0f, 0f, 800f, 600f), new Vector2(0.5f, 0.5f), 100f);
 		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
 		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)(Screen.width / 2), (float)(Screen.height / 2), 0f);
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.x);
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.y);
 		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.z);
-		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
+		if (Screen.currentResolution.height == 720)
+		{
+			gameObject.transform.localScale = new Vector3(13f, 7f, 1f);
+		}
+		else if (Screen.currentResolution.height == 768)
+		{
+			gameObject.transform.localScale = new Vector3(14f, 8f, 1f);
+		}
+		else if (Screen.currentResolution.height == 900)
+		{
+			gameObject.transform.localScale = new Vector3(16f, 9f, 1f);
+		}
+		else if (Screen.currentResolution.height >= 1080)
+		{
+			gameObject.transform.localScale = new Vector3(20f, 11f, 1f);
+		}
 		gameObject.SetActive(true);
 		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
 		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
@@ -1037,10 +1055,6 @@ public class TheCloud : MonoBehaviour
 	{
 		if (this.nightmarePossible)
 		{
-			if (DataManager.LeetMode)
-			{
-				return;
-			}
 			ModsManager.Nightmare = true;
 			this.TenTwentyMode();
 		}
@@ -1094,12 +1108,19 @@ public class TheCloud : MonoBehaviour
 
 	private void LoadMods()
 	{
-		LookUp.SoundLookUp.JumpHit1.MyAudioLayer = AUDIO_LAYER.GAME_OVER;
 		GameManager.TimeSlinger.FireTimer(5f, delegate()
 		{
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
-		new GameObject("BombMakerBehaviour").AddComponent<BombMakerBehaviour>();
+		new GameObject("BombMakerManager").AddComponent<BombMakerManager>();
+	}
+
+	public bool IsGFActive
+	{
+		get
+		{
+			return this.GFschedule;
+		}
 	}
 
 	public CustomEvent KeyDiscoveredEvent = new CustomEvent(6);

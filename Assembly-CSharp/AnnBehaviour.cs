@@ -49,6 +49,10 @@ public class AnnBehaviour : WindowBehaviour
 			}
 			if (RouterBehaviour.Ins.Owned && RouterBehaviour.Ins.RouterIsActive)
 			{
+				if (UnityEngine.Random.Range(0, 1000) > 993)
+				{
+					GameManager.TimeSlinger.FireTimer(3f, new Action(RouterBehaviour.Ins.JamTheRouter), 0);
+				}
 				switch (RouterBehaviour.Ins.routerHubSwitch)
 				{
 				case 1:
@@ -66,6 +70,10 @@ public class AnnBehaviour : WindowBehaviour
 				default:
 					num /= 0.1f;
 					break;
+				}
+				if (RouterBehaviour.Ins.IsJammed)
+				{
+					num = 45f;
 				}
 			}
 			LookUp.DesktopUI.ANN_WINDOW_HOME_BTN.setLock(true);
@@ -726,7 +734,7 @@ public class AnnBehaviour : WindowBehaviour
 		}
 		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "the bomb maker") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "thebombmaker"))
 		{
-			Debug.Log("foobar bombmaker");
+			EnemyManager.BombMakerManager.ReleaseTheBombMaker();
 		}
 	}
 

@@ -56,60 +56,51 @@ public class BombMakerBehaviour : MonoBehaviour
 	{
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.DEAD_DROP || StateManager.PlayerLocation == PLAYER_LOCATION.DEAD_DROP_ROOM || StateManager.PlayerLocation == PLAYER_LOCATION.LOBBY || StateManager.PlayerLocation == PLAYER_LOCATION.LOBBY_COMPUTER)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor1Jump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY1)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor1Jump();
 			this.stageApartmentJump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY3)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor3Jump();
 			this.stageApartmentJump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY5)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor5Jump();
 			this.stageApartmentJump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY6)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor6Jump();
 			this.stageApartmentJump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY8)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor8Jump();
 			this.stageApartmentJump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY10)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor10Jump();
 			this.stageApartmentJump();
 			return;
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAINTENANCE_ROOM || StateManager.PlayerLocation == PLAYER_LOCATION.STAIR_WAY)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageApartmentJump();
 		}
 		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.BATH_ROOM || StateManager.PlayerLocation == PLAYER_LOCATION.OUTSIDE)
 		{
-			EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 			this.stageFloor8Jump();
 		}
 	}

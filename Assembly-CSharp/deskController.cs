@@ -194,6 +194,11 @@ public class deskController : mouseableController
 		base.OnDestroy();
 	}
 
+	public void UnLockRecovery()
+	{
+		this.lockOutFromRecovery = false;
+	}
+
 	public static deskController Ins;
 
 	public float MaxLookLeft = -70f;

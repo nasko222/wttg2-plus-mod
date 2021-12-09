@@ -25,15 +25,6 @@ public class SulphurPackageObject : MonoBehaviour
 		}
 	}
 
-	private void OnDisable()
-	{
-		UnityEngine.Object.Destroy(this.packages[0]);
-		UnityEngine.Object.Destroy(this.packages[1]);
-		UnityEngine.Object.Destroy(this.packages[2]);
-		UnityEngine.Object.Destroy(this.packages[3]);
-		UnityEngine.Object.Destroy(this.packages[4]);
-	}
-
 	public void UpdateSulphurPackages()
 	{
 		this.packages[0].SetActive(SulphurInventory.SulphurAmount >= 1);

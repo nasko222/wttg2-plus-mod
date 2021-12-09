@@ -7,6 +7,7 @@ public class SoundLookUp : MonoBehaviour
 	{
 		LookUp.SoundLookUp = this;
 		AssetBundleManager.ProceedLoadingAFD();
+		LookUp.SoundLookUp.JumpHit1.MyAudioLayer = AUDIO_LAYER.GAME_OVER;
 	}
 
 	public AudioFileDefinition MouseClick;

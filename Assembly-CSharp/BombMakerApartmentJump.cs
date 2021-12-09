@@ -11,6 +11,7 @@ public class BombMakerApartmentJump : MonoBehaviour
 
 	public void gunRecoil()
 	{
+		this.Bullet.SetActive(true);
 		this.shoulderBM.transform.DOLocalRotate(new Vector3(0f, -90f, -2f), 0.1f, RotateMode.Fast).OnComplete(delegate
 		{
 			this.gunRecoilBack();
@@ -19,9 +20,14 @@ public class BombMakerApartmentJump : MonoBehaviour
 
 	private void gunRecoilBack()
 	{
-		this.shoulderBM.transform.DOLocalRotate(new Vector3(0f, -90f, 1f), 0.1f, RotateMode.Fast);
+		this.shoulderBM.transform.DOLocalRotate(new Vector3(0f, -90f, 1f), 0.1f, RotateMode.Fast).OnComplete(delegate
+		{
+			this.Bullet.SetActive(false);
+		});
 	}
 
 	[SerializeField]
 	private GameObject shoulderBM;
+
+	public GameObject Bullet;
 }

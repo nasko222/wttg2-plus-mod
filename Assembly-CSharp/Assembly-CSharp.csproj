@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A334B3F-EC5D-45F2-BEAD-F3428D6C9A55}</ProjectGuid>
+    <ProjectGuid>{9C931BFE-4059-4D67-B366-BA7CC039A914}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -161,6 +161,8 @@
     <Compile Include="BombMakerBehaviour.cs" />
     <Compile Include="BombMakerBehindJump.cs" />
     <Compile Include="BombMakerDataDefinition.cs" />
+    <Compile Include="BombMakerDeskJumper.cs" />
+    <Compile Include="BombMakerDeskPresence.cs" />
     <Compile Include="BombMakerFloor10Jump.cs" />
     <Compile Include="BombMakerFloor1Jump.cs" />
     <Compile Include="BombMakerFloor3Jump.cs" />
@@ -169,6 +171,8 @@
     <Compile Include="BombMakerFloor8Jump.cs" />
     <Compile Include="BombMakerMainDoorJump.cs" />
     <Compile Include="BombMakerManager.cs" />
+    <Compile Include="BombMakerPresenceGunJump.cs" />
+    <Compile Include="BombMakerYoureUseless.cs" />
     <Compile Include="BookmarkData.cs" />
     <Compile Include="BookMarksData.cs" />
     <Compile Include="BookmarkTABObject.cs" />

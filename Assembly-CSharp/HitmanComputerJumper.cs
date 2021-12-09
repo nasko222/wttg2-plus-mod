@@ -54,7 +54,7 @@ public class HitmanComputerJumper : MonoBehaviour
 	[SerializeField]
 	private float delayTriggerJumpTime = 10f;
 
-	private computerController myComputerController;
+	public computerController myComputerController;
 
 	private float delayTriggerTimeStamp;
 }

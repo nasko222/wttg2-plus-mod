@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
 
 public class DevTools : MonoBehaviour
 {
@@ -339,9 +338,9 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "BombMaker")
 			{
-				if (BombMakerBehaviour.Ins != null && EnemyManager.State == ENEMY_STATE.IDLE)
+				if (EnemyManager.BombMakerManager != null)
 				{
-					BombMakerBehaviour.Ins.StageBombMakerOutsideKill();
+					EnemyManager.BombMakerManager.ReleaseTheBombMakerInstantly();
 				}
 				this.iAmLive = true;
 			}
@@ -435,9 +434,9 @@ public class DevTools : MonoBehaviour
 			}
 			else if (Response.Action == "GoldenFreddy")
 			{
-				if (DevTools.Ins != null && !this.GFschedule && !ModsManager.Nightmare)
+				if (GameManager.TheCloud != null && !GameManager.TheCloud.IsGFActive && !ModsManager.Nightmare)
 				{
-					this.ScheduleGoldenFreddy();
+					GameManager.TheCloud.ScheduleGoldenFreddy();
 				}
 				this.iAmLive = true;
 			}
@@ -870,42 +869,6 @@ public class DevTools : MonoBehaviour
 	private void Awake()
 	{
 		DevTools.Ins = this;
-	}
-
-	private void ScheduleGoldenFreddy()
-	{
-		if (!this.GFschedule)
-		{
-			this.GFschedule = true;
-			GameManager.TimeSlinger.FireTimer(45f, new Action(this.ScheduleGoldenFreddy), 0);
-			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gfpresence);
-			return;
-		}
-		if (StateManager.PlayerState != PLAYER_STATE.PEEPING)
-		{
-			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(150f, 350f), new Action(this.ScheduleGoldenFreddy), 0);
-			this.SpawnGF();
-			return;
-		}
-		GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(5f, 20f), new Action(this.ScheduleGoldenFreddy), 0);
-	}
-
-	private void SpawnGF()
-	{
-		GameObject gameObject = new GameObject();
-		gameObject.AddComponent<Image>().sprite = Sprite.Create(CustomSpriteLookUp.freddy, new Rect(0f, 0f, (float)CustomSpriteLookUp.freddy.width, (float)CustomSpriteLookUp.freddy.height), new Vector2(0.5f, 0.5f), 100f);
-		gameObject.GetComponent<RectTransform>().SetParent(LookUp.PlayerUI.HandTransform.transform);
-		gameObject.GetComponent<RectTransform>().transform.position = new Vector3((float)(Screen.width / 2), (float)(Screen.height / 2), 0f);
-		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.x);
-		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.y);
-		Debug.Log(gameObject.GetComponent<RectTransform>().transform.position.z);
-		gameObject.transform.localScale = new Vector3(10f, 10f, 10f);
-		gameObject.SetActive(true);
-		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
-		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
-		{
-			UnityEngine.Object.Destroy(gameObject);
-		}, 0);
 	}
 
 	public string myHash;

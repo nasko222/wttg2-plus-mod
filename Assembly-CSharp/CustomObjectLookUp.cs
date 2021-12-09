@@ -10,4 +10,8 @@ public static class CustomObjectLookUp
 	public static GameObject PackageBox;
 
 	public static GameObject Router;
+
+	public static GameObject BombMakerPCKill;
+
+	public static GameObject BombMakerPresence;
 }

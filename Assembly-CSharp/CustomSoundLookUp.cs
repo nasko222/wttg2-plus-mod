@@ -126,4 +126,16 @@ public static class CustomSoundLookUp
 	public static AudioClip hackermans;
 
 	public static AudioFileDefinition routerreset;
+
+	public static AudioFileDefinition bombmaker;
+
+	public static AudioFileDefinition bombmakertalk;
+
+	public static AudioFileDefinition explosion;
+
+	public static AudioFileDefinition youreuseless;
+
+	public static AudioFileDefinition routerjammed;
+
+	public static AudioFileDefinition gfscream;
 }

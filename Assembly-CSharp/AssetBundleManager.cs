@@ -32,6 +32,8 @@ public static class AssetBundleManager
 	{
 		CustomObjectLookUp.BombMakerHallwayJump = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("BombMakerHallwayJump.prefab");
 		CustomObjectLookUp.BombMakerApartmentJump = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("BombMakerApartmentJump.prefab");
+		CustomObjectLookUp.BombMakerPCKill = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("BombMakerPCKill.prefab");
+		CustomObjectLookUp.BombMakerPresence = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("BombMakerPresence.prefab");
 		CustomObjectLookUp.PackageBox = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("PackageBox.prefab");
 		CustomObjectLookUp.Router = AssetBundleManager.WTTG2PlusProps.LoadAsset<GameObject>("Router.prefab");
 	}
@@ -59,6 +61,8 @@ public static class AssetBundleManager
 		CustomSoundLookUp.beep = AFDManager.Ins.AddSwanAudio("beep", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("beep.wav"));
 		CustomSoundLookUp.beware = AFDManager.Ins.AddWebsiteAFD("beware", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("beware.wav"), true);
 		CustomSoundLookUp.blue = AFDManager.Ins.AddPlayerAFD("blue", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("blue.wav"), 0.25f);
+		CustomSoundLookUp.bombmaker = AFDManager.Ins.AddPlayerAFD("bombmaker", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("bombmaker.wav"), 1f);
+		CustomSoundLookUp.bombmakertalk = AFDManager.Ins.AddPlayerAFD("bombmakertalk", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("bombmakertalk.wav"), 1f);
 		CustomSoundLookUp.bruh = AFDManager.Ins.AddPlayerAFD("bruh", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("bruh.wav"), 0.5f);
 		CustomSoundLookUp.cannabisworld = AFDManager.Ins.AddWebsiteAFD("cannabisworld", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("cannabisworld.wav"), false);
 		CustomSoundLookUp.challenger = AFDManager.Ins.AddPlayerAFD("challenger", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("challenger.wav"), 0.8f);
@@ -73,6 +77,7 @@ public static class AssetBundleManager
 		CustomSoundLookUp.dream = AFDManager.Ins.AddPlayerAFD("dream", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("dream.wav"), 0.35f);
 		CustomSoundLookUp.elevator = AFDManager.Ins.AddPlayerAFD("elevator", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("elevator.wav"), 0.35f);
 		CustomSoundLookUp.enigma = AFDManager.Ins.AddWebsiteAFD("enigma", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("enigma.wav"), false);
+		CustomSoundLookUp.explosion = AFDManager.Ins.AddPlayerAFD("explosion", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("explosion.wav"), 0.65f);
 		CustomSoundLookUp.failsafe = AFDManager.Ins.AddSwanAudio("failsafe", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("failsafe.wav"));
 		CustomSoundLookUp.fbi = AFDManager.Ins.AddPlayerAFD("fbi", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("fbi.wav"), 0.5f);
 		CustomSoundLookUp.foeoe = AFDManager.Ins.AddWebsiteAFD("foeoe", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("foeoe.wav"), false);
@@ -81,6 +86,7 @@ public static class AssetBundleManager
 		CustomSoundLookUp.funky = AFDManager.Ins.AddWebsiteAFD("funky", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("funky.wav"), true);
 		CustomSoundLookUp.gflaugh = AFDManager.Ins.AddPlayerAFD("gflaugh", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("gflaugh.wav"), 0.8f);
 		CustomSoundLookUp.gfpresence = AFDManager.Ins.AddPlayerAFD("gfpresence", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("gfpresence.wav"), 0.8f);
+		CustomSoundLookUp.gfscream = AFDManager.Ins.AddPlayerAFD("gfscream", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("gfscream.wav"), 1f);
 		CustomSoundLookUp.gnome = AFDManager.Ins.AddPlayerAFD("gnome", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("gnome.wav"), 0.5f);
 		CustomSoundLookUp.hailsatan = AFDManager.Ins.AddWebsiteAFD("hailsatan", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("hailsatan.wav"), true);
 		CustomSoundLookUp.illuminati = AFDManager.Ins.AddWebsiteAFD("illuminati", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("illuminati.wav"), false);
@@ -98,6 +104,7 @@ public static class AssetBundleManager
 		CustomSoundLookUp.reset = AFDManager.Ins.AddSwanAudio("reset", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("reset.wav"));
 		CustomSoundLookUp.rosesdestruction = AFDManager.Ins.AddWebsiteAFD("rosesdestruction", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("rosesdestruction.wav"), false);
 		CustomSoundLookUp.routerreset = AFDManager.Ins.AddPlayerAFD("routerreset", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("routerreset.wav"), 1f);
+		CustomSoundLookUp.routerjammed = AFDManager.Ins.AddPlayerAFD("routerjammed", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("routerjammed.wav"), 1f);
 		CustomSoundLookUp.shutdown = AFDManager.Ins.AddPlayerAFD("shutdown", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("shutdown.wav"), 0.5f);
 		CustomSoundLookUp.startup = AFDManager.Ins.AddPlayerAFD("startup", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("startup.wav"), 0.5f);
 		CustomSoundLookUp.stickbug = AFDManager.Ins.AddPlayerAFD("stickbug", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("stickbug.wav"), 0.4f);
@@ -114,6 +121,7 @@ public static class AssetBundleManager
 		CustomSoundLookUp.whisper = AFDManager.Ins.AddWebsiteAFD("whisper", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("whisper.wav"), true);
 		CustomSoundLookUp.xfiles = AFDManager.Ins.AddPlayerAFD("xfiles", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("xfiles.wav"), 0.5f);
 		CustomSoundLookUp.xor = AFDManager.Ins.AddPlayerAFD("xor", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("xor.wav"), 1f);
+		CustomSoundLookUp.youreuseless = AFDManager.Ins.AddPlayerAFD("youreuseless", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("youreuseless.wav"), 1f);
 		CustomSoundLookUp.hackermans = AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("hackermans.wav");
 	}
 

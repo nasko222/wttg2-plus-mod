@@ -164,6 +164,7 @@ public class RouterBehaviour : MonoBehaviour
 			this.RouterIsActive = true;
 			this.routerHubSwitch = num;
 			this.RouterLocked = false;
+			this.IsJammed = false;
 			if (GameManager.ManagerSlinger.WifiManager.IsOnline)
 			{
 				GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
@@ -176,6 +177,16 @@ public class RouterBehaviour : MonoBehaviour
 	public void trollReset()
 	{
 		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
+	}
+
+	public void JamTheRouter()
+	{
+		if (this.IsJammed)
+		{
+			return;
+		}
+		this.myAudioHub.PlaySound(CustomSoundLookUp.routerjammed);
+		this.IsJammed = true;
 	}
 
 	[HideInInspector]
@@ -226,4 +237,7 @@ public class RouterBehaviour : MonoBehaviour
 	public int routerHubSwitch;
 
 	private bool RouterLocked;
+
+	[HideInInspector]
+	public bool IsJammed;
 }
