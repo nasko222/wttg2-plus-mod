@@ -55,18 +55,36 @@ public class BombMakerManager : MonoBehaviour
 		}
 		EnemyManager.State = ENEMY_STATE.IDLE;
 		SulphurInventory.RemoveSulphur(1);
-		this.PlayLaugh();
-		CurrencyManager.AddCurrency(ModsManager.EasyModeActive ? 20f : 65f);
-		if (this.SulphurTaken < 5)
+		if (!ModsManager.Nightmare)
 		{
-			this.SulphurTaken++;
-			this.activateSulphurTime();
+			CurrencyManager.AddCurrency(ModsManager.EasyModeActive ? 20f : 65f);
+		}
+		if (this.SulphurTaken >= 8)
+		{
+			return;
+		}
+		this.SulphurTaken++;
+		this.PlayLaugh();
+		this.activateSulphurTime();
+		if (ModsManager.Nightmare)
+		{
+			if (UnityEngine.Random.Range(0, 2) == 0)
+			{
+				GameManager.TimeSlinger.FireTimer((float)UnityEngine.Random.Range(80, 120), new Action(this.PlayExplosion), 0);
+				return;
+			}
+			GameManager.TimeSlinger.FireTimer((float)UnityEngine.Random.Range(50, 90), new Action(this.PlayExplosion2), 0);
+			return;
+		}
+		else
+		{
 			if (UnityEngine.Random.Range(0, 2) == 0)
 			{
 				GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(340f, 480f), new Action(this.PlayExplosion), 0);
 				return;
 			}
 			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(280f, 360f), new Action(this.PlayExplosion2), 0);
+			return;
 		}
 	}
 

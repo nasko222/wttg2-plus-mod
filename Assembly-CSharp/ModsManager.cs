@@ -96,7 +96,7 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.3-pre10";
+	public static readonly string ModVersion = "1.3-pre11";
 
 	public static bool NoParameter;
 

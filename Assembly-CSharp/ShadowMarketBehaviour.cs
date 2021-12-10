@@ -161,7 +161,7 @@ public class ShadowMarketBehaviour : WindowBehaviour
 		shadowMarketProductDefinition.productDesc = "Have you ever wanted to make a bomb? Does the thrill of destruction and smoking death of lives unworthy your concern move you? Look no further! With this package of basic sulphur you will get started!";
 		shadowMarketProductDefinition.productHasLimitPurchases = true;
 		shadowMarketProductDefinition.productID = HARDWARE_PRODUCTS.SULPHUR;
-		shadowMarketProductDefinition.productMaxPurchaseAmount = 5;
+		shadowMarketProductDefinition.productMaxPurchaseAmount = 8;
 		shadowMarketProductDefinition.productName = "Sulphur";
 		shadowMarketProductDefinition.productRequiresOtherProduct = false;
 		shadowMarketProductDefinition.productSprite = CustomSpriteLookUp.sulphur;

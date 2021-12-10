@@ -517,6 +517,11 @@ public class TheCloud : MonoBehaviour
 				this.Websites[i].PageTitle = "Rotten Meal";
 				this.Websites[i].PageDesc = "Weird ass people selling meal for canniballs.";
 			}
+			if (this.Websites[i].PageTitle == "The Doll Maker" || this.Websites[i].PageTitle == "The Bomb Maker")
+			{
+				this.Websites[i].WikiSpecific = true;
+				this.Websites[i].WikiIndex = 2;
+			}
 		}
 		new WebsiteExtension().ExtendWebsites(this.Websites);
 		this.myWebSitesData = DataManager.Load<WebSitesData>(2020);
