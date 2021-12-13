@@ -7,12 +7,7 @@ public class SteamSlinger : MonoBehaviour
 {
 	public void UnlockSteamAchievement(STEAM_ACHIEVEMENT TheAchievement)
 	{
-		string achievement;
-		if (SteamManager.Initialized && this.achievementLookUp.TryGetValue(TheAchievement, out achievement))
-		{
-			SteamUserStats.SetAchievement(achievement);
-			this.storeStats = true;
-		}
+		Debug.Log("Placeholder Discord Achievement " + TheAchievement.ToString());
 	}
 
 	public void ClearAchievements()

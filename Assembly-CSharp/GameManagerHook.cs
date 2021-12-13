@@ -6,8 +6,10 @@ public class GameManagerHook : MonoBehaviour
 {
 	private void Awake()
 	{
-		new GameObject("AFDManager").AddComponent<AFDManager>();
-		AssetBundleManager.LoadAssetBundles();
+		if (AFDManager.Ins == null)
+		{
+			new GameObject("AFDManager").AddComponent<AFDManager>();
+		}
 		ModsManager.ApplyMods();
 		GameManager.Instance.Init();
 	}

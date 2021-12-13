@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using ASoft.WTTG2;
 using UnityEngine;
 
@@ -11,21 +10,14 @@ public static class AssetBundleManager
 		{
 			return;
 		}
-		AssetBundleManager.CheckAssetExistance("WTTG2_Data\\Resources\\WTTG2Plus.assets");
+		AssetDownloader.Init();
+		AssetDownloader.Exec();
+		AssetDownloader.ValidateAll();
 		AssetBundleManager.WTTG2PlusProps = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\WTTG2Plus.assets");
 		AssetBundleManager.loaded = true;
 		AssetBundleManager.ProceedLoadingObjects();
 		AssetBundleManager.ProceedLoadingSprites();
-	}
-
-	private static void CheckAssetExistance(string path)
-	{
-		if (!File.Exists(path))
-		{
-			Debug.Log("FATAL ERROR: " + path + " does not exist!");
-			Application.Quit();
-			return;
-		}
+		TitleManager.UnloadBox();
 	}
 
 	public static void ProceedLoadingObjects()
@@ -51,6 +43,7 @@ public static class AssetBundleManager
 		CustomSpriteLookUp.speeditem = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("speeditem.png");
 		CustomSpriteLookUp.sulphur = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("sulphur.png");
 		CustomSpriteLookUp.router = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("router.png");
+		CustomSpriteLookUp.logo = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("logo.png");
 	}
 
 	public static void ProceedLoadingAFD()
@@ -123,6 +116,11 @@ public static class AssetBundleManager
 		CustomSoundLookUp.xor = AFDManager.Ins.AddPlayerAFD("xor", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("xor.wav"), 1f);
 		CustomSoundLookUp.youreuseless = AFDManager.Ins.AddPlayerAFD("youreuseless", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("youreuseless.wav"), 1f);
 		CustomSoundLookUp.hackermans = AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("hackermans.wav");
+	}
+
+	public static void PrepAssetBundles()
+	{
+		TitleManager.AddTextHook();
 	}
 
 	public static bool loaded;

@@ -62,7 +62,7 @@ public class EarlyGamePoll
 		this.myDOSTwitch.myTwitchIRC.SendMsg("DOSCOINS: " + num.ToString());
 		this.myDOSTwitch.myTwitchIRC.SendMsg("LUCAS: " + num2.ToString());
 		this.myDOSTwitch.myTwitchIRC.SendMsg("DOLLMAKER: " + num3.ToString());
-		this.myDOSTwitch.myTwitchIRC.SendMsg("BOMBMAKER: " + num3.ToString());
+		this.myDOSTwitch.myTwitchIRC.SendMsg("BOMBMAKER: " + num4.ToString());
 		if (num == 0 && num2 == 0 && num3 == 0 && num4 == 0)
 		{
 			this.myDOSTwitch.myTwitchIRC.SendMsg("No one voted, Story of my life!");

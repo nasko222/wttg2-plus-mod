@@ -7,7 +7,7 @@ public class BombMakerYoureUseless : MonoBehaviour
 	public void StagePCKill()
 	{
 		this.BMNeck.transform.DOLocalRotate(new Vector3(-8.264f, 5.885f, -28.896f), 0.4f, RotateMode.Fast);
-		this.BMShoulder.transform.DOLocalRotate(new Vector3(-164.6f, -245.8f, 184.5f), 0.3f, RotateMode.Fast).OnComplete(delegate
+		this.BMShoulder.transform.DOLocalRotate(new Vector3(-164.6f, -245.8f, 184.5f), 0.8f, RotateMode.Fast).OnComplete(delegate
 		{
 			this.StageYouAreUseless();
 		});

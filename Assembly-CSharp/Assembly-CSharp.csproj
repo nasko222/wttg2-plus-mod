@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{541F1FAB-D179-4297-AEAB-F0F9EA8F4331}</ProjectGuid>
+    <ProjectGuid>{03B176D2-B6DA-45DA-8C9C-D37ED6945E96}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -135,6 +135,8 @@
     <Compile Include="ASoft\WTTG2\AFDManager.cs" />
     <Compile Include="ASoft\WTTG2\OptionsUtil.cs" />
     <Compile Include="AssetBundleManager.cs" />
+    <Compile Include="AssetDownloader.cs" />
+    <Compile Include="AssetFile.cs" />
     <Compile Include="AudioBehaviour.cs" />
     <Compile Include="AudioClipComparer.cs" />
     <Compile Include="AudioFileDefinition.cs" />

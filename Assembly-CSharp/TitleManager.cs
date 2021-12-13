@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using ASoft.WTTG2;
 using DG.Tweening;
 using DG.Tweening.Core;
@@ -6,6 +7,7 @@ using DG.Tweening.Plugins.Options;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TitleManager : MonoBehaviour
 {
@@ -76,6 +78,7 @@ public class TitleManager : MonoBehaviour
 
 	private void Start()
 	{
+		this.prepMod();
 		GameManager.AudioSlinger.PlaySound(this.titleMusic);
 		this.TitleStaging.Execute();
 		this.startTimeStamp = Time.time;
@@ -195,6 +198,62 @@ public class TitleManager : MonoBehaviour
 		gameObject8.transform.SetParent(transform3);
 	}
 
+	private void prepMod()
+	{
+		if (AssetBundleManager.loaded)
+		{
+			return;
+		}
+		AssetBundleManager.PrepAssetBundles();
+		base.StartCoroutine(this.warmMod());
+	}
+
+	public static void UnloadBox()
+	{
+		TitleManager.wttg2plus_modLoad.SetActive(false);
+		TitleManager.wttg2plus_modText.gameObject.SetActive(false);
+		GameObject.Find("Logo").GetComponent<Image>().sprite = CustomSpriteLookUp.logo;
+	}
+
+	public static void AddTextHook()
+	{
+		GameObject.Find("HelpMeVideoPlayer").GetComponent<TitleHelpMeHook>().enabled = false;
+		TitleManager.wttg2plus_modLoad = new GameObject();
+		TitleManager.wttg2plus_modLoad.transform.SetParent(GameObject.Find("MainCanvas").transform);
+		TitleManager.wttg2plus_modLoad.AddComponent<Image>().color = new Color(0f, 0f, 0f, 255f);
+		RectTransform component = TitleManager.wttg2plus_modLoad.GetComponent<RectTransform>();
+		component.transform.localPosition = Vector2.zero;
+		component.anchorMin = new Vector2(0f, 0f);
+		component.anchorMax = new Vector2(1f, 1f);
+		component.pivot = new Vector2(0.5f, 0.5f);
+		GameObject gameObject = new GameObject();
+		gameObject.transform.SetParent(GameObject.Find("MainCanvas").transform);
+		CanvasGroup canvasGroup = gameObject.AddComponent<CanvasGroup>();
+		canvasGroup.alpha = 1f;
+		canvasGroup.interactable = false;
+		canvasGroup.blocksRaycasts = false;
+		canvasGroup.ignoreParentGroups = false;
+		TitleManager.wttg2plus_modText = gameObject.AddComponent<TextMeshProUGUI>();
+		TitleManager.wttg2plus_modText.text = "Loading WTTG2+ Assets";
+		TitleManager.wttg2plus_modText.fontSize = 25f;
+		TitleManager.wttg2plus_modText.characterSpacing = 25f;
+		TitleManager.wttg2plus_modText.alignment = TextAlignmentOptions.Center;
+		RectTransform component2 = gameObject.GetComponent<RectTransform>();
+		component2.transform.localPosition = Vector2.zero;
+		component2.anchorMin = new Vector2(0f, 0.5f);
+		component2.anchorMax = new Vector2(1f, 0.5f);
+		component2.pivot = new Vector2(0.5f, 0.5f);
+	}
+
+	private IEnumerator warmMod()
+	{
+		yield return new WaitForSeconds(1f);
+		TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = "Downloading WTTG2+ Assets";
+		yield return new WaitForSeconds(1f);
+		AssetBundleManager.LoadAssetBundles();
+		yield break;
+	}
+
 	public CustomEvent TitleStaging = new CustomEvent(5);
 
 	public CustomEvent TitlePresent = new CustomEvent(5);
@@ -234,4 +293,8 @@ public class TitleManager : MonoBehaviour
 	private bool loadGameActive;
 
 	private TitleMainMenuHook mainMenu;
+
+	public static GameObject wttg2plus_modLoad;
+
+	public static TMP_Text wttg2plus_modText;
 }

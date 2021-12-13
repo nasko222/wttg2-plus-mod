@@ -15,6 +15,7 @@ public class BombMakerDeskPresence : MonoBehaviour
 	public void TriggerPresence()
 	{
 		HitmanComputerJumper.Ins.myComputerController.LeaveEvents.Event -= this.TriggerPresence;
+		BombMakerManager.scheduledAutoLeave = false;
 		PauseManager.LockPause();
 		GameManager.InteractionManager.LockInteraction();
 		this.myDeskController.LockRecovery();
@@ -33,14 +34,14 @@ public class BombMakerDeskPresence : MonoBehaviour
 			component.ArmAppear();
 			GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.JumpHit1);
 		});
-		GameManager.TimeSlinger.FireTimer(10f, new Action(component.RandGunShake), 4);
-		GameManager.TimeSlinger.FireTimer(47f, delegate()
+		GameManager.TimeSlinger.FireTimer(9f, new Action(component.RandGunShake), 5);
+		GameManager.TimeSlinger.FireTimer(51f, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);
 		}, 0);
-		GameManager.TimeSlinger.FireTimer(47f, new Action(this.UnlockController), 0);
-		GameManager.TimeSlinger.FireTimer(48f, new Action(LookUp.Doors.MainDoor.ForceOpenDoor), 0);
-		GameManager.TimeSlinger.FireTimer(50f, new Action(EnemyManager.BombMakerManager.ClearPresenceState), 0);
+		GameManager.TimeSlinger.FireTimer(51f, new Action(this.UnlockController), 0);
+		GameManager.TimeSlinger.FireTimer(52f, new Action(LookUp.Doors.MainDoor.ForceOpenDoor), 0);
+		GameManager.TimeSlinger.FireTimer(54f, new Action(EnemyManager.BombMakerManager.ClearPresenceState), 0);
 	}
 
 	private void Awake()

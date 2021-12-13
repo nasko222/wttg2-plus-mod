@@ -59,7 +59,7 @@ public class BombMakerManager : MonoBehaviour
 		{
 			CurrencyManager.AddCurrency(ModsManager.EasyModeActive ? 20f : 65f);
 		}
-		if (this.SulphurTaken >= 8)
+		if (this.SulphurTaken >= this.bmData.maxSulphurReq)
 		{
 			return;
 		}
@@ -110,6 +110,7 @@ public class BombMakerManager : MonoBehaviour
 		UnityEngine.Object.Destroy(this.packageHub);
 		UnityEngine.Object.Destroy(this.explosionHub1);
 		UnityEngine.Object.Destroy(this.explosionHub2);
+		BombMakerManager.scheduledAutoLeave = false;
 		Debug.Log("[BombMaker Mod] Unloaded successfully");
 	}
 
@@ -131,17 +132,26 @@ public class BombMakerManager : MonoBehaviour
 
 	public void PlayLaugh()
 	{
-		this.packageHub.PlaySound(CustomSoundLookUp.bombmaker);
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY8)
+		{
+			this.packageHub.PlaySound(CustomSoundLookUp.bombmaker);
+		}
 	}
 
 	public void PlayExplosion()
 	{
-		this.explosionHub1.PlaySound(CustomSoundLookUp.explosion);
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY8)
+		{
+			this.explosionHub1.PlaySound(CustomSoundLookUp.explosion);
+		}
 	}
 
 	public void PlayExplosion2()
 	{
-		this.explosionHub2.PlaySound(CustomSoundLookUp.explosion);
+		if (StateManager.PlayerLocation == PLAYER_LOCATION.MAIN_ROON || StateManager.PlayerLocation == PLAYER_LOCATION.HALL_WAY8)
+		{
+			this.explosionHub2.PlaySound(CustomSoundLookUp.explosion);
+		}
 	}
 
 	public string SulphurDebug
@@ -166,6 +176,8 @@ public class BombMakerManager : MonoBehaviour
 		EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
 		BombMakerDeskPresence.Ins.AddComputerPresence();
 		EnvironmentManager.PowerBehaviour.LockedOut = true;
+		BombMakerManager.scheduledAutoLeave = true;
+		GameManager.TimeSlinger.FireTimer(25f, new Action(this.TriggerAutoPCLeave), 0);
 	}
 
 	public void ClearPresenceState()
@@ -185,6 +197,31 @@ public class BombMakerManager : MonoBehaviour
 			this.activateSulphurTime();
 			this.PlayExplosion();
 			GameManager.TimeSlinger.FireTimer(3f, new Action(this.PlayLaugh), 0);
+		}
+	}
+
+	private void TriggerAutoPCLeave()
+	{
+		if (!BombMakerManager.scheduledAutoLeave)
+		{
+			return;
+		}
+		if (StateManager.PlayerState == PLAYER_STATE.COMPUTER)
+		{
+			computerController.Ins.LeaveMe();
+			return;
+		}
+		GameManager.TimeSlinger.FireTimer(20f, new Action(this.TriggerAutoPCLeave), 0);
+	}
+
+	public void ReleaseTheBombMakerFastDBG()
+	{
+		if (!this.bombMakerReleased)
+		{
+			this.SulphurTaken = 0;
+			GameManager.StageManager.ManuallyActivateThreats();
+			this.bombMakerReleased = true;
+			GameManager.TimeSlinger.FireTimer(UnityEngine.Random.Range(2f, 8f), new Action(this.BombMakerPresence), 0);
 		}
 	}
 
@@ -216,4 +253,6 @@ public class BombMakerManager : MonoBehaviour
 	private AudioHubObject explosionHub1;
 
 	private AudioHubObject explosionHub2;
+
+	public static bool scheduledAutoLeave;
 }

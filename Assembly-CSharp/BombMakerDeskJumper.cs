@@ -31,7 +31,7 @@ public class BombMakerDeskJumper : MonoBehaviour
 		{
 			MainCameraHook.Ins.TriggerHitManJump();
 			GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.JumpHit1);
-			GameManager.TimeSlinger.FireTimer(2.7f, delegate()
+			GameManager.TimeSlinger.FireTimer(3.2f, delegate()
 			{
 				DataManager.ClearGameData();
 				MainCameraHook.Ins.ClearARF(2f);

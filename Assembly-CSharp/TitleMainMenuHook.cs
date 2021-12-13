@@ -120,6 +120,9 @@ public class TitleMainMenuHook : MonoBehaviour
 		this.continueBTN.MyAction.Event += this.continueAction;
 		this.optionsBTN.MyAction.Event += this.optionsAction;
 		this.quitBTN.MyAction.Event += this.quitAction;
+		this.continueBTN.gameObject.SetActive(false);
+		this.optionsBTN.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -85f);
+		this.quitBTN.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -170f);
 	}
 
 	private void OnDestroy()
