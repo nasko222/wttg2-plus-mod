@@ -10,7 +10,6 @@ public static class AssetBundleManager
 		{
 			return;
 		}
-		AssetDownloader.Init();
 		AssetDownloader.Exec();
 		AssetDownloader.ValidateAll();
 		AssetBundleManager.WTTG2PlusProps = AssetBundle.LoadFromFile("WTTG2_Data\\Resources\\WTTG2Plus.assets");
@@ -120,6 +119,7 @@ public static class AssetBundleManager
 
 	public static void PrepAssetBundles()
 	{
+		AssetDownloader.Init();
 		TitleManager.AddTextHook();
 	}
 

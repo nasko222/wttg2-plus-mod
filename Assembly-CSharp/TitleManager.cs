@@ -248,7 +248,10 @@ public class TitleManager : MonoBehaviour
 	private IEnumerator warmMod()
 	{
 		yield return new WaitForSeconds(1f);
-		TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = "Downloading WTTG2+ Assets";
+		if (!AssetDownloader.CheckFiles())
+		{
+			TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = "Downloading WTTG2+ Assets";
+		}
 		yield return new WaitForSeconds(1f);
 		AssetBundleManager.LoadAssetBundles();
 		yield break;

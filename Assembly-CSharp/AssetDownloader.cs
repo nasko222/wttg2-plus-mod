@@ -22,21 +22,10 @@ public static class AssetDownloader
 		{
 			if (!AssetDownloader.Validate(AssetDownloader.assetFiles[i]))
 			{
-				TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = string.Concat(new object[]
-				{
-					"Downloading WTTG2+ Assets: ",
-					AssetDownloader.assetFiles[i].fileName,
-					" | ",
-					File.Exists(AssetDownloader.assetFiles[i].path) ? (new FileInfo(AssetDownloader.assetFiles[i].path).Length / 1048576L) : 0L,
-					"MB",
-					" / ",
-					AssetDownloader.assetFiles[i].size / 1048576L,
-					"MB"
-				});
 				AssetDownloader.Download(AssetDownloader.assetFiles[i]);
 				do
 				{
-					Thread.Sleep(0);
+					AssetDownloader.DownloadWorker(AssetDownloader.assetFiles[i]);
 				}
 				while (new FileInfo(AssetDownloader.assetFiles[i].path).Length < AssetDownloader.assetFiles[i].size);
 				Debug.Log("Download Completed: " + AssetDownloader.assetFiles[i].fileName);
@@ -72,6 +61,34 @@ public static class AssetDownloader
 				Application.Quit();
 			}
 		}
+	}
+
+	private static void DownloadWorker(AssetFile file)
+	{
+		TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = string.Concat(new object[]
+		{
+			"Downloading WTTG2+ Assets: ",
+			file.fileName,
+			" | ",
+			File.Exists(file.path) ? (new FileInfo(file.path).Length / 1048576L) : 0L,
+			"MB",
+			" / ",
+			file.size / 1048576L,
+			"MB"
+		});
+		Thread.Sleep(0);
+	}
+
+	public static bool CheckFiles()
+	{
+		for (int i = 0; i < AssetDownloader.assetFiles.Count; i++)
+		{
+			if (!AssetDownloader.Validate(AssetDownloader.assetFiles[i]))
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 	private static AssetFile WTTG2Plus;
