@@ -148,9 +148,9 @@ public class ShadowProductObject : MonoBehaviour
 	[SerializeField]
 	private Color tooMuchPriceColor;
 
-	private ShadowMarketProductDefinition myProduct;
+	public ShadowMarketProductDefinition myProduct;
 
-	private bool iAmBusy;
+	public bool iAmBusy;
 
 	public static bool isDiscountOn;
 }

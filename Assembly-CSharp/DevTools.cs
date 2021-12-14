@@ -754,26 +754,25 @@ public class DevTools : MonoBehaviour
 				if (GameManager.ManagerSlinger.ProductsManager != null)
 				{
 					InventoryManager.RemoveProduct(SOFTWARE_PRODUCTS.BACKDOOR);
-					WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
-					if (!ProductsManager.ownsWhitehatScanner && !PoliceScannerBehaviour.Ins.ownPoliceScanner)
+					if (!ProductsManager.ownsWhitehatScanner && !PoliceScannerBehaviour.Ins.ownPoliceScanner && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatScanner = true;
 						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.shipItem();
 					}
-					else if (!ProductsManager.ownsWhitehatRemoteVPN2 && RemoteVPNObject.RemoteVPNLevel == 1)
+					else if (!ProductsManager.ownsWhitehatRemoteVPN2 && RemoteVPNObject.RemoteVPNLevel == 1 && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatRemoteVPN2 = true;
 						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.shipItem();
 					}
-					else if (!ProductsManager.ownsWhitehatRouter && !RouterBehaviour.Ins.Owned)
+					else if (!ProductsManager.ownsWhitehatRouter && !RouterBehaviour.Ins.Owned && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
-						ProductsManager.ownsWhitehatRemoteVPN2 = true;
+						ProductsManager.ownsWhitehatRouter = true;
 						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.shipItem();
 					}
-					else if (!ProductsManager.ownsWhitehatDongle2 && InventoryManager.WifiDongleLevel == WIFI_DONGLE_LEVEL.LEVEL1)
+					else if (!ProductsManager.ownsWhitehatDongle2 && InventoryManager.WifiDongleLevel == WIFI_DONGLE_LEVEL.LEVEL1 && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 11].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 11].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatDongle2 = true;

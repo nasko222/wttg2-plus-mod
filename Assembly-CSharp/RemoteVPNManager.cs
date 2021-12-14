@@ -175,6 +175,7 @@ public class RemoteVPNManager : MonoBehaviour
 	{
 		this.myID = base.transform.position.GetHashCode();
 		GameManager.ManagerSlinger.RemoteVPNManager = this;
+		RemoteVPNObject.RemoteVPNLevel = 1;
 		GameManager.StageManager.Stage += this.stageMe;
 		GameManager.StageManager.TheGameIsLive += this.gameLive;
 		GameManager.ManagerSlinger.ProductsManager.ShadowMarketProductWasActivated.Event += this.productWasPickedUp;

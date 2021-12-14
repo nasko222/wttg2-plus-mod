@@ -914,6 +914,9 @@ public class TheCloud : MonoBehaviour
 		WiFiPoll.resetWiFiStats();
 		DOSCoinPoll.moneyLoan = 0;
 		ProductsManager.ownsWhitehatScanner = false;
+		ProductsManager.ownsWhitehatRouter = false;
+		ProductsManager.ownsWhitehatRemoteVPN2 = false;
+		ProductsManager.ownsWhitehatRemoteVPN3 = false;
 		ProductsManager.ownsWhitehatDongle2 = false;
 		ProductsManager.ownsWhitehatDongle3 = false;
 		TrollPoll.isTrollPlaying = false;

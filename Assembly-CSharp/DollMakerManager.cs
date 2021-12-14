@@ -165,7 +165,7 @@ public class DollMakerManager : MonoBehaviour
 	{
 		StateManager.PlayerLocationChangeEvents.Event -= this.triggerMarkerTimesUp;
 		StateManager.PlayerStateChangeEvents.Event -= this.triggerMarkerTimesUp;
-		if ((EnemyManager.State != ENEMY_STATE.IDLE || EnvironmentManager.PowerState != POWER_STATE.ON) && (EnemyManager.State != ENEMY_STATE.DOLL_MAKER || EnvironmentManager.PowerState != POWER_STATE.ON))
+		if ((EnemyManager.State != ENEMY_STATE.IDLE || EnvironmentManager.PowerState != POWER_STATE.ON || StateManager.BeingHacked) && (EnemyManager.State != ENEMY_STATE.DOLL_MAKER || EnvironmentManager.PowerState != POWER_STATE.ON || StateManager.BeingHacked))
 		{
 			this.markerWindow = 60f;
 			this.markerTimeStamp = Time.time;
