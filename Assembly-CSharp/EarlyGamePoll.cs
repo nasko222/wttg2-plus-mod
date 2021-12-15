@@ -92,7 +92,7 @@ public class EarlyGamePoll
 		}
 		else if (num3 > num && num3 > num2 && num3 > num4)
 		{
-			this.myDOSTwitch.myTwitchIRC.SendMsg("The Doll maker is on the way!");
+			this.myDOSTwitch.myTwitchIRC.SendMsg("The Doll Maker is on the way!");
 			EnemyManager.DollMakerManager.ReleaseTheDollMaker();
 			this.myDOSTwitch.myTwitchIRC.SendMsg("Shipping the LOLPY disc...");
 			WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
@@ -108,7 +108,7 @@ public class EarlyGamePoll
 		}
 		else if (num4 > num && num4 > num2 && num4 > num3)
 		{
-			this.myDOSTwitch.myTwitchIRC.SendMsg("The Bomb maker has been released!");
+			this.myDOSTwitch.myTwitchIRC.SendMsg("The Bomb Maker has been released!");
 			EnemyManager.BombMakerManager.ReleaseTheBombMaker();
 			this.myDOSTwitch.myTwitchIRC.SendMsg("Shipping some sulphur...");
 			WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
