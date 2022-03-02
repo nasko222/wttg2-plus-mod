@@ -111,7 +111,7 @@ public class TitleManager : MonoBehaviour
 		gameObject.GetComponent<TextMeshProUGUI>().text = "WTTG2+ Mod by nasko222 [v" + ModsManager.ModVersion + "]";
 		gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(225f, 40f);
 		gameObject.transform.SetParent(transform2);
-		OptionsUtil.BuildOptionsButton("Twitch Integration:", "[MOD]TTVInt", 1, 50f, null, null);
+		OptionsUtil.BuildOptionsButton("Twitch Integration:", "[MOD]TTVInt", 0, 50f, null, null);
 		OptionsUtil.BuildOptionsButton("Memes and Music:", "[MOD]TrolloPollo", 1, 100f, null, null);
 		OptionsUtil.BuildOptionsButton("DevTools:", "[MOD]DevTools", 1, 150f, null, null);
 		OptionsUtil.BuildOptionsButton("Easy Mode:", "[MOD]EasyMode", 0, 200f, null, null);

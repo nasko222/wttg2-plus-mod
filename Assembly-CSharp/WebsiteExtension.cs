@@ -9,6 +9,7 @@ public class WebsiteExtension
 		this.dynamicId = 2000;
 		this.dynamicId++;
 		this.AddFakeWebsites(Websites);
+		this.AddChosenAwake(Websites);
 		if (OptionDataHook.Ins.Options.Nudity)
 		{
 			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false, null, null, null);
@@ -1015,6 +1016,43 @@ public class WebsiteExtension
 		webSiteDefinition.SubPages.Add(webPageDefinition7);
 		webSiteDefinition.SubPages.Add(webPageDefinition8);
 		webSiteDefinition.SubPages.Add(webPageDefinition9);
+		Websites.Add(webSiteDefinition);
+	}
+
+	private void AddChosenAwake(List<WebSiteDefinition> Websites)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
+		webPageDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition.AudioFile = null;
+		webPageDefinition.HasMusic = false;
+		webPageDefinition.FileName = "index.html";
+		webPageDefinition.HashIndex = 0;
+		webPageDefinition.HashValue = string.Empty;
+		webPageDefinition.IsTapped = false;
+		webPageDefinition.PageEvent = null;
+		webPageDefinition.PageHTML = "010101000100100001000101001000000100110101000101010100110101001101000001010001110100010100100000010010010101001100100000010000110100111101001101010010010100111001000111001011100000101001010100010010000100010100100000010001100100111101010010010011010010000001001001010100110010000001000101010101000100010101010010010011100100000101001100001011100010111000101110000010100101010001001000010001010010000001000101010011100100010000100000010011110100001101000011010101010101001001010010010001010100010000101110";
+		webPageDefinition.PageName = "Chosen Awake";
+		webPageDefinition.isWTTG1Website = true;
+		webSiteDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webSiteDefinition.isFake = false;
+		webSiteDefinition.DoNotList = false;
+		webSiteDefinition.DoNotTap = true;
+		webSiteDefinition.isStatic = false;
+		webSiteDefinition.HasWindow = false;
+		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		webSiteDefinition.PageTitle = "Chosen Awake";
+		webSiteDefinition.PageDesc = "How Will You Tell The World?";
+		webSiteDefinition.PageURL = string.Empty;
+		webSiteDefinition.DocumentRoot = "ChosenAwake";
+		webSiteDefinition.HoldsSecondWikiLink = false;
+		webSiteDefinition.IsTapped = false;
+		webSiteDefinition.WasVisted = false;
+		webSiteDefinition.WikiIndex = 2;
+		webSiteDefinition.WikiSpecific = true;
+		webSiteDefinition.HomePage = webPageDefinition;
 		Websites.Add(webSiteDefinition);
 	}
 
