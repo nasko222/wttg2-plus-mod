@@ -167,7 +167,7 @@ public class DiscountPoll
 		else
 		{
 			this.myDOSTwitch.myTwitchIRC.SendMsg("There is a tie! RE-VOTE!");
-			GameManager.TimeSlinger.FireTimer(10f, new Action(this.BeginVote), 0);
+			GameManager.TimeSlinger.FireTimer(10f, new Action(this.BeginVoteNightmare), 0);
 			flag = true;
 		}
 		if (!flag)

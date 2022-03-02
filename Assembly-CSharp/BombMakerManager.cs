@@ -61,6 +61,7 @@ public class BombMakerManager : MonoBehaviour
 		}
 		if (this.SulphurTaken >= this.bmData.maxSulphurReq)
 		{
+			CurrencyManager.AddCurrency(ModsManager.Nightmare ? 50f : 100f);
 			return;
 		}
 		this.SulphurTaken++;

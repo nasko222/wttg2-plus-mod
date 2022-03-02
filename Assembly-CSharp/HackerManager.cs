@@ -441,6 +441,10 @@ public class HackerManager : MonoBehaviour
 				{
 					num = 50.2f;
 				}
+				else if (ModsManager.EasyModeActive)
+				{
+					num = 19.87f;
+				}
 				else
 				{
 					num = 0.5f;
@@ -507,7 +511,7 @@ public class HackerManager : MonoBehaviour
 		{
 			this.NotesLostText.SetText("NOTES: KEPT");
 		}
-		if (DataManager.LeetMode)
+		if (DataManager.LeetMode || ModsManager.Nightmare)
 		{
 			this.virusManager.ForceVirus();
 		}

@@ -128,16 +128,16 @@ public class ZeroDayBehaviour : WindowBehaviour
 		zeroDayProductDefinition.productRequiresOtherProduct = false;
 		zeroDayProductDefinition.productToOwn = null;
 		zeroDayProductDefinition.unlimtedUse = true;
+		if (ModsManager.DOSTwitchActive)
+		{
+			zeroDayProductDefinition.productRequiresOtherProduct = true;
+			zeroDayProductDefinition.productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[3];
+		}
 		if (ModsManager.EasyModeActive)
 		{
 			zeroDayProductDefinition.productPrice = 30f;
 			this.myProducts.Add(zeroDayProductDefinition);
 			return;
-		}
-		if (ModsManager.DOSTwitchActive)
-		{
-			zeroDayProductDefinition.productRequiresOtherProduct = true;
-			zeroDayProductDefinition.productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[3];
 		}
 		zeroDayProductDefinition.productPrice = 50f;
 		this.myProducts.Add(zeroDayProductDefinition);

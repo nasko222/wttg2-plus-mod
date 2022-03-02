@@ -492,6 +492,12 @@ public class DevTools : MonoBehaviour
 						CultComputerJumper.Ins.AddLightsOffJump();
 						EnemyManager.State = ENEMY_STATE.CULT;
 					}
+					else if (Response.Additional == "bombmaker")
+					{
+						BombMakerDeskJumper.Ins.AddComputerJump();
+						BombMakerBehaviour.Ins.StageBombMakerOutsideKill();
+						EnemyManager.State = ENEMY_STATE.BOMB_MAKER;
+					}
 				}
 				this.iAmLive = true;
 			}

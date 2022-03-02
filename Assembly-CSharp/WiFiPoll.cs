@@ -158,10 +158,7 @@ public class WiFiPoll
 		{
 			GameManager.ManagerSlinger.WifiManager.DisconnectFromWifi();
 		}
-		else
-		{
-			WifiMenuBehaviour.Ins.refreshNetworks();
-		}
+		WifiMenuBehaviour.Ins.refreshNetworks();
 		WiFiPoll.interactedWiFiType = WiFiPoll.WiFiInteractionType.LOCKED;
 	}
 

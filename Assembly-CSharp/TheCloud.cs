@@ -926,6 +926,7 @@ public class TheCloud : MonoBehaviour
 		DollMakerManager.Lucassed = false;
 		WorldManager.LucasSpawnedToKill = false;
 		ModsManager.Nightmare = false;
+		SulphurInventory.SulphurAmount = 0;
 		Debug.Log("TheCloud is disabled.");
 	}
 

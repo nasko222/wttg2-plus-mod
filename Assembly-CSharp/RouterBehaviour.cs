@@ -176,7 +176,7 @@ public class RouterBehaviour : MonoBehaviour
 
 	public void trollReset()
 	{
-		this.myAudioHub.PlaySound(CustomSoundLookUp.routerreset);
+		this.myAudioHub.PlaySound(CustomSoundLookUp.routerjammed);
 	}
 
 	public void JamTheRouter()

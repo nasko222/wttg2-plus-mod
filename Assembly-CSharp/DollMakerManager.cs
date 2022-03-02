@@ -192,6 +192,7 @@ public class DollMakerManager : MonoBehaviour
 		{
 			this.myDollMakerData.IsSatisfied = true;
 			EnemyManager.State = ENEMY_STATE.IDLE;
+			EnvironmentManager.PowerBehaviour.PowerOutageHub.PlaySound(LookUp.SoundLookUp.BodyHit);
 			DollMakerManager.Lucassed = true;
 			return;
 		}

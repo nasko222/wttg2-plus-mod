@@ -202,6 +202,7 @@ public class TitleManager : MonoBehaviour
 	{
 		if (AssetBundleManager.loaded)
 		{
+			GameObject.Find("Logo").GetComponent<Image>().sprite = CustomSpriteLookUp.logo;
 			return;
 		}
 		AssetBundleManager.PrepAssetBundles();
