@@ -388,7 +388,7 @@ public class TheCloud : MonoBehaviour
 					list.RemoveAt(j);
 				}
 			}
-			for (int k = 0; k < 4; k++)
+			for (int k = 0; k < 3; k++)
 			{
 				Dictionary<int, string> dictionary = new Dictionary<int, string>(20);
 				List<int> list3 = new List<int>(20);
@@ -397,29 +397,14 @@ public class TheCloud : MonoBehaviour
 				{
 					if (k != 1)
 					{
-						if (k != 2)
+						if (k == 2)
 						{
-							if (k == 3)
+							for (int l = list.Count - 1; l >= 0; l--)
 							{
-								for (int l = list.Count - 1; l >= 0; l--)
+								if (list[l].WikiSpecific && list[l].WikiIndex == 2)
 								{
-									if (list[l].WikiSpecific && list[l].WikiIndex == 3)
-									{
-										dictionary.Add(this.websiteLookUp[list[l].PageURL], list[l].PageTitle);
-										list.RemoveAt(l);
-										num--;
-									}
-								}
-							}
-						}
-						else
-						{
-							for (int m = list.Count - 1; m >= 0; m--)
-							{
-								if (list[m].WikiSpecific && list[m].WikiIndex == 2)
-								{
-									dictionary.Add(this.websiteLookUp[list[m].PageURL], list[m].PageTitle);
-									list.RemoveAt(m);
+									dictionary.Add(this.websiteLookUp[list[l].PageURL], list[l].PageTitle);
+									list.RemoveAt(l);
 									num--;
 								}
 							}
@@ -427,12 +412,12 @@ public class TheCloud : MonoBehaviour
 					}
 					else
 					{
-						for (int n = list.Count - 1; n >= 0; n--)
+						for (int m = list.Count - 1; m >= 0; m--)
 						{
-							if (list[n].WikiSpecific && list[n].WikiIndex == 1)
+							if (list[m].WikiSpecific && list[m].WikiIndex == 1)
 							{
-								dictionary.Add(this.websiteLookUp[list[n].PageURL], list[n].PageTitle);
-								list.RemoveAt(n);
+								dictionary.Add(this.websiteLookUp[list[m].PageURL], list[m].PageTitle);
+								list.RemoveAt(m);
 								num--;
 							}
 						}
@@ -440,12 +425,12 @@ public class TheCloud : MonoBehaviour
 				}
 				else
 				{
-					for (int num2 = list.Count - 1; num2 >= 0; num2--)
+					for (int n = list.Count - 1; n >= 0; n--)
 					{
-						if (list[num2].WikiSpecific && list[num2].WikiIndex == 0)
+						if (list[n].WikiSpecific && list[n].WikiIndex == 0)
 						{
-							dictionary.Add(this.websiteLookUp[list[num2].PageURL], list[num2].PageTitle);
-							list.RemoveAt(num2);
+							dictionary.Add(this.websiteLookUp[list[n].PageURL], list[n].PageTitle);
+							list.RemoveAt(n);
 							num--;
 						}
 					}
@@ -464,18 +449,18 @@ public class TheCloud : MonoBehaviour
 						}
 					}
 				}
-				int num3 = 0;
-				while (num3 < num)
+				int num2 = 0;
+				while (num2 < num)
 				{
 					int index2 = UnityEngine.Random.Range(0, list.Count);
 					if (!list[index2].WikiSpecific)
 					{
 						dictionary.Add(this.websiteLookUp[list[index2].PageURL], list[index2].PageTitle);
 						list.RemoveAt(index2);
-						num3++;
+						num2++;
 					}
 				}
-				for (int num4 = 0; num4 < 10; num4++)
+				for (int num3 = 0; num3 < 10; num3++)
 				{
 					int index3 = UnityEngine.Random.Range(0, list2.Count);
 					dictionary.Add(list2[index3], this.Websites[list2[index3]].PageTitle);
@@ -483,32 +468,32 @@ public class TheCloud : MonoBehaviour
 				}
 				List<KeyValuePair<int, string>> list4 = dictionary.ToList<KeyValuePair<int, string>>();
 				list4.Sort((KeyValuePair<int, string> pair1, KeyValuePair<int, string> pair2) => pair1.Value.CompareTo(pair2.Value));
-				for (int num5 = 0; num5 < list4.Count; num5++)
+				for (int num4 = 0; num4 < list4.Count; num4++)
 				{
-					list3.Add(list4[num5].Key);
+					list3.Add(list4[num4].Key);
 				}
 				this.myWikiSiteData.WikiSites.Add(list3);
 			}
 		}
 		this.wikiLookUp = new Dictionary<string, int>(this.myWikiSiteData.Wikis.Count);
-		for (int num6 = 0; num6 < this.myWikiSiteData.Wikis.Count; num6++)
+		for (int num5 = 0; num5 < this.myWikiSiteData.Wikis.Count; num5++)
 		{
-			this.wikis[num6].PageURL = this.myWikiSiteData.Wikis[num6].PageURL;
-			this.wikiLookUp.Add(this.myWikiSiteData.Wikis[num6].PageURL, num6);
+			this.wikis[num5].PageURL = this.myWikiSiteData.Wikis[num5].PageURL;
+			this.wikiLookUp.Add(this.myWikiSiteData.Wikis[num5].PageURL, num5);
 		}
-		for (int num7 = 0; num7 < this.myWikiSiteData.WikiSites.Count; num7++)
+		for (int num6 = 0; num6 < this.myWikiSiteData.WikiSites.Count; num6++)
 		{
-			this.wikiSites.Add(this.myWikiSiteData.WikiSites[num7]);
+			this.wikiSites.Add(this.myWikiSiteData.WikiSites[num6]);
 		}
-		for (int num8 = 0; num8 < this.Websites.Count; num8++)
+		for (int num7 = 0; num7 < this.Websites.Count; num7++)
 		{
-			if (this.Websites[num8].PageTitle.GetHashCode() == this.myWikiSiteData.PickedSiteToHoldSecondWiki)
+			if (this.Websites[num7].PageTitle.GetHashCode() == this.myWikiSiteData.PickedSiteToHoldSecondWiki)
 			{
-				this.Websites[num8].HoldsSecondWikiLink = true;
+				this.Websites[num7].HoldsSecondWikiLink = true;
 			}
 			else
 			{
-				this.Websites[num8].HoldsSecondWikiLink = false;
+				this.Websites[num7].HoldsSecondWikiLink = false;
 			}
 		}
 		DataManager.Save<WikiSiteData>(this.myWikiSiteData);
@@ -520,8 +505,7 @@ public class TheCloud : MonoBehaviour
 		{
 			if (this.Websites[i].PageTitle == "Chosen Awake")
 			{
-				this.Websites[i].PageTitle = "Chopper";
-				this.Websites[i].PageDesc = "Best tutorials for human meat cooking on the Deep Web.";
+				this.Websites[i].PageDesc = "How would you tell the world?";
 			}
 			if (this.Websites[i].PageTitle == "Illumanti")
 			{
@@ -536,7 +520,7 @@ public class TheCloud : MonoBehaviour
 			if (this.Websites[i].PageTitle == "The Doll Maker" || this.Websites[i].PageTitle == "The Bomb Maker")
 			{
 				this.Websites[i].WikiSpecific = true;
-				this.Websites[i].WikiIndex = 3;
+				this.Websites[i].WikiIndex = 2;
 			}
 		}
 		new WebsiteExtension().ExtendWebsites(this.Websites);
@@ -651,7 +635,6 @@ public class TheCloud : MonoBehaviour
 					if (!webSiteDefinition.isFake && !webSiteDefinition.DoNotTap && !webSiteDefinition.IsTapped)
 					{
 						webSiteDefinition.IsTapped = true;
-						Debug.Log("Tapped at @ " + webSiteDefinition.PageTitle);
 						this.myWebSitesData.Sites[list2[index]].IsTapped = true;
 						int index2 = UnityEngine.Random.Range(0, list.Count);
 						string text = list[index2];
@@ -695,6 +678,61 @@ public class TheCloud : MonoBehaviour
 						k++;
 					}
 					list2.RemoveAt(index);
+				}
+			}
+			for (int l = 1; l < this.wikiSites.Count; l++)
+			{
+				List<int> list3 = new List<int>(this.wikiSites[l]);
+				int m = 0;
+				while (m < 1)
+				{
+					int index3 = UnityEngine.Random.Range(0, list3.Count);
+					WebSiteDefinition webSiteDefinition2 = this.Websites[list3[index3]];
+					if (!webSiteDefinition2.isFake && !webSiteDefinition2.DoNotTap && !webSiteDefinition2.IsTapped)
+					{
+						webSiteDefinition2.IsTapped = true;
+						this.myWebSitesData.Sites[index3].IsTapped = true;
+						int index4 = UnityEngine.Random.Range(0, list.Count);
+						string text2 = list[index4];
+						int hashIndex2 = dictionary[text2];
+						if (webSiteDefinition2.SubPages.Count > 0)
+						{
+							if (UnityEngine.Random.Range(0, 4) == 3)
+							{
+								webSiteDefinition2.HomePage.IsTapped = true;
+								webSiteDefinition2.HomePage.HashIndex = hashIndex2;
+								webSiteDefinition2.HomePage.HashValue = text2;
+								this.myWebSitesData.Sites[list3[index3]].Pages[0].IsTapped = true;
+								this.myWebSitesData.Sites[list3[index3]].Pages[0].HashIndex = hashIndex2;
+								this.myWebSitesData.Sites[list3[index3]].Pages[0].HashValue = text2;
+							}
+							else
+							{
+								int num2 = UnityEngine.Random.Range(0, webSiteDefinition2.SubPages.Count);
+								webSiteDefinition2.SubPages[num2].IsTapped = true;
+								webSiteDefinition2.SubPages[num2].HashIndex = hashIndex2;
+								webSiteDefinition2.SubPages[num2].HashValue = text2;
+								if (this.myWebSitesData.Sites[list3[index3]].Pages[num2 + 1] != null)
+								{
+									this.myWebSitesData.Sites[list3[index3]].Pages[num2 + 1].IsTapped = true;
+									this.myWebSitesData.Sites[list3[index3]].Pages[num2 + 1].HashIndex = hashIndex2;
+									this.myWebSitesData.Sites[list3[index3]].Pages[num2 + 1].HashValue = text2;
+								}
+							}
+						}
+						else
+						{
+							webSiteDefinition2.HomePage.IsTapped = true;
+							webSiteDefinition2.HomePage.HashIndex = hashIndex2;
+							webSiteDefinition2.HomePage.HashValue = text2;
+							this.myWebSitesData.Sites[list3[index3]].Pages[0].IsTapped = true;
+							this.myWebSitesData.Sites[list3[index3]].Pages[0].HashIndex = hashIndex2;
+							this.myWebSitesData.Sites[list3[index3]].Pages[0].HashValue = text2;
+						}
+						list.RemoveAt(index4);
+						dictionary.Remove(text2);
+						m++;
+					}
 				}
 			}
 			DataManager.Save<WebSitesData>(this.myWebSitesData);
@@ -741,13 +779,6 @@ public class TheCloud : MonoBehaviour
 	private void Awake()
 	{
 		this.GFschedule = false;
-		WebSiteDefinition webSiteDefinition = UnityEngine.Object.Instantiate<WebSiteDefinition>(this.wikis[2]);
-		WebPageDefinition homePage = UnityEngine.Object.Instantiate<WebPageDefinition>(this.wikis[2].HomePage);
-		webSiteDefinition.HomePage = homePage;
-		webSiteDefinition.DocumentRoot = "wiki4";
-		webSiteDefinition.PageTitle = "The Deep Wiki IV";
-		webSiteDefinition.HomePage.PageName = "The Deep Wiki IV";
-		this.wikis.Add(webSiteDefinition);
 		ZeroDayProductObject.isDiscountOn = false;
 		ShadowProductObject.isDiscountOn = false;
 		if (!TheCloud.vpnFIX)
@@ -1091,9 +1122,6 @@ public class TheCloud : MonoBehaviour
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
 		new GameObject("BombMakerManager").AddComponent<BombMakerManager>();
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(1));
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki3.txt", GameManager.TheCloud.GetWikiURL(2));
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki4.txt", GameManager.TheCloud.GetWikiURL(3));
 	}
 
 	public bool IsGFActive

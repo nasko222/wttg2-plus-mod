@@ -736,22 +736,6 @@ public class AnnBehaviour : WindowBehaviour
 		{
 			EnemyManager.BombMakerManager.ReleaseTheBombMaker();
 		}
-		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "chosen awake") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "chosenawake"))
-		{
-			this.myBrowser.CallFunction("PickWikiSpot", new JSONNode[]
-			{
-				string.Empty
-			});
-			this.myBrowser.RegisterFunction("WikiSpotHit", delegate(JSONNode args)
-			{
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.PuzzleSolved);
-				this.myBrowser.CallFunction("PlaceWiki", new JSONNode[]
-				{
-					GameManager.TheCloud.GetWikiURL(3)
-				});
-			});
-			return;
-		}
 	}
 
 	public int BOOKMARK_TAB_START_POOL_COUNT = 10;

@@ -652,19 +652,19 @@ public class DevTools : MonoBehaviour
 			{
 				if (Response.Additional != "" && GameManager.AudioSlinger != null && GameManager.ManagerSlinger != null && GameManager.ManagerSlinger.TextDocManager != null)
 				{
-					if (Response.Additional == "2")
+					if (Response.Additional == "1")
 					{
-						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(0));
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki1.txt", GameManager.TheCloud.GetWikiURL(0));
+						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+					}
+					else if (Response.Additional == "2")
+					{
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(1));
 						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
 					}
 					else if (Response.Additional == "3")
 					{
-						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki3.txt", GameManager.TheCloud.GetWikiURL(1));
-						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-					}
-					else if (Response.Additional == "4")
-					{
-						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki4.txt", GameManager.TheCloud.GetWikiURL(2));
+						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki3.txt", GameManager.TheCloud.GetWikiURL(2));
 						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
 					}
 				}
