@@ -416,6 +416,15 @@ public class DevTools : MonoBehaviour
 				}
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "playTarot")
+			{
+				if (TarotManager.Ins != null && Response.Additional != "")
+				{
+					int tar = int.Parse(Response.Additional);
+					TarotManager.Ins.playTarot(tar);
+				}
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "spawnDancing")
 			{
 				if (GameManager.TheCloud != null || DancingLoader.Ins != null)

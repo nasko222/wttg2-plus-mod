@@ -107,6 +107,10 @@ public class PoliceScannerBehaviour : MonoBehaviour
 
 	private void triggerPoliceBanter()
 	{
+		if (ModsManager.PoliceScannerMod)
+		{
+			return;
+		}
 		int num = UnityEngine.Random.Range(1, this.policeBanterSFXS.Length);
 		this.myAudioHub.PlaySound(this.policeBanterSFXS[num]);
 		BlueWhisperManager.Ins.ProcessSound(this.policeBanterSFXS[num]);

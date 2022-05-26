@@ -1,5 +1,6 @@
 ﻿using System;
 using ASoft.WTTG2;
+using TMPro;
 using UnityEngine;
 
 public static class AssetBundleManager
@@ -8,6 +9,14 @@ public static class AssetBundleManager
 	{
 		if (AssetBundleManager.loaded)
 		{
+			return;
+		}
+		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1654462800)
+		{
+			TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = string.Concat(new object[]
+			{
+				"This beta version of WTTG2+ has expired. Please update to the latest version of WTTG2+"
+			});
 			return;
 		}
 		AssetDownloader.Exec();

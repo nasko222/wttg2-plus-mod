@@ -69,6 +69,22 @@ public static class ModsManager
 		{
 			ModsManager.NoParameter = false;
 		}
+		if (PlayerPrefs.GetInt("[MOD]Achievements", 1) == 1)
+		{
+			ModsManager.Achievements = true;
+		}
+		else
+		{
+			ModsManager.Achievements = false;
+		}
+		if (PlayerPrefs.GetInt("[MOD]PoliceScannerMod", 1) == 1)
+		{
+			ModsManager.PoliceScannerMod = true;
+		}
+		else
+		{
+			ModsManager.PoliceScannerMod = false;
+		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
 
@@ -96,9 +112,13 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.32";
+	public static readonly string ModVersion = "1.4-beta1";
 
 	public static bool NoParameter;
 
 	public static readonly bool DebugEnabled = false;
+
+	public static bool PoliceScannerMod;
+
+	public static bool Achievements;
 }

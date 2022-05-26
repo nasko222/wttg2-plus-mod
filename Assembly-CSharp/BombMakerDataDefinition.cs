@@ -2,9 +2,16 @@
 
 public class BombMakerDataDefinition
 {
-	public readonly float SulphurCoolTimeMin = 930f;
+	public BombMakerDataDefinition()
+	{
+		this.SulphurCoolTimeMin = 930f;
+		this.SulphurCoolTimeMax = 1290f;
+		this.maxSulphurReq = 6;
+	}
 
-	public readonly float SulphurCoolTimeMax = 1290f;
+	public readonly float SulphurCoolTimeMin;
 
-	public readonly int maxSulphurReq = 8;
+	public readonly float SulphurCoolTimeMax;
+
+	public readonly int maxSulphurReq;
 }

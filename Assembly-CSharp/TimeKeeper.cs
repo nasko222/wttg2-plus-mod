@@ -145,6 +145,7 @@ public class TimeKeeper : MonoBehaviour
 		{
 			this.updateClock();
 		}
+		this.secondsToMin = (float)TarotManager.TimeController;
 	}
 
 	private void OnDestroy()

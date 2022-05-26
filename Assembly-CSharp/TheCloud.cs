@@ -1122,6 +1122,7 @@ public class TheCloud : MonoBehaviour
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 		}, 0);
 		new GameObject("BombMakerManager").AddComponent<BombMakerManager>();
+		new GameObject("TarotManager").AddComponent<TarotManager>();
 	}
 
 	public bool IsGFActive
