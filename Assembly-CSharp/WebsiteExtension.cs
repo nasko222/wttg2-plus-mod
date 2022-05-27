@@ -10,6 +10,7 @@ public class WebsiteExtension
 		this.dynamicId++;
 		this.AddFakeWebsites(Websites);
 		this.AddDeepWebRadio(Websites);
+		this.AddYouAreAnIdiot(Websites);
 		if (OptionDataHook.Ins.Options.Nudity)
 		{
 			this.AddTriplePageWebsite(Websites, "bathroomcams.txt", "Bathroom Cams", "BathroomCams", "High quality cameras from bathrooms across the world.", "bathroomcamscams.txt", "cams.html", "bathroomcamsaccess.txt", "access.html", false, -1, false, false, false, null, null, null);
@@ -39,7 +40,6 @@ public class WebsiteExtension
 		this.AddSinglePageWebsite(Websites, "funnymonke.txt", "FUNNY MONKE", "FunnyMonke", "Very funky!", false, -1, ModsManager.Trolling, CustomSoundLookUp.funky);
 		this.AddSinglePageWebsite(Websites, "gravethieves.txt", "Grave Thieves", "GraveThieves", "Service for stealing valuables from graves.", true, 4, false, null);
 		this.AddSinglePageWebsite(Websites, "haunteddolls.txt", "Haunted Dolls", "HauntedDolls", "Some random guys passionated about creepy dolls.", false, -1, false, null);
-		this.AddSinglePageWebsite(Websites, "idiot.txt", "You Are An Idiot", "IDIOT", "HA-HA. AHAHAHA. AHA. HA-HA. HA-HA!!!", false, -1, true, CustomSoundLookUp.idiot);
 		this.AddSinglePageWebsite(Websites, "illuminati.txt", "Illuminati", "Illuminati", "333", true, 1, true, CustomSoundLookUp.illuminati);
 		this.AddSinglePageWebsite(Websites, "imaginaryfriends.txt", "Imaginary Friends", "ImaginaryFriends", "Online stalkers with fucked up faith.", true, 5, true, CustomSoundLookUp.imaginary);
 		this.AddSinglePageWebsite(Websites, "itersanguinis.txt", "Iter Sanguinis", "IterSanguinis", "Poem to embrace the way of the blood.", false, -1, false, null);
@@ -1127,6 +1127,43 @@ public class WebsiteExtension
 		webSiteDefinition.WikiSpecific = true;
 		webSiteDefinition.HomePage = webPageDefinition;
 		webSiteDefinition.SubPages.Add(webPageDefinition2);
+		Websites.Add(webSiteDefinition);
+	}
+
+	private void AddYouAreAnIdiot(List<WebSiteDefinition> Websites)
+	{
+		WebSiteDefinition webSiteDefinition = ScriptableObject.CreateInstance<WebSiteDefinition>();
+		WebPageDefinition webPageDefinition = ScriptableObject.CreateInstance<WebPageDefinition>();
+		webPageDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webPageDefinition.AudioFile = CustomSoundLookUp.idiot;
+		webPageDefinition.HasMusic = true;
+		webPageDefinition.FileName = "index.html";
+		webPageDefinition.HashIndex = 0;
+		webPageDefinition.HashValue = string.Empty;
+		webPageDefinition.IsTapped = false;
+		webPageDefinition.PageEvent = null;
+		webPageDefinition.PageHTML = "You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA \n You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA \n You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA \n You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA \n You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA \n You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA \n You Are An Idiot HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA";
+		webPageDefinition.PageName = "You Are An Idiot";
+		webPageDefinition.isWTTG1Website = false;
+		webSiteDefinition.id = this.dynamicId;
+		this.dynamicId++;
+		webSiteDefinition.isFake = false;
+		webSiteDefinition.DoNotList = false;
+		webSiteDefinition.DoNotTap = false;
+		webSiteDefinition.isStatic = false;
+		webSiteDefinition.HasWindow = false;
+		webSiteDefinition.WindowTime = WEBSITE_WINDOW_TIME.FIRST_QUARTER;
+		webSiteDefinition.PageTitle = "You Are An Idiot";
+		webSiteDefinition.PageDesc = "HA-HA. AHA-HA-HA. AHA. HA-HA. HA-HA";
+		webSiteDefinition.PageURL = string.Empty;
+		webSiteDefinition.DocumentRoot = "IDIOT";
+		webSiteDefinition.HoldsSecondWikiLink = false;
+		webSiteDefinition.IsTapped = false;
+		webSiteDefinition.WasVisted = false;
+		webSiteDefinition.WikiIndex = 0;
+		webSiteDefinition.WikiSpecific = false;
+		webSiteDefinition.HomePage = webPageDefinition;
 		Websites.Add(webSiteDefinition);
 	}
 

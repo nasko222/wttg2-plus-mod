@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBB34BBB-6534-4050-87F8-ECB334ABD931}</ProjectGuid>
+    <ProjectGuid>{C1AE0C59-31D7-4050-9178-C522F59E3752}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
