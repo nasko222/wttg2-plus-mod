@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A7FA7395-0D74-431F-9F44-48D160655E6B}</ProjectGuid>
+    <ProjectGuid>{EBB34BBB-6534-4050-87F8-ECB334ABD931}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -310,6 +310,7 @@
     <Compile Include="CustomEvent.2.cs" />
     <Compile Include="CustomEvent.cs" />
     <Compile Include="CustomObjectLookUp.cs" />
+    <Compile Include="CustomRadioLookUp.cs" />
     <Compile Include="CustomSoundLookUp.cs" />
     <Compile Include="CustomSpriteLookUp.cs" />
     <Compile Include="DancingLoader.cs" />
@@ -322,6 +323,7 @@
     <Compile Include="DeadOrNotChatObject.cs" />
     <Compile Include="DebugExtensions.cs" />
     <Compile Include="DeBugger.cs" />
+    <Compile Include="DeepWebRadioManager.cs" />
     <Compile Include="Definition.cs" />
     <Compile Include="DefinitionUnityEvent.cs" />
     <Compile Include="DemoUI.cs" />

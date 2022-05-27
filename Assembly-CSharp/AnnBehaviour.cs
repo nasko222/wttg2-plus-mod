@@ -410,6 +410,7 @@ public class AnnBehaviour : WindowBehaviour
 			GameManager.AudioSlinger.KillSound(GameManager.TheCloud.GetCurrentWebPageDef().AudioFile);
 		}
 		GameManager.TheCloud.ClearCurrentWebDeff();
+		DeepWebRadioManager.RadioAS.volume = 0f;
 	}
 
 	private void aniLoadingPage(float setLoadingTime)
@@ -735,6 +736,17 @@ public class AnnBehaviour : WindowBehaviour
 		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "the bomb maker") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "thebombmaker"))
 		{
 			EnemyManager.BombMakerManager.ReleaseTheBombMaker();
+		}
+		if (((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "you are an idiot") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "youareanidiot")) && !GameManager.HackerManager.theSwan.isActivatedBefore)
+		{
+			GameManager.TimeSlinger.FireTimer(6f, delegate()
+			{
+				GameManager.HackerManager.theSwan.ActivateTheSwan();
+			}, 0);
+		}
+		if (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "deep web radio jazz")
+		{
+			DeepWebRadioManager.RadioAS.volume = 0.33f;
 		}
 		if ((GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "chosen awake") || (GameManager.TheCloud.GetCurrentWebPageDef() != null && GameManager.TheCloud.GetCurrentWebPageDef().PageName.ToLower() == "chosenawake"))
 		{

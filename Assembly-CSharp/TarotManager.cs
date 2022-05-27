@@ -146,6 +146,10 @@ public class TarotManager : MonoBehaviour
 	private void Awake()
 	{
 		TarotManager.Ins = this;
+		this.cards = UnityEngine.Object.Instantiate<GameObject>(CustomObjectLookUp.TarotCards);
+		this.cards.transform.position = new Vector3(1.603f, 40.68f, 2.489f);
+		this.cards.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+		this.cards.transform.Rotate(new Vector3(0f, -20f, 180f));
 	}
 
 	public static bool HermitActive = false;
@@ -155,4 +159,7 @@ public class TarotManager : MonoBehaviour
 	public static bool BreatherUndertaker = false;
 
 	public static TarotManager Ins;
+
+	[HideInInspector]
+	private GameObject cards;
 }

@@ -420,8 +420,8 @@ public class DevTools : MonoBehaviour
 			{
 				if (TarotManager.Ins != null && Response.Additional != "")
 				{
-					int tar = int.Parse(Response.Additional);
-					TarotManager.Ins.playTarot(tar);
+					int tarot = int.Parse(Response.Additional);
+					TarotManager.Ins.playTarot(tarot);
 				}
 				this.iAmLive = true;
 			}

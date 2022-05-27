@@ -16,6 +16,10 @@ public class BreatherManager : MonoBehaviour
 			{
 				flag = true;
 			}
+			else if (TarotManager.Ins != null && TarotManager.BreatherUndertaker)
+			{
+				flag = true;
+			}
 			else
 			{
 				int num = UnityEngine.Random.Range(0, 100);

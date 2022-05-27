@@ -154,12 +154,10 @@ public class SoundObject : MonoBehaviour
 				this.delayTimeStamp = Time.time;
 				this.delayIsActive = true;
 				this.myAS.PlayDelayed(this.MyAudioFile.DelayAmount);
+				return;
 			}
-			else
-			{
-				this.myAS.Play();
-				this.audioFileWasPlayed = true;
-			}
+			this.myAS.Play();
+			this.audioFileWasPlayed = true;
 		}
 	}
 

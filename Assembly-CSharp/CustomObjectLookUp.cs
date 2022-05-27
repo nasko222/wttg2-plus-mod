@@ -14,4 +14,6 @@ public static class CustomObjectLookUp
 	public static GameObject BombMakerPCKill;
 
 	public static GameObject BombMakerPresence;
+
+	public static GameObject TarotCards;
 }

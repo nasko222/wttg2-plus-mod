@@ -138,4 +138,24 @@ public static class CustomSoundLookUp
 	public static AudioFileDefinition routerjammed;
 
 	public static AudioFileDefinition gfscream;
+
+	public static AudioFileDefinition encrypta;
+
+	public static AudioFileDefinition envision;
+
+	public static AudioFileDefinition enigmaold;
+
+	public static AudioFileDefinition morse;
+
+	public static AudioFileDefinition existance;
+
+	public static AudioFileDefinition leettf;
+
+	public static AudioFileDefinition theend;
+
+	public static AudioFileDefinition imaginary;
+
+	public static AudioFileDefinition idiot;
+
+	public static AudioFileDefinition livehere;
 }

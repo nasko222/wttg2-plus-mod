@@ -1120,9 +1120,17 @@ public class TheCloud : MonoBehaviour
 		GameManager.TimeSlinger.FireTimer(5f, delegate()
 		{
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
+			if (ModsManager.DebugEnabled)
+			{
+				KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
+				SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(1));
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki3.txt", GameManager.TheCloud.GetWikiURL(2));
+			}
 		}, 0);
 		new GameObject("BombMakerManager").AddComponent<BombMakerManager>();
 		new GameObject("TarotManager").AddComponent<TarotManager>();
+		new GameObject("DeepWebRadioManager").AddComponent<DeepWebRadioManager>();
 	}
 
 	public bool IsGFActive
