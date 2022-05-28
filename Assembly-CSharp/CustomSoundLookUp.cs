@@ -158,4 +158,14 @@ public static class CustomSoundLookUp
 	public static AudioFileDefinition idiot;
 
 	public static AudioFileDefinition livehere;
+
+	public static AudioFileDefinition timechange;
+
+	public static AudioFileDefinition pull;
+
+	public static AudioFileDefinition disappear;
+
+	public static AudioFileDefinition fool;
+
+	public static AudioFileDefinition _static;
 }

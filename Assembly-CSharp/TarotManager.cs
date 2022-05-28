@@ -3,46 +3,40 @@ using UnityEngine;
 
 public class TarotManager : MonoBehaviour
 {
-	public void playTarot(TAROT_CARDS tarot)
+	private void HermitTrap()
 	{
-		if (UnityEngine.Random.Range(0, 100) < 13)
+		if (StateManager.PlayerLocation != PLAYER_LOCATION.MAIN_ROON && StateManager.PlayerLocation != PLAYER_LOCATION.BATH_ROOM && StateManager.PlayerLocation != PLAYER_LOCATION.OUTSIDE && StateManager.PlayerLocation != PLAYER_LOCATION.UNKNOWN)
 		{
-			this.TheFool();
-			return;
+			ControllerManager.Get<roamController>(GAME_CONTROLLER.ROAM).transform.position = new Vector3(0.10953f, 40.51757f, -1.304061f);
 		}
-		if (tarot == TAROT_CARDS.THE_PRO)
+	}
+
+	private void Awake()
+	{
+		TarotManager.Ins = this;
+	}
+
+	public void PullTarotCard(TAROT_CARDS card)
+	{
+		switch (card)
 		{
-			KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
-		}
-		else if (tarot == TAROT_CARDS.THE_NOOB)
-		{
-			KeyPoll.DevEnableManipulator(KEY_CUE_MODE.DISABLED);
-		}
-		else if (tarot == TAROT_CARDS.THE_RICH)
-		{
+		case TAROT_CARDS.THE_PRO:
+			if (UnityEngine.Random.Range(0, 2) == 0)
+			{
+				KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
+				return;
+			}
 			SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
-		}
-		else if (tarot == TAROT_CARDS.THE_POOR)
-		{
+			return;
+		case TAROT_CARDS.THE_NOOB:
+			if (UnityEngine.Random.Range(0, 2) == 0)
+			{
+				KeyPoll.DevEnableManipulator(KEY_CUE_MODE.DISABLED);
+				return;
+			}
 			SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.SLOW);
-		}
-		else if (tarot == TAROT_CARDS.THE_IMMUNE)
-		{
-			if (EnemyManager.State == ENEMY_STATE.IDLE)
-			{
-				EnemyManager.State = ENEMY_STATE.LOCKED;
-				GameManager.TimeSlinger.FireTimer(600f, delegate()
-				{
-					EnemyManager.State = ENEMY_STATE.IDLE;
-				}, 0);
-			}
-			else
-			{
-				this.TheFool();
-			}
-		}
-		else if (tarot == TAROT_CARDS.THE_SUN)
-		{
+			return;
+		case TAROT_CARDS.THE_SUN:
 			if (TarotManager.TimeController == 30)
 			{
 				TarotManager.TimeController = 60;
@@ -55,9 +49,9 @@ public class TarotManager : MonoBehaviour
 			{
 				TarotManager.TimeController = 30;
 			}, 0);
-		}
-		else if (tarot == TAROT_CARDS.THE_MOON)
-		{
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.timechange);
+			return;
+		case TAROT_CARDS.THE_MOON:
 			if (TarotManager.TimeController == 30)
 			{
 				TarotManager.TimeController = 5;
@@ -70,89 +64,206 @@ public class TarotManager : MonoBehaviour
 			{
 				TarotManager.TimeController = 30;
 			}, 0);
-		}
-		else if (tarot == TAROT_CARDS.THE_UNDERTAKER)
-		{
-			TarotManager.BreatherUndertaker = true;
-			GameManager.TimeSlinger.FireTimer(600f, delegate()
-			{
-				TarotManager.BreatherUndertaker = false;
-			}, 0);
-		}
-		else if (tarot == TAROT_CARDS.THE_HERMIT)
-		{
-			TarotManager.HermitActive = true;
-			GameManager.TimeSlinger.FireTimer(600f, delegate()
-			{
-				TarotManager.HermitActive = false;
-			}, 0);
-		}
-		else if (tarot == TAROT_CARDS.THE_HACKER)
-		{
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.timechange);
+			return;
+		case TAROT_CARDS.THE_RICH:
 			CurrencyManager.AddCurrency(UnityEngine.Random.Range(3.33f, 166.6f));
 			GameManager.HackerManager.WhiteHatSound();
-		}
-		else if (tarot == TAROT_CARDS.THE_DEVIL)
-		{
+			return;
+		case TAROT_CARDS.THE_POOR:
 			CurrencyManager.RemoveCurrency(UnityEngine.Random.Range(CurrencyManager.CurrentCurrency / 3f, CurrencyManager.CurrentCurrency / 2f));
 			GameManager.HackerManager.BlackHatSound();
-		}
-		else if (tarot == TAROT_CARDS.THE_CURSED)
+			return;
+		case TAROT_CARDS.THE_CURSED:
+			for (int i = 0; i < UnityEngine.Random.Range(1, 5); i++)
+			{
+				GameManager.HackerManager.virusManager.ForceVirus();
+			}
+			return;
+		case TAROT_CARDS.THE_GAMBLER:
+			if (UnityEngine.Random.Range(0, 2) == 0)
+			{
+				CurrencyManager.AddCurrency(50f);
+				GameManager.HackerManager.WhiteHatSound();
+				return;
+			}
+			CurrencyManager.RemoveCurrency((CurrencyManager.CurrentCurrency < 50f) ? CurrencyManager.CurrentCurrency : 50f);
+			GameManager.HackerManager.BlackHatSound();
+			return;
+		case TAROT_CARDS.THE_HACKER:
+			if (UnityEngine.Random.Range(0, 2) == 0)
+			{
+				GameManager.HackerManager.ForcePogHack();
+				return;
+			}
+			GameManager.HackerManager.ForceNormalHack();
+			return;
+		case TAROT_CARDS.THE_DEVIL:
+			WindowManager.Get(SOFTWARE_PRODUCTS.ZERODAY).Launch();
+			if (!ZeroDayProductObject.isDiscountOn)
+			{
+				for (int j = 0; j < GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts.Count; j++)
+				{
+					GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[j].myProductObject.DiscountMe();
+				}
+			}
+			WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
+			if (!ShadowProductObject.isDiscountOn)
+			{
+				for (int k = 0; k < GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count; k++)
+				{
+					GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[k].myProductObject.DiscountMe();
+				}
+			}
+			return;
+		case TAROT_CARDS.THE_UNDERTAKER:
+			if (!TarotManager.BreatherUndertaker)
+			{
+				TarotManager.BreatherUndertaker = true;
+				GameManager.TimeSlinger.FireTimer(600f, delegate()
+				{
+					TarotManager.BreatherUndertaker = false;
+				}, 0);
+				return;
+			}
+			return;
+		case TAROT_CARDS.THE_QUICK:
+			if (TarotManager.CurSpeed == playerSpeedMode.WEAK)
+			{
+				TarotManager.CurSpeed = playerSpeedMode.NORMAL;
+				return;
+			}
+			TarotManager.CurSpeed = playerSpeedMode.QUICK;
+			GameManager.TimeSlinger.FireTimer(180f, delegate()
+			{
+				TarotManager.CurSpeed = playerSpeedMode.NORMAL;
+			}, 0);
+			return;
+		case TAROT_CARDS.THE_WEAK:
+			if (TarotManager.CurSpeed == playerSpeedMode.QUICK)
+			{
+				TarotManager.CurSpeed = playerSpeedMode.NORMAL;
+				return;
+			}
+			TarotManager.CurSpeed = playerSpeedMode.WEAK;
+			GameManager.TimeSlinger.FireTimer(180f, delegate()
+			{
+				TarotManager.CurSpeed = playerSpeedMode.NORMAL;
+			}, 0);
+			return;
+		case TAROT_CARDS.THE_DRUNK:
+			GameManager.BehaviourManager.NotesBehaviour.ClearNotes();
+			return;
+		case TAROT_CARDS.THE_IMMUNE:
+			if (EnemyManager.State == ENEMY_STATE.IDLE)
+			{
+				EnemyManager.State = ENEMY_STATE.LOCKED;
+				GameManager.TimeSlinger.FireTimer(600f, delegate()
+				{
+					EnemyManager.State = ENEMY_STATE.IDLE;
+				}, 0);
+				return;
+			}
+			return;
+		case TAROT_CARDS.THE_POPULAR:
+			GameManager.TheCloud.ForceKeyDiscover();
+			GameManager.TheCloud.ForceKeyDiscover();
+			return;
+		case TAROT_CARDS.THE_HERMIT:
+			if (!TarotManager.HermitActive)
+			{
+				TarotManager.HermitActive = true;
+				GameManager.TimeSlinger.FireTimer(600f, delegate()
+				{
+					TarotManager.HermitActive = false;
+				}, 0);
+				return;
+			}
+			return;
+		case TAROT_CARDS.THE_DIZZY:
+			if (!TarotManager.DizzyActive)
+			{
+				TarotManager.DizzyActive = true;
+				GameManager.TimeSlinger.FireTimer(300f, delegate()
+				{
+					TarotManager.DizzyActive = false;
+				}, 0);
+				return;
+			}
+			return;
+		case TAROT_CARDS.THE_DEAF:
+			GameManager.AudioSlinger.PlaySound(CustomSoundLookUp._static);
+			return;
+		case TAROT_CARDS.THE_BLIND:
+			EnvironmentManager.PowerBehaviour.ForceTwitchPowerOff();
+			return;
+		case TAROT_CARDS.THE_ARTIST:
 		{
-			Debug.Log("spawns bomb or doll maker");
+			string masterKey = GameManager.TheCloud.MasterKey;
+			int num = UnityEngine.Random.Range(0, 8) + 1;
+			if (num == 1)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key1.txt", "1 - " + masterKey.Substring(0, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 2)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key2.txt", "2 - " + masterKey.Substring(12, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 3)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key3.txt", "3 - " + masterKey.Substring(24, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 4)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key4.txt", "4 - " + masterKey.Substring(36, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 5)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key5.txt", "5 - " + masterKey.Substring(48, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 6)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key6.txt", "6 - " + masterKey.Substring(60, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 7)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key7.txt", "7 - " + masterKey.Substring(72, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				return;
+			}
+			if (num == 8)
+			{
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key8.txt", "8 - " + masterKey.Substring(84, 12));
+				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+			}
+			return;
 		}
-		else if (tarot == TAROT_CARDS.THE_GAMBLER)
-		{
-			Debug.Log("discount me");
+		case TAROT_CARDS.THE_DEAD:
+			EnemyManager.CultManager.triggerCloseJump();
+			return;
+		default:
+			return;
 		}
-		else if (tarot == TAROT_CARDS.THE_DEAD)
-		{
-			Debug.Log("lucas");
-		}
-		else if (tarot == TAROT_CARDS.THE_POPULAR)
-		{
-			Debug.Log("popular");
-		}
-		Debug.Log(tarot + " missing action");
 	}
 
-	private void Update()
+	public void PullCardAtLoc()
 	{
-		if (TarotManager.HermitActive)
-		{
-			this.HermitTrap();
-		}
+		this.PullTarotCard((TAROT_CARDS)TarotCardPullAnim.currentCardTex);
 	}
 
-	private void HermitTrap()
-	{
-		if (StateManager.PlayerLocation != PLAYER_LOCATION.MAIN_ROON && StateManager.PlayerLocation != PLAYER_LOCATION.UNKNOWN)
-		{
-			ControllerManager.Get<roamController>(GAME_CONTROLLER.ROAM).transform.position = new Vector3(0.10953f, 40.51757f, -1.304061f);
-			Debug.Log("teleport back to the room");
-		}
-	}
-
-	private void TheFool()
-	{
-		Debug.Log("THE_FOOL");
-	}
-
-	public void playTarot(int tarot)
-	{
-		this.playTarot((TAROT_CARDS)tarot);
-	}
-
-	private void Awake()
-	{
-		TarotManager.Ins = this;
-		this.cards = UnityEngine.Object.Instantiate<GameObject>(CustomObjectLookUp.TarotCards);
-		this.cards.transform.position = new Vector3(1.603f, 40.68f, 2.489f);
-		this.cards.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-		this.cards.transform.Rotate(new Vector3(0f, -20f, 180f));
-	}
-
-	public static bool HermitActive = false;
+	public static bool HermitActive;
 
 	public static int TimeController = 30;
 
@@ -160,6 +271,7 @@ public class TarotManager : MonoBehaviour
 
 	public static TarotManager Ins;
 
-	[HideInInspector]
-	private GameObject cards;
+	public static bool DizzyActive;
+
+	public static playerSpeedMode CurSpeed = playerSpeedMode.NORMAL;
 }

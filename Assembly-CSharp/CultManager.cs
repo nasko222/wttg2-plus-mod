@@ -102,7 +102,7 @@ public class CultManager : MonoBehaviour
 		StateManager.PlayerLocationChangeEvents.Event += this.attemptSpawn;
 	}
 
-	private void triggerCloseJump()
+	public void triggerCloseJump()
 	{
 		this.cultFemale.ValidSpawnLocationEvent.Event += this.performCloseJump;
 		this.cultFemale.InValidSpawnLocationEvent.Event += this.reRollCloseJump;

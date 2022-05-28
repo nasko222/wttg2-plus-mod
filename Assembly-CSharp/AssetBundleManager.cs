@@ -11,7 +11,7 @@ public static class AssetBundleManager
 		{
 			return;
 		}
-		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1654462800)
+		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1654560000)
 		{
 			TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = string.Concat(new object[]
 			{
@@ -134,6 +134,11 @@ public static class AssetBundleManager
 		CustomSoundLookUp.imaginary = AFDManager.Ins.AddWebsiteAFD("imaginary", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("imaginary.wav"), true);
 		CustomSoundLookUp.idiot = AFDManager.Ins.AddWebsiteAFD("idiot", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("idiot.wav"), true);
 		CustomSoundLookUp.livehere = AFDManager.Ins.AddWebsiteAFD("livehere", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("livehere.wav"), false);
+		CustomSoundLookUp.timechange = AFDManager.Ins.AddPlayerAFD("timechange", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("timechange.wav"), 1f);
+		CustomSoundLookUp.pull = AFDManager.Ins.AddPlayerAFD("pull", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("pull.wav"), 1f);
+		CustomSoundLookUp.disappear = AFDManager.Ins.AddPlayerAFD("disappear", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("disappear.wav"), 1f);
+		CustomSoundLookUp.fool = AFDManager.Ins.AddPlayerAFD("fool", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("fool.wav"), 1f);
+		CustomSoundLookUp._static = AFDManager.Ins.AddPlayerAFD("_static", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("static.wav"), 0.6f);
 		CustomSoundLookUp.hackermans = AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("hackermans.wav");
 		AssetBundleManager.LoadDeepWebRadioSamples();
 	}

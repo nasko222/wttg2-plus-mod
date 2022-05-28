@@ -1161,8 +1161,8 @@ public class WebsiteExtension
 		webSiteDefinition.HoldsSecondWikiLink = false;
 		webSiteDefinition.IsTapped = false;
 		webSiteDefinition.WasVisted = false;
-		webSiteDefinition.WikiIndex = 0;
-		webSiteDefinition.WikiSpecific = false;
+		webSiteDefinition.WikiIndex = 1;
+		webSiteDefinition.WikiSpecific = true;
 		webSiteDefinition.HomePage = webPageDefinition;
 		Websites.Add(webSiteDefinition);
 	}

@@ -927,6 +927,11 @@ public class TheCloud : MonoBehaviour
 		WorldManager.LucasSpawnedToKill = false;
 		ModsManager.Nightmare = false;
 		SulphurInventory.SulphurAmount = 0;
+		TarotManager.HermitActive = false;
+		TarotManager.DizzyActive = false;
+		TarotManager.BreatherUndertaker = false;
+		TarotManager.TimeController = 30;
+		TarotManager.CurSpeed = playerSpeedMode.NORMAL;
 		Debug.Log("TheCloud is disabled.");
 	}
 

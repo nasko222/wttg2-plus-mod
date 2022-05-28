@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C1AE0C59-31D7-4050-9178-C522F59E3752}</ProjectGuid>
+    <ProjectGuid>{FDA8FEFB-F80F-4C01-B138-934F4D05D8DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -600,6 +600,7 @@
     <Compile Include="PlayerAudioBehaviour.cs" />
     <Compile Include="PlayerAudioHubHook.cs" />
     <Compile Include="PlayerData.cs" />
+    <Compile Include="playerSpeedMode.cs" />
     <Compile Include="PlayerUI.cs" />
     <Compile Include="PLAYER_LOCATION.cs" />
     <Compile Include="PLAYER_STATE.cs" />
@@ -724,6 +725,8 @@
     <Compile Include="SWS\PathRenderer.cs" />
     <Compile Include="SWS\splineMove.cs" />
     <Compile Include="SWS\WaypointManager.cs" />
+    <Compile Include="TarotCardPullAnim.cs" />
+    <Compile Include="TarotCardsBehaviour.cs" />
     <Compile Include="TarotManager.cs" />
     <Compile Include="TAROT_CARDS.cs" />
     <Compile Include="TenantData.cs" />

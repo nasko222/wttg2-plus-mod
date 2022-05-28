@@ -328,6 +328,16 @@ public class DevTools : MonoBehaviour
 				this.forceBreather = false;
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "foolOn")
+			{
+				this.alwaysFool = true;
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "foolOff")
+			{
+				this.alwaysFool = false;
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "dollMaker")
 			{
 				if (EnemyManager.DollMakerManager != null)
@@ -413,15 +423,6 @@ public class DevTools : MonoBehaviour
 				if (AdamLOLHook.Ins != null)
 				{
 					AdamLOLHook.Ins.DeSpawn();
-				}
-				this.iAmLive = true;
-			}
-			else if (Response.Action == "playTarot")
-			{
-				if (TarotManager.Ins != null && Response.Additional != "")
-				{
-					int tarot = int.Parse(Response.Additional);
-					TarotManager.Ins.playTarot(tarot);
 				}
 				this.iAmLive = true;
 			}
@@ -906,4 +907,6 @@ public class DevTools : MonoBehaviour
 	public static bool InsanityMode;
 
 	private bool GFschedule;
+
+	public bool alwaysFool;
 }

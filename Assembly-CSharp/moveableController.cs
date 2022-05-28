@@ -245,6 +245,17 @@ public class moveableController : mouseableController
 	protected new void Update()
 	{
 		base.Update();
+		if (TarotManager.CurSpeed == playerSpeedMode.WEAK)
+		{
+			this.RunSpeed = 3f;
+			return;
+		}
+		if (TarotManager.CurSpeed == playerSpeedMode.QUICK)
+		{
+			this.RunSpeed = 10f;
+			return;
+		}
+		this.RunSpeed = 5f;
 	}
 
 	private void FixedUpdate()

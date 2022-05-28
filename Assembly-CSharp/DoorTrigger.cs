@@ -245,20 +245,30 @@ public class DoorTrigger : MonoBehaviour
 	{
 		if (!this.amBusy)
 		{
+			if (this.DoorLockable && TarotManager.HermitActive)
+			{
+				this.myAudioHub.PlaySound(this.DoorIsLockedSFX);
+				this.amBusy = true;
+				GameManager.TimeSlinger.FireTimer(1f, delegate()
+				{
+					this.amBusy = false;
+				}, 0);
+				return;
+			}
 			if (this.amOpend)
 			{
 				this.closeTheDoor();
+				return;
 			}
-			else if (!this.isLocked)
+			if (!this.isLocked)
 			{
 				if (this.CheckPlayerIsBlockingDoorPath)
 				{
 					this.fireCheckForPlayer = true;
+					return;
 				}
-				else
-				{
-					this.openTheDoor();
-				}
+				this.openTheDoor();
+				return;
 			}
 			else
 			{
