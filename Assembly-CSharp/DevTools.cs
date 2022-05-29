@@ -189,7 +189,7 @@ public class DevTools : MonoBehaviour
 				if (LookUp.Doors != null)
 				{
 					LookUp.Doors.MainDoor.AudioHub.PlaySound(LookUp.SoundLookUp.DoorKnobSFX);
-					if (ModsManager.EasyModeActive)
+					if (ModsManager.EasierEnemies)
 					{
 						LookUp.Doors.MainDoor.AudioHub.PlaySoundCustomDelay(LookUp.SoundLookUp.DoorKnobSFX, 1f);
 						LookUp.Doors.MainDoor.AudioHub.PlaySoundCustomDelay(LookUp.SoundLookUp.DoorKnobSFX, 2f);
@@ -662,12 +662,7 @@ public class DevTools : MonoBehaviour
 			{
 				if (Response.Additional != "" && GameManager.AudioSlinger != null && GameManager.ManagerSlinger != null && GameManager.ManagerSlinger.TextDocManager != null)
 				{
-					if (Response.Additional == "1")
-					{
-						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki1.txt", GameManager.TheCloud.GetWikiURL(0));
-						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-					}
-					else if (Response.Additional == "2")
+					if (Response.Additional == "2")
 					{
 						GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(1));
 						GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);

@@ -107,7 +107,7 @@ public class TheCloud : MonoBehaviour
 						returnURL = "localGame://" + this.Websites[index2].DocumentRoot + "/" + this.Websites[index2].HomePage.FileName;
 						this.curWebPageDef = this.Websites[index2].HomePage;
 					}
-					if (this.Websites[index2].HasWindow && !ModsManager.EasyModeActive)
+					if (this.Websites[index2].HasWindow && !ModsManager.AlwaysOpenSites)
 					{
 						bool flag = true;
 						switch (this.Websites[index2].WindowTime)
@@ -438,7 +438,7 @@ public class TheCloud : MonoBehaviour
 					while (!flag)
 					{
 						int index = UnityEngine.Random.Range(0, list.Count);
-						if (!list[index].WikiSpecific && (!list[index].HasWindow || ModsManager.EasyModeActive))
+						if (!list[index].WikiSpecific && (!list[index].HasWindow || ModsManager.AlwaysOpenSites))
 						{
 							list[index].HoldsSecondWikiLink = true;
 							this.myWikiSiteData.PickedSiteToHoldSecondWiki = list[index].PageTitle.GetHashCode();
@@ -505,7 +505,8 @@ public class TheCloud : MonoBehaviour
 		{
 			if (this.Websites[i].PageTitle == "Chosen Awake")
 			{
-				this.Websites[i].PageDesc = "How would you tell the world?";
+				this.Websites[i].PageTitle = "Chopper";
+				this.Websites[i].PageDesc = "Best tutorials for human meat cooking on the Deep Web.";
 			}
 			if (this.Websites[i].PageTitle == "Illumanti")
 			{
@@ -521,6 +522,13 @@ public class TheCloud : MonoBehaviour
 			{
 				this.Websites[i].WikiSpecific = true;
 				this.Websites[i].WikiIndex = 2;
+			}
+			if (this.Websites[i].PageTitle == "Forgive Me")
+			{
+				this.Websites[i].WikiSpecific = true;
+				this.Websites[i].WikiIndex = 0;
+				this.Websites[i].isStatic = true;
+				this.Websites[i].PageURL = "forgiver4i838pl22t4yk1np3confess";
 			}
 		}
 		new WebsiteExtension().ExtendWebsites(this.Websites);

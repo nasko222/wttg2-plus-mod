@@ -61,14 +61,6 @@ public static class ModsManager
 		{
 			ModsManager.Trolling = false;
 		}
-		if (PlayerPrefs.GetInt("[MOD]AntiSwanParameters", 1) == 1)
-		{
-			ModsManager.NoParameter = true;
-		}
-		else
-		{
-			ModsManager.NoParameter = false;
-		}
 		if (PlayerPrefs.GetInt("[MOD]Achievements", 1) == 1)
 		{
 			ModsManager.Achievements = true;
@@ -84,6 +76,22 @@ public static class ModsManager
 		else
 		{
 			ModsManager.PoliceScannerMod = false;
+		}
+		if (PlayerPrefs.GetInt("[MOD]EasierEnemies", 1) == 1)
+		{
+			ModsManager.EasierEnemies = true;
+		}
+		else
+		{
+			ModsManager.EasierEnemies = false;
+		}
+		if (PlayerPrefs.GetInt("[MOD]AlwaysOpenSites", 1) == 1)
+		{
+			ModsManager.AlwaysOpenSites = true;
+		}
+		else
+		{
+			ModsManager.AlwaysOpenSites = false;
 		}
 		Debug.Log("[ModsManager] Applies mod settings");
 	}
@@ -112,7 +120,7 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.4-beta3";
+	public static readonly string ModVersion = "1.4-beta4";
 
 	public static bool NoParameter;
 
@@ -121,4 +129,8 @@ public static class ModsManager
 	public static bool PoliceScannerMod;
 
 	public static bool Achievements;
+
+	public static bool EasierEnemies;
+
+	public static bool AlwaysOpenSites;
 }

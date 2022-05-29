@@ -179,7 +179,7 @@ public class HitManManager : MonoBehaviour
 			if (LookUp.Doors.MainDoor.Locked)
 			{
 				LookUp.Doors.MainDoor.AudioHub.PlaySound(LookUp.SoundLookUp.DoorKnobSFX);
-				if (ModsManager.EasyModeActive)
+				if (ModsManager.EasierEnemies)
 				{
 					LookUp.Doors.MainDoor.AudioHub.PlaySoundCustomDelay(LookUp.SoundLookUp.DoorKnobSFX, 1f);
 					LookUp.Doors.MainDoor.AudioHub.PlaySoundCustomDelay(LookUp.SoundLookUp.DoorKnobSFX, 2f);

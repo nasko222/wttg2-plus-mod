@@ -103,28 +103,35 @@ public class WifiHotspotObject : MonoBehaviour
 					this.myWifiNetworks[i].affectedByDosDrainer = true;
 					Debug.Log("Infected FreeWiFiNoViruses");
 				}
-				if (ModsManager.EasyModeActive)
+				if (this.myWifiNetworks[i].networkMaxInjectionAmount <= 8)
 				{
-					if (this.myWifiNetworks[i].networkMaxInjectionAmount <= 8)
-					{
-						this.myWifiNetworks[i].networkInjectionCoolOffTime = 1f;
-					}
-					else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 8 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 38)
-					{
-						this.myWifiNetworks[i].networkInjectionCoolOffTime = 2f;
-					}
-					else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 38 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 92)
-					{
-						this.myWifiNetworks[i].networkInjectionCoolOffTime = 3f;
-					}
-					else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 92 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 128)
-					{
-						this.myWifiNetworks[i].networkInjectionCoolOffTime = 4f;
-					}
-					else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 128)
-					{
-						this.myWifiNetworks[i].networkInjectionCoolOffTime = 5f;
-					}
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = 1f;
+				}
+				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 8 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 38)
+				{
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = 2f;
+				}
+				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 38 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 92)
+				{
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = 3f;
+				}
+				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 92 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 128)
+				{
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = 4f;
+				}
+				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 128)
+				{
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = 5f;
+				}
+				if (this.myWifiNetworks[i].networkName == "D59709")
+				{
+					this.myWifiNetworks[i].networkTrackRate = 477f;
+					Debug.Log("Nerfed police on D59709");
+				}
+				if (this.myWifiNetworks[i].networkName == "SSWIFI")
+				{
+					this.myWifiNetworks[i].networkTrackRate = 543f;
+					Debug.Log("Nerfed police on SSWIFI");
 				}
 				wifiNetworkData = new WifiNetworkData(this.myWifiNetworks[i].networkName.GetHashCode());
 				wifiNetworkData.NetworkBSSID = MagicSlinger.GenerateRandomHexCode(2, 5, ":");

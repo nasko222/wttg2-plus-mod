@@ -15,13 +15,6 @@ public class TheSwan
 		this.SwanClock = (ModsManager.Nightmare ? 0.5f : 1.5f);
 		GameManager.TimeSlinger.FireTimer(18f, new Action(this.StartCountdown), 0);
 		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: 4 8 15 16 23 42");
-		if (ModsManager.NoParameter)
-		{
-			return;
-		}
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: SW4N");
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: DH4RMA");
-		GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("swan", "THE CODE IS LOST: H4TCH");
 	}
 
 	private void StartCountdown()
@@ -126,24 +119,7 @@ public class TheSwan
 			this._108 = (float)UnityEngine.Random.Range(108, 324);
 		}
 		CurrencyManager.AddCurrency(UnityEngine.Random.Range(2.5f * this.SwanClock * this.SwanClock, 3.5f * this.SwanClock * this.SwanClock));
-		if (UnityEngine.Random.Range(0, 100) < ((DataManager.LeetMode || ModsManager.Nightmare) ? 60 : 90) || ModsManager.NoParameter || TheSwan.extOn)
-		{
-			TheSwan.extOn = false;
-			return;
-		}
-		TheSwan.extOn = true;
-		int num = UnityEngine.Random.Range(0, 3);
-		if (num == 0)
-		{
-			TheSwan.extCode = "SW4N";
-			return;
-		}
-		if (num == 1)
-		{
-			TheSwan.extCode = "H4TCH";
-			return;
-		}
-		TheSwan.extCode = "DH4RMA";
+		TheSwan.extOn = false;
 	}
 
 	private void TakeSwanDOS()

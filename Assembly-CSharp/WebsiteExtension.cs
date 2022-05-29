@@ -1073,7 +1073,7 @@ public class WebsiteExtension
 		webSiteDefinition.HoldsSecondWikiLink = false;
 		webSiteDefinition.IsTapped = false;
 		webSiteDefinition.WasVisted = false;
-		webSiteDefinition.WikiIndex = 2;
+		webSiteDefinition.WikiIndex = 1;
 		webSiteDefinition.WikiSpecific = true;
 		webSiteDefinition.HomePage = webPageDefinition;
 		Websites.Add(webSiteDefinition);

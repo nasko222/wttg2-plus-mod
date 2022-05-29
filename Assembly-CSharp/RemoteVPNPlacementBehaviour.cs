@@ -90,7 +90,11 @@ public class RemoteVPNPlacementBehaviour : MonoBehaviour
 				if (flag)
 				{
 					float vpnvalues = GameManager.WorldManager.GetVPNValues(this.remoteVPNObject.transform);
-					if (vpnvalues > 2700f)
+					if (TarotManager.DizzyActive)
+					{
+						this.remoteVPNPlacementBeh.GoBlack();
+					}
+					else if (vpnvalues > 2700f)
 					{
 						if (ModsManager.ShowGodSpot)
 						{

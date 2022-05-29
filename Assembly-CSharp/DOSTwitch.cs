@@ -546,7 +546,7 @@ public class DOSTwitch : MonoBehaviour
 		if (array[0] == "lockpick")
 		{
 			LookUp.Doors.MainDoor.AudioHub.PlaySound(LookUp.SoundLookUp.DoorKnobSFX);
-			if (ModsManager.EasyModeActive)
+			if (ModsManager.EasierEnemies)
 			{
 				LookUp.Doors.MainDoor.AudioHub.PlaySoundCustomDelay(LookUp.SoundLookUp.DoorKnobSFX, 1f);
 				LookUp.Doors.MainDoor.AudioHub.PlaySoundCustomDelay(LookUp.SoundLookUp.DoorKnobSFX, 2f);

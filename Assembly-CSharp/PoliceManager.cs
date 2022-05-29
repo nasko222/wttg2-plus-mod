@@ -494,22 +494,22 @@ public class PoliceManager : MonoBehaviour
 	private void Awake()
 	{
 		EnemyManager.PoliceManager = this;
-		if (ModsManager.EasyModeActive && !DataManager.LeetMode && !ModsManager.Nightmare)
+		if (ModsManager.EasierEnemies && !DataManager.LeetMode && !ModsManager.Nightmare)
 		{
 			this.networkHotTime = 60f;
 			UnityEngine.Debug.Log("Playing Easy Mode, WiFi De-Track time changed to: " + this.networkHotTime);
 		}
-		else if (!ModsManager.EasyModeActive && !DataManager.LeetMode && !ModsManager.Nightmare)
+		else if (!ModsManager.EasierEnemies && !DataManager.LeetMode && !ModsManager.Nightmare)
 		{
 			this.networkHotTime = 120f;
 			UnityEngine.Debug.Log("Playing Normal Mode, WiFi De-Track time changed to: " + this.networkHotTime);
 		}
-		else if (ModsManager.EasyModeActive && DataManager.LeetMode && !ModsManager.Nightmare)
+		else if (ModsManager.EasierEnemies && DataManager.LeetMode && !ModsManager.Nightmare)
 		{
 			this.networkHotTime = 180f;
 			UnityEngine.Debug.Log("Playing Easy 1337 Mode, WiFi De-Track time changed to: " + this.networkHotTime);
 		}
-		else if (!ModsManager.EasyModeActive && DataManager.LeetMode && !ModsManager.Nightmare)
+		else if (!ModsManager.EasierEnemies && DataManager.LeetMode && !ModsManager.Nightmare)
 		{
 			this.networkHotTime = 300f;
 			UnityEngine.Debug.Log("Playing 1337 Mode, WiFi De-Track time changed to: " + this.networkHotTime);

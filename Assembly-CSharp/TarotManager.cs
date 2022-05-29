@@ -23,19 +23,75 @@ public class TarotManager : MonoBehaviour
 		case TAROT_CARDS.THE_PRO:
 			if (UnityEngine.Random.Range(0, 2) == 0)
 			{
-				KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
+				if (KeyPoll.keyManipulatorData == KEY_CUE_MODE.DEFAULT)
+				{
+					KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
+					return;
+				}
+				if (GameManager.ManagerSlinger.WifiManager != null && GameManager.ManagerSlinger.TextDocManager != null && GameManager.AudioSlinger != null)
+				{
+					int index;
+					do
+					{
+						index = UnityEngine.Random.Range(0, 42);
+					}
+					while (GameManager.ManagerSlinger.WifiManager.GetAllWifiNetworks()[index].networkSecurity == WIFI_SECURITY.NONE);
+					GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(GameManager.ManagerSlinger.WifiManager.GetAllWifiNetworks()[index].networkName, GameManager.ManagerSlinger.WifiManager.GetAllWifiNetworks()[index].networkPassword);
+					GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				}
 				return;
 			}
-			SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
-			return;
+			else
+			{
+				if (!SpeedPoll.speedManipulatorActive)
+				{
+					SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
+					return;
+				}
+				if (GameManager.ManagerSlinger.WifiManager != null && GameManager.ManagerSlinger.TextDocManager != null && GameManager.AudioSlinger != null)
+				{
+					int index2;
+					do
+					{
+						index2 = UnityEngine.Random.Range(0, 42);
+					}
+					while (GameManager.ManagerSlinger.WifiManager.GetAllWifiNetworks()[index2].networkSecurity == WIFI_SECURITY.NONE);
+					GameManager.ManagerSlinger.TextDocManager.CreateTextDoc(GameManager.ManagerSlinger.WifiManager.GetAllWifiNetworks()[index2].networkName, GameManager.ManagerSlinger.WifiManager.GetAllWifiNetworks()[index2].networkPassword);
+					GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
+				}
+				return;
+			}
+			break;
 		case TAROT_CARDS.THE_NOOB:
 			if (UnityEngine.Random.Range(0, 2) == 0)
 			{
-				KeyPoll.DevEnableManipulator(KEY_CUE_MODE.DISABLED);
+				if (KeyPoll.keyManipulatorData == KEY_CUE_MODE.DEFAULT)
+				{
+					KeyPoll.DevEnableManipulator(KEY_CUE_MODE.DISABLED);
+					return;
+				}
+				if (GameManager.ManagerSlinger.WifiManager.getCurrentWiFi() != null)
+				{
+					GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer = true;
+					return;
+				}
 				return;
 			}
-			SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.SLOW);
-			return;
+			else
+			{
+				if (!SpeedPoll.speedManipulatorActive)
+				{
+					SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.SLOW);
+					return;
+				}
+				if (GameManager.ManagerSlinger.WifiManager.getCurrentWiFi() != null)
+				{
+					GameManager.ManagerSlinger.WifiManager.getCurrentWiFi().affectedByDosDrainer = true;
+					return;
+				}
+				return;
+			}
+			break;
 		case TAROT_CARDS.THE_SUN:
 			if (TarotManager.TimeController == 30)
 			{
@@ -45,7 +101,7 @@ public class TarotManager : MonoBehaviour
 			{
 				TarotManager.TimeController = 30;
 			}
-			GameManager.TimeSlinger.FireTimer(600f, delegate()
+			GameManager.TimeSlinger.FireTimer(300f, delegate()
 			{
 				TarotManager.TimeController = 30;
 			}, 0);
@@ -60,7 +116,7 @@ public class TarotManager : MonoBehaviour
 			{
 				TarotManager.TimeController = 30;
 			}
-			GameManager.TimeSlinger.FireTimer(600f, delegate()
+			GameManager.TimeSlinger.FireTimer(300f, delegate()
 			{
 				TarotManager.TimeController = 30;
 			}, 0);
@@ -75,19 +131,32 @@ public class TarotManager : MonoBehaviour
 			GameManager.HackerManager.BlackHatSound();
 			return;
 		case TAROT_CARDS.THE_CURSED:
+		{
+			int chance = UnityEngine.Random.Range(0, 100);
+			if (chance < 10 && !GameManager.HackerManager.theSwan.isActivatedBefore)
+			{
+				GameManager.HackerManager.theSwan.ActivateTheSwan();
+				return;
+			}
+			if (chance >= 10 && chance < 20 && !GameManager.TheCloud.IsGFActive)
+			{
+				GameManager.TheCloud.ScheduleGoldenFreddy();
+				return;
+			}
 			for (int i = 0; i < UnityEngine.Random.Range(1, 5); i++)
 			{
 				GameManager.HackerManager.virusManager.ForceVirus();
 			}
 			return;
+		}
 		case TAROT_CARDS.THE_GAMBLER:
 			if (UnityEngine.Random.Range(0, 2) == 0)
 			{
-				CurrencyManager.AddCurrency(50f);
+				CurrencyManager.AddCurrency(CurrencyManager.CurrentCurrency);
 				GameManager.HackerManager.WhiteHatSound();
 				return;
 			}
-			CurrencyManager.RemoveCurrency((CurrencyManager.CurrentCurrency < 50f) ? CurrencyManager.CurrentCurrency : 50f);
+			CurrencyManager.RemoveCurrency(CurrencyManager.CurrentCurrency);
 			GameManager.HackerManager.BlackHatSound();
 			return;
 		case TAROT_CARDS.THE_HACKER:
@@ -99,13 +168,17 @@ public class TarotManager : MonoBehaviour
 			GameManager.HackerManager.ForceNormalHack();
 			return;
 		case TAROT_CARDS.THE_DEVIL:
-			WindowManager.Get(SOFTWARE_PRODUCTS.ZERODAY).Launch();
-			if (!ZeroDayProductObject.isDiscountOn)
+			if (UnityEngine.Random.Range(0, 2) == 0)
 			{
-				for (int j = 0; j < GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts.Count; j++)
+				WindowManager.Get(SOFTWARE_PRODUCTS.ZERODAY).Launch();
+				if (!ZeroDayProductObject.isDiscountOn)
 				{
-					GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[j].myProductObject.DiscountMe();
+					for (int j = 0; j < GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts.Count; j++)
+					{
+						GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[j].myProductObject.DiscountMe();
+					}
 				}
+				return;
 			}
 			WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 			if (!ShadowProductObject.isDiscountOn)
@@ -166,14 +239,16 @@ public class TarotManager : MonoBehaviour
 			}
 			return;
 		case TAROT_CARDS.THE_POPULAR:
-			GameManager.TheCloud.ForceKeyDiscover();
-			GameManager.TheCloud.ForceKeyDiscover();
+			for (int l = 0; l < UnityEngine.Random.Range(1, 3); l++)
+			{
+				GameManager.TheCloud.ForceKeyDiscover();
+			}
 			return;
 		case TAROT_CARDS.THE_HERMIT:
 			if (!TarotManager.HermitActive)
 			{
 				TarotManager.HermitActive = true;
-				GameManager.TimeSlinger.FireTimer(600f, delegate()
+				GameManager.TimeSlinger.FireTimer((ModsManager.Nightmare || DataManager.LeetMode) ? 300f : 600f, delegate()
 				{
 					TarotManager.HermitActive = false;
 				}, 0);
@@ -261,6 +336,14 @@ public class TarotManager : MonoBehaviour
 	public void PullCardAtLoc()
 	{
 		this.PullTarotCard((TAROT_CARDS)TarotCardPullAnim.currentCardTex);
+	}
+
+	private void Update()
+	{
+		if (TarotManager.HermitActive)
+		{
+			this.HermitTrap();
+		}
 	}
 
 	public static bool HermitActive;

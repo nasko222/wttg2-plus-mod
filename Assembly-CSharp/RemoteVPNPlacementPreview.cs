@@ -99,6 +99,13 @@ public class RemoteVPNPlacementPreview : MonoBehaviour
 		LookUp.PlayerUI.RemoteVPNIcon.GetComponent<Image>().sprite = LookUp.PlayerUI.RemoteVPNTwoBar;
 	}
 
+	public void GoBlack()
+	{
+		Color black = Color.black;
+		this.myMat.SetColor("_EmissionColor", black);
+		LookUp.PlayerUI.RemoteVPNIcon.GetComponent<Image>().sprite = LookUp.PlayerUI.RemoteVPNZeroBar;
+	}
+
 	[SerializeField]
 	private Material myMat;
 }

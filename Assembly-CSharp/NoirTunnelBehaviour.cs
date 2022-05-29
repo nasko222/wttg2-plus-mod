@@ -96,12 +96,6 @@ public class NoirTunnelBehaviour : WindowBehaviour
 
 	private void presentLocation()
 	{
-		if (ModsManager.EasyModeActive)
-		{
-			this.presentLocationEZ();
-			CultComputerJumper.Ins.AddLightsOffJump();
-			return;
-		}
 		if (!ModsManager.Nightmare)
 		{
 			GameManager.AudioSlinger.MuteAudioLayer(AUDIO_LAYER.WEBSITE);
