@@ -132,13 +132,13 @@ public class TarotManager : MonoBehaviour
 			return;
 		case TAROT_CARDS.THE_CURSED:
 		{
-			int chance = UnityEngine.Random.Range(0, 100);
-			if (chance < 10 && !GameManager.HackerManager.theSwan.isActivatedBefore)
+			int num = UnityEngine.Random.Range(0, 100);
+			if (num < 10 && !GameManager.HackerManager.theSwan.isActivatedBefore)
 			{
 				GameManager.HackerManager.theSwan.ActivateTheSwan();
 				return;
 			}
-			if (chance >= 10 && chance < 20 && !GameManager.TheCloud.IsGFActive)
+			if (num >= 10 && num < 20 && !GameManager.TheCloud.IsGFActive)
 			{
 				GameManager.TheCloud.ScheduleGoldenFreddy();
 				return;
@@ -273,58 +273,19 @@ public class TarotManager : MonoBehaviour
 			EnvironmentManager.PowerBehaviour.ForceTwitchPowerOff();
 			return;
 		case TAROT_CARDS.THE_ARTIST:
-		{
-			string masterKey = GameManager.TheCloud.MasterKey;
-			int num = UnityEngine.Random.Range(0, 8) + 1;
-			if (num == 1)
+			GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("keys.txt", string.Concat(new object[]
 			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key1.txt", "1 - " + masterKey.Substring(0, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 2)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key2.txt", "2 - " + masterKey.Substring(12, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 3)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key3.txt", "3 - " + masterKey.Substring(24, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 4)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key4.txt", "4 - " + masterKey.Substring(36, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 5)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key5.txt", "5 - " + masterKey.Substring(48, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 6)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key6.txt", "6 - " + masterKey.Substring(60, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 7)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key7.txt", "7 - " + masterKey.Substring(72, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-				return;
-			}
-			if (num == 8)
-			{
-				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Key8.txt", "8 - " + masterKey.Substring(84, 12));
-				GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
-			}
+				"- " + TarotManager.tappedSites[0] + "\n",
+				"- " + TarotManager.tappedSites[1] + "\n",
+				"- " + TarotManager.tappedSites[2] + "\n",
+				"- " + TarotManager.tappedSites[3] + "\n",
+				"- " + TarotManager.tappedSites[4] + "\n",
+				"- " + TarotManager.tappedSites[5] + "\n",
+				"- " + TarotManager.tappedSites[6] + "\n",
+				"- " + TarotManager.tappedSites[7]
+			}));
+			GameManager.AudioSlinger.PlaySound(LookUp.SoundLookUp.KeyFound);
 			return;
-		}
 		case TAROT_CARDS.THE_DEAD:
 			EnemyManager.CultManager.triggerCloseJump();
 			return;
@@ -357,4 +318,6 @@ public class TarotManager : MonoBehaviour
 	public static bool DizzyActive;
 
 	public static playerSpeedMode CurSpeed = playerSpeedMode.NORMAL;
+
+	public static string[] tappedSites;
 }

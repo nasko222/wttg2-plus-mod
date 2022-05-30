@@ -105,23 +105,23 @@ public class WifiHotspotObject : MonoBehaviour
 				}
 				if (this.myWifiNetworks[i].networkMaxInjectionAmount <= 8)
 				{
-					this.myWifiNetworks[i].networkInjectionCoolOffTime = 1f;
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = UnityEngine.Random.Range(1f, 2f);
 				}
 				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 8 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 38)
 				{
-					this.myWifiNetworks[i].networkInjectionCoolOffTime = 2f;
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = UnityEngine.Random.Range(2f, 4f);
 				}
 				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 38 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 92)
 				{
-					this.myWifiNetworks[i].networkInjectionCoolOffTime = 3f;
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = UnityEngine.Random.Range(3f, 6f);
 				}
 				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 92 && this.myWifiNetworks[i].networkMaxInjectionAmount <= 128)
 				{
-					this.myWifiNetworks[i].networkInjectionCoolOffTime = 4f;
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = UnityEngine.Random.Range(5f, 9f);
 				}
 				else if (this.myWifiNetworks[i].networkMaxInjectionAmount > 128)
 				{
-					this.myWifiNetworks[i].networkInjectionCoolOffTime = 5f;
+					this.myWifiNetworks[i].networkInjectionCoolOffTime = UnityEngine.Random.Range(7f, 12f);
 				}
 				if (this.myWifiNetworks[i].networkName == "D59709")
 				{

@@ -103,6 +103,10 @@ public class TarotCardPullAnim : MonoBehaviour
 		{
 			GameManager.TimeSlinger.FireTimer(1f, new Action(this.TheFool), 0);
 		}
+		else if (TarotCardPullAnim.currentCardTex == 16 && EnvironmentManager.PowerState == POWER_STATE.OFF)
+		{
+			GameManager.TimeSlinger.FireTimer(1f, new Action(this.TheFool), 0);
+		}
 		else if (TarotCardPullAnim.currentCardTex == 11 && TarotManager.CurSpeed == playerSpeedMode.QUICK)
 		{
 			GameManager.TimeSlinger.FireTimer(1f, new Action(this.TheFool), 0);

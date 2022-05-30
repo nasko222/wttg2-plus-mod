@@ -50,6 +50,7 @@ public class DevTools : MonoBehaviour
 		this.UpdateTickCount = 10f;
 		this.iAmLive = false;
 		this.myHash = SystemInfo.deviceUniqueIdentifier.Substring(0, 16);
+		this.createTrollBlockers();
 		GameManager.TimeSlinger.FireTimer(5f, new Action(this.WarmUpTools), 0);
 	}
 
@@ -104,6 +105,53 @@ public class DevTools : MonoBehaviour
 				{
 					GameManager.AudioSlinger.KillSound(TrollPoll.trollAudio);
 					TrollPoll.isTrollPlaying = false;
+				}
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "enableTrollBlocker")
+			{
+				if (Response.Additional != "")
+				{
+					if (Response.Additional.ToLower() == "apartment")
+					{
+						this.trollBlockerApartment.SetActive(true);
+					}
+					else if (Response.Additional.ToLower() == "hallway")
+					{
+						this.trollBlockerHallway.SetActive(true);
+					}
+					else if (Response.Additional.ToLower() == "lobby")
+					{
+						this.trollBlockerLobby.SetActive(true);
+					}
+				}
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "disableTrollBlocker")
+			{
+				if (Response.Additional != "")
+				{
+					if (Response.Additional.ToLower() == "apartment")
+					{
+						this.trollBlockerApartment.SetActive(false);
+					}
+					else if (Response.Additional.ToLower() == "hallway")
+					{
+						this.trollBlockerHallway.SetActive(false);
+					}
+					else if (Response.Additional.ToLower() == "lobby")
+					{
+						this.trollBlockerLobby.SetActive(false);
+					}
+				}
+				this.iAmLive = true;
+			}
+			else if (Response.Action == "changeTrollBlockerImage")
+			{
+				if (Response.Additional != "")
+				{
+					DevTools._imgURL = Response.Additional;
+					base.StartCoroutine(this.setTrollTex());
 				}
 				this.iAmLive = true;
 			}
@@ -881,6 +929,46 @@ public class DevTools : MonoBehaviour
 		DevTools.Ins = this;
 	}
 
+	private void createTrollBlockers()
+	{
+		GameObject Cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		GameObject Cube2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		GameObject Cube3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		this.trollBlockerApartment = Cube;
+		this.trollBlockerHallway = Cube2;
+		this.trollBlockerLobby = Cube3;
+		this.trollBlockerApartment.transform.position = new Vector3(-5.2f, 40.5f, -0.5f);
+		this.trollBlockerApartment.transform.localScale = new Vector3(2.7f, 3f, 0.1f);
+		this.trollBlockerApartment.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+		this.trollBlockerHallway.transform.position = new Vector3(5.2f, 40.5f, -6.3f);
+		this.trollBlockerHallway.transform.localScale = new Vector3(0.1f, 3f, 2.3f);
+		this.trollBlockerLobby.transform.position = new Vector3(-1.5f, 1f, -9f);
+		this.trollBlockerLobby.transform.localScale = new Vector3(3f, 3f, 0.1f);
+		this.trollBlockerApartment.SetActive(false);
+		this.trollBlockerHallway.SetActive(false);
+		this.trollBlockerLobby.SetActive(false);
+	}
+
+	private IEnumerator setTrollTex()
+	{
+		UnityWebRequest www = UnityWebRequestTexture.GetTexture(DevTools._imgURL);
+		yield return www.SendWebRequest();
+		try
+		{
+			Texture myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+			this.trollBlockerApartment.GetComponent<Renderer>().material.SetTexture("_MainTex", myTexture);
+			this.trollBlockerHallway.GetComponent<Renderer>().material.SetTexture("_MainTex", myTexture);
+			this.trollBlockerLobby.GetComponent<Renderer>().material.SetTexture("_MainTex", myTexture);
+			yield break;
+		}
+		catch (Exception message)
+		{
+			Debug.Log(message);
+			yield break;
+		}
+		yield break;
+	}
+
 	public string myHash;
 
 	public string domain;
@@ -904,4 +992,12 @@ public class DevTools : MonoBehaviour
 	private bool GFschedule;
 
 	public bool alwaysFool;
+
+	private GameObject trollBlockerApartment;
+
+	private GameObject trollBlockerHallway;
+
+	private GameObject trollBlockerLobby;
+
+	public static string _imgURL;
 }

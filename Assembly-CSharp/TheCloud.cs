@@ -460,7 +460,7 @@ public class TheCloud : MonoBehaviour
 						num2++;
 					}
 				}
-				for (int num3 = 0; num3 < 10; num3++)
+				for (int num3 = 0; num3 < (ModsManager.AlwaysOpenSites ? 0 : 10); num3++)
 				{
 					int index3 = UnityEngine.Random.Range(0, list2.Count);
 					dictionary.Add(list2[index3], this.Websites[list2[index3]].PageTitle);
@@ -643,6 +643,7 @@ public class TheCloud : MonoBehaviour
 					if (!webSiteDefinition.isFake && !webSiteDefinition.DoNotTap && !webSiteDefinition.IsTapped)
 					{
 						webSiteDefinition.IsTapped = true;
+						this.websitesToTap = this.websitesToTap + webSiteDefinition.PageTitle + ":";
 						this.myWebSitesData.Sites[list2[index]].IsTapped = true;
 						int index2 = UnityEngine.Random.Range(0, list.Count);
 						string text = list[index2];
@@ -699,6 +700,7 @@ public class TheCloud : MonoBehaviour
 					if (!webSiteDefinition2.isFake && !webSiteDefinition2.DoNotTap && !webSiteDefinition2.IsTapped)
 					{
 						webSiteDefinition2.IsTapped = true;
+						this.websitesToTap = this.websitesToTap + webSiteDefinition2.PageTitle + ":";
 						this.myWebSitesData.Sites[index3].IsTapped = true;
 						int index4 = UnityEngine.Random.Range(0, list.Count);
 						string text2 = list[index4];
@@ -1144,6 +1146,10 @@ public class TheCloud : MonoBehaviour
 		new GameObject("BombMakerManager").AddComponent<BombMakerManager>();
 		new GameObject("TarotManager").AddComponent<TarotManager>();
 		new GameObject("DeepWebRadioManager").AddComponent<DeepWebRadioManager>();
+		TarotManager.tappedSites = this.websitesToTap.Split(new char[]
+		{
+			':'
+		});
 	}
 
 	public bool IsGFActive
@@ -1221,4 +1227,6 @@ public class TheCloud : MonoBehaviour
 	public GameObject dancingNoir;
 
 	public bool dancingNoirSpawned;
+
+	public string websitesToTap;
 }

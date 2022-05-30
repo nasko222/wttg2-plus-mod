@@ -48,6 +48,7 @@ public class PowerBehaviour : MonoBehaviour
 			this.powerOutageHub.PlaySound(this.powerOutSFX);
 			this.breakerBoxHub.PlaySound(this.breakerSwitchOffSFX);
 		}
+		TarotManager.HermitActive = false;
 		switchToComputerController.Ins.Lock();
 		EnvironmentManager.PowerState = POWER_STATE.OFF;
 		this.switchOffTween.Restart(true, -1f);

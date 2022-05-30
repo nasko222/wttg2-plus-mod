@@ -119,7 +119,7 @@ public class TitleManager : MonoBehaviour
 		OptionsUtil.BuildOptionsButton2("Probe/Inject Skip:", "[MOD]SkybreakGlitch", 0, 150f, null, null);
 		OptionsUtil.BuildOptionsButton2("Cheaper Economy:", "[MOD]EasyMode", 0, 200f, null, null);
 		OptionsUtil.BuildOptionsButton2("Unlimited Stamina:", "[MOD]UnlimitedStamina", 0, 250f, null, null);
-		OptionsUtil.BuildOptionsButton2("No Timed Websites:", "[MOD]AlwaysOpenSites", 0, 300f, null, null);
+		OptionsUtil.BuildOptionsButton2("Always Open Websites:", "[MOD]AlwaysOpenSites", 0, 300f, null, null);
 		OptionsUtil.BuildOptionsButton2("No Fake Scanner Alerts:", "[MOD]PoliceScannerMod", 0, 350f, null, null);
 	}
 
