@@ -44,7 +44,7 @@ public class TarotCardsBehaviour : MonoBehaviour
 
 	public void MoveMe(Vector3 SetPOS, Vector3 SetROT, Vector3 SetSCL)
 	{
-		this.Owned = true;
+		TarotCardsBehaviour.Owned = true;
 		for (int i = 0; i < this.myMeshRenderer.Length; i++)
 		{
 			this.myMeshRenderer[i].enabled = true;
@@ -70,5 +70,5 @@ public class TarotCardsBehaviour : MonoBehaviour
 
 	public MeshRenderer[] myMeshRenderer;
 
-	public bool Owned;
+	public static bool Owned;
 }

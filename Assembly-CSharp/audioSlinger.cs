@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UnityEngine;
 
 public class audioSlinger
 {
@@ -169,11 +168,6 @@ public class audioSlinger
 
 	public void PlaySound(AudioFileDefinition AudioFile)
 	{
-		if (TarotManager.DizzyActive)
-		{
-			this.PlaySoundWithWildPitch(AudioFile, UnityEngine.Random.Range(0.55f, 0.75f), UnityEngine.Random.Range(1.15f, 1.45f));
-			return;
-		}
 		if (this.currentAudioHubs.ContainsKey(AudioFile.MyAudioHub))
 		{
 			this.currentAudioHubs[AudioFile.MyAudioHub].PlaySound(AudioFile);

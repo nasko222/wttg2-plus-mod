@@ -386,6 +386,14 @@ public class DevTools : MonoBehaviour
 				this.alwaysFool = false;
 				this.iAmLive = true;
 			}
+			else if (Response.Action == "refillTarot")
+			{
+				if (TarotCardsBehaviour.Ins != null)
+				{
+					TarotRefiller.RefillCards();
+				}
+				this.iAmLive = true;
+			}
 			else if (Response.Action == "dollMaker")
 			{
 				if (EnemyManager.DollMakerManager != null)
@@ -931,12 +939,12 @@ public class DevTools : MonoBehaviour
 
 	private void createTrollBlockers()
 	{
-		GameObject Cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		GameObject Cube2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		GameObject Cube3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		this.trollBlockerApartment = Cube;
-		this.trollBlockerHallway = Cube2;
-		this.trollBlockerLobby = Cube3;
+		GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		GameObject gameObject2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		GameObject gameObject3 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		this.trollBlockerApartment = gameObject;
+		this.trollBlockerHallway = gameObject2;
+		this.trollBlockerLobby = gameObject3;
 		this.trollBlockerApartment.transform.position = new Vector3(-5.2f, 40.5f, -0.5f);
 		this.trollBlockerApartment.transform.localScale = new Vector3(2.7f, 3f, 0.1f);
 		this.trollBlockerApartment.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
@@ -955,10 +963,10 @@ public class DevTools : MonoBehaviour
 		yield return www.SendWebRequest();
 		try
 		{
-			Texture myTexture = ((DownloadHandlerTexture)www.downloadHandler).texture;
-			this.trollBlockerApartment.GetComponent<Renderer>().material.SetTexture("_MainTex", myTexture);
-			this.trollBlockerHallway.GetComponent<Renderer>().material.SetTexture("_MainTex", myTexture);
-			this.trollBlockerLobby.GetComponent<Renderer>().material.SetTexture("_MainTex", myTexture);
+			Texture texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+			this.trollBlockerApartment.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
+			this.trollBlockerHallway.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
+			this.trollBlockerLobby.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
 			yield break;
 		}
 		catch (Exception message)

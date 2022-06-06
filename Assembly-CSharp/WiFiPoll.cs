@@ -17,7 +17,7 @@ public class WiFiPoll
 			GameManager.TimeSlinger.FireTimer(60f, new Action(this.PollEnd), 0);
 			return;
 		}
-		if (DataManager.LeetMode)
+		if (DataManager.LeetMode || ModsManager.Nightmare)
 		{
 			this.myDOSTwitch.myTwitchIRC.SendMsg("Oops, Probe/Inject Skip is enabled, WiFi poll will have 25% chance of infecting the WiFi with D05_DR41N3R!");
 			if (UnityEngine.Random.Range(0, 100) > 75)

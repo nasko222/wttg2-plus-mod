@@ -80,6 +80,10 @@ public class KeyPoll
 	{
 		if (KeyPoll.keyManipulatorData != KEY_CUE_MODE.DEFAULT)
 		{
+			GameManager.TimeSlinger.FireTimer(15f, delegate()
+			{
+				this.FireManipulator(kEY_CUE_MODE);
+			}, 0);
 			return;
 		}
 		KeyPoll.keyManipulatorData = kEY_CUE_MODE;

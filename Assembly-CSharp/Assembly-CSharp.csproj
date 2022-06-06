@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{84493081-42A6-4479-A9F8-8CDED5DC7CF4}</ProjectGuid>
+    <ProjectGuid>{5E667C9E-330F-45A3-9E73-BC30876CE89F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -105,6 +105,9 @@
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II all mods\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II all mods\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Welcome to the Game II all mods\Welcome to the Game II - TI 1.2\WTTG2_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
@@ -728,6 +731,7 @@
     <Compile Include="TarotCardPullAnim.cs" />
     <Compile Include="TarotCardsBehaviour.cs" />
     <Compile Include="TarotManager.cs" />
+    <Compile Include="TarotRefiller.cs" />
     <Compile Include="TAROT_CARDS.cs" />
     <Compile Include="TenantData.cs" />
     <Compile Include="TenantDefinition.cs" />

@@ -81,6 +81,10 @@ public class SpeedPoll
 	{
 		if (SpeedPoll.speedManipulatorActive)
 		{
+			GameManager.TimeSlinger.FireTimer(15f, delegate()
+			{
+				this.FireManipulator(nET_SPEED);
+			}, 0);
 			return;
 		}
 		SpeedPoll.speedManipulatorData = nET_SPEED;

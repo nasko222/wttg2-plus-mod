@@ -119,6 +119,10 @@ public class TarotCardPullAnim : MonoBehaviour
 		{
 			GameManager.TimeSlinger.FireTimer(1f, new Action(this.TheFool), 0);
 		}
+		else if (TarotCardPullAnim.currentCardTex == 7 && CurrencyManager.CurrentCurrency <= 0f)
+		{
+			GameManager.TimeSlinger.FireTimer(1f, new Action(this.TheFool), 0);
+		}
 		else
 		{
 			GameManager.TimeSlinger.FireTimer(1.25f, new Action(TarotManager.Ins.PullCardAtLoc), 0);

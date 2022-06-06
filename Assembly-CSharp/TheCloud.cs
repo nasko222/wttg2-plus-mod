@@ -937,6 +937,7 @@ public class TheCloud : MonoBehaviour
 		WorldManager.LucasSpawnedToKill = false;
 		ModsManager.Nightmare = false;
 		SulphurInventory.SulphurAmount = 0;
+		TarotCardsBehaviour.Owned = false;
 		TarotManager.HermitActive = false;
 		TarotManager.DizzyActive = false;
 		TarotManager.BreatherUndertaker = false;

@@ -34,6 +34,10 @@ public class AudioHubObject : MonoBehaviour
 		list.Add(soundObject);
 		soundObject.enabled = true;
 		soundObject.DonePlaying += this.soundObjectDoneAction;
+		if (TarotManager.DizzyActive)
+		{
+			soundObject.SetCustomPitch(UnityEngine.Random.Range(0.55f, 1.45f));
+		}
 		soundObject.Fire(AudioFile);
 	}
 
