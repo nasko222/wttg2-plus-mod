@@ -11,7 +11,7 @@ public static class AssetBundleManager
 		{
 			return;
 		}
-		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1655078400)
+		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1656028800)
 		{
 			TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = string.Concat(new object[]
 			{

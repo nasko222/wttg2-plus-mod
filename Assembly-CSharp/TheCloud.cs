@@ -460,7 +460,7 @@ public class TheCloud : MonoBehaviour
 						num2++;
 					}
 				}
-				for (int num3 = 0; num3 < (ModsManager.AlwaysOpenSites ? 0 : 10); num3++)
+				for (int num3 = 0; num3 < (ModsManager.AlwaysOpenSites ? 2 : 10); num3++)
 				{
 					int index3 = UnityEngine.Random.Range(0, list2.Count);
 					dictionary.Add(list2[index3], this.Websites[list2[index3]].PageTitle);

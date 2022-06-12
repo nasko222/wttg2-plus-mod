@@ -18,7 +18,7 @@ public class TarotCardPullAnim : MonoBehaviour
 
 	private void TheFool()
 	{
-		TarotCardsBehaviour.Ins.myAudioHub.PlaySound(this.TheFoolSFX);
+		TarotCardsBehaviour.Ins.myAudioHub.PlaySoundWithWildPitch(this.TheFoolSFX, 0.5f, 1.5f);
 		this.cards[TarotCardPullAnim.currentCard].GetComponent<Renderer>().material = this.GlowMat;
 		this.ChangeTexBF();
 		for (float num = 0f; num < 0.3f; num += 0.01f)
