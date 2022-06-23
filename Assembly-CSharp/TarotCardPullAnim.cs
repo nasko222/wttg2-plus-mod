@@ -18,17 +18,30 @@ public class TarotCardPullAnim : MonoBehaviour
 
 	private void TheFool()
 	{
+		int num = UnityEngine.Random.Range(0, 3);
+		if (num == 0)
+		{
+			this.TheFoolSFX = CustomSoundLookUp.fool;
+		}
+		else if (num == 1)
+		{
+			this.TheFoolSFX = CustomSoundLookUp.fool2;
+		}
+		else if (num == 2)
+		{
+			this.TheFoolSFX = CustomSoundLookUp.fool3;
+		}
 		TarotCardsBehaviour.Ins.myAudioHub.PlaySoundWithWildPitch(this.TheFoolSFX, 0.5f, 1.5f);
 		this.cards[TarotCardPullAnim.currentCard].GetComponent<Renderer>().material = this.GlowMat;
 		this.ChangeTexBF();
-		for (float num = 0f; num < 0.3f; num += 0.01f)
+		for (float num2 = 0f; num2 < 0.3f; num2 += 0.01f)
 		{
-			GameManager.TimeSlinger.FireTimer(num, new Action(this.GlowIn), 0);
+			GameManager.TimeSlinger.FireTimer(num2, new Action(this.GlowIn), 0);
 		}
 		GameManager.TimeSlinger.FireTimer(0.16f, new Action(this.ChangeTexF), 0);
-		for (float num2 = 0.3f; num2 < 0.62f; num2 += 0.01f)
+		for (float num3 = 0.3f; num3 < 0.62f; num3 += 0.01f)
 		{
-			GameManager.TimeSlinger.FireTimer(num2, new Action(this.GlowOut), 0);
+			GameManager.TimeSlinger.FireTimer(num3, new Action(this.GlowOut), 0);
 		}
 		GameManager.TimeSlinger.FireTimer(0.48f, new Action(this.ChangeTexAF), 0);
 		TarotCardPullAnim.foolTimer = 1f;

@@ -794,7 +794,7 @@ public class TheCloud : MonoBehaviour
 		if (!TheCloud.vpnFIX)
 		{
 			GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[6].isDiscounted = false;
-			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 6].deliveryTimeMax = GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 6].deliveryTimeMin;
+			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].deliveryTimeMax = GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].deliveryTimeMin;
 			TheCloud.vpnFIX = true;
 		}
 		GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[2].productToOwn = GameManager.ManagerSlinger.ProductsManager.ZeroDayProducts[1];
@@ -1069,7 +1069,7 @@ public class TheCloud : MonoBehaviour
 			gameObject.transform.localScale = new Vector3(20f, 11f, 1f);
 		}
 		gameObject.SetActive(true);
-		GameManager.AudioSlinger.PlaySound(CustomSoundLookUp.gflaugh);
+		GameManager.AudioSlinger.PlaySoundWithWildPitch(CustomSoundLookUp.gflaugh, 0.77f, 1.22f);
 		GameManager.TimeSlinger.FireTimer(0.85f, delegate()
 		{
 			UnityEngine.Object.Destroy(gameObject);
@@ -1138,10 +1138,22 @@ public class TheCloud : MonoBehaviour
 			new GameObject("DancingLoader").AddComponent<DancingLoader>();
 			if (ModsManager.DebugEnabled)
 			{
+				CurrencyManager.AddCurrency(910f);
 				KeyPoll.DevEnableManipulator(KEY_CUE_MODE.ENABLED);
 				SpeedPoll.DevEnableManipulator(TWITCH_NET_SPEED.FAST);
 				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki2.txt", GameManager.TheCloud.GetWikiURL(1));
 				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("Wiki3.txt", GameManager.TheCloud.GetWikiURL(2));
+				GameManager.ManagerSlinger.TextDocManager.CreateTextDoc("keys.txt", string.Concat(new object[]
+				{
+					"- " + TarotManager.tappedSites[0] + "\n",
+					"- " + TarotManager.tappedSites[1] + "\n",
+					"- " + TarotManager.tappedSites[2] + "\n",
+					"- " + TarotManager.tappedSites[3] + "\n",
+					"- " + TarotManager.tappedSites[4] + "\n",
+					"- " + TarotManager.tappedSites[5] + "\n",
+					"- " + TarotManager.tappedSites[6] + "\n",
+					"- " + TarotManager.tappedSites[7]
+				}));
 			}
 		}, 0);
 		new GameObject("BombMakerManager").AddComponent<BombMakerManager>();

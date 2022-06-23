@@ -69,6 +69,14 @@ public static class ModsManager
 		{
 			ModsManager.Achievements = false;
 		}
+		if (PlayerPrefs.GetInt("[MOD]Debugging", 1) == 1)
+		{
+			ModsManager.DebugEnabled = true;
+		}
+		else
+		{
+			ModsManager.DebugEnabled = false;
+		}
 		if (PlayerPrefs.GetInt("[MOD]PoliceScannerMod", 1) == 1)
 		{
 			ModsManager.PoliceScannerMod = true;
@@ -120,11 +128,11 @@ public static class ModsManager
 
 	public static bool Websites;
 
-	public static readonly string ModVersion = "1.4-beta7";
+	public static readonly string ModVersion = "1.4-pre1";
 
 	public static bool NoParameter;
 
-	public static readonly bool DebugEnabled = false;
+	public static bool DebugEnabled;
 
 	public static bool PoliceScannerMod;
 

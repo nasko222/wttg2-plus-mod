@@ -11,7 +11,7 @@ public static class AssetBundleManager
 		{
 			return;
 		}
-		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1656028800)
+		if ((int)DateTime.Now.Subtract(new DateTime(1970, 1, 1)).TotalSeconds > 1656547200)
 		{
 			TitleManager.wttg2plus_modText.GetComponent<TextMeshProUGUI>().text = string.Concat(new object[]
 			{
@@ -53,6 +53,7 @@ public static class AssetBundleManager
 		CustomSpriteLookUp.sulphur = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("sulphur.png");
 		CustomSpriteLookUp.router = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("router.png");
 		CustomSpriteLookUp.logo = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("logo.png");
+		CustomSpriteLookUp.tarotcard = AssetBundleManager.WTTG2PlusProps.LoadAsset<Sprite>("tarotcard.png");
 	}
 
 	public static void ProceedLoadingAFD()
@@ -137,8 +138,11 @@ public static class AssetBundleManager
 		CustomSoundLookUp.timechange = AFDManager.Ins.AddPlayerAFD("timechange", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("timechange.wav"), 1f);
 		CustomSoundLookUp.pull = AFDManager.Ins.AddPlayerAFD("pull", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("pull.wav"), 1f);
 		CustomSoundLookUp.disappear = AFDManager.Ins.AddPlayerAFD("disappear", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("disappear.wav"), 1f);
-		CustomSoundLookUp.fool = AFDManager.Ins.AddPlayerAFD("fool", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("fool.wav"), 1f);
 		CustomSoundLookUp._static = AFDManager.Ins.AddPlayerAFD("_static", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("static.wav"), 0.6f);
+		CustomSoundLookUp.fool = AFDManager.Ins.AddPlayerAFD("fool", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("fool.wav"), 1f);
+		CustomSoundLookUp.fool2 = AFDManager.Ins.AddPlayerAFD("fool2", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("thefool2.wav"), 1f);
+		CustomSoundLookUp.fool3 = AFDManager.Ins.AddPlayerAFD("fool3", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("thefool3.wav"), 1f);
+		CustomSoundLookUp.trolled = AFDManager.Ins.AddPlayerAFD("trolled", AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("trolled.wav"), 0.5f);
 		CustomSoundLookUp.hackermans = AssetBundleManager.WTTG2PlusProps.LoadAsset<AudioClip>("hackermans.wav");
 		AssetBundleManager.LoadDeepWebRadioSamples();
 	}

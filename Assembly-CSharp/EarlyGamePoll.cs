@@ -87,7 +87,7 @@ public class EarlyGamePoll
 			{
 				this.myDOSTwitch.myTwitchIRC.SendMsg("More than 75% of twitch chat voted for Lucas, giving out free motion sensor.");
 				WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
-				GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 9].myProductObject.shipItem();
+				GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 10].myProductObject.shipItem();
 			}
 		}
 		else if (num3 > num && num3 > num2 && num3 > num4)
@@ -96,7 +96,7 @@ public class EarlyGamePoll
 			EnemyManager.DollMakerManager.ReleaseTheDollMaker();
 			this.myDOSTwitch.myTwitchIRC.SendMsg("Shipping the LOLPY disc...");
 			WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
-			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 6].myProductObject.shipItem();
+			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.shipItem();
 			GameManager.TheCloud.ForceKeyDiscover();
 			if ((float)(num + num2 + num3 + num4) * 0.75f <= (float)num3 && num3 >= 4)
 			{
@@ -112,7 +112,7 @@ public class EarlyGamePoll
 			EnemyManager.BombMakerManager.ReleaseTheBombMaker();
 			this.myDOSTwitch.myTwitchIRC.SendMsg("Shipping some sulphur...");
 			WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
-			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].myProductObject.shipItem();
+			GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 3].myProductObject.shipItem();
 			if ((float)(num + num2 + num3 + num4) * 0.75f <= (float)num4 && num4 >= 4)
 			{
 				if (ModsManager.EasyModeActive)

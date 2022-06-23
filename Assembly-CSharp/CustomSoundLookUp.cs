@@ -168,4 +168,10 @@ public static class CustomSoundLookUp
 	public static AudioFileDefinition fool;
 
 	public static AudioFileDefinition _static;
+
+	public static AudioFileDefinition fool2;
+
+	public static AudioFileDefinition fool3;
+
+	public static AudioFileDefinition trolled;
 }

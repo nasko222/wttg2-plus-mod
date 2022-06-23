@@ -318,6 +318,10 @@ public class DevTools : MonoBehaviour
 					{
 						audioFile = CustomSoundLookUp.xfiles;
 					}
+					else if (Response.Additional.ToLower() == "trolled")
+					{
+						audioFile = CustomSoundLookUp.trolled;
+					}
 					else
 					{
 						audioFile = CustomSoundLookUp.mlg;
@@ -821,29 +825,29 @@ public class DevTools : MonoBehaviour
 				if (GameManager.ManagerSlinger.ProductsManager != null)
 				{
 					InventoryManager.RemoveProduct(SOFTWARE_PRODUCTS.BACKDOOR);
-					if (!ProductsManager.ownsWhitehatScanner && !PoliceScannerBehaviour.Ins.ownPoliceScanner && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.myProduct.productIsShipped)
+					if (!ProductsManager.ownsWhitehatScanner && !PoliceScannerBehaviour.Ins.ownPoliceScanner && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 8].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 8].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatScanner = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 7].myProductObject.shipItem();
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 8].myProductObject.shipItem();
 					}
-					else if (!ProductsManager.ownsWhitehatRemoteVPN2 && RemoteVPNObject.RemoteVPNLevel == 1 && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.myProduct.productIsShipped)
+					else if (!ProductsManager.ownsWhitehatRemoteVPN2 && RemoteVPNObject.RemoteVPNLevel == 1 && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 5].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 5].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatRemoteVPN2 = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 4].myProductObject.shipItem();
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 5].myProductObject.shipItem();
 					}
-					else if (!ProductsManager.ownsWhitehatRouter && !RouterBehaviour.Ins.Owned && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.myProduct.productIsShipped)
+					else if (!ProductsManager.ownsWhitehatRouter && !RouterBehaviour.Ins.Owned && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatRouter = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 1].myProductObject.shipItem();
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 2].myProductObject.shipItem();
 					}
-					else if (!ProductsManager.ownsWhitehatDongle2 && InventoryManager.WifiDongleLevel == WIFI_DONGLE_LEVEL.LEVEL1 && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 11].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 11].myProductObject.myProduct.productIsShipped)
+					else if (!ProductsManager.ownsWhitehatDongle2 && InventoryManager.WifiDongleLevel == WIFI_DONGLE_LEVEL.LEVEL1 && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 12].myProductObject.myProduct.productIsPending && !GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 12].myProductObject.myProduct.productIsShipped)
 					{
 						WindowManager.Get(SOFTWARE_PRODUCTS.SHADOW_MARKET).Launch();
 						ProductsManager.ownsWhitehatDongle2 = true;
-						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 11].myProductObject.shipItem();
+						GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts[GameManager.ManagerSlinger.ProductsManager.ShadowMarketProducts.Count - 12].myProductObject.shipItem();
 					}
 					else
 					{
