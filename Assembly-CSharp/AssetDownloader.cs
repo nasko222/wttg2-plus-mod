@@ -10,8 +10,8 @@ public static class AssetDownloader
 {
 	public static void Init()
 	{
-		AssetDownloader.WTTG2Plus = new AssetFile(AssetDownloader._size[0], "WTTG2Plus.assets", "WTTG2_Data\\Resources\\", "https://wttg2plus.ampersoft.cz/Resources/pre1/WTTG2Plus.assets");
-		AssetDownloader.browser_assets = new AssetFile(AssetDownloader._size[1], "browser_assets", "WTTG2_Data\\Resources\\", "https://wttg2plus.ampersoft.cz/Resources/beta7/browser_assets");
+		AssetDownloader.WTTG2Plus = new AssetFile(AssetDownloader._size[0], "WTTG2Plus.assets", "WTTG2_Data\\Resources\\", "https://wttg2plus.ampersoft.cz/Resources/WTTG2Plus.assets");
+		AssetDownloader.browser_assets = new AssetFile(AssetDownloader._size[1], "browser_assets", "WTTG2_Data\\Resources\\", "https://wttg2plus.ampersoft.cz/Resources/browser_assets");
 		AssetDownloader.assetFiles.Add(AssetDownloader.WTTG2Plus);
 		AssetDownloader.assetFiles.Add(AssetDownloader.browser_assets);
 	}
